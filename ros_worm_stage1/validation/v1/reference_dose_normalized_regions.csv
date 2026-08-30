@@ -1,0 +1,9 @@
+case,region,region_Gy_per_assumed_1Gy_whole_worm_average
+focused_50kV,body,1.0492341905748148
+focused_50kV,bodywall,0.6682498077328155
+focused_50kV,digestive,0.506841627381375
+focused_50kV,reproductive,0.5381315826935479
+diffuse_20kV,body,1.057592995204652
+diffuse_20kV,bodywall,0.5877493563688972
+diffuse_20kV,digestive,0.44804504652983523
+diffuse_20kV,reproductive,0.43261264432258595

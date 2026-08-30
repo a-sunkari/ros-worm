@@ -24,9 +24,9 @@ Materials: `ros_worm_stage1/config/region_materials.csv`
 
 Model scale: `0.1 mm / model unit`
 
-Current preferred transport manifest:
+Authoritative transport manifest:
 
-`openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_NO_PHYSICAL_NERVOUS_manifest.csv`
+`ros_worm_stage1/config/transport_geometry_v1.csv`
 
 Historical physical-nervous manifest, useful only for comparisons:
 
@@ -36,13 +36,17 @@ High-resolution nervous anatomy:
 
 `openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl`
 
-Exact neural-surface scorer:
+Exact, bounded-memory neural-surface scorer:
 
-`ros_worm_stage1/scripts/highres_nervous_exact_surface_scoring.py`
+`ros_worm_stage1/scripts/score_nervous_surface_v1.py`
 
-Alignment QC:
+Geometry/alignment/fidelity QC:
 
-`ros_worm_stage1/scripts/qc_exact_nervous_surface_alignment.py`
+`ros_worm_stage1/scripts/qc_geometry_v1.py`
+
+Authoritative end-to-end runner:
+
+`ros_worm_stage1/scripts/run_reproducible_case.py`
 
 ## Region IDs
 
@@ -53,7 +57,9 @@ Alignment QC:
 5. ReproductiveSystem
 6. ExcretorySystem
 
-With the preferred no-physical-nervous manifest, region 2 should have zero physical Geant4 energy deposition by design.
+With the authoritative manifest, region 2 (nervous) and region 6 (excretory)
+have zero physical Geant4 energy deposition by design. Nervous is a surface
+atlas; excretory is a same-material post-processing ROI.
 
 ## Files/directories that are historical rather than authoritative
 

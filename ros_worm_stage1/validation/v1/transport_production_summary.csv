@@ -1,0 +1,3 @@
+case,events,total_edep_keV,all_secondaries,eligible_electrons,outside_body_excluded,within_5um,within_5um_fraction,median_surface_distance_um,p95_surface_distance_um,geomnav1002_incidents,warnings_per_primary
+focused_50kV,10000000,313649.4427990236,90539,90514,0,6562,0.07249707227611198,35.362736713407294,98.56845177739856,18,1.8e-06
+diffuse_20kV,10000000,201910.1054122427,62979,62968,0,4056,0.0644136704357769,37.191547443831176,99.34496700017303,3,3e-07

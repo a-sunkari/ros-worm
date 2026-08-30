@@ -19,9 +19,14 @@ def read_csv(path: Path):
 def write_csv(path: Path, rows, fields):
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
+
+
+def clean_svg(path: Path):
+    """Normalize matplotlib SVG trailing whitespace for clean git diffs."""
+    path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
 
 
 def main() -> None:
@@ -40,6 +45,7 @@ def main() -> None:
     region_rows = []
     normalized_rows = []
     warning_rows = []
+    threshold_rows = []
     threshold = {}
     for case, folder in runs.items():
         summary = json.loads((folder / "transport_summary.json").read_text())
@@ -69,6 +75,8 @@ def main() -> None:
             normalized_rows.append({"case": case, "region": r["region_key"],
                                     "region_Gy_per_assumed_1Gy_whole_worm_average": transfer})
         threshold[case] = read_csv(folder / "nervous_surface_scoring/nervous_surface_threshold_scan.csv")
+        for row in threshold[case]:
+            threshold_rows.append({"case": case, **row})
         for pair, count in warning["pair_counts"].items():
             warning_rows.append({"case": case, "boundary_pair": pair, "incidents": count})
 
@@ -76,6 +84,7 @@ def main() -> None:
     write_csv(out / "regional_transport_results.csv", region_rows, list(region_rows[0]))
     write_csv(out / "reference_dose_normalized_regions.csv", normalized_rows, list(normalized_rows[0]))
     write_csv(out / "navigation_warning_pairs.csv", warning_rows, list(warning_rows[0]))
+    write_csv(out / "nervous_surface_threshold_scan.csv", threshold_rows, list(threshold_rows[0]))
 
     qc = results / "geometry_qc_highstat_v1"
     for name in ["nervous_surface_fidelity.csv", "nervous_voxel_scoring_dependence.csv"]:
@@ -93,6 +102,8 @@ def main() -> None:
         source = qc / f"nervous_morphology_qc.{ext}"
         if source.exists():
             shutil.copy2(source, figures / source.name)
+            if ext == "svg":
+                clean_svg(figures / source.name)
 
     chemistry_rows = []
     chemistry = {
@@ -125,6 +136,7 @@ def main() -> None:
     axes[1].legend(frameon=False, fontsize=8)
     fig.savefig(figures / "transport_and_neural_scoring_v1.png", dpi=300)
     fig.savefig(figures / "transport_and_neural_scoring_v1.svg")
+    clean_svg(figures / "transport_and_neural_scoring_v1.svg")
     plt.close(fig)
 
     species_order = ["°OH^0", "H2O2^0", "e_aq^-1", "H^0", "H_2^0"]
@@ -138,6 +150,7 @@ def main() -> None:
     ax.legend(frameon=False, fontsize=8)
     fig.savefig(figures / "water_radiolysis_near_neural_v1.png", dpi=300)
     fig.savefig(figures / "water_radiolysis_near_neural_v1.svg")
+    clean_svg(figures / "water_radiolysis_near_neural_v1.svg")
     plt.close(fig)
     print(f"[OK] release artifacts: {out}")
 

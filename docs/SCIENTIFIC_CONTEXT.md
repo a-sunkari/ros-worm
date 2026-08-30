@@ -18,9 +18,20 @@ The simulation does **not** by itself prove the molecular activation mechanism o
 
 ## Experimental conditions to reproduce
 
-The Cannon/Bolding experiment used a tungsten-target iMOXS-MFR X-ray source with polycapillary focusing. The reported focused beam had an approximately 0.85 mm FWHM spot at the agar surface and was operated at 50 kV. Beam current was varied to change stimulation intensity. The highest focused condition was estimated near 1 Gy/s, while lower current produced roughly 0.2 Gy/s. The paper also reports diffuse dose-rate conditions around 0.19, 0.38, 0.56, and 0.74 Gy/s.
+The focused Cannon/Bolding experiment used a tungsten-target iMOXS-MFR X-ray
+source with polycapillary focusing. The reported beam had an approximately
+0.85-mm FWHM spot at the agar surface and was operated at 50 kV. Avoidance used
+10-s exposures over approximately 0.2–1 Gy/s; focused egg-ejection/paralysis used
+15 s near 1 Gy/s. The separate diffuse swimming/paralysis experiment used an
+Amptek Mini-X **silver-target source at 20 kV** with nozzle and filters removed,
+20-s exposures, and approximately 0.19, 0.38, 0.56, and 0.74 Gy/s.
 
-Important modeling consequence: the worm is ~1 mm long and tens of micrometers across, while the focused X-ray spot is on the order of the worm length. Position along the worm and beam placement therefore matter even when material composition differences are modest.
+Important modeling consequence: the worm is ~1 mm long and tens of micrometers
+across, while the focused X-ray spot is on the order of the worm length. Position
+along the worm and beam placement therefore matter even when material composition
+differences are modest. The current Kramers spectra reproduce endpoints only;
+they do not reproduce tungsten/silver characteristic lines, filtration, or the
+polycapillary/cone fluence distribution.
 
 The experimental dose estimates were approximate; the authors note substantial dosimetry uncertainty. Do not overstate simulation precision beyond the experimental input uncertainty.
 

@@ -1,135 +1,69 @@
-# Geometry and nervous-system strategy
+# Geometry and nervous-system treatment
 
-## The core geometry problem
+## Physical transport geometry
 
-The OpenWorm/Virtual Worm source anatomy was created for visualization/biological modeling, not Geant4 solid navigation. Many anatomical pieces overlap or intersect rather than forming a mutually exclusive set of closed material volumes. This is especially severe for the nervous system, where neurites and other components visually form a plausible neural network but are not one clean Boolean-unioned solid.
+`ros_worm_stage1/config/transport_geometry_v1.csv` is authoritative. Its paths,
+hashes, counts, and bounds were recomputed from the referenced STL contents.
+Geant4 centers every mesh using the actual body-envelope center and uses:
 
-The practical consequence is that a mesh may look biologically correct in 3D and still be unsuitable as a Geant4 daughter volume.
+- WholeBodyEnvelope as residual soft tissue;
+- BodyWallMuscle, DigestiveSystem, and ReproductiveSystem as daughters;
+- no physical nervous daughter;
+- no physical excretory daughter.
 
-## Current physical transport geometry
+The residual-body scoring mass is the mother volume minus physical daughter
+volumes, eliminating the former parent/child mass double count.
 
-The preferred transport manifest is:
+## Neural decision
 
-`openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_NO_PHYSICAL_NERVOUS_manifest.csv`
+The original OpenWorm neural aggregate is a high-detail surface atlas, not a
+valid closed solid. Making a watertight mesh was not treated as sufficient.
+`scripts/qc_geometry_v1.py` compares candidates by bounds, morphology,
+connectivity, topology, sampled symmetric surface distance, and scoring impact.
 
-It places:
+| representation | faces | components | watertight | sampled symmetric p95 error | reference→candidate p95 |
+|---|---:|---:|:---:|---:|---:|
+| original high resolution | 1,355,686 | 54 | no | reference | reference |
+| historical decimation | 522,169 | 937 | no | 3.23 µm | 7.10 µm |
+| voxel 0.020 | 7,026 | 241 | yes | 15.53 µm | 21.16 µm |
+| voxel 0.030 | 3,442 | 125 | yes | 24.53 µm | 33.45 µm |
 
-- `WholeBodyEnvelope`
-- `ExcretorySystem`
-- `ReproductiveSystem`
-- `DigestiveSystem`
-- `BodyWallMuscle`
+The sampled maximum symmetric distances were 19.0, 42.9, and 48.4 µm,
+respectively. In the same 90,514-electron focused dataset, the two voxel volumes
+classified 59 and 173 births as inside. The near-threefold scoring difference
+and 65.5% volume difference reject these meshes as a converged volumetric ROI.
 
-The physical nervous system is intentionally omitted.
+The authoritative neural endpoint is therefore exact distance from an eligible
+secondary-electron birth to the **original full-resolution triangle surface**,
+implemented in `scripts/score_nervous_surface_v1.py` using
+`vtkStaticCellLocator`. Threshold shells (0.5–50 µm) remain interpretable despite
+the open surface. They do not define an inside volume and are not absorbed dose.
 
-The body envelope and child systems are derived/remeshed versions of the source anatomy intended to reduce overlap/navigation failures. Always inspect the actual STL files referenced by the manifest; some manifest min/max metadata has been stale in earlier iterations.
+## Coordinate alignment
 
-## High-resolution nervous anatomy
+At 0.1 mm/model unit, physical body bounds are ±41.34 µm (x), ±439.72 µm (y),
+and ±95.07 µm (z). Neural bounds are -28.98 to 27.62 µm, -349.54 to 448.32 µm,
+and -67.09 to 64.91 µm. Both transport and scorer derive placement from the
+actual body STL. This corrects the historical ~50.9-µm y displacement created
+by stale manifest bounds.
 
-Primary anatomical surface:
+## Non-neural warnings
 
-`openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl`
+The historical excretory daughter was very small, disconnected, and assigned
+the same material as residual body. Direct inspection of the prior 10M ROOT file
+showed that its navigation failures created the extreme secondary coordinate.
+Omitting it physically removes a material-neutral boundary while retaining the
+mesh for post-processing ROI use.
 
-Recorded processed QC:
+The new focused/diffuse 10M runs have 18/3 remaining warning incidents,
+respectively. These occur at body/digestive, body/body-wall, and one
+body/reproductive interface. Further destructive smoothing was not justified by
+this low rate, because the current failures no longer contaminate saved electron
+birth positions. Warning summaries remain mandatory for every run.
 
-- ~1.36 million faces
-- ~677k vertices
-- 54 components
-- not watertight
-- inconsistent winding
-- ~5,591 boundary edges
-- 12 non-manifold edges
-- ~5,290 broken faces
+## Rules for future neural-volume work
 
-Despite this topology, gross visual inspection shows a recognizable *C. elegans* nervous system. That distinction is critical: **topologically invalid as a closed solid does not mean anatomically useless as a surface atlas**.
-
-## Why previous physical nervous meshes were rejected
-
-Two voxel-remeshed candidates were explored at approximately 0.020 and 0.030 model-unit resolution. Both became watertight, but:
-
-- neural morphology became resolution-dependent;
-- the number/topology of connected components changed substantially;
-- Geant4 navigation warnings involving nervous/body or nervous/bodywall boundaries persisted or worsened;
-- the nervous energy-deposition fraction changed materially between resolutions.
-
-This means "voxelize until Geant4 stops complaining" is not a scientifically acceptable criterion.
-
-Do not resurrect the physical voxel nervous volume as the default unless a convergence study demonstrates stable anatomy and scoring.
-
-## Current preferred method: surface-proximity scoring
-
-Transport is run without a physical nervous daughter volume. Saved secondary-electron positions are then scored against the high-resolution neural surface with:
-
-`ros_worm_stage1/scripts/highres_nervous_exact_surface_scoring.py`
-
-For every point, the script computes the nearest point on the nervous triangle mesh and the Euclidean distance. It can report threshold shells such as 0.5, 1, 2, 5, 10, 25, and 50 um.
-
-This method is robust to the mesh being non-watertight because it does not require an inside/outside test.
-
-Interpretation:
-
-- `distance <= 5 um` means the secondary position is within 5 um of nervous anatomy.
-- It does **not** prove the secondary was inside a neuron or other nervous tissue.
-
-## Coordinate/alignment sanity checks already performed
-
-At `0.1 mm/model-unit`, recorded loaded bounds were approximately:
-
-Whole-body envelope span:
-
-- X: 82.7 um
-- Y: 879.4 um
-- Z: 190.1 um
-
-High-resolution nervous span:
-
-- X: 56.6 um
-- Y: 797.9 um
-- Z: 132.0 um
-
-0.030 voxel nervous span:
-
-- X: 54.1 um
-- Y: 780.9 um
-- Z: 127.0 um
-
-The high-resolution and voxel nervous models therefore occupy broadly the same coordinate frame. Visual alignment QC also showed near-neural points close to the expected neural structures rather than a grossly shifted/rotated mesh.
-
-Still, any future geometry rewrite must re-run alignment QC because other physical compartments may be resampled/shrunk independently.
-
-## Memory issue in exact surface scoring
-
-The full-resolution nervous mesh caused the proximity scorer to consume roughly 21 GB and be killed by OOM on larger runs. A decimated derivative was generated under:
-
-`openworm_geometry/compartment_pipeline/baked_priority_meshes_test/decimated_scoring_surfaces/`
-
-One file is named `NervousSystem_baked_union_decimated_150k.stl`, but the actual recorded face count was about 522k. The name is historical and should not be trusted.
-
-100k validation showed that the decimated mesh preserved >=5-10 um shell statistics reasonably well but degraded sub-2-um behavior. Therefore:
-
-- full-resolution surface = reference for low-stat validation;
-- decimated surface = pragmatic high-stat approximation;
-- if sub-micron accuracy matters, develop a more memory-efficient exact method rather than relying on the current decimation.
-
-## Better future option for true neural-volume classification
-
-If the scientific endpoint requires "inside nervous tissue" rather than proximity, prefer constructing a validated **implicit or voxel neural ROI** from the high-resolution atlas instead of blindly closing STL holes.
-
-A good workflow would:
-
-1. rasterize/splat the neural surface or centerline/process geometry onto a fine grid;
-2. use a physically justified effective neural/process radius or morphological dilation;
-3. classify hits in the resulting volumetric mask;
-4. run voxel-size/radius convergence;
-5. compare reconstructed ROI to the original high-resolution mesh using surface-distance/Hausdorff metrics and visual overlays;
-6. keep the ROI out of Geant4 unless physical-material separation is actually needed.
-
-A robust Boolean/implicit surface reconstruction could also be explored, but a watertight result is not enough by itself. It must preserve neural morphology quantitatively.
-
-## What not to do
-
-- Do not globally scale/inflate/deflate the nervous system merely to remove overlaps without quantifying anatomical error.
-- Do not replace OpenWorm with the Wu worm model; Wu is a benchmark/reference only.
-- Do not infer biological correctness from `is_watertight=True`.
-- Do not infer failure from `is_watertight=False` when using surface-distance scoring.
-- Do not call a proximity-shell result a true nervous absorbed dose.
+A future implicit ROI may supersede proximity only after voxel/radius convergence,
+quantitative distance and morphology comparison, stable scoring, and—if made
+physical—clean Geant4 navigation. Do not infer anatomical fidelity from
+watertightness and do not overwrite any source STL.
