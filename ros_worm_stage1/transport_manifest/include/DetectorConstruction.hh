@@ -37,6 +37,10 @@ public:
   G4double GetSourceY() const { return fSourceY; }
   G4double GetHalfX() const { return fHalfX; }
   G4double GetHalfZ() const { return fHalfZ; }
+  const G4String& GetSpectrumFile() const { return fSpectrumFile; }
+  G4ThreeVector GetSourcePosition() const { return {fSourceX, fSourceY, fSourceZ}; }
+  G4ThreeVector GetSourceDirection() const { return {fDirectionX, fDirectionY, fDirectionZ}; }
+  G4ThreeVector GetTargetPosition() const { return {fTargetX, fTargetY, fTargetZ}; }
 
   G4int RegionIdFromPhysicalName(const G4String& physName) const;
   G4String RegionKey(G4int id) const;
@@ -84,13 +88,31 @@ private:
 
   G4String fSourceType = "focused";
   G4String fSpectrumType = "kramers";
+  G4String fSpectrumFile = "";
   G4double fMonoEnergy = 30.0*keV;
   G4double fKvp = 50.0*keV;
   G4double fMinEnergy = 1.0*keV;
   G4double fSpotFWHM = 0.85*mm;
   G4double fSourceY = -2.0*mm;
+  G4double fSourceX = 0.0*mm;
+  G4double fSourceZ = 0.0*mm;
+  G4double fDirectionX = 0.0;
+  G4double fDirectionY = 1.0;
+  G4double fDirectionZ = 0.0;
+  G4double fTargetX = 0.0*mm;
+  G4double fTargetY = 0.0*mm;
+  G4double fTargetZ = 0.0*mm;
   G4double fHalfX = 0.6*mm;
   G4double fHalfZ = 0.6*mm;
+
+  G4String fEnvironmentMode = "none"; // none, slab, or immersion
+  G4String fEnvironmentMaterial = "G4_WATER";
+  G4double fEnvironmentHalfX = 2.0*mm;
+  G4double fEnvironmentHalfY = 2.0*mm;
+  G4double fEnvironmentAbove = 0.0*mm;
+  G4double fEnvironmentBelow = 0.0*mm;
+  G4String fSubstrateMaterial = "none";
+  G4double fSubstrateThickness = 0.0*mm;
 };
 
 #endif

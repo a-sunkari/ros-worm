@@ -1,0 +1,73 @@
+schema_version: 2
+purpose: >-
+  Traceable uncertainty ensemble for the Cannon et al. focused and diffuse
+  sources. These are physics-informed spectra, not measured spectra of the
+  exact experimental instruments.
+
+references:
+  cannon_2023:
+    citation: "Cannon et al., Frontiers in Neuroscience 17, 1210138 (2023)"
+    doi: "10.3389/fnins.2023.1210138"
+    url: "https://doi.org/10.3389/fnins.2023.1210138"
+  imoxs_manual:
+    title: "IFG iMOXS Modular X-ray Source Technical Manual"
+    url: "https://manualzz.com/doc/6740452/ifg-imoxs-modular-x-ray-source-technical-manual"
+  minix2_manual:
+    title: "Amptek Mini-X2 User Manual, rev. B2"
+    url: "https://www.amptek.com/-/media/ametekamptek/documents/resources/products/user-manuals/mini-x2-user-manual-rev-b2.pdf"
+  nist_xcom:
+    title: "NIST XCOM photon cross sections"
+    url: "https://www.nist.gov/pml/x-ray-and-gamma-ray-data"
+  nist_lines:
+    title: "NIST X-ray Transition Energies Database"
+    url: "https://www.nist.gov/pml/x-ray-transition-energies-database"
+
+common:
+  continuum_model:
+    value: "Kramers photon-number shape (E0-E)/E, followed by attenuation"
+    status: inferred
+    limitation: "Does not model tube self-absorption, takeoff angle, or polycapillary energy-dependent transmission from first principles."
+  attenuation_model:
+    value: "NIST XCOM mass attenuation coefficients, log-log interpolation"
+    status: reference_data
+  energy_grid_keV: {min: 1.0, step: 0.25}
+
+sources:
+  focused_imoxs_w_50kv:
+    experimental:
+      target: {value: tungsten, status: measured_setup, source: cannon_2023}
+      voltage_kV: {value: 50, status: measured_setup, source: cannon_2023}
+      current_uA: {value_range: [150, 600], status: measured_setup, source: cannon_2023}
+      footprint_fwhm_mm: {value: 0.85, status: measured, source: cannon_2023}
+      capillary_to_agar_mm: {value: 50, status: measured_setup, source: cannon_2023}
+      focused_dose_uncertainty: {value: "factor of two", status: reported, source: cannon_2023}
+      beryllium_window_mm: {value: 0.10, status: manufacturer_specified, source: imoxs_manual}
+    ensemble:
+      soft: {be_mm: 0.10, al_mm: 0.00, characteristic_fraction_pre_filter: 0.25}
+      nominal: {be_mm: 0.10, al_mm: 0.10, characteristic_fraction_pre_filter: 0.15}
+      hard: {be_mm: 0.10, al_mm: 0.25, characteristic_fraction_pre_filter: 0.10}
+    assumed_parameters:
+      extra_aluminum_mm: "Unknown filter-wheel state; 0-0.25 mm bracket is an explicit assumption."
+      characteristic_fraction_pre_filter: "10-25% photon fraction is assumed because an exact tube spectrum was not recovered."
+      line_energies_keV: [8.398, 9.672, 9.962, 11.286]
+      line_relative_weights: [1.0, 0.55, 0.18, 0.08]
+
+  diffuse_minix_ag_20kv:
+    experimental:
+      target: {value: silver, status: measured_setup, source: cannon_2023}
+      voltage_kV: {value: 20, status: measured_setup, source: cannon_2023}
+      current_uA: {values: [50, 100, 150, 198], status: measured_setup, source: cannon_2023}
+      dose_rates_Gy_s: {values: [0.19, 0.38, 0.56, 0.74], status: measured, source: cannon_2023}
+      nozzle_filters: {value: removed, status: measured_setup, source: cannon_2023}
+      cone_full_angle_deg: {value: 120, status: manufacturer_specified, source: minix2_manual}
+      beryllium_window_mm: {value: 0.125, status: manufacturer_specified, source: minix2_manual}
+    ensemble:
+      soft: {be_mm: 0.10, al_mm: 0.00, characteristic_fraction_pre_filter: 0.20}
+      nominal: {be_mm: 0.125, al_mm: 0.00, characteristic_fraction_pre_filter: 0.10}
+      hard: {be_mm: 0.15, al_mm: 0.05, characteristic_fraction_pre_filter: 0.05}
+    assumed_parameters:
+      window_bracket_mm: "0.10-0.15 mm brackets window specification/tolerance and unmodeled tube self-absorption."
+      characteristic_fraction_pre_filter: "5-20% assumed Ag-L photon fraction; Ag K lines cannot be excited at 20 kV."
+      line_energies_keV: [2.984, 3.151, 3.348]
+      line_relative_weights: [1.0, 0.45, 0.12]
+

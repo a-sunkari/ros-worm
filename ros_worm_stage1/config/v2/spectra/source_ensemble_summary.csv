@@ -1,0 +1,7 @@
+source,variant,endpoint_keV,be_mm,al_mm,characteristic_fraction_pre_filter,mean_energy_keV,median_energy_keV,p10_energy_keV,p90_energy_keV,photon_fraction_below_5keV,spectrum_file
+focused_imoxs_w_50kv,soft,50.0,0.1,0.0,0.25,10.473036844308103,8.5,3.25,20.5,0.19576563394014834,config/v2/spectra/focused_imoxs_w_50kv_soft.csv
+focused_imoxs_w_50kv,nominal,50.0,0.1,0.1,0.15,12.828103853410639,9.75,5.5,25.25,0.07205360524018996,config/v2/spectra/focused_imoxs_w_50kv_nominal.csv
+focused_imoxs_w_50kv,hard,50.0,0.1,0.25,0.1,14.58346027608336,11.25,6.75,27.75,0.023683841125081807,config/v2/spectra/focused_imoxs_w_50kv_hard.csv
+diffuse_minix_ag_20kv,soft,20.0,0.1,0.0,0.2,5.526689878997293,4.0,2.75,10.75,0.5856303825663108,config/v2/spectra/diffuse_minix_ag_20kv_soft.csv
+diffuse_minix_ag_20kv,nominal,20.0,0.125,0.0,0.1,6.092224550383125,5.0,2.75,11.5,0.4944543013368156,config/v2/spectra/diffuse_minix_ag_20kv_nominal.csv
+diffuse_minix_ag_20kv,hard,20.0,0.15,0.05,0.05,7.57305855948128,6.75,3.5,13.0,0.2742969120237597,config/v2/spectra/diffuse_minix_ag_20kv_hard.csv
