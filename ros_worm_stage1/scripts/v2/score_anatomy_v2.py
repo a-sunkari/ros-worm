@@ -38,6 +38,16 @@ def row_stats(frame: pd.DataFrame, energy: str, events: int, dose_per_history: f
     }
 
 
+def write_spectrum(frame: pd.DataFrame, energy_column: str, path: Path) -> None:
+    edges = np.geomspace(0.05, 100.0, 81)
+    counts, _ = np.histogram(frame[energy_column].to_numpy(float), bins=edges)
+    centers = np.sqrt(edges[:-1] * edges[1:])
+    with path.open("w") as handle:
+        handle.write("# energy_keV,weight\n")
+        for energy, weight in zip(centers[counts > 0], counts[counts > 0]):
+            handle.write(f"{energy:.9g},{int(weight)}\n")
+
+
 def inverse_rigid(points: np.ndarray, angle_deg: float, shift: np.ndarray) -> np.ndarray:
     angle = np.deg2rad(angle_deg)
     c, s = np.cos(angle), np.sin(angle)
@@ -110,6 +120,8 @@ def main() -> None:
         row.update(row_stats(scored[mask], energy, events, dose_per_history))
         row["fraction_of_eligible_births"] = float(mask.mean()) if len(mask) else 0.0
         rows.append(row)
+        label = f"{lower:g}_{upper:g}um" if np.isfinite(upper) else "ge50um"
+        write_spectrum(scored[mask], energy, args.outdir / f"electron_spectrum_neural_shell_{label}.csv")
     pd.DataFrame(rows).to_csv(args.outdir / "neural_distance_shells.csv", index=False)
 
     sector_rows = []
@@ -129,6 +141,10 @@ def main() -> None:
     }.items():
         row = {"tissue_metric": label}; row.update(row_stats(scored[mask], energy, events, dose_per_history)); tissue_rows.append(row)
     pd.DataFrame(tissue_rows).to_csv(args.outdir / "neural_muscle_comparison.csv", index=False)
+    write_spectrum(scored[scored["distance_to_nervous_surface_um"] < 5], energy,
+                   args.outdir / "electron_spectrum_neural_within_5um.csv")
+    write_spectrum(scored[scored["inside_bodywall_physical_compartment"]], energy,
+                   args.outdir / "electron_spectrum_inside_bodywall.csv")
 
     # Exact-surface matched null: small rigid perturbations of the same atlas.
     # Perturbations are admitted only if sampled vertex containment is close to
@@ -162,6 +178,10 @@ def main() -> None:
         "exclusions": {"non_electron": int((~electron).sum()), "nonfinite": int((~finite).sum()),
                        "recorded_outside_body": int((electron & ~recorded).sum()),
                        "geometrically_outside_body": int((electron & finite & ~geometric).sum())},
+        "eligible_coordinate_ranges_mm": {
+            axis: [float(scored_points[:, i].min()), float(scored_points[:, i].max())] if len(scored_points) else [None, None]
+            for i, axis in enumerate(["x", "y", "z"])
+        },
         "whole_worm_mass_kg": total_mass, "whole_worm_dose_per_incident_history_Gy": dose_per_history,
         "per_Gy_normalization": "Conditional on identifying the reported experimental Gy with model whole-worm mean absorbed dose.",
         "longitudinal_sectors": "Equal fifths of atlas Y bounds; coordinate sectors, not named neuron classes.",

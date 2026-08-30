@@ -1,0 +1,92 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-08-30T20:56:24.392529+00:00",
+  "git_commit": "105cb563743c63e65bd63a5077ad2f95645f762a",
+  "git_status_at_run": [],
+  "case_name": "diffuse_paralysis",
+  "case": {
+    "experimental_source": "diffuse_minix_ag_20kv",
+    "source_type": "targeted_cone",
+    "spectrum_variants": [
+      "soft",
+      "nominal",
+      "hard"
+    ],
+    "source_position_mm": [
+      0.0,
+      0.0,
+      10.0
+    ],
+    "direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "target_position_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "target_half_widths_mm": [
+      0.6,
+      0.6
+    ],
+    "default_environment": "m9_drop_glass",
+    "dose_rates_Gy_s": [
+      0.19,
+      0.38,
+      0.56,
+      0.74
+    ],
+    "exposure_s": 20.0,
+    "normalization_note": "Photon histories are conditioned on crossing a 1.2 x 1.2 mm target plane around the worm. Absolute fluence is therefore obtained only by scaling to the measured experimental dose, not from histories per tube electron."
+  },
+  "spectrum_variant": "nominal",
+  "environment_name": "m9_drop_glass",
+  "environment": {
+    "interpretation": "Worm immersed in a water-equivalent M9 layer up to 0.5 mm total height on a 1 mm glass slide.",
+    "mode": "immersion",
+    "material": "G4_WATER",
+    "half_x_mm": 5.0,
+    "half_y_mm": 5.0,
+    "above_mm": 0.405,
+    "below_mm": 0.01,
+    "substrate_material": "G4_Pyrex_Glass",
+    "substrate_thickness_mm": 1.0
+  },
+  "events": 100000,
+  "threads": 12,
+  "random_seeds": [
+    31003,
+    41003
+  ],
+  "geant4_version": "11.3.2",
+  "normalization_warning": "Photon histories are conditioned on crossing a 1.2 x 1.2 mm target plane around the worm. Absolute fluence is therefore obtained only by scaling to the measured experimental dose, not from histories per tube electron.",
+  "artifacts": {
+    "ros_worm_stage1/config/v2/study_cases.yaml": {
+      "sha256": "06e3507208935e018010683516d809e6111bc6d214b73b9ebc6b5bdc0915ee40",
+      "bytes": 2677
+    },
+    "ros_worm_stage1/config/v2/source_models.yaml": {
+      "sha256": "f0a4fb706ab938bbfbf0af410c1c93f3c9e207e9242129fcd76aed94f57281dd",
+      "bytes": 4002
+    },
+    "ros_worm_stage1/config/v2/spectra/diffuse_minix_ag_20kv_nominal.csv": {
+      "sha256": "8c4327770a13dfae1d06aefb8c9b4b1e316e20e0946bdaedd94f9d6d88f8c7cd",
+      "bytes": 2142
+    },
+    "ros_worm_stage1/config/transport_geometry_v1.csv": {
+      "sha256": "fd874f679e12874b8323d5ed79decb3812a46f7156d5a458212ae9eadaf4efb1",
+      "bytes": 1751
+    },
+    "ros_worm_stage1/config/region_materials.csv": {
+      "sha256": "10dcffd8a1a6acf182a551f2b54ac246a4c35da6154eda607a6195464ab42b78",
+      "bytes": 989
+    },
+    "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl": {
+      "sha256": "686224ff64fb03024fa34df08434481f90679cc8b551d54021e853689081f8a7",
+      "bytes": 67784384
+    }
+  },
+  "result_directory": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm/ros_worm_stage1/results/v2_smoke_diffuse_nominal_m9_100k"
+}

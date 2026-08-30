@@ -54,6 +54,11 @@ def main() -> None:
     parser.add_argument("--case", choices=["focused_avoidance", "focused_egg_ejection", "diffuse_paralysis"], required=True)
     parser.add_argument("--spectrum", choices=["soft", "nominal", "hard"], default="nominal")
     parser.add_argument("--environment", choices=["worm_only", "ngm_agar_dish", "m9_drop_glass"], default=None)
+    parser.add_argument("--material-model", choices=["tissue", "water"], default="tissue")
+    parser.add_argument("--beam-y-mm", type=float, default=None, help="Override source and target Y for beam-position sensitivity")
+    parser.add_argument("--spot-fwhm-mm", type=float, default=None)
+    parser.add_argument("--environment-above-mm", type=float, default=None)
+    parser.add_argument("--environment-below-mm", type=float, default=None)
     parser.add_argument("--events", type=int, default=100_000)
     parser.add_argument("--threads", type=int, default=min(16, os.cpu_count() or 1))
     parser.add_argument("--seed-a", type=int, default=1357911)
@@ -73,7 +78,14 @@ def main() -> None:
     cfg = yaml.safe_load(cfg_path.read_text())
     case = cfg["cases"][args.case]
     env_name = args.environment or case["default_environment"]
-    environment = cfg["environments"][env_name]
+    environment = dict(cfg["environments"][env_name])
+    if args.environment_above_mm is not None: environment["above_mm"] = args.environment_above_mm
+    if args.environment_below_mm is not None: environment["below_mm"] = args.environment_below_mm
+    source_position = list(case["source_position_mm"])
+    target_position = list(case["target_position_mm"])
+    if args.beam_y_mm is not None:
+        source_position[1] = args.beam_y_mm; target_position[1] = args.beam_y_mm
+    materials_path = stage / ("config/region_materials.csv" if args.material_model == "tissue" else "config/v2/region_materials_water_sensitivity.csv")
     spectrum = stage / "config/v2/spectra" / f"{case['experimental_source']}_{args.spectrum}.csv"
     if not spectrum.exists():
         execute([sys.executable, str(stage / "scripts/v2/generate_source_ensemble_v2.py")], repo)
@@ -90,18 +102,18 @@ def main() -> None:
 
     macro = [
         f"/run/numberOfThreads {args.threads}", f"/random/setSeeds {args.seed_a} {args.seed_b}",
-        f"/rosworm/materials {stage / 'config/region_materials.csv'}",
+        f"/rosworm/materials {materials_path}",
         f"/rosworm/manifest {stage / 'config/transport_geometry_v1.csv'}",
         f"/rosworm/mmPerUnit {cfg['mm_per_model_unit']}", "/rosworm/maxStep_um 2 um",
         f"/rosworm/saveSteps {'true' if args.save_steps else 'false'}",
         f"/rosworm/sourceType {case['source_type']}", "/rosworm/spectrumType tabulated",
         f"/rosworm/spectrumFile {spectrum}",
     ]
-    macro += triplet_commands("source", case["source_position_mm"])
+    macro += triplet_commands("source", source_position)
     macro += [f"/rosworm/direction{axis} {value}" for axis, value in zip("XYZ", case["direction"])]
-    macro += triplet_commands("target", case["target_position_mm"])
+    macro += triplet_commands("target", target_position)
     if case["source_type"] == "focused":
-        macro.append(f"/rosworm/spotFWHM {case['spot_fwhm_mm']} mm")
+        macro.append(f"/rosworm/spotFWHM {args.spot_fwhm_mm if args.spot_fwhm_mm is not None else case['spot_fwhm_mm']} mm")
     else:
         macro += [f"/rosworm/halfX {case['target_half_widths_mm'][0]} mm",
                   f"/rosworm/halfZ {case['target_half_widths_mm'][1]} mm"]
@@ -127,7 +139,7 @@ def main() -> None:
     summary_path = outdir / "transport_summary.json"
     if not args.resume or not summary_path.exists():
         execute([py, str(stage / "scripts/extract_transport_outputs.py"), str(outdir / "output0.root"),
-                 "--regions", str(stage / "config/regions.csv"), "--materials", str(stage / "config/region_materials.csv"),
+                 "--regions", str(stage / "config/regions.csv"), "--materials", str(materials_path),
                  "--transport-log", str(log_path), "--outdir", str(outdir),
                  "--target-dose-rate", str(max(case["dose_rates_Gy_s"])), "--pulse-s", str(case["exposure_s"]),
                  "--skip-step-csv"], repo)
@@ -141,7 +153,7 @@ def main() -> None:
                  "--null-count", str(args.null_count)], repo)
 
     tracked_inputs = [cfg_path, stage / "config/v2/source_models.yaml", spectrum,
-                      stage / "config/transport_geometry_v1.csv", stage / "config/region_materials.csv",
+                      stage / "config/transport_geometry_v1.csv", materials_path,
                       repo / "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl"]
     manifest = {
         "schema_version": 2, "created_utc": datetime.now(timezone.utc).isoformat(),
@@ -149,6 +161,8 @@ def main() -> None:
         "git_status_at_run": subprocess.check_output(["git", "status", "--short"], cwd=repo, text=True).splitlines(),
         "case_name": args.case, "case": case, "spectrum_variant": args.spectrum,
         "environment_name": env_name, "environment": environment,
+        "material_model": args.material_model, "beam_y_mm": source_position[1],
+        "spot_fwhm_mm": args.spot_fwhm_mm if args.spot_fwhm_mm is not None else case.get("spot_fwhm_mm"),
         "events": args.events, "threads": args.threads, "random_seeds": [args.seed_a, args.seed_b],
         "geant4_version": subprocess.check_output(["geant4-config", "--version"], text=True).strip(),
         "normalization_warning": case["normalization_note"],

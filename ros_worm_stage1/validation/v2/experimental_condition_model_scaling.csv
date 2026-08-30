@@ -1,0 +1,10 @@
+case,dose_rate_Gy_s,exposure_s,total_dose_Gy,near5_births_conditional,near5_births_MC_sd,near5_birth_energy_keV_conditional,interpretation
+focused_avoidance,0.2,10.0,2.0,2323173.1521832924,73623.04218621517,12645666.73213647,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+focused_avoidance,0.5,10.0,5.0,5807932.880458231,184057.60546553793,31614166.830341175,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+focused_avoidance,0.7,10.0,7.0,8131106.0326415235,257680.6476517531,44259833.56247764,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+focused_avoidance,1.0,10.0,10.0,11615865.760916462,368115.21093107585,63228333.66068235,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+focused_egg_ejection,1.0,15.0,15.0,17423798.641374692,552172.8163966138,94842500.49102353,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+diffuse_paralysis,0.19,20.0,3.8,4862038.249423302,816965.3031940856,23034783.119253155,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+diffuse_paralysis,0.38,20.0,7.6,9724076.498846604,1633930.6063881712,46069566.23850631,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+diffuse_paralysis,0.56,20.0,11.200000000000001,14330217.998300258,2407897.7357299365,67891992.351483,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.
+diffuse_paralysis,0.74,20.0,14.8,18936359.49775391,3181864.865071702,89714418.46445967,Linear fluence scaling conditional on reported Gy equaling model whole-worm mean dose.

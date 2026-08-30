@@ -1,0 +1,37 @@
+contrast,metric,altered,reference,percent_change,evidence_level
+Focused: remove agar/dish,near5_births_per_whole_worm_Gy_conditional,1170966.156497209,1167874.8274453755,0.2646969503226293,paired 1M
+Focused: remove agar/dish,near5_fraction,0.14189089839729452,0.1417680691980648,0.08664094808126244,paired 1M
+Focused: remove agar/dish,near5_mean_energy_keV,5.417573763274228,5.428798005164842,-0.20675372117245905,paired 1M
+Diffuse: remove M9/glass,near5_births_per_whole_worm_Gy_conditional,1595500.158602754,1129662.0035368428,41.23694995559954,paired 1M
+Diffuse: remove M9/glass,near5_fraction,0.12969326715031182,0.1455201443174985,-10.87607302852539,paired 1M
+Diffuse: remove M9/glass,near5_mean_energy_keV,3.379116936231914,5.379993023970986,-37.191053572449064,paired 1M
+Focused: soft spectrum,near5_births_per_whole_worm_Gy_conditional,1227931.096369728,1167874.8274453755,5.142354943613303,paired 1M
+Focused: soft spectrum,near5_fraction,0.137154679323354,0.1417680691980648,-3.2541812135886583,paired 1M
+Focused: soft spectrum,near5_mean_energy_keV,4.8713403203716,5.428798005164842,-10.26852876572104,paired 1M
+Focused: hard spectrum,near5_births_per_whole_worm_Gy_conditional,1037400.7387063912,1167874.8274453755,-11.171924051517145,paired 1M
+Focused: hard spectrum,near5_fraction,0.13709677419354838,0.1417680691980648,-3.2950261867431885,paired 1M
+Focused: hard spectrum,near5_mean_energy_keV,5.909733460844789,5.428798005164842,8.858967587712696,paired 1M
+Diffuse: soft spectrum,near5_births_per_whole_worm_Gy_conditional,1112840.3513011097,1129662.0035368428,-1.489087194494143,paired 1M
+Diffuse: soft spectrum,near5_fraction,0.1394658753709199,0.1455201443174985,-4.160433577752154,paired 1M
+Diffuse: soft spectrum,near5_mean_energy_keV,5.336343688357036,5.379993023970986,-0.8113269927947364,paired 1M
+Diffuse: hard spectrum,near5_births_per_whole_worm_Gy_conditional,1146526.9835520345,1129662.0035368428,1.4929226584933675,paired 1M
+Diffuse: hard spectrum,near5_fraction,0.14705882352941177,0.1455201443174985,1.0573650947982571,paired 1M
+Diffuse: hard spectrum,near5_mean_energy_keV,5.769272889677284,5.379993023970986,7.235694618409916,paired 1M
+Focused: beam y -0.2 mm,near5_births_per_whole_worm_Gy_conditional,1135748.9141129614,1167874.8274453755,-2.750801077088605,paired 1M
+Focused: beam y -0.2 mm,near5_fraction,0.13716295427901523,0.1417680691980648,-3.2483442464154244,paired 1M
+Focused: beam y -0.2 mm,near5_mean_energy_keV,5.368295409819659,5.428798005164842,-1.1144749774742557,paired 1M
+Focused: beam y +0.2 mm,near5_births_per_whole_worm_Gy_conditional,1224297.1892179998,1167874.8274453755,4.831199409961018,paired 1M
+Focused: beam y +0.2 mm,near5_fraction,0.14835526315789474,0.1417680691980648,4.646458117890373,paired 1M
+Focused: beam y +0.2 mm,near5_mean_energy_keV,5.451438816110245,5.428798005164842,0.4170501632932755,paired 1M
+Focused: FWHM 0.65 mm,near5_births_per_whole_worm_Gy_conditional,1121410.6836870606,1167874.8274453755,-3.978520871106639,paired 1M
+Focused: FWHM 0.65 mm,near5_fraction,0.1353440150801131,0.1417680691980648,-4.531382951245988,paired 1M
+Focused: FWHM 0.65 mm,near5_mean_energy_keV,5.346213107767579,5.428798005164842,-1.521237248442353,paired 1M
+Focused: FWHM 1.05 mm,near5_births_per_whole_worm_Gy_conditional,1153081.7625821107,1167874.8274453755,-1.2666652723069105,paired 1M
+Focused: FWHM 1.05 mm,near5_fraction,0.13876416506307462,0.1417680691980648,-2.118886256956365,paired 1M
+Focused: FWHM 1.05 mm,near5_mean_energy_keV,5.270623949539867,5.428798005164842,-2.91361099592381,paired 1M
+Diffuse: shallower M9,near5_births_per_whole_worm_Gy_conditional,1387105.5885612408,1129662.0035368428,22.789434735201475,paired 1M
+Diffuse: shallower M9,near5_fraction,0.1548868028713418,0.1455201443174985,6.436674865719594,paired 1M
+Diffuse: shallower M9,near5_mean_energy_keV,4.619648651333707,5.379993023970986,-14.132813355881769,paired 1M
+Focused: water materials,near5_births_per_whole_worm_Gy_conditional,1119502.933190849,1167874.8274453755,-4.14187318005097,paired 1M
+Focused: water materials,near5_fraction,0.13648909743306653,0.1417680691980648,-3.7236676741523533,paired 1M
+Focused: water materials,near5_mean_energy_keV,5.604819959317405,5.428798005164842,3.2423743522064896,paired 1M

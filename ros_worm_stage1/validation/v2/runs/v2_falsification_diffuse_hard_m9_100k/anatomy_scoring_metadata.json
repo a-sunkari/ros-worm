@@ -1,0 +1,56 @@
+{
+  "interpretation": "near-neural secondary-electron birth proximity; not nervous dose or intracellular chemistry",
+  "events": 100000,
+  "n_input_records": 206,
+  "n_eligible_electrons": 206,
+  "exclusions": {
+    "non_electron": 0,
+    "nonfinite": 0,
+    "recorded_outside_body": 0,
+    "geometrically_outside_body": 0
+  },
+  "whole_worm_mass_kg": 7.252349000000001e-09,
+  "whole_worm_dose_per_incident_history_Gy": 2.708139440012912e-10,
+  "per_Gy_normalization": "Conditional on identifying the reported experimental Gy with model whole-worm mean absorbed dose.",
+  "longitudinal_sectors": "Equal fifths of atlas Y bounds; coordinate sectors, not named neuron classes.",
+  "neural_bounds_mm": [
+    [
+      -0.028984600305557252,
+      0.027619099617004397
+    ],
+    [
+      -0.3495352268218994,
+      0.4483225822448731
+    ],
+    [
+      -0.06709195971488953,
+      0.06491047143936157
+    ]
+  ],
+  "body_bounds_mm": [
+    [
+      -0.04133652746677399,
+      0.04133652746677399
+    ],
+    [
+      -0.4397152423858643,
+      0.4397152423858643
+    ],
+    [
+      -0.09506834745407106,
+      0.09506834745407106
+    ]
+  ],
+  "null_model": {
+    "type": "same-atlas small rigid perturbation",
+    "seed": 20260830,
+    "requested": 0,
+    "accepted": 0,
+    "attempts": 0,
+    "baseline_sampled_atlas_containment": 0.9903008709422011,
+    "real_fraction_within_5um": 0.11165048543689321,
+    "null_mean_fraction_within_5um": null,
+    "enrichment_ratio_real_over_null_mean": null,
+    "empirical_upper_tail_p": null
+  }
+}

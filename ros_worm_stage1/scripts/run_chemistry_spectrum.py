@@ -52,6 +52,15 @@ def main() -> None:
     text = text.replace("/random/setSeeds 1357911 2468022",
                         f"/random/setSeeds {args.seed_a} {args.seed_b}")
     text = text.replace("/run/beamOn 10000", f"/run/beamOn {args.events}")
+    explicit_times = "\n".join([
+        "/scorer/species/addTimeToRecord 10 ps",
+        "/scorer/species/addTimeToRecord 100 ps",
+        "/scorer/species/addTimeToRecord 1 ns",
+        "/scorer/species/addTimeToRecord 10 ns",
+        "/scorer/species/addTimeToRecord 100 ns",
+    ])
+    text = text.replace("/scorer/species/nOfTimeBins 50",
+                        "/scorer/species/nOfTimeBins 50\n" + explicit_times)
     macro = outdir / "chemistry.in"
     macro.write_text(text)
     shutil.copy2(spectrum, outdir / "electron_spectrum.csv")
@@ -61,11 +70,13 @@ def main() -> None:
                        stderr=subprocess.STDOUT, check=True)
     subprocess.run(["python3", str(stage / "chemistry/analysis/summarize_species_root.py"),
                     "--latest", "--csv", "species_summary.csv"], cwd=outdir, check=True)
+    subprocess.run(["python3", str(stage / "scripts/v2/summarize_chemistry_timeseries_v2.py"),
+                    "--root", "Species0.root", "--out", "species_timeseries.csv"], cwd=outdir, check=True)
 
     git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo,
                                       text=True).strip()
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "interpretation": "Geant4-DNA water-radiolysis simulation; not measured biological ROS.",
         "git_commit": git_sha,
@@ -77,6 +88,8 @@ def main() -> None:
         "input_spectrum": str(spectrum),
         "input_spectrum_sha256": digest(spectrum),
         "macro_sha256": digest(macro),
+        "reported_scoring_times": ["1 ps", "10 ps", "100 ps", "1 ns", "10 ns", "100 ns", "999.999 ns"],
+        "time_note": "The logarithmic default supplies 1 ps and endTime-1 ps; five interior reporting times are added explicitly.",
     }
     (outdir / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(f"[OK] {outdir}")
