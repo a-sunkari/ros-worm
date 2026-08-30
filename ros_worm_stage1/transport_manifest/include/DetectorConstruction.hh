@@ -43,6 +43,7 @@ public:
   G4double RegionMass(G4int id) const;
   const std::vector<RegionInfo>& Regions() const { return fRegions; }
   G4String RegionMaterialName(G4int id) const;
+  G4bool IsInsideBody(const G4ThreeVector& position) const;
 
 private:
   void DefineMaterials();
@@ -59,6 +60,7 @@ private:
   std::map<G4int,G4Material*> fRegionMaterials;
   std::map<G4int,G4String> fRegionMaterialNames;
   G4UserLimits* fStepLimit = nullptr;
+  G4VSolid* fBodySolid = nullptr;
 
   struct ManifestRow {
     G4String objectName;
@@ -73,8 +75,8 @@ private:
   std::vector<RegionInfo> fRegions;
   std::map<G4String,G4int> fPhysicalNameToRegionId;
 
-  G4String fManifestPath = "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_plus_nervous_voxel030_manifest.csv";
-  G4String fMaterialsPath = "/home/asunkari/ros-worm/ros_worm_stage1/config/region_materials.csv";
+  G4String fManifestPath;
+  G4String fMaterialsPath;
   G4double fMmPerUnit = 0.1;
   G4double fWorldMargin = 1.0*mm;
   G4double fMaxStep = 2.0*um;

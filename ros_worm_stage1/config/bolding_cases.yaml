@@ -1,35 +1,45 @@
+literature:
+  citation: "Cannon et al., Frontiers in Neuroscience 17, 1210138 (2023)"
+  doi: "10.3389/fnins.2023.1210138"
+  dosimetry_note: "Focused dose estimates were reported as approximate within a factor of two."
+
 cases:
-  focused_1Gy_s_10s:
-    description: Focused 50 kVp-like X-ray, approximates acute focused stimulation.
+  focused_avoidance_50kv:
+    description: "Focused iMOXS-MFR tungsten-target avoidance experiment."
     source_type: focused
+    target: tungsten
     spectrum_type: kramers
+    spectrum_interpretation: "Generic endpoint approximation; not a measured/filtered iMOXS spectrum."
     kvp_keV: 50
     min_energy_keV: 1
     spot_fwhm_mm: 0.85
     source_y_mm: -2.0
-    beam_on: 100000
-    target_dose_rate_Gy_s: 1.0
+    dose_rates_Gy_s: [0.2, 0.5, 0.7, 1.0]
     pulse_s: 10.0
-  focused_0p5Gy_s_10s:
-    description: Focused 50 kVp-like X-ray at 0.5 Gy/s.
+
+  focused_egg_ejection_50kv:
+    description: "Focused iMOXS-MFR tungsten-target paralysis/egg-ejection experiment."
     source_type: focused
+    target: tungsten
     spectrum_type: kramers
+    spectrum_interpretation: "Generic endpoint approximation; not a measured/filtered iMOXS spectrum."
     kvp_keV: 50
     min_energy_keV: 1
     spot_fwhm_mm: 0.85
     source_y_mm: -2.0
-    beam_on: 100000
-    target_dose_rate_Gy_s: 0.5
-    pulse_s: 10.0
-  diffuse_0p74Gy_s_20s:
-    description: Diffuse Mini-X-like broad exposure at 0.74 Gy/s.
+    dose_rates_Gy_s: [1.0]
+    pulse_s: 15.0
+
+  diffuse_paralysis_20kv:
+    description: "Diffuse Amptek Mini-X silver-target swimming/paralysis experiment."
     source_type: diffuse
+    target: silver
     spectrum_type: kramers
-    kvp_keV: 50
+    spectrum_interpretation: "Generic 20-keV endpoint approximation; Ag characteristic lines and the removed nozzle/filter assembly are not modeled."
+    kvp_keV: 20
     min_energy_keV: 1
     source_y_mm: -2.0
     half_x_mm: 0.6
     half_z_mm: 0.6
-    beam_on: 100000
-    target_dose_rate_Gy_s: 0.74
+    dose_rates_Gy_s: [0.19, 0.38, 0.56, 0.74]
     pulse_s: 20.0

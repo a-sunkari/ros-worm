@@ -19,6 +19,7 @@
 #include <cstdint>
 #include <cstring>
 #include <fstream>
+#include <filesystem>
 #include <limits>
 #include <map>
 #include <sstream>
@@ -78,6 +79,13 @@ std::vector<Tri> ReadBinaryStl(const std::string& path) {
 
 DetectorConstruction::DetectorConstruction()
 {
+#ifdef ROSWORM_REPO_ROOT
+  fManifestPath = G4String(ROSWORM_REPO_ROOT) + "/ros_worm_stage1/config/transport_geometry_v1.csv";
+  fMaterialsPath = G4String(ROSWORM_REPO_ROOT) + "/ros_worm_stage1/config/region_materials.csv";
+#else
+  fManifestPath = "ros_worm_stage1/config/transport_geometry_v1.csv";
+  fMaterialsPath = "ros_worm_stage1/config/region_materials.csv";
+#endif
   fMessenger = new G4GenericMessenger(this, "/rosworm/", "ROS-Worm manifest transport controls");
   fMessenger->DeclareProperty("manifest", fManifestPath, "CSV manifest with safe_name/category_guess/stl_path/bounds");
   fMessenger->DeclareProperty("materials", fMaterialsPath, "CSV region_id/material_name map for Stage-1 transport materials");
@@ -196,6 +204,11 @@ void DetectorConstruction::LoadManifest()
   while (std::getline(in,line)) {
     if (Trim(line).empty()) continue; auto v=SplitCsv(line); if ((int)v.size() <= iPath) continue;
     ManifestRow r; r.objectName=Trim(v[iObj]); r.safeName=Trim(v[iSafe]); r.category=Trim(v[iCat]); r.stlPath=Trim(v[iPath]);
+    std::filesystem::path stlPath(r.stlPath.c_str());
+    if (stlPath.is_relative()) {
+      stlPath = std::filesystem::path(fManifestPath.c_str()).parent_path() / stlPath;
+      r.stlPath = std::filesystem::weakly_canonical(stlPath).string();
+    }
     r.minX=std::stod(v[iMinX]); r.minY=std::stod(v[iMinY]); r.minZ=std::stod(v[iMinZ]); r.maxX=std::stod(v[iMaxX]); r.maxY=std::stod(v[iMaxY]); r.maxZ=std::stod(v[iMaxZ]);
     r.regionId=CategoryToRegionId(r.category, r.safeName); if (r.regionId>0) fRows.push_back(r);
   }
@@ -226,6 +239,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4ThreeVector center((body->minX+body->maxX)/2.0, (body->minY+body->maxY)/2.0, (body->minZ+body->maxZ)/2.0);
   G4double spanX=(body->maxX-body->minX)*fMmPerUnit*mm, spanY=(body->maxY-body->minY)*fMmPerUnit*mm, spanZ=(body->maxZ-body->minZ)*fMmPerUnit*mm;
   G4double half = std::max({spanX,spanY,spanZ})/2.0 + fWorldMargin;
+  half = std::max(half, std::abs(fSourceY) + fWorldMargin);
   auto* worldS = new G4Box("world", half, half, half);
   auto* worldL = new G4LogicalVolume(worldS, fWorldMaterial, "world_log");
   auto* worldP = new G4PVPlacement(nullptr, {}, worldL, "world_phys", nullptr, false, 0, false);
@@ -241,6 +255,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     const auto physName = "ow_"+r.safeName+"_phys";
     if (r.regionId == 1) {
       bodyL = lv;
+      fBodySolid = solid;
       new G4PVPlacement(nullptr, {}, lv, physName, worldL, false, r.regionId, false);
     } else {
       if (!bodyL) G4Exception("Construct","ROSWORM_BODY_ORDER",FatalException,"Body must be constructed before children");
@@ -249,10 +264,22 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     RegionInfo info; info.id=r.regionId; info.key=RegionKeyFromId(r.regionId); info.safeName=r.safeName; info.physicalName=physName;
     info.materialName = fRegionMaterialNames.count(r.regionId) ? fRegionMaterialNames.at(r.regionId) : material->GetName();
     info.density = material->GetDensity();
-    info.mass=solid->GetCubicVolume()*material->GetDensity();
+    info.grossVolume = solid->GetCubicVolume();
+    info.scoringVolume = info.grossVolume;
+    info.mass=info.scoringVolume*material->GetDensity();
     fRegions.push_back(info); fPhysicalNameToRegionId[physName]=r.regionId;
+  }
+  G4double daughterVolume = 0.0;
+  for (const auto& info : fRegions) if (info.id != 1) daughterVolume += info.grossVolume;
+  for (auto& info : fRegions) {
+    if (info.id == 1) {
+      info.scoringVolume = std::max(0.0, info.grossVolume - daughterVolume);
+      info.mass = info.scoringVolume * info.density;
+    }
     G4cout << "[ROS-WORM][REGION] id=" << info.id << " key=" << info.key << " phys=" << info.physicalName
            << " material=" << info.materialName << " density_g_cm3=" << info.density/(g/cm3)
+           << " gross_volume_mm3=" << info.grossVolume/(mm3)
+           << " scoring_volume_mm3=" << info.scoringVolume/(mm3)
            << " mass_kg=" << info.mass/kg << G4endl;
   }
   return worldP;
@@ -265,3 +292,7 @@ G4int DetectorConstruction::RegionIdFromPhysicalName(const G4String& physName) c
 G4String DetectorConstruction::RegionKey(G4int id) const { return RegionKeyFromId(id); }
 G4String DetectorConstruction::RegionMaterialName(G4int id) const { for (const auto& r:fRegions) if (r.id==id) return r.materialName; return "unknown"; }
 G4double DetectorConstruction::RegionMass(G4int id) const { for (const auto& r:fRegions) if (r.id==id) return r.mass; return 0.0; }
+G4bool DetectorConstruction::IsInsideBody(const G4ThreeVector& position) const
+{
+  return fBodySolid && fBodySolid->Inside(position) != kOutside;
+}

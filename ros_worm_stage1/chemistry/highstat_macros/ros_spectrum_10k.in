@@ -5,7 +5,8 @@
 # Required input in current working directory:
 #   electron_spectrum.csv  with rows: energy_keV,weight
 
-/run/numberOfThreads 32
+/run/numberOfThreads 8
+/random/setSeeds 1357911 2468022
 /process/dna/e-SolvationSubType Meesungnoen2002
 /process/chem/TimeStepModel IRT
 
@@ -47,4 +48,4 @@
 /primaryKiller/eLossMin 100 MeV
 /primaryKiller/eLossMax 200 MeV
 
-/run/beamOn 25000
+/run/beamOn 10000

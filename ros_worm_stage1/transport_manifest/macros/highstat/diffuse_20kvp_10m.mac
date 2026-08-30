@@ -1,18 +1,16 @@
-# HISTORICAL COMPARISON ONLY. Cannon et al.'s diffuse Mini-X experiment used
-# 20 kV, not 50 kV. Use diffuse_20kvp.mac for the defensible literature case.
-/run/numberOfThreads 8
+/run/numberOfThreads 32
 /random/setSeeds 1357911 2468022
 /rosworm/mmPerUnit 0.1
 /rosworm/maxStep_um 2 um
 /rosworm/saveSteps true
 /rosworm/sourceType diffuse
 /rosworm/spectrumType kramers
-/rosworm/kvp 50 keV
+/rosworm/kvp 20 keV
 /rosworm/minEnergy 1 keV
 /rosworm/sourceY -2.0 mm
 /rosworm/halfX 0.6 mm
 /rosworm/halfZ 0.6 mm
 /run/initialize
 /tracking/verbose 0
-/run/printProgress 10000
-/run/beamOn 100000
+/run/printProgress 1000000
+/run/beamOn 10000000

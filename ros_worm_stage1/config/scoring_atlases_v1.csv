@@ -1,0 +1,3 @@
+roi_name,stl_path,mm_per_model_unit,role,physical_material,sha256,interpretation
+NervousSystem,../../openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl,0.1,surface_proximity_atlas,none,686224ff64fb03024fa34df08434481f90679cc8b551d54021e853689081f8a7,"Distance to original high-resolution neural surface; not an inside-volume dose"
+ExcretorySystem,../../openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ExcretorySystem_voxel_0.020.stl,0.1,postprocessed_volume_roi,G4_TISSUE_SOFT_ICRU-4,1137d56fa9125fbf138abdeae5a345d7a30a6e48531ab507801afef9abcafed5,"Inside-volume attribution after transport; same material as residual body"

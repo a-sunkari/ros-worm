@@ -21,4 +21,7 @@ add_executable(ros_worm_manifest ros_worm_manifest.cc ${SOURCES})
 target_include_directories(ros_worm_manifest PRIVATE include)
 target_link_libraries(ros_worm_manifest ${Geant4_LIBRARIES})
 
+get_filename_component(ROSWORM_REPO_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+target_compile_definitions(ros_worm_manifest PRIVATE ROSWORM_REPO_ROOT="${ROSWORM_REPO_ROOT}")
+
 file(COPY macros DESTINATION ${CMAKE_BINARY_DIR})

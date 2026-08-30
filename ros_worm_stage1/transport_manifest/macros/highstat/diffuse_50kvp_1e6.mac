@@ -1,6 +1,6 @@
+# Historical 50 kV comparison only; the literature diffuse case is 20 kV.
 /run/numberOfThreads 32
-/rosworm/materials /home/asunkari/ros-worm/ros_worm_stage1/config/region_materials.csv
-/rosworm/manifest /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_plus_nervous_voxel030_manifest.csv
+/random/setSeeds 1357911 2468022
 /rosworm/mmPerUnit 0.1
 /rosworm/maxStep_um 2 um
 /rosworm/saveSteps true
@@ -14,4 +14,4 @@
 /run/initialize
 /tracking/verbose 0
 /run/printProgress 10000
-/run/beamOn 10000000
+/run/beamOn 1000000

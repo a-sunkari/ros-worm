@@ -1,6 +1,6 @@
 /run/numberOfThreads 8
-/rosworm/materials /home/asunkari/ros-worm/ros_worm_stage1/config/region_materials.csv
-/rosworm/manifest /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_plus_nervous_voxel030_manifest.csv
+/random/setSeeds 1357911 2468022
+# Uses compiled defaults: config/transport_geometry_v1.csv and region_materials.csv.
 /rosworm/mmPerUnit 0.1
 /rosworm/maxStep_um 2 um
 /rosworm/saveSteps true

@@ -12,6 +12,8 @@ struct RegionInfo {
   G4String physicalName;
   G4String materialName;
   G4double density = 0.0;
+  G4double grossVolume = 0.0;
+  G4double scoringVolume = 0.0;
   G4double mass = 0.0;
 };
 

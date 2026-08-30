@@ -48,6 +48,14 @@ RunAction::RunAction(DetectorConstruction* det) : fDetector(det)
   man->CreateNtupleDColumn("x_um");
   man->CreateNtupleDColumn("y_um");
   man->CreateNtupleDColumn("z_um");
+  man->CreateNtupleIColumn("insideBody");
+  man->CreateNtupleDColumn("parentStep_um");
+  man->CreateNtupleDColumn("parentPreX_um");
+  man->CreateNtupleDColumn("parentPreY_um");
+  man->CreateNtupleDColumn("parentPreZ_um");
+  man->CreateNtupleDColumn("parentPostX_um");
+  man->CreateNtupleDColumn("parentPostY_um");
+  man->CreateNtupleDColumn("parentPostZ_um");
   man->FinishNtuple(2);
 }
 

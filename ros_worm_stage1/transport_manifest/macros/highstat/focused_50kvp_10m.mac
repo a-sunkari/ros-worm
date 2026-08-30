@@ -11,5 +11,5 @@
 /rosworm/sourceY -2.0 mm
 /run/initialize
 /tracking/verbose 0
-/run/printProgress 10000
-/run/beamOn 1000000
+/run/printProgress 1000000
+/run/beamOn 10000000

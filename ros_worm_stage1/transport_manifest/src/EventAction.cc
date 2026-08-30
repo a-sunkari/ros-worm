@@ -64,6 +64,8 @@ void EventAction::AddStep(const G4Step* step)
       const auto* sd = sec->GetParticleDefinition();
       const auto spdg = sd->GetPDGEncoding();
       const auto spos = sec->GetPosition();
+      const auto postPos = step->GetPostStepPoint()->GetPosition();
+      const auto insideBody = fDetector->IsInsideBody(spos);
       man->FillNtupleIColumn(2, 0, fEventID);
       man->FillNtupleIColumn(2, 1, regionID);
       man->FillNtupleIColumn(2, 2, pdg);
@@ -72,6 +74,14 @@ void EventAction::AddStep(const G4Step* step)
       man->FillNtupleDColumn(2, 5, spos.x()/um);
       man->FillNtupleDColumn(2, 6, spos.y()/um);
       man->FillNtupleDColumn(2, 7, spos.z()/um);
+      man->FillNtupleIColumn(2, 8, insideBody ? 1 : 0);
+      man->FillNtupleDColumn(2, 9, step->GetStepLength()/um);
+      man->FillNtupleDColumn(2, 10, pos.x()/um);
+      man->FillNtupleDColumn(2, 11, pos.y()/um);
+      man->FillNtupleDColumn(2, 12, pos.z()/um);
+      man->FillNtupleDColumn(2, 13, postPos.x()/um);
+      man->FillNtupleDColumn(2, 14, postPos.y()/um);
+      man->FillNtupleDColumn(2, 15, postPos.z()/um);
       man->AddNtupleRow(2);
     }
   }
