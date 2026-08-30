@@ -1,7 +1,0 @@
-region_id,region_key,material_name,material_class,density_g_cm3,rationale
-1,body,G4_TISSUE_SOFT_ICRU-4,NIST_ICRU,1.00,Residual worm tissue modeled as ICRU four-element soft tissue rather than pure water.
-2,nervous,G4_BRAIN_ICRP,NIST_ICRP,1.04,Nerve-rich compartment modeled with ICRP brain material as closest radiological proxy for neural tissue.
-3,bodywall,G4_MUSCLE_SKELETAL_ICRP,NIST_ICRP,1.05,Body wall muscle modeled with ICRP skeletal muscle material.
-4,digestive,G4_TISSUE_SOFT_ICRP,NIST_ICRP,1.00,Digestive/intestine modeled as ICRP soft tissue proxy; C. elegans intestine stores lipids/glycogen and macromolecules but no complete tissue-specific elemental table is available.
-5,reproductive,G4_TESTIS_ICRP,NIST_ICRP,1.04,Germline/reproductive compartment modeled with ICRP testes material as germ-cell-rich proxy.
-6,excretory,G4_TISSUE_SOFT_ICRU-4,NIST_ICRU,1.00,Excretory canal/cell compartment modeled as water-rich soft tissue proxy; chemistry stage remains water radiolysis.
