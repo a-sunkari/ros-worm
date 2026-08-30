@@ -1,0 +1,10 @@
+/run/initialize
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/set/viewpointThetaPhi 60 30
+/vis/viewer/set/style surface
+/vis/viewer/set/autoRefresh true
+/vis/scene/add/trajectories smooth
+/vis/scene/add/axes 0 0 0 1 mm
+/tracking/storeTrajectory 1
+/run/beamOn 10

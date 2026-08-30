@@ -1,0 +1,84 @@
+{
+  "method": "surface_offset_outer_face_extraction",
+  "sources": [
+    "Cuticle"
+  ],
+  "source_info": [
+    {
+      "name": "Cuticle",
+      "path": "/home/asunkari/ros-worm/openworm_geometry/object_stls_repaired_meshfix_defective/stl/Cuticle.stl",
+      "vertices": 16044,
+      "faces": 32096,
+      "watertight": true,
+      "volume": 0.10902066824752309,
+      "bounds": [
+        [
+          -0.3074254095554352,
+          -3.527811050415039,
+          -0.7171018123626709
+        ],
+        [
+          0.3057541251182556,
+          4.625528812408447,
+          0.6913139820098877
+        ]
+      ],
+      "extents": [
+        0.6131795346736908,
+        8.153339862823486,
+        1.4084157943725586
+      ]
+    }
+  ],
+  "axis": "y",
+  "bins": 240,
+  "centerline_smooth_sigma": 3.0,
+  "selection": {
+    "faces_total": 32096,
+    "faces_kept": 16827,
+    "faces_side_kept": 16060,
+    "faces_low_end_kept": 1286,
+    "faces_high_end_kept": 894,
+    "outer_dot_threshold": 0.05,
+    "end_fraction": 0.025,
+    "end_normal_threshold": 0.25,
+    "dot_min": -0.9999994863102982,
+    "dot_median": 0.06776033582934786,
+    "dot_max": 0.9999959815721391
+  },
+  "offset_um": 0.5,
+  "unit_um": 100.0,
+  "smooth_iters_before": 0,
+  "smooth_iters_after": 3,
+  "smooth_lambda": 0.25,
+  "meshfix": {
+    "pymeshfix_available": true,
+    "ran_meshfix": true,
+    "meshfix_error": null
+  },
+  "output": {
+    "stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset/whole_body_envelope.stl",
+    "manifest": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset/whole_body_envelope_manifest.csv",
+    "vertices": 8347,
+    "faces": 16690,
+    "watertight": true,
+    "volume": 1.6404705717405836,
+    "bounds": [
+      [
+        -0.31161282033251897,
+        -3.5529931451463512,
+        -0.723733941445977
+      ],
+      [
+        0.3099363600297359,
+        4.657761651887059,
+        0.6992783059339737
+      ]
+    ],
+    "extents": [
+      0.6215491803622548,
+      8.21075479703341,
+      1.4230122473799507
+    ]
+  }
+}

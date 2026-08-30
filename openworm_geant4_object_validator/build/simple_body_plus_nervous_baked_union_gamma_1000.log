@@ -1,0 +1,2419 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+[OPENWORM-VALIDATOR][SMOKE_SOURCE] particle=gamma energy_keV=100 source_y_um=-650 half_x_um=120 half_z_um=120 seed=1
+[OPENWORM-VALIDATOR] manifest = /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/nervous_candidate_manifests/simple_body_plus_nervous_baked_union.csv
+[OPENWORM-VALIDATOR] objects  = 2
+[OPENWORM-VALIDATOR] global center model = (-0.000835493,0.509081,-0.0100855)
+[OPENWORM-VALIDATOR] global span model   = (0.613179,8.23224,1.42234)
+[OPENWORM-VALIDATOR] mm/model-unit = 0.1
+[OPENWORM-VALIDATOR] world half size = 1.03066, 1.41161, 1.07112 mm
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=WholeBodyEnvelope category=whole_body_parent raw_tri=3840 kept_tri=3840 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_LOADED] 1 name=WholeBodyEnvelope category=whole_body_parent members=1
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.50505e-12
+P0 = (-0.00122492,-0.171596,-0.0581297)
+P1 = (-0.00122492,-0.169537,-0.0587906)
+P2 = (-0.00122492,-0.172703,-0.0577743)
+Side1 length (P0->P1) = 0.00216258
+Side2 length (P1->P2) = 0.00332569
+Side3 length (P2->P0) = 0.00116311
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00122492,-0.171596,-0.0581297)
+P[1]      = (-0.00122492,-0.169537,-0.0587906)
+P[2]      = (-0.00122492,-0.172703,-0.0577743)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.1446e-14
+P0 = (-0.00153488,0.11613,0.00300318)
+P1 = (-0.00153488,0.116132,0.00300303)
+P2 = (-0.00153476,0.116069,0.00300755)
+Side1 length (P0->P1) = 2.07967e-06
+Side2 length (P1->P2) = 6.30453e-05
+Side3 length (P2->P0) = 6.09657e-05
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00153488,0.11613,0.00300318)
+P[1]      = (-0.00153488,0.116132,0.00300303)
+P[2]      = (-0.00153476,0.116069,0.00300755)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.62825e-13
+P0 = (-0.00405091,-0.395794,0.0570997)
+P1 = (-0.00405636,-0.395429,0.0570472)
+P2 = (-0.0040441,-0.39625,0.0571653)
+Side1 length (P0->P1) = 0.000368364
+Side2 length (P1->P2) = 0.000828729
+Side3 length (P2->P0) = 0.000460365
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00405091,-0.395794,0.0570997)
+P[1]      = (-0.00405636,-0.395429,0.0570472)
+P[2]      = (-0.0040441,-0.39625,0.0571653)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.02187e-13
+P0 = (0.00331673,-0.380715,0.0580316)
+P1 = (0.00330028,-0.380818,0.0580423)
+P2 = (0.00340007,-0.380193,0.0579773)
+Side1 length (P0->P1) = 0.00010471
+Side2 length (P1->P2) = 0.000635419
+Side3 length (P2->P0) = 0.000530709
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.00331673,-0.380715,0.0580316)
+P[1]      = (0.00330028,-0.380818,0.0580423)
+P[2]      = (0.00340007,-0.380193,0.0579773)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 2.48253e-18
+P0 = (0.0128697,-0.00316842,-0.018728)
+P1 = (0.0128697,-0.00316842,-0.018728)
+P2 = (0.0128697,-0.00316841,-0.018728)
+Side1 length (P0->P1) = 1.49012e-09
+Side2 length (P1->P2) = 5.5755e-09
+Side3 length (P2->P0) = 4.47035e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.0128697,-0.00316842,-0.018728)
+P[1]      = (0.0128697,-0.00316842,-0.018728)
+P[2]      = (0.0128697,-0.00316841,-0.018728)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.43619e-14
+P0 = (-0.00147194,0.344171,-0.00256604)
+P1 = (-0.00147292,0.344151,-0.0025761)
+P2 = (-0.00147119,0.344186,-0.00255831)
+Side1 length (P0->P1) = 2.19673e-05
+Side2 length (P1->P2) = 3.88584e-05
+Side3 length (P2->P0) = 1.68911e-05
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00147194,0.344171,-0.00256604)
+P[1]      = (-0.00147292,0.344151,-0.0025761)
+P[2]      = (-0.00147119,0.344186,-0.00255831)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 7.28584e-19
+P0 = (-0.0013799,0.345199,-0.00203576)
+P1 = (-0.0013799,0.345199,-0.00203576)
+P2 = (-0.0013799,0.345199,-0.00203576)
+Side1 length (P0->P1) = 1.22496e-09
+Side2 length (P1->P2) = 1.45775e-09
+Side3 length (P2->P0) = 1.2495e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0013799,0.345199,-0.00203576)
+P[1]      = (-0.0013799,0.345199,-0.00203576)
+P[2]      = (-0.0013799,0.345199,-0.00203576)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.1167e-15
+P0 = (-0.00140116,0.345081,-0.00209669)
+P1 = (-0.00140198,0.345077,-0.00209905)
+P2 = (-0.00140086,0.345083,-0.00209584)
+Side1 length (P0->P1) = 5.21707e-06
+Side2 length (P1->P2) = 7.09248e-06
+Side3 length (P2->P0) = 1.87541e-06
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00140116,0.345081,-0.00209669)
+P[1]      = (-0.00140198,0.345077,-0.00209905)
+P[2]      = (-0.00140086,0.345083,-0.00209584)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.83238e-15
+P0 = (-0.0242506,0.00550768,0.0190971)
+P1 = (-0.0242501,0.00551094,0.0190971)
+P2 = (-0.0242507,0.00550704,0.0190971)
+Side1 length (P0->P1) = 3.29764e-06
+Side2 length (P1->P2) = 3.94985e-06
+Side3 length (P2->P0) = 6.5221e-07
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0242506,0.00550768,0.0190971)
+P[1]      = (-0.0242501,0.00551094,0.0190971)
+P[2]      = (-0.0242507,0.00550704,0.0190971)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 5.55112e-19
+P0 = (-0.0103864,0.340648,0.00773805)
+P1 = (-0.0103864,0.340648,0.00773805)
+P2 = (-0.0103864,0.340648,0.00773805)
+Side1 length (P0->P1) = 1.05367e-09
+Side2 length (P1->P2) = 1.49012e-09
+Side3 length (P2->P0) = 1.05367e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0103864,0.340648,0.00773805)
+P[1]      = (-0.0103864,0.340648,0.00773805)
+P[2]      = (-0.0103864,0.340648,0.00773805)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.11022e-18
+P0 = (-0.0103864,0.340648,0.00773805)
+P1 = (-0.0103864,0.340648,0.00773805)
+P2 = (-0.0103864,0.340648,0.00773805)
+Side1 length (P0->P1) = 1.49012e-09
+Side2 length (P1->P2) = 2.68635e-09
+Side3 length (P2->P0) = 1.666e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0103864,0.340648,0.00773805)
+P[1]      = (-0.0103864,0.340648,0.00773805)
+P[2]      = (-0.0103864,0.340648,0.00773805)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.66533e-18
+P0 = (0.0124563,-0.260315,-0.00471717)
+P1 = (0.0124563,-0.260315,-0.00471717)
+P2 = (0.0124563,-0.260315,-0.00471717)
+Side1 length (P0->P1) = 3.43455e-09
+Side2 length (P1->P2) = 1.49012e-09
+Side3 length (P2->P0) = 2.499e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.0124563,-0.260315,-0.00471717)
+P[1]      = (0.0124563,-0.260315,-0.00471717)
+P[2]      = (0.0124563,-0.260315,-0.00471717)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 6.97954e-13
+P0 = (-0.0143535,-0.186337,-0.0495967)
+P1 = (-0.0143554,-0.185334,-0.0500279)
+P2 = (-0.0143523,-0.186946,-0.0493354)
+Side1 length (P0->P1) = 0.00109238
+Side2 length (P1->P2) = 0.00175448
+Side3 length (P2->P0) = 0.000662099
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0143535,-0.186337,-0.0495967)
+P[1]      = (-0.0143554,-0.185334,-0.0500279)
+P[2]      = (-0.0143523,-0.186946,-0.0493354)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.80733e-17
+P0 = (-0.00128622,-0.0329805,-0.0416656)
+P1 = (-0.00128622,-0.0329805,-0.0416656)
+P2 = (-0.00128622,-0.0329805,-0.0416656)
+Side1 length (P0->P1) = 2.40319e-08
+Side2 length (P1->P2) = 3.86705e-08
+Side3 length (P2->P0) = 1.46866e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00128622,-0.0329805,-0.0416656)
+P[1]      = (-0.00128622,-0.0329805,-0.0416656)
+P[2]      = (-0.00128622,-0.0329805,-0.0416656)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.12174e-12
+P0 = (-0.0012879,-0.0329168,-0.0416312)
+P1 = (-0.00143181,-0.0274689,-0.038682)
+P2 = (-0.00128622,-0.0329805,-0.0416656)
+Side1 length (P0->P1) = 0.00619665
+Side2 length (P1->P2) = 0.00626901
+Side3 length (P2->P0) = 7.23622e-05
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0012879,-0.0329168,-0.0416312)
+P[1]      = (-0.00143181,-0.0274689,-0.038682)
+P[2]      = (-0.00128622,-0.0329805,-0.0416656)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.26532e-17
+P0 = (-0.00643379,0.341938,-0.00248167)
+P1 = (-0.00643379,0.341938,-0.00248167)
+P2 = (-0.00643378,0.341938,-0.00248167)
+Side1 length (P0->P1) = 1.05367e-09
+Side2 length (P1->P2) = 2.53676e-08
+Side3 length (P2->P0) = 2.50482e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00643379,0.341938,-0.00248167)
+P[1]      = (-0.00643379,0.341938,-0.00248167)
+P[2]      = (-0.00643378,0.341938,-0.00248167)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.249e-18
+P0 = (0.0077467,0.346243,0.00522168)
+P1 = (0.0077467,0.346243,0.00522167)
+P2 = (0.0077467,0.346243,0.00522168)
+Side1 length (P0->P1) = 2.38535e-09
+Side2 length (P1->P2) = 2.71205e-09
+Side3 length (P2->P0) = 1.05367e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.0077467,0.346243,0.00522168)
+P[1]      = (0.0077467,0.346243,0.00522167)
+P[2]      = (0.0077467,0.346243,0.00522168)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 2.28849e-17
+P0 = (-0.015684,-0.051954,-0.0461243)
+P1 = (-0.015684,-0.051954,-0.0461243)
+P2 = (-0.015684,-0.0519541,-0.0461244)
+Side1 length (P0->P1) = 3.62106e-08
+Side2 length (P1->P2) = 9.95601e-09
+Side3 length (P2->P0) = 4.61034e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.015684,-0.051954,-0.0461243)
+P[1]      = (-0.015684,-0.051954,-0.0461243)
+P[2]      = (-0.015684,-0.0519541,-0.0461244)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.33002e-12
+P0 = (-0.0145808,-0.134524,-0.0620847)
+P1 = (-0.0145491,-0.136547,-0.0619498)
+P2 = (-0.0146096,-0.132678,-0.0622078)
+Side1 length (P0->P1) = 0.00202833
+Side2 length (P1->P2) = 0.00387831
+Side3 length (P2->P0) = 0.00184998
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0145808,-0.134524,-0.0620847)
+P[1]      = (-0.0145491,-0.136547,-0.0619498)
+P[2]      = (-0.0146096,-0.132678,-0.0622078)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 6.65976e-14
+P0 = (-0.0013799,-0.21,-0.0411217)
+P1 = (-0.0013799,-0.209875,-0.0411853)
+P2 = (-0.0013799,-0.209971,-0.0411361)
+Side1 length (P0->P1) = 0.000140544
+Side2 length (P1->P2) = 0.000108716
+Side3 length (P2->P0) = 3.18278e-05
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0013799,-0.21,-0.0411217)
+P[1]      = (-0.0013799,-0.209875,-0.0411853)
+P[2]      = (-0.0013799,-0.209971,-0.0411361)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 6.86979e-17
+P0 = (-0.00125884,-0.0358446,-0.0431622)
+P1 = (-0.00125884,-0.0358447,-0.0431622)
+P2 = (-0.00125884,-0.0358445,-0.0431621)
+Side1 length (P0->P1) = 1.00017e-07
+Side2 length (P1->P2) = 1.96001e-07
+Side3 length (P2->P0) = 9.5989e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00125884,-0.0358446,-0.0431622)
+P[1]      = (-0.00125884,-0.0358447,-0.0431622)
+P[2]      = (-0.00125884,-0.0358445,-0.0431621)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.47464e-16
+P0 = (-0.00143183,-0.0274685,-0.0386819)
+P1 = (-0.00143183,-0.0274685,-0.0386818)
+P2 = (-0.00143181,-0.0274687,-0.038682)
+Side1 length (P0->P1) = 5.60877e-08
+Side2 length (P1->P2) = 3.33736e-07
+Side3 length (P2->P0) = 2.77657e-07
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00143183,-0.0274685,-0.0386819)
+P[1]      = (-0.00143183,-0.0274685,-0.0386818)
+P[2]      = (-0.00143181,-0.0274687,-0.038682)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 4.77017e-17
+P0 = (-0.00156029,-0.0253389,-0.0374593)
+P1 = (-0.00156029,-0.0253388,-0.0374592)
+P2 = (-0.00156029,-0.0253389,-0.0374593)
+Side1 length (P0->P1) = 8.44286e-08
+Side2 length (P1->P2) = 1.08494e-07
+Side3 length (P2->P0) = 2.40858e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00156029,-0.0253389,-0.0374593)
+P[1]      = (-0.00156029,-0.0253388,-0.0374592)
+P[2]      = (-0.00156029,-0.0253389,-0.0374593)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.08986e-17
+P0 = (-0.0013799,0.200801,-0.0196521)
+P1 = (-0.0013799,0.200801,-0.0196521)
+P2 = (-0.0013799,0.200801,-0.0196521)
+Side1 length (P0->P1) = 7.37316e-08
+Side2 length (P1->P2) = 8.3819e-10
+Side3 length (P2->P0) = 7.37269e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0013799,0.200801,-0.0196521)
+P[1]      = (-0.0013799,0.200801,-0.0196521)
+P[2]      = (-0.0013799,0.200801,-0.0196521)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.66533e-18
+P0 = (-0.00122492,-0.290283,0.0127502)
+P1 = (-0.00122492,-0.290283,0.0127502)
+P2 = (-0.00122492,-0.290283,0.0127502)
+Side1 length (P0->P1) = 3.03217e-09
+Side2 length (P1->P2) = 5.96046e-09
+Side3 length (P2->P0) = 3.03217e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00122492,-0.290283,0.0127502)
+P[1]      = (-0.00122492,-0.290283,0.0127502)
+P[2]      = (-0.00122492,-0.290283,0.0127502)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 5.88939e-18
+P0 = (-0.00153488,-0.274566,0.00184893)
+P1 = (-0.00153488,-0.274566,0.00184892)
+P2 = (-0.00153488,-0.274566,0.00184893)
+Side1 length (P0->P1) = 6.19242e-09
+Side2 length (P1->P2) = 1.51437e-08
+Side3 length (P2->P0) = 9.03383e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00153488,-0.274566,0.00184893)
+P[1]      = (-0.00153488,-0.274566,0.00184892)
+P[2]      = (-0.00153488,-0.274566,0.00184893)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.97068e-17
+P0 = (-0.0013799,0.0466473,0.00214186)
+P1 = (-0.0013799,0.0466473,0.00214187)
+P2 = (-0.0013799,0.0466473,0.00214187)
+Side1 length (P0->P1) = 8.48567e-08
+Side2 length (P1->P2) = 1.22656e-08
+Side3 length (P2->P0) = 7.2633e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.0013799,0.0466473,0.00214186)
+P[1]      = (-0.0013799,0.0466473,0.00214187)
+P[2]      = (-0.0013799,0.0466473,0.00214187)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 8.33851e-17
+P0 = (-0.00217748,-0.0194214,-0.0337639)
+P1 = (-0.00217752,-0.0194213,-0.0337638)
+P2 = (-0.00217748,-0.0194214,-0.0337639)
+Side1 length (P0->P1) = 1.65129e-07
+Side2 length (P1->P2) = 1.76061e-07
+Side3 length (P2->P0) = 1.09754e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00217748,-0.0194214,-0.0337639)
+P[1]      = (-0.00217752,-0.0194213,-0.0337638)
+P[2]      = (-0.00217748,-0.0194214,-0.0337639)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 4.20275e-17
+P0 = (-0.00321712,-0.318792,0.0279276)
+P1 = (-0.00321713,-0.318792,0.0279276)
+P2 = (-0.00321713,-0.318792,0.0279276)
+Side1 length (P0->P1) = 7.17513e-08
+Side2 length (P1->P2) = 2.39464e-08
+Side3 length (P2->P0) = 9.56762e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00321712,-0.318792,0.0279276)
+P[1]      = (-0.00321713,-0.318792,0.0279276)
+P[2]      = (-0.00321713,-0.318792,0.0279276)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 7.97973e-19
+P0 = (-0.00122492,-0.280058,0.00567004)
+P1 = (-0.00122492,-0.280058,0.00567004)
+P2 = (-0.00122492,-0.280058,0.00567004)
+Side1 length (P0->P1) = 1.51608e-09
+Side2 length (P1->P2) = 1.88348e-09
+Side3 length (P2->P0) = 1.05367e-09
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.00122492,-0.280058,0.00567004)
+P[1]      = (-0.00122492,-0.280058,0.00567004)
+P[2]      = (-0.00122492,-0.280058,0.00567004)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 3.16296e-15
+P0 = (0.00391658,-0.376855,0.0576258)
+P1 = (0.0039169,-0.376853,0.0576256)
+P2 = (0.00391578,-0.37686,0.0576263)
+Side1 length (P0->P1) = 2.13405e-06
+Side2 length (P1->P2) = 7.4695e-06
+Side3 length (P2->P0) = 5.33544e-06
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.00391658,-0.376855,0.0576258)
+P[1]      = (0.0039169,-0.376853,0.0576256)
+P[2]      = (0.00391578,-0.37686,0.0576263)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.23075e-17
+P0 = (-0.000870292,-0.318767,0.0282134)
+P1 = (-0.000870293,-0.318767,0.0282134)
+P2 = (-0.000870307,-0.318767,0.0282134)
+Side1 length (P0->P1) = 1.02445e-09
+Side2 length (P1->P2) = 2.81267e-08
+Side3 length (P2->P0) = 2.86726e-08
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (-0.000870292,-0.318767,0.0282134)
+P[1]      = (-0.000870293,-0.318767,0.0282134)
+P[2]      = (-0.000870307,-0.318767,0.0282134)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TriangularFacet::G4TriangularFacet()
+Facet is too small or too narrow.
+Triangle area = 1.61732e-13
+P0 = (0.00245538,-0.387263,0.0589245)
+P1 = (0.00244145,-0.38735,0.0589347)
+P2 = (0.00253467,-0.386768,0.058866)
+Side1 length (P0->P1) = 8.86093e-05
+Side2 length (P1->P2) = 0.000593136
+Side3 length (P2->P0) = 0.000504526
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1002
+      issued by : G4TessellatedSolid::AddFacet()
+Attempt to add facet not properly defined.
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+*********************************************************************
+FACET TYPE       = G4TriangularFacet
+ABSOLUTE VECTORS = 
+P[0]      = (0.00245538,-0.387263,0.0589245)
+P[1]      = (0.00244145,-0.38735,0.0589347)
+P[2]      = (0.00253467,-0.386768,0.058866)
+*********************************************************************
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TessellatedSolid::SetSolidClosed()
+Defects in solid: ow_NervousSystem_solid - some facets have wrong orientation!
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TessellatedSolid::SetSolidClosed()
+Defects in solid: ow_NervousSystem_solid - there are holes in the surface!
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=NervousSystem category=NervousSystem raw_tri=1355686 kept_tri=1355686 skipped_deg=0
+[OPENWORM-VALIDATOR][FLAT_LOADED] 2 name=NervousSystem category=NervousSystem
+[OPENWORM-VALIDATOR] loaded physical volumes = 2
+[OPENWORM-VALIDATOR] running CheckOverlaps on flat physical volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume ow_NervousSystem_phys:1 (G4TessellatedSolid) ... OK! 
+[OPENWORM-VALIDATOR] overlap checks completed
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+[OPENWORM-VALIDATOR][SMOKE_BEAMON] events=1000
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Positron annihilation at rest model                SimplePositronium
+Enable 3 gamma annihilation on fly                 0
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Use Ricardo-Gerardo pair production model          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Urban
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina : Emin=    0 eV  Emax=  100 TeV
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+     BetheHeitlerLPM : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 150 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 150 keV to 100 TeV in 62 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+CoulombScat:  for e- XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+annihil:  for e+ XStype:2 SubType=5 AtRestModel:Simple BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+-----------------------------------------------------------------------
+                           Hadronic Processes for neutron
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronElasticXS: 0 eV  ---> 100 TeV
+  Process: neutronInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+  Process: nCapture
+        Model:               nRadCapture: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+  Process: nKiller
+-----------------------------------------------------------------------
+                           Hadronic Processes for B-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: B-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for D-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: D-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for GenericIon
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: He3Inelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: alphaInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_He3Inelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_alphaInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_deuteronInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-------------------------------------------------------------------------
+                           Hadronic Processes for anti_hypertriton
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: anti_lambdaInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_neutron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_proton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_tritonInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: dInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e-
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for gamma
+  Process: photonNuclear
+        Model:               GammaNPreco: 0 eV  ---> 200 MeV
+        Model:            BertiniCascade: 199 MeV ---> 6 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            GammaNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: lambdaInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu-
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+  Process: muMinusCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi-
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for proton
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: protonInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for sigma-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: sigma-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: tInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+=======================================================================
+======       Geant4 Native Pre-compound Model Parameters       ========
+=======================================================================
+Type of pre-compound inverse x-section              1
+Pre-compound model active                           1
+Pre-compound excitation low energy                  100 keV
+Pre-compound excitation high energy                 30 MeV
+Angular generator for pre-compound model            1
+Use NeverGoBack option for pre-compound model       0
+Use SoftCutOff option for pre-compound model        0
+Use CEM transitions for pre-compound model          1
+Use GNASH transitions for pre-compound model        0
+Use HETC submodel for pre-compound model            0
+=======================================================================
+======       Nuclear De-excitation Module Parameters           ========
+=======================================================================
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy                               10 eV 
+Min energy per nucleon for multifragmentation       200 GeV
+Limit excitation energy for Fermi BreakUp           20 MeV
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      0
+Time limit for long lived isomeres                  1 ns 
+Isomer production flag                              1
+Internal e- conversion flag                         1
+Store e- internal conversion data                   1
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+=======================================================================
+[OPENWORM-VALIDATOR][SMOKE_RUN_BEGIN] runID=0 events=1000
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01357130548705614,-0.1066830340842833,-0.06490146714012414)
+     in direction: (0,1,0)
+    (local position: (-0.01357130548705614,-0.1066830340842833,-0.06490146714012414))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01357130548705614,-0.1064939766340749,-0.06490146714012414)
+     in direction: (0,1,0)
+    (local position: (-0.01357130548705614,-0.1064939766340749,-0.06490146714012414))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.006605990053768807,-0.3354418532333593,0.05826355851090341)
+     in direction: (0,1,0)
+    (local position: (-0.006605990053768807,-0.3354418532333593,0.05826355851090341))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.006605990053768807,-0.3353017203129011,0.05826355851090341)
+     in direction: (0,1,0)
+    (local position: (-0.006605990053768807,-0.3353017203129011,0.05826355851090341))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.01681599791640932,0.0002723037816449596,-0.01969763076102758)
+     in direction: (0,1,0)
+    (local position: (0.01681599791640932,0.0002723037816449596,-0.01969763076102758))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01982812952764081,-0.2046994859250254,-0.03655439600564112)
+     in direction: (0,1,0)
+    (local position: (-0.01982812952764081,-0.2046994859250254,-0.03655439600564112))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01982812952764081,-0.2042615589154974,-0.03655439600564112)
+     in direction: (0,1,0)
+    (local position: (-0.01982812952764081,-0.2042615589154974,-0.03655439600564112))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.02692133060826194,-0.00319832803209558,-0.009954437183395001)
+     in direction: (0,1,0)
+    (local position: (-0.02692133060826194,-0.00319832803209558,-0.009954437183395001))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.02692133060826194,-0.002952746763906746,-0.009954437183395001)
+     in direction: (0,1,0)
+    (local position: (-0.02692133060826194,-0.002952746763906746,-0.009954437183395001))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.02692133060826194,-0.002937156136488739,-0.009954437183395001)
+     in direction: (0,1,0)
+    (local position: (-0.02692133060826194,-0.002937156136488739,-0.009954437183395001))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.02692133060826194,-0.002908097494237277,-0.009954437183395001)
+     in direction: (0,1,0)
+    (local position: (-0.02692133060826194,-0.002908097494237277,-0.009954437183395001))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.02692133060826194,-0.002781784277125385,-0.009954437183395001)
+     in direction: (0,1,0)
+    (local position: (-0.02692133060826194,-0.002781784277125385,-0.009954437183395001))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.00254383367277498,-0.3120237514989866,0.05176990415427503)
+     in direction: (0,1,0)
+    (local position: (0.00254383367277498,-0.3120237514989866,0.05176990415427503))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.01784261343647921,-0.01337016042506411,-0.02907674561193233)
+     in direction: (0,1,0)
+    (local position: (0.01784261343647921,-0.01337016042506411,-0.02907674561193233))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.003089788269621508,-0.2894828505915863,0.01489198348918558)
+     in direction: (0,1,0)
+    (local position: (-0.003089788269621508,-0.2894828505915863,0.01489198348918558))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.003927158233928637,-0.3142763768313194,0.03426955910610392)
+     in direction: (0,1,0)
+    (local position: (0.003927158233928637,-0.3142763768313194,0.03426955910610392))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.003927158233928637,-0.3142754020528377,0.03426955910610392)
+     in direction: (0,1,0)
+    (local position: (0.003927158233928637,-0.3142754020528377,0.03426955910610392))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.003927158233928637,-0.3142714700422273,0.03426955910610392)
+     in direction: (0,1,0)
+    (local position: (0.003927158233928637,-0.3142714700422273,0.03426955910610392))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.003927158233928637,-0.3140864565405968,0.03426955910610392)
+     in direction: (0,1,0)
+    (local position: (0.003927158233928637,-0.3140864565405968,0.03426955910610392))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.003927158233928637,-0.3140853557010024,0.03426955910610392)
+     in direction: (0,1,0)
+    (local position: (0.003927158233928637,-0.3140853557010024,0.03426955910610392))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.009887841042643345,-0.2974696989056439,0.01901785229967257)
+     in direction: (0,1,0)
+    (local position: (0.009887841042643345,-0.2974696989056439,0.01901785229967257))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.0273816395744916,-0.08033391453869347,-0.04535204680478708)
+     in direction: (0,1,0)
+    (local position: (-0.0273816395744916,-0.08033391453869347,-0.04535204680478708))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.0273816395744916,-0.07909504248585562,-0.04535204680478708)
+     in direction: (0,1,0)
+    (local position: (-0.0273816395744916,-0.07909504248585562,-0.04535204680478708))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.0273816395744916,-0.07487023782220946,-0.04535204680478708)
+     in direction: (0,1,0)
+    (local position: (-0.0273816395744916,-0.07487023782220946,-0.04535204680478708))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.0273816395744916,-0.07468997520428382,-0.04535204680478708)
+     in direction: (0,1,0)
+    (local position: (-0.0273816395744916,-0.07468997520428382,-0.04535204680478708))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01994356567277725,-0.01947536754270394,-0.03012922894679481)
+     in direction: (0,1,0)
+    (local position: (-0.01994356567277725,-0.01947536754270394,-0.03012922894679481))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01994356567277725,-0.01945236479357934,-0.03012922894679481)
+     in direction: (0,1,0)
+    (local position: (-0.01994356567277725,-0.01945236479357934,-0.03012922894679481))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01994356567277725,-0.01874732159273414,-0.03012922894679481)
+     in direction: (0,1,0)
+    (local position: (-0.01994356567277725,-0.01874732159273414,-0.03012922894679481))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.01994356567277725,-0.01824344177990847,-0.03012922894679481)
+     in direction: (0,1,0)
+    (local position: (-0.01994356567277725,-0.01824344177990847,-0.03012922894679481))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.008525305367142124,-0.0051549485507954,-0.02891397012458589)
+     in direction: (0,1,0)
+    (local position: (0.008525305367142124,-0.0051549485507954,-0.02891397012458589))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (-0.004964173057854254,-0.2928726652402301,0.01563756583848075)
+     in direction: (0,1,0)
+    (local position: (-0.004964173057854254,-0.2928726652402301,0.01563756583848075))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.009537096742180694,0.2230689634685233,0.01748207001652378)
+     in direction: (0,1,0)
+    (local position: (0.009537096742180694,0.2230689634685233,0.01748207001652378))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomNav1002
+      issued by : G4Navigator::ComputeStep()
+Stuck Track: potential geometry or navigation problem.
+  Track stuck, not moving for 10 steps.
+  Current  phys volume: 'ow_WholeBodyEnvelope_phys'
+   - at position : (0.005054057322450347,-0.314462152448629,0.03676515308780239)
+     in direction: (0,1,0)
+    (local position: (0.005054057322450347,-0.314462152448629,0.03676515308780239))
+    (local direction: (0,1,0)).
+  Previous phys volume: 'ow_NervousSystem_phys'
+
+  Likely geometry overlap - else navigation problem !
+   *** Trying to get *unstuck* using a push - expanding step to 1e-07 (mm) ...       Potential overlap in geometry !
+
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+[OPENWORM-VALIDATOR][SMOKE_RUN_END] runID=0 events=1000 totalSteps=3128 totalEdep_keV=0
+[OPENWORM-VALIDATOR][SMOKE_STEP_VOLUME_COUNTS]
+  ow_NervousSystem_phys 835
+  ow_WholeBodyEnvelope_phys 1063
+  world_phys 1230
+[OPENWORM-VALIDATOR][SMOKE_EDEP_BY_VOLUME_KEV]

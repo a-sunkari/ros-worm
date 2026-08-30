@@ -1,0 +1,173 @@
+#include "DetectorConstruction.hh"
+#include "STLReader.hh"
+
+#include <G4Box.hh>
+#include <G4LogicalVolume.hh>
+#include <G4Material.hh>
+#include <G4NistManager.hh>
+#include <G4PVPlacement.hh>
+#include <G4SystemOfUnits.hh>
+#include <G4TessellatedSolid.hh>
+#include <G4TriangularFacet.hh>
+#include <G4ThreeVector.hh>
+#include <G4VisAttributes.hh>
+#include <G4Colour.hh>
+#include <G4ios.hh>
+
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
+#include <algorithm>
+#include <limits>
+#include <set>
+
+static std::vector<std::string> split_csv_line(const std::string& line) {
+    std::vector<std::string> out;
+    std::string cur;
+    bool inq = false;
+    for (char c : line) {
+        if (c == '"') { inq = !inq; continue; }
+        if (c == ',' && !inq) { out.push_back(cur); cur.clear(); }
+        else cur.push_back(c);
+    }
+    out.push_back(cur);
+    return out;
+}
+
+static int col_index(const std::vector<std::string>& h, const std::string& key) {
+    for (int i=0; i<(int)h.size(); ++i) if (h[i] == key) return i;
+    return -1;
+}
+
+DetectorConstruction::DetectorConstruction(ValidatorConfig cfg) : cfg_(std::move(cfg)) {}
+
+void DetectorConstruction::LoadManifest() {
+    std::ifstream f(cfg_.manifest);
+    if (!f) throw std::runtime_error("Cannot open manifest: " + cfg_.manifest);
+    std::string line;
+    if (!std::getline(f, line)) throw std::runtime_error("Empty manifest: " + cfg_.manifest);
+    auto h = split_csv_line(line);
+    const int i_obj = col_index(h, "object_name");
+    const int i_safe = col_index(h, "safe_name");
+    const int i_cat = col_index(h, "category_guess");
+    const int i_path = col_index(h, "stl_path");
+    const int i_minx = col_index(h, "min_x");
+    const int i_miny = col_index(h, "min_y");
+    const int i_minz = col_index(h, "min_z");
+    const int i_maxx = col_index(h, "max_x");
+    const int i_maxy = col_index(h, "max_y");
+    const int i_maxz = col_index(h, "max_z");
+    if (i_obj<0 || i_safe<0 || i_cat<0 || i_path<0 || i_minx<0 || i_miny<0 || i_minz<0 || i_maxx<0 || i_maxy<0 || i_maxz<0)
+        throw std::runtime_error("Manifest missing required columns");
+
+    double gminx=std::numeric_limits<double>::infinity(), gminy=gminx, gminz=gminx;
+    double gmaxx=-gminx, gmaxy=-gminx, gmaxz=-gminx;
+
+    while (std::getline(f, line)) {
+        if (line.empty()) continue;
+        auto c = split_csv_line(line);
+        if ((int)c.size() <= std::max({i_obj,i_safe,i_cat,i_path,i_minx,i_miny,i_minz,i_maxx,i_maxy,i_maxz})) continue;
+        ObjectRecord r;
+        r.object_name = c[i_obj]; r.safe_name = c[i_safe]; r.category = c[i_cat]; r.stl_path = c[i_path];
+        r.min_x=std::stod(c[i_minx]); r.min_y=std::stod(c[i_miny]); r.min_z=std::stod(c[i_minz]);
+        r.max_x=std::stod(c[i_maxx]); r.max_y=std::stod(c[i_maxy]); r.max_z=std::stod(c[i_maxz]);
+        if (!KeepRecord(r)) continue;
+        records_.push_back(r);
+        gminx=std::min(gminx,r.min_x); gminy=std::min(gminy,r.min_y); gminz=std::min(gminz,r.min_z);
+        gmaxx=std::max(gmaxx,r.max_x); gmaxy=std::max(gmaxy,r.max_y); gmaxz=std::max(gmaxz,r.max_z);
+        if (cfg_.maxObjects > 0 && (int)records_.size() >= cfg_.maxObjects) break;
+    }
+    if (records_.empty()) throw std::runtime_error("No objects left after filters");
+    globalCenterModel_ = G4ThreeVector((gminx+gmaxx)/2.0, (gminy+gmaxy)/2.0, (gminz+gmaxz)/2.0);
+    globalSpanModel_ = G4ThreeVector((gmaxx-gminx), (gmaxy-gminy), (gmaxz-gminz));
+}
+
+bool DetectorConstruction::KeepRecord(const ObjectRecord& r) const {
+    for (const auto& ex : cfg_.excludeNames) {
+        if (r.object_name == ex || r.safe_name == ex) return false;
+    }
+    if (!cfg_.includeCategories.empty()) {
+        for (const auto& cat : cfg_.includeCategories) {
+            if (r.category == cat) return true;
+        }
+        return false;
+    }
+    return true;
+}
+
+G4VPhysicalVolume* DetectorConstruction::Construct() {
+    LoadManifest();
+    auto nist = G4NistManager::Instance();
+    auto worldMat = nist->FindOrBuildMaterial("G4_AIR");
+    auto wormMat = nist->FindOrBuildMaterial("G4_WATER");
+
+    const double sx = globalSpanModel_.x()*cfg_.mmPerModelUnit*mm;
+    const double sy = globalSpanModel_.y()*cfg_.mmPerModelUnit*mm;
+    const double sz = globalSpanModel_.z()*cfg_.mmPerModelUnit*mm;
+    const double worldHalfX = 0.5*sx + cfg_.marginMM*mm;
+    const double worldHalfY = 0.5*sy + cfg_.marginMM*mm;
+    const double worldHalfZ = 0.5*sz + cfg_.marginMM*mm;
+
+    auto worldSolid = new G4Box("world", worldHalfX, worldHalfY, worldHalfZ);
+    auto worldLV = new G4LogicalVolume(worldSolid, worldMat, "world_lv");
+    auto worldPV = new G4PVPlacement(nullptr, {}, worldLV, "world_phys", nullptr, false, 0, false);
+
+    G4cout << "[OPENWORM-VALIDATOR] manifest = " << cfg_.manifest << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] objects  = " << records_.size() << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] global center model = " << globalCenterModel_ << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] global span model   = " << globalSpanModel_ << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] mm/model-unit = " << cfg_.mmPerModelUnit << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] world half size = " << worldHalfX/mm << ", " << worldHalfY/mm << ", " << worldHalfZ/mm << " mm" << G4endl;
+
+    std::vector<G4VPhysicalVolume*> placed;
+    int loaded = 0;
+    for (const auto& r : records_) {
+        try {
+            STLMesh mesh = ReadBinarySTL(r.stl_path, cfg_.minTriangleAreaMM2);
+            if (mesh.triangles.empty()) {
+                G4cout << "[OPENWORM-VALIDATOR][SKIP_EMPTY] " << r.object_name << " path=" << r.stl_path << G4endl;
+                continue;
+            }
+            auto solid = new G4TessellatedSolid(G4String("ow_") + r.safe_name + "_solid");
+            for (const auto& t : mesh.triangles) {
+                auto cvt = [&](double x, double y, double z) {
+                    return G4ThreeVector(
+                        (x - globalCenterModel_.x()) * cfg_.mmPerModelUnit * mm,
+                        (y - globalCenterModel_.y()) * cfg_.mmPerModelUnit * mm,
+                        (z - globalCenterModel_.z()) * cfg_.mmPerModelUnit * mm
+                    );
+                };
+                solid->AddFacet(new G4TriangularFacet(
+                    cvt(t.x0,t.y0,t.z0), cvt(t.x1,t.y1,t.z1), cvt(t.x2,t.y2,t.z2), ABSOLUTE));
+            }
+            solid->SetSolidClosed(true);
+            auto lv = new G4LogicalVolume(solid, wormMat, G4String("ow_") + r.safe_name + "_lv");
+            lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.2,0.7,1.0,0.35)));
+            auto pv = new G4PVPlacement(nullptr, {}, lv, G4String("ow_") + r.safe_name + "_phys", worldLV, false, loaded, false);
+            placed.push_back(pv);
+            loaded++;
+            if (cfg_.verboseLoad) {
+                G4cout << "[OPENWORM-VALIDATOR][LOADED] " << loaded << " name=" << r.object_name
+                       << " category=" << r.category
+                       << " raw_tri=" << mesh.raw_triangles
+                       << " kept_tri=" << mesh.triangles.size()
+                       << " skipped_deg=" << mesh.skipped_degenerate
+                       << G4endl;
+            }
+        } catch (const std::exception& e) {
+            G4cout << "[OPENWORM-VALIDATOR][LOAD_ERROR] name=" << r.object_name
+                   << " path=" << r.stl_path << " error=" << e.what() << G4endl;
+        }
+    }
+
+    G4cout << "[OPENWORM-VALIDATOR] loaded physical volumes = " << loaded << G4endl;
+
+    if (cfg_.checkOverlaps) {
+        G4cout << "[OPENWORM-VALIDATOR] running CheckOverlaps on all placed object volumes..." << G4endl;
+        for (auto* pv : placed) {
+            pv->CheckOverlaps(cfg_.overlapResolution, cfg_.overlapToleranceMM*mm, true, cfg_.overlapMaxErr);
+        }
+        G4cout << "[OPENWORM-VALIDATOR] overlap checks completed" << G4endl;
+    }
+    return worldPV;
+}

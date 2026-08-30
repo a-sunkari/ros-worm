@@ -1,0 +1,6 @@
+region_id,region_name,parent,material,shape,center_x_um,center_y_um,center_z_um,radius_x_um,radius_y_um,radius_z_um,length_um,notes
+1,whole_worm,world,water,capsule,0,0,0,40,40,500,1000,Stage-1 body placeholder; replace with OpenWorm-informed body axis/shape
+2,head_proxy,whole_worm,water,sphere,430,0,0,35,35,35,,Stage-1 placeholder; replace with head neuron/cell coordinate cluster
+3,ventral_nerve_cord_proxy,whole_worm,water,cylinder,0,-22,-15,3,3,430,860,Stage-1 placeholder; replace with OpenWorm VNC/cell positions
+4,body_wall_muscle_proxy,whole_worm,water,shell,0,0,0,40,40,500,900,Stage-1 placeholder; replace with muscle quadrants
+5,intestine_proxy,whole_worm,water,cylinder,0,0,5,12,12,400,800,Stage-1 placeholder; replace with intestine tract geometry

@@ -1,0 +1,16 @@
+/run/numberOfThreads 8
+/rosworm/materials /home/asunkari/ros-worm/ros_worm_stage1/config/region_materials.csv
+/rosworm/manifest /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_voxel_remesh_plus_nervous_voxel030_manifest.csv
+/rosworm/mmPerUnit 0.1
+/rosworm/maxStep_um 2 um
+/rosworm/saveSteps true
+/rosworm/sourceType focused
+/rosworm/spectrumType kramers
+/rosworm/kvp 50 keV
+/rosworm/minEnergy 1 keV
+/rosworm/spotFWHM 0.85 mm
+/rosworm/sourceY -2.0 mm
+/run/initialize
+/tracking/verbose 0
+/run/printProgress 10000
+/run/beamOn 100000

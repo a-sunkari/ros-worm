@@ -1,0 +1,22 @@
+# Part 1: realistic transport model for Cannon/Bolding focused iMOXS-like setup.
+# Output: output0.root with regional dose and optional electron step source data.
+
+/run/numberOfThreads 8
+
+/worm/geometry/wormMaterial soft
+/worm/geometry/wormLength 1.0 mm
+/worm/geometry/wormRadius 40 um
+/worm/geometry/maxStep 2 um
+
+/worm/source/type focused
+/worm/source/spectrum kramers
+/worm/source/kvp 50 keV
+/worm/source/minEnergy 1 keV
+/worm/source/sourceZ 50 mm
+/worm/source/spotFWHM 0.85 mm
+
+# Save steps only when generating a source spectrum for Part 2. Turn off for high-stat dose runs.
+/worm/scoring/saveSteps true
+
+/run/initialize
+/run/beamOn 20000

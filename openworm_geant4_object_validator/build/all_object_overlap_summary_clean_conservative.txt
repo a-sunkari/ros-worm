@@ -1,0 +1,609 @@
+=== counts ===
+loaded objects: 694
+load errors: 0
+GeomSolids1001 small/narrow facets: 148
+GeomSolids1002 bad facet add: 0
+solid defects: 148
+overlap mentions: 40227
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_hyp11_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Seam_Cells_Left_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_hyp4_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Seam_Cells_Right_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Phar_Gland_g2_VR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Arcade_Cell_Ant_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Arcade_Cell_Ant_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Arcade_Cell_Post_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_pm8_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_pm4D_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_pm4D_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Phar_Gland_g2_VL_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL19_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL17_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL11_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL9_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL7_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL5_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL3_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VL1_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_VR18_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR22_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR14_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR12_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR8_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR6_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR4_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR2_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR3_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR5_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR7_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR9_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR11_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR19_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR15_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL2_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL2_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL21_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL21_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL19_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL17_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL15_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL3_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL5_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL9_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL11_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DL11_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR1_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR1_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_bod_DR24_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_P_4R_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_P_2R_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_P_3R_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_A_3L_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_A_2L_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Sp_bag_A_4L_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Gonadal_Sheath_A1L_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Rachis_P_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Rachis_A_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_um1L_Post_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_um1R_Post_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_um2L_Post_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_ut3_Ant_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_int1DL_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Anus_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_vpi2_V_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_vpi1_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_OLQDR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVL_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_OLQDL_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_rect_VR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_mu_anal_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIAVR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_LUAR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_ADAR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_MI_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_I3_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_DVC_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_DVC_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_DVA_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_DVA_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_LUAL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RICR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RICR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBVR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBVR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIADR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIADR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SAADL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SAADL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVKR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVKR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVKL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVKL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVAR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVAR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVBR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVBR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVDL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVDL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVBL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVBL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVAL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVAL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVDR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVDR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SAADR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SAADR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RIR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBDR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBDR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBDR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AINR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AINR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AVHR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RIS_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RIS_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_ADAL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AINL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AINL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBDL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBDL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RICL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RICL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AIYR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RIFL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RIFR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AIYL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIADL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIADL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIAVL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBVL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_SIBVL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_DA5_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AS10_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_AS8_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RMER_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RMER_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RMEL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_RMEL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_PVDR_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_PVDR_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_PVDL_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_PVDL_solid - there are holes in the surface!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_ADEsoL_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_ADEsoR_solid - negative cubic volume, please check orientation of facets!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Cube_solid - some facets have wrong orientation!
+*** G4Exception : GeomSolids1001
+Defects in solid: ow_Cube_solid - there are holes in the surface!
+
+=== overlap lines tail ===
+          overlap at local point (0.00062349,-0.402506,-0.0910884) by 129.914 nm  (max of 10 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_Excretory_Cell_phys:362 (G4TessellatedSolid)
+          overlap at local point (0.00737276,-0.347589,-0.0975555) by 3.14932 um  (max of 145 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_RIPR_phys:381 (G4TessellatedSolid)
+          overlap at local point (0.00792079,-0.350209,-0.0975271) by 125.188 nm  (max of 6 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_URBL_phys:434 (G4TessellatedSolid)
+          overlap at local point (0.00412066,-0.380844,-0.0937639) by 219.373 nm  (max of 54 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_BAGL_phys:626 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.434 nm  (max of 21 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_FLPL_phys:629 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.437 nm  (max of 17 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_ADLL_phys:630 (G4TessellatedSolid)
+          overlap at local point (0.00782436,-0.347486,-0.0964843) by 1.64602 um  (max of 38 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_ASHL_phys:631 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.413 nm  (max of 17 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_AWBL_phys:632 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.424 nm  (max of 16 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_AFDL_phys:633 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.427 nm  (max of 17 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_ADFL_phys:634 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.406 nm  (max of 18 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_ASEL_phys:635 (G4TessellatedSolid)
+          overlap at local point (0.00062349,-0.402506,-0.0910884) by 129.923 nm  (max of 9 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_AWCL_phys:636 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.446 nm  (max of 18 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_OLLshL_phys:689 (G4TessellatedSolid) with ow_ASJL_phys:637 (G4TessellatedSolid)
+          overlap at local point (0.000794045,-0.402614,-0.0917726) by 251.427 nm  (max of 17 cases)
+NOTE: Reached maximum fixed number -20- of overlaps reports for this volume !
+Checking overlaps for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_hyp2_phys:8 (G4TessellatedSolid)
+          overlap at local point (-0.000364537,-0.399559,-0.0895727) by 290.737 nm  (max of 21 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_hyp1_phys:9 (G4TessellatedSolid)
+          overlap at local point (-0.000135726,-0.398291,-0.089251) by 253.23 nm  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_Phar_Gland_Dorsal_g2_phys:15 (G4TessellatedSolid)
+          overlap at local point (-0.000341617,-0.329878,-0.0959499) by 8.19938 um  (max of 26 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_Arcade_Cell_Ant_phys:16 (G4TessellatedSolid)
+          overlap at local point (-0.000360584,-0.401084,-0.089593) by 172.753 nm  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_Arcade_Cell_Post_phys:17 (G4TessellatedSolid)
+          overlap at local point (-0.000199822,-0.398121,-0.089202) by 265.297 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_AUAL_phys:328 (G4TessellatedSolid)
+          overlap at local point (-0.00030884,-0.331761,-0.096993) by 1.49662 um  (max of 7 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_URYDL_phys:329 (G4TessellatedSolid)
+          overlap at local point (0.00134057,-0.330706,-0.0965885) by 817.418 nm  (max of 43 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_AVL_phys:340 (G4TessellatedSolid)
+          overlap at local point (0.0045359,-0.330138,-0.0989251) by 1.49724 um  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_IL1DL_phys:341 (G4TessellatedSolid)
+          overlap at local point (0.00243456,-0.337787,-0.0971293) by 870.753 nm  (max of 77 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_OLQDL_phys:344 (G4TessellatedSolid)
+          overlap at local point (-0.00030884,-0.331761,-0.096993) by 1.84035 um  (max of 36 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_GLRDL_phys:350 (G4TessellatedSolid)
+          overlap at local point (0.00478508,-0.329947,-0.10107) by 313.71 nm  (max of 9 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_SDQL_phys:374 (G4TessellatedSolid)
+          overlap at local point (0.00665437,-0.329198,-0.105997) by 1.81527 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_PVNR_phys:376 (G4TessellatedSolid)
+          overlap at local point (0.0045359,-0.330138,-0.0989251) by 1.49723 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_PVPL_phys:380 (G4TessellatedSolid)
+          overlap at local point (0.0045359,-0.330138,-0.0989251) by 1.49724 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_AIBR_phys:383 (G4TessellatedSolid)
+          overlap at local point (0.00421775,-0.33081,-0.0987419) by 1.30573 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_I6_phys:386 (G4TessellatedSolid)
+          overlap at local point (0.0030653,-0.328048,-0.0979387) by 4.43512 um  (max of 207 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_PVNL_phys:392 (G4TessellatedSolid)
+          overlap at local point (0.0031257,-0.329376,-0.0975291) by 1.47054 um  (max of 13 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_PVCL_phys:393 (G4TessellatedSolid)
+          overlap at local point (0.0045359,-0.330138,-0.0989251) by 1.4972 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_PVQL_phys:394 (G4TessellatedSolid)
+          overlap at local point (0.00685167,-0.328988,-0.103633) by 1.97883 um  (max of 8 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:690 (G4TessellatedSolid) with ow_DVA_phys:396 (G4TessellatedSolid)
+          overlap at local point (0.00276899,-0.329788,-0.0986338) by 329.714 nm  (max of 2 cases)
+NOTE: Reached maximum fixed number -20- of overlaps reports for this volume !
+Checking overlaps for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_hyp2_phys:8 (G4TessellatedSolid)
+          overlap at local point (-0.0002668,-0.401841,-0.0936537) by 341.871 nm  (max of 66 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_hyp1_phys:9 (G4TessellatedSolid)
+          overlap at local point (-0.000347291,-0.401361,-0.0937444) by 208.724 nm  (max of 19 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_Arcade_Cell_Ant_phys:16 (G4TessellatedSolid)
+          overlap at local point (-0.000315563,-0.401594,-0.0936958) by 271.366 nm  (max of 8 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_Arcade_Cell_Post_phys:17 (G4TessellatedSolid)
+          overlap at local point (-0.000381895,-0.399086,-0.0941906) by 257.157 nm  (max of 13 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_e2DL_phys:21 (G4TessellatedSolid)
+          overlap at local point (0.000747423,-0.389334,-0.0959592) by 1.87354 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_pm1_phys:25 (G4TessellatedSolid)
+          overlap at local point (0.0033041,-0.360335,-0.101495) by 491.078 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_pm2VL_phys:27 (G4TessellatedSolid)
+          overlap at local point (0.000934667,-0.387243,-0.0963215) by 1.10895 um  (max of 9 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_pm4VL_phys:46 (G4TessellatedSolid)
+          overlap at local point (0.00447848,-0.352711,-0.103279) by 124.482 nm  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_PLNR_phys:319 (G4TessellatedSolid)
+          overlap at local point (-0.000864216,-0.328395,-0.115089) by 4.1535 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_PLNL_phys:323 (G4TessellatedSolid)
+          overlap at local point (0.00316554,-0.327844,-0.114315) by 2.95063 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_AUAL_phys:328 (G4TessellatedSolid)
+          overlap at local point (0.0058294,-0.329339,-0.108575) by 1.73141 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_URYVL_phys:330 (G4TessellatedSolid)
+          overlap at local point (0.00416179,-0.346397,-0.105193) by 134.278 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_AVL_phys:340 (G4TessellatedSolid)
+          overlap at local point (0.00299209,-0.327414,-0.11306) by 2.12852 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_OLQVL_phys:345 (G4TessellatedSolid)
+          overlap at local point (0.00327477,-0.341851,-0.107142) by 533.883 nm  (max of 7 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_GLRVL_phys:351 (G4TessellatedSolid)
+          overlap at local point (0.00344877,-0.34408,-0.10586) by 140.681 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_SDQR_phys:373 (G4TessellatedSolid)
+          overlap at local point (0.00345779,-0.327623,-0.114062) by 3.23892 um  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_SDQL_phys:374 (G4TessellatedSolid)
+          overlap at local point (0.00328678,-0.327781,-0.114214) by 3.24422 um  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:691 (G4TessellatedSolid) with ow_PVNR_phys:376 (G4TessellatedSolid)
+          overlap at local point (-0.000718639,-0.327014,-0.115913) by 1.40234 um  (max of 5 cases)
+NOTE: Reached maximum fixed number -20- of overlaps reports for this volume !
+Checking overlaps for volume ow_AMshL_phys:692 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_hyp2_phys:8 (G4TessellatedSolid)
+          overlap at local point (0.00259491,-0.3907,-0.0924982) by 525.65 nm  (max of 46 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_hyp1_phys:9 (G4TessellatedSolid)
+          overlap at local point (0.00413407,-0.38074,-0.0937324) by 1.04283 um  (max of 26 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_Arcade_Cell_Ant_phys:16 (G4TessellatedSolid)
+          overlap at local point (0.00438718,-0.37908,-0.0937194) by 851.26 nm  (max of 21 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_AUAL_phys:328 (G4TessellatedSolid)
+          overlap at local point (0.00635485,-0.359158,-0.0962658) by 617.023 nm  (max of 61 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_IL1L_phys:343 (G4TessellatedSolid)
+          overlap at local point (0.00716755,-0.343947,-0.0992909) by 230.835 nm  (max of 11 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_GLRL_phys:349 (G4TessellatedSolid)
+          overlap at local point (0.00581802,-0.335601,-0.102512) by 436.449 nm  (max of 13 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_Excretory_Cell_phys:362 (G4TessellatedSolid)
+          overlap at local point (0.00776875,-0.349387,-0.0978142) by 2.43589 um  (max of 65 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_RIPR_phys:381 (G4TessellatedSolid)
+          overlap at local point (0.00153411,-0.395561,-0.0919531) by 163.141 nm  (max of 7 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_PVQL_phys:394 (G4TessellatedSolid)
+          overlap at local point (0.00576698,-0.32884,-0.104806) by 848.024 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_AVKL_phys:414 (G4TessellatedSolid)
+          overlap at local point (0.00576698,-0.32884,-0.104806) by 866.391 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_AVAL_phys:421 (G4TessellatedSolid)
+          overlap at local point (0.00556971,-0.329348,-0.104578) by 209.895 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_SAAVR_phys:428 (G4TessellatedSolid)
+          overlap at local point (0.00576698,-0.32884,-0.104806) by 883.968 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_URBL_phys:434 (G4TessellatedSolid)
+          overlap at local point (0.00559516,-0.334554,-0.1028) by 703.371 nm  (max of 67 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_ADAL_phys:435 (G4TessellatedSolid)
+          overlap at local point (0.00556971,-0.329348,-0.104578) by 679.489 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_AIYL_phys:461 (G4TessellatedSolid)
+          overlap at local point (0.00556971,-0.329348,-0.104578) by 679.489 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_SMDVR_phys:556 (G4TessellatedSolid)
+          overlap at local point (0.00576698,-0.32884,-0.104806) by 819.386 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_RMGL_phys:580 (G4TessellatedSolid)
+          overlap at local point (0.00576698,-0.32884,-0.104806) by 866.396 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_BAGL_phys:626 (G4TessellatedSolid)
+          overlap at local point (0.00601252,-0.338979,-0.101209) by 598.954 nm  (max of 27 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_FLPL_phys:629 (G4TessellatedSolid)
+          overlap at local point (0.000870401,-0.403098,-0.0916614) by 191.338 nm  (max of 12 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:692 (G4TessellatedSolid) with ow_ADLL_phys:630 (G4TessellatedSolid)
+          overlap at local point (0.00569457,-0.326167,-0.105451) by 496.021 nm  (max of 13 cases)
+NOTE: Reached maximum fixed number -20- of overlaps reports for this volume !
+Checking overlaps for volume ow_Cube_phys:693 (G4TessellatedSolid) ... OK! 
+[OPENWORM-VALIDATOR] overlap checks completed

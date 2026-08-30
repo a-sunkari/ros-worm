@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_core_priority_clearance.py", line 74, in <module>
+    r2 = trimesh.boolean.difference([r, cutter], engine="manifold")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 50, in difference
+    return _engines[engine](
+           ^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!
+[load] ExcretorySystem: watertight=True comps=2 faces=24842 vol=0.0011172443082277195
+[load] ReproductiveSystem: watertight=True comps=56 faces=234046 vol=0.16029046411034567
+[load] DigestiveSystem: watertight=True comps=28 faces=302874 vol=0.30867825569588436
+[load] BodyWallMuscle: watertight=True comps=91 faces=457976 vol=0.16628385085431918
+
+================ RESOLVE ExcretorySystem ================
+[out] /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls_clearance_5um/ExcretorySystem_resolved.stl
+[out] ExcretorySystem: watertight=True comps=2 faces=24842 vol=0.0011172443082277195 bounds=[[-0.28908309 -3.4165895  -0.44183168]
+ [ 0.27048662  4.03152514  0.57372147]]
+[inflate] ExcretorySystem: delta_model=0.05 watertight=True faces=24842 vol=0.25080828433376245
+
+================ RESOLVE ReproductiveSystem ================
+[diff] ReproductiveSystem -= inflated ExcretorySystem (5.0 um clearance)
+[post] ReproductiveSystem: watertight=False comps=58 faces=234746 vol=0.16025793305237723
+[out] /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls_clearance_5um/ReproductiveSystem_resolved.stl
+[out] ReproductiveSystem: watertight=False comps=58 faces=234746 vol=0.16025793305237723 bounds=[[-0.25488898 -2.26581001 -0.59728378]
+ [ 0.23849678  3.54050183  0.39012757]]
+[inflate] ReproductiveSystem: delta_model=0.05 watertight=False faces=234746 vol=1.023115021948615
+
+================ RESOLVE DigestiveSystem ================
+[diff] DigestiveSystem -= inflated ExcretorySystem (5.0 um clearance)
+[clean] DigestiveSystem_minus_ExcretorySystem: drop 130 degenerate faces
+[post] DigestiveSystem: watertight=False comps=485 faces=258174 vol=0.3046346039273211
+[diff] DigestiveSystem -= inflated ReproductiveSystem (5.0 um clearance)
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_core_priority_clearance.py", line 74, in <module>
+    r2 = trimesh.boolean.difference([r, cutter], engine="manifold")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 50, in difference
+    return _engines[engine](
+           ^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_core_priority_clearance.py", line 77, in <module>
+    raise RuntimeError(f"failed subtract inflated {cutter_name} from {name}")
+RuntimeError: failed subtract inflated ReproductiveSystem from DigestiveSystem

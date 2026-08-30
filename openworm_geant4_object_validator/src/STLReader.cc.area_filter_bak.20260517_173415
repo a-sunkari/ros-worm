@@ -1,0 +1,79 @@
+#include "STLReader.hh"
+#include <fstream>
+#include <stdexcept>
+#include <cstdint>
+#include <cmath>
+#include <iostream>
+
+static float read_f32(std::ifstream& in) {
+    float v;
+    in.read(reinterpret_cast<char*>(&v), sizeof(float));
+    return v;
+}
+
+static double tri_area2_mm2(const Tri3& t) {
+    const double ax = t.x1 - t.x0, ay = t.y1 - t.y0, az = t.z1 - t.z0;
+    const double bx = t.x2 - t.x0, by = t.y2 - t.y0, bz = t.z2 - t.z0;
+    const double cx = ay*bz - az*by;
+    const double cy = az*bx - ax*bz;
+    const double cz = ax*by - ay*bx;
+    return 0.25 * (cx*cx + cy*cy + cz*cz);
+}
+
+STLMesh ReadBinarySTL(const std::string& path, double minArea2) {
+    std::ifstream in(path, std::ios::binary);
+    if (!in) throw std::runtime_error("Cannot open STL: " + path);
+
+    char header[80];
+    in.read(header, 80);
+
+    uint32_t ntri = 0;
+    in.read(reinterpret_cast<char*>(&ntri), sizeof(uint32_t));
+    if (!in) throw std::runtime_error("Invalid binary STL header: " + path);
+
+    STLMesh mesh;
+    mesh.raw_triangles = ntri;
+    mesh.triangles.reserve(ntri);
+
+    for (uint32_t i = 0; i < ntri; ++i) {
+        // normal ignored
+        read_f32(in);
+        read_f32(in);
+        read_f32(in);
+
+        Tri3 t;
+        t.x0 = read_f32(in); t.y0 = read_f32(in); t.z0 = read_f32(in);
+        t.x1 = read_f32(in); t.y1 = read_f32(in); t.z1 = read_f32(in);
+        t.x2 = read_f32(in); t.y2 = read_f32(in); t.z2 = read_f32(in);
+
+        uint16_t attr;
+        in.read(reinterpret_cast<char*>(&attr), sizeof(uint16_t));
+        if (!in) throw std::runtime_error("Unexpected EOF in STL: " + path);
+
+        double a2 = tri_area2_mm2(t);
+        if (a2 <= minArea2) {
+            const double cx = (t.x0 + t.x1 + t.x2) / 3.0;
+            const double cy = (t.y0 + t.y1 + t.y2) / 3.0;
+            const double cz = (t.z0 + t.z1 + t.z2) / 3.0;
+
+            std::cerr
+                << "[STLReader][SKIP_DEGENERATE]"
+                << " path=" << path
+                << " tri_index=" << i
+                << " area2=" << a2
+                << " minArea2=" << minArea2
+                << " centroid=(" << cx << "," << cy << "," << cz << ")"
+                << " v0=(" << t.x0 << "," << t.y0 << "," << t.z0 << ")"
+                << " v1=(" << t.x1 << "," << t.y1 << "," << t.z1 << ")"
+                << " v2=(" << t.x2 << "," << t.y2 << "," << t.z2 << ")"
+                << std::endl;
+
+            mesh.skipped_degenerate++;
+            continue;
+        }
+
+        mesh.triangles.push_back(t);
+    }
+
+    return mesh;
+}

@@ -1,0 +1,47 @@
+#pragma once
+#include <G4VUserDetectorConstruction.hh>
+#include <G4ThreeVector.hh>
+#include <G4String.hh>
+#include <string>
+#include <vector>
+
+struct ObjectRecord {
+    std::string object_name;
+    std::string safe_name;
+    std::string category;
+    std::string stl_path;
+    double min_x=0, min_y=0, min_z=0;
+    double max_x=0, max_y=0, max_z=0;
+};
+
+struct ValidatorConfig {
+    std::string manifest;
+    double mmPerModelUnit = 0.1;       // Virtual Worm scale: 1 Blender unit ~= 100 um = 0.1 mm
+    double marginMM = 1.0;
+    int maxObjects = -1;
+    int overlapResolution = 1000;
+    double overlapToleranceMM = 0.0001; // 0.1 um
+    int overlapMaxErr = 20;
+    double minTriangleAreaMM2 = 1e-18;
+    bool checkOverlaps = true;
+    bool verboseLoad = true;
+    std::string geometryMode = "priority";
+    std::string exportPolyStlDir;
+    std::string exportPolyOnly;
+    std::vector<std::string> includeCategories;
+    std::vector<std::string> excludeNames;
+};
+
+class DetectorConstruction : public G4VUserDetectorConstruction {
+public:
+    explicit DetectorConstruction(ValidatorConfig cfg);
+    G4VPhysicalVolume* Construct() override;
+private:
+    ValidatorConfig cfg_;
+    std::vector<ObjectRecord> records_;
+    G4ThreeVector globalCenterModel_;
+    G4ThreeVector globalSpanModel_;
+
+    void LoadManifest();
+    bool KeepRecord(const ObjectRecord& r) const;
+};

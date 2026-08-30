@@ -1,0 +1,12 @@
+compartment,geometry_role,count
+hypodermis_shell,defer_physical,12
+exclude,exclude,1
+review,manual_review,16
+bodywall_muscle,physical_child_candidate,95
+digestive_system,physical_child_candidate,65
+excretory_system,physical_child_candidate,4
+reproductive_rectal_system,physical_child_candidate,139
+whole_body,physical_parent,1
+nervous_system,scoring_only,304
+support_sheath_socket,scoring_only,55
+nervous_system,scoring_only_problem_mesh,2

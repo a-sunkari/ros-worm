@@ -1,0 +1,8 @@
+SRC /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/DigestiveSystem_resolved.stl
+faces 306542 verts 152953 watertight True winding True vol 0.30803277650246974
+components 33
+keeping components 11 of 33
+decimation skipped: No module named 'fast_simplification'
+OUT /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/DigestiveSystem_resolved_simplified_test.stl
+faces 289694 verts 144485 watertight True winding True vol 0.2550630980859929
+manifest /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_simple_body_digestive_simplified_test_manifest.csv

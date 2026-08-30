@@ -1,0 +1,7 @@
+region_id,region_key,geant4_safe_name,description
+1,body,WholeBodyEnvelope,Whole-body/residual tissue envelope
+2,nervous,NervousSystem,OpenWorm-derived nervous system
+3,bodywall,BodyWallMuscle,Body wall muscle compartment
+4,digestive,DigestiveSystem,Digestive/intestine compartment
+5,reproductive,ReproductiveSystem,Reproductive system compartment
+6,excretory,ExcretorySystem,Excretory system compartment

@@ -1,0 +1,133 @@
+eah, exactly. I overcorrected into “follow Wu” when the real point is:
+
+Wu is evidence for one valid Geant4-ready reduction, not a prescription for our biology.
+
+They had a radiation-ecology dose-coefficient question. Their relevant targets were whole body, digestive system, reproductive system, and rest-of-body. That is why their model stops there. They were not trying to answer neuron-level ROS/radiomodulation. The paper explicitly says their adult model included the external contour plus digestive and reproductive internal surfaces, and their internal exposure model designates digestive/reproductive systems as source organs.
+
+So for us, the correct decision rule is not:
+
+What did Wu include?
+
+It is:
+
+Which anatomical structures materially affect transport, source terms, or scoring for our ROS/radiomodulation question?
+
+That gives a better methodology:
+
+The path I would actually commit to
+
+1. Physical transport mesh: keep it mesh-based, not voxel-first
+
+Use a cleaned mesh compartment model as the Geant4 physical geometry.
+
+Why? Because Wu argues mesh-type models are relevant at the C. elegans micron scale and can be more realistic/efficient than voxel models for Monte Carlo, and their implementation was explicitly mesh/remesh-based.
+
+So physical geometry should be a small-to-moderate set of non-overlapping mesh volumes.
+
+2. Compartment selection should be based on our scientific question
+
+For your ROS/neuron project, I would include more than Wu, but still not all 694 objects as material volumes.
+
+Physical material/source/target compartments
+
+Start with:
+
+whole body / body envelope
+digestive system: mouth/pharynx/intestine
+reproductive system
+body-wall muscle aggregate
+hypodermis / cuticle shell, if we can make the shell clean
+excretory system/canal, if clean enough
+nervous-system aggregate, maybe
+rest-of-body parent material
+
+That is not blindly copying Wu. It extends Wu to compartments that matter for radiomodulation.
+
+3. Neurons: two-tier handling, not “just ignore them”
+
+This is the key nuance.
+
+For transport material, individual neurons probably do not need to be separate physical volumes initially. Wu found water vs soft tissue changed results by only a few percent, and they even argue water is reasonable because it has better cross-section support and is useful for future Geant4-DNA-style modeling.
+
+But for biological scoring, neurons absolutely matter. So:
+
+individual neurons = scoring atlas
+nervous system aggregate = optional physical mesh compartment
+
+This means Geant4 can transport through:
+
+whole body / muscle / pharynx / intestine / nervous-system aggregate
+
+while the analysis still reports:
+
+dose/ROS near AVAL
+dose/ROS near AVAR
+dose/ROS near PVDL/PVDR
+dose/ROS near nerve ring
+
+That is a better compromise than either extreme.
+
+The specific answer to “what about structures they excluded?”
+
+They excluded most structures because their endpoint did not need them.
+
+For us:
+
+digestive/reproductive:
+    include because they are major compartments and useful literature match
+
+muscle:
+    include because radiomodulation/behavior and body-wall response matter
+
+hypodermis/cuticle:
+    include if we can model as shell/boundary; otherwise body envelope + scoring label
+
+excretory/canal:
+    include if clean and not too overlap-heavy; otherwise scoring/source label
+
+neurons:
+    include as scoring atlas immediately
+    optionally include nervous-system aggregate as physical compartment
+    only make selected individual neurons explicit physical volumes later if the physics demands it
+
+Why not all neurons as physical volumes?
+
+Not because it is impossible in principle. Because it likely adds little transport accuracy while adding huge geometry risk.
+
+At X-ray/electron energies relevant to dose/ROS, if the neuron material is basically water/soft tissue, the particle transport difference between “neuron material” and “surrounding soft tissue” is small compared to the uncertainty in geometry, source, ROS chemistry, and scoring.
+
+But neuron location is crucial. So preserve neuron location for scoring.
+
+Practical next step
+
+Before building anything, we should run compartment-only overlap tests using your repaired STLs:
+
+Test A: Wu baseline
+    whole body + digestive + reproductive
+
+Test B: Wu + muscle
+    whole body + digestive + reproductive + body-wall muscle aggregate
+
+Test C: Wu + muscle + hypodermis/cuticle
+    check whether shell logic is feasible
+
+Test D: nervous-system aggregate
+    test whether all neuron meshes can form an aggregate scoring/physical region
+
+Then choose the most detailed model that remains Geant4-stable.
+
+Final decision logic
+
+Use the most detailed physical mesh model that passes these tests:
+
+non-overlapping
+watertight
+visually anatomically sane
+Geant4 navigates without warnings
+does not require biologically destructive booleans
+
+Everything else stays in the scoring atlas.
+
+That is the non-flip-flop version:
+
+Mesh physical compartments, chosen by our ROS/neuron scientific question; full OpenWorm atlas preserved for scoring; voxelization only later for dose/ROS field visualization or chemistry grids, not the first physical geometry.

@@ -1,0 +1,20 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+[OPENWORM-VALIDATOR] manifest = /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/manifest_material_children_no_body.csv
+[OPENWORM-VALIDATOR] objects  = 303
+[OPENWORM-VALIDATOR] global center model = (-0.006,0.254935,-0.00137174)
+[OPENWORM-VALIDATOR] global span model   = (0.543019,7.50178,1.33581)
+[OPENWORM-VALIDATOR] mm/model-unit = 0.1
+[OPENWORM-VALIDATOR] world half size = 1.02715, 1.37509, 1.06679 mm
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Aggregate validator requires one WholeBodyEnvelope row with category_guess=whole_body_parent

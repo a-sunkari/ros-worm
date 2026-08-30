@@ -1,0 +1,53 @@
+/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+[load] ExcretorySystem: watertight=True faces=24842 vol=0.0011172443082277195
+[load] ReproductiveSystem: watertight=True faces=234046 vol=0.16029046411096867
+[load] DigestiveSystem: watertight=True faces=306542 vol=0.30803277650246974
+[load] BodyWallMuscle: watertight=True faces=465710 vol=0.16381172464465846
+
+=== PAIRWISE INTERSECTIONS ===
+
+--- ExcretorySystem ∩ ReproductiveSystem ---
+empty intersection
+
+--- ExcretorySystem ∩ DigestiveSystem ---
+faces: 33
+watertight: False
+components: 5
+volume: 4.1523726544833575e-14
+bounds: [[-0.0239873  -2.50359392  0.25027919]
+ [-0.0207939  -2.49904633  0.25168604]]
+
+--- ExcretorySystem ∩ BodyWallMuscle ---
+faces: 173
+watertight: False
+components: 31
+volume: 1.2061617020467693e-12
+bounds: [[-0.04012619 -2.68350863  0.26139835]
+ [-0.02709777 -2.63658857  0.28362781]]
+
+--- ReproductiveSystem ∩ DigestiveSystem ---
+faces: 4740
+watertight: False
+components: 790
+volume: 6.12374380081863e-11
+bounds: [[-0.15060776 -1.08427    -0.51410675]
+ [ 0.11488063  1.41184783  0.22680414]]
+
+--- ReproductiveSystem ∩ BodyWallMuscle ---
+faces: 10497
+watertight: False
+components: 2435
+volume: 2.521092327956165e-10
+bounds: [[-0.24136239 -1.28723741 -0.27548206]
+ [ 0.22194806  3.50921941  0.30337489]]
+
+--- DigestiveSystem ∩ BodyWallMuscle ---
+faces: 6051
+watertight: False
+components: 1075
+volume: 3.79016705173707e-10
+bounds: [[-0.22859338 -2.19930863 -0.55800211]
+ [ 0.16305937  3.95685649  0.45163587]]

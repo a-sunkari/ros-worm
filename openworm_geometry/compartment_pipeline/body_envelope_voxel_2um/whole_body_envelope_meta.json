@@ -1,0 +1,40 @@
+{
+  "manifest": "/home/asunkari/ros-worm/openworm_geometry/object_stls_repaired_meshfix_defective/openworm_object_stl_manifest_repaired.csv",
+  "sources": [
+    "Cuticle",
+    "hyp7"
+  ],
+  "voxel_um": 2.0,
+  "um_per_unit": 100.0,
+  "pitch_model_units": 0.02,
+  "dilation_iters": 1,
+  "closing_iters": 1,
+  "smooth_iters": 2,
+  "keep_largest": 1,
+  "output_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_voxel_2um/whole_body_envelope.stl",
+  "output_faces": 102832,
+  "output_vertices": 51418,
+  "output_watertight": true,
+  "output_volume": 2.092388,
+  "output_bounds_min": [
+    -0.33025942911096473,
+    -3.552790828314923,
+    -0.7505896116158286
+  ],
+  "output_bounds_max": [
+    0.3302594291109647,
+    4.652690548231776,
+    0.7305738886394069
+  ],
+  "output_extents": [
+    0.6605188582219295,
+    8.2054813765467,
+    1.4811635002552355
+  ],
+  "filled_matrix_shape": [
+    39,
+    416,
+    80
+  ],
+  "filled_voxels": 261767
+}

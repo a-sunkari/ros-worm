@@ -1,0 +1,18 @@
+22:[OPENWORM-VALIDATOR][FLAT_LOADED] 2 name=ExcretorySystem category=ExcretorySystem
+24:[OPENWORM-VALIDATOR][FLAT_LOADED] 3 name=ReproductiveSystem category=ReproductiveSystem
+26:[OPENWORM-VALIDATOR][FLAT_LOADED] 4 name=DigestiveSystem category=DigestiveSystem
+28:[OPENWORM-VALIDATOR][FLAT_LOADED] 5 name=BodyWallMuscle category=BodyWallMuscle
+29:[OPENWORM-VALIDATOR] loaded physical volumes = 5
+31:Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+32:Checking overlaps for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) ... 
+37:          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+47:          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+52:Checking overlaps for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) ... 
+57:          Overlap is detected for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+62:Checking overlaps for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) ... 
+67:          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+77:          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+82:Checking overlaps for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) ... 
+87:          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+97:          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+107:          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)

@@ -1,0 +1,15 @@
+/run/numberOfThreads 4
+
+/worm/geometry/wormMaterial water
+/worm/geometry/maxStep 1 um
+
+/worm/source/type focused
+/worm/source/spectrum mono
+/worm/source/energy 30 keV
+/worm/source/sourceZ 5 mm
+/worm/source/spotFWHM 0.05 mm
+
+/worm/scoring/saveSteps true
+
+/run/initialize
+/run/beamOn 10000

@@ -1,0 +1,2 @@
+object_name,safe_name,category_guess,stl_path
+WholeBodyEnvelope,WholeBodyEnvelope,whole_body_parent,/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill_inset05_largest_repaired/whole_body_envelope.stl

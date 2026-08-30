@@ -1,0 +1,22 @@
+20:[OPENWORM-VALIDATOR][AGGREGATE_LOADED] 1 name=WholeBodyEnvelope category=whole_body_parent members=1
+116:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=BodyWallMuscle members=95
+210:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=DigestiveSystem members=93
+217:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=ExcretorySystem members=6
+230:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=HypodermisSeam members=12
+507:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=NervousSystem members=276
+613:[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=ReproductiveSystem members=105
+614:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 2 name=NervousSystem members=276 subtractions=0
+615:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 3 name=ExcretorySystem members=6 subtractions=1
+616:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 4 name=ReproductiveSystem members=105 subtractions=2
+617:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 5 name=DigestiveSystem members=93 subtractions=3
+618:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 6 name=BodyWallMuscle members=95 subtractions=4
+619:[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 7 name=HypodermisSeam members=12 subtractions=5
+621:[OPENWORM-VALIDATOR] running CheckOverlaps on aggregate physical volumes...
+622:Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+623:Checking overlaps for volume ow_NervousSystem_phys:1 (G4MultiUnion) ... OK! 
+624:Checking overlaps for volume ow_ExcretorySystem_phys:2 (G4SubtractionSolid) ... OK! 
+625:Checking overlaps for volume ow_ReproductiveSystem_phys:3 (G4SubtractionSolid) ... OK! 
+626:Checking overlaps for volume ow_DigestiveSystem_phys:4 (G4SubtractionSolid) ... OK! 
+627:Checking overlaps for volume ow_BodyWallMuscle_phys:5 (G4SubtractionSolid) ... OK! 
+628:Checking overlaps for volume ow_HypodermisSeam_phys:6 (G4SubtractionSolid) ... OK! 
+629:[OPENWORM-VALIDATOR] overlap checks completed

@@ -1,0 +1,39 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+[OPENWORM-VALIDATOR] manifest = /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill_inset05_g4clean_area1e8/whole_body_parent_manifest.csv
+[OPENWORM-VALIDATOR] objects  = 1
+[OPENWORM-VALIDATOR] global center model = (-0.000835493,0.509081,-0.0100855)
+[OPENWORM-VALIDATOR] global span model   = (0.613179,8.23224,1.42234)
+[OPENWORM-VALIDATOR] mm/model-unit = 0.1
+[OPENWORM-VALIDATOR] world half size = 1.03066, 1.41161, 1.07112 mm
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomSolids1001
+      issued by : G4TessellatedSolid::SetSolidClosed()
+Defects in solid: ow_WholeBodyEnvelope_solid - there are holes in the surface!
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+[OPENWORM-VALIDATOR][LOADED] 1 name=WholeBodyEnvelope category=whole_body_parent raw_tri=22282 kept_tri=22281 skipped_deg=1
+[OPENWORM-VALIDATOR] loaded physical volumes = 1
+[OPENWORM-VALIDATOR] running CheckOverlaps on all placed object volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+[OPENWORM-VALIDATOR] overlap checks completed
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0

@@ -1,0 +1,41 @@
+{
+  "input_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset_tuned1/whole_body_envelope.stl",
+  "axis": "y",
+  "min_radius_um": 8.0,
+  "margin_um": 2.0,
+  "cuts": {
+    "high": 4.210532846450805
+  },
+  "repair_meta": {
+    "ran_meshfix": true,
+    "meshfix_error": null
+  },
+  "repair_meta2": {
+    "ran_meshfix": true,
+    "meshfix_error": null
+  },
+  "output": {
+    "stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset_tuned1_capped/whole_body_envelope.stl",
+    "vertices": 7541,
+    "faces": 15078,
+    "watertight": true,
+    "volume": 1.5885715091491814,
+    "bounds": [
+      [
+        -0.3055844894940842,
+        -3.6095397097833524,
+        -0.723756177277674
+      ],
+      [
+        0.30392229852482816,
+        4.237674195963574,
+        0.7035852246928955
+      ]
+    ],
+    "extents": [
+      0.6095067880189123,
+      7.847213905746926,
+      1.4273414019705695
+    ]
+  }
+}

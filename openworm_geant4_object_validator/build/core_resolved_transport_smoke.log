@@ -1,0 +1,19 @@
+Unknown argument: --run
+Usage:
+  ./openworm_validator --manifest /path/openworm_object_stl_manifest.csv [options]
+
+Options:
+  --mm-per-unit 0.1          model-unit to mm scale; Virtual Worm default 0.1
+  --max-objects N            load only first N kept objects
+  --res N                    CheckOverlaps resolution, default 1000
+  --tol-mm X                 CheckOverlaps tolerance in mm, default 0.0001
+  --maxerr N                 max overlap errors printed per volume, default 20
+  --no-check                 load objects but do not run CheckOverlaps
+  --include-categories a,b   only load manifest category_guess values listed
+  --exclude-names A,B        skip objects by object_name or safe_name
+  --quiet-load               suppress per-object MEMBER_LOADED lines
+  --vis                      open interactive Geant4 visualization
+  --macro /path/file.mac     execute a visualization/control macro
+  --export-gdml /path/out.gdml  write constructed Geant4 geometry to GDML
+  --read-gdml /path/in.gdml     read GDML geometry instead of manifest geometry
+  --geometry-mode priority|flat|flat_nervous_union  priority=MultiUnion/subtraction, flat=one row one solid

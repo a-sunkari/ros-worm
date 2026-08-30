@@ -1,0 +1,120 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+[OPENWORM-VALIDATOR] manifest = /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/core_resolved_flat_manifest.csv
+[OPENWORM-VALIDATOR] objects  = 5
+[OPENWORM-VALIDATOR] global center model = (-0.000835493,0.509081,-0.0100855)
+[OPENWORM-VALIDATOR] global span model   = (0.613179,8.23224,1.42234)
+[OPENWORM-VALIDATOR] mm/model-unit = 0.1
+[OPENWORM-VALIDATOR] world half size = 1.03066, 1.41161, 1.07112 mm
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=WholeBodyEnvelope category=whole_body_parent raw_tri=22282 kept_tri=22282 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_LOADED] 1 name=WholeBodyEnvelope category=whole_body_parent members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ExcretorySystem category=ExcretorySystem raw_tri=24842 kept_tri=24842 skipped_deg=0
+[OPENWORM-VALIDATOR][FLAT_LOADED] 2 name=ExcretorySystem category=ExcretorySystem
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ReproductiveSystem category=ReproductiveSystem raw_tri=234046 kept_tri=234046 skipped_deg=0
+[OPENWORM-VALIDATOR][FLAT_LOADED] 3 name=ReproductiveSystem category=ReproductiveSystem
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=DigestiveSystem category=DigestiveSystem raw_tri=306542 kept_tri=306542 skipped_deg=0
+[OPENWORM-VALIDATOR][FLAT_LOADED] 4 name=DigestiveSystem category=DigestiveSystem
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BodyWallMuscle category=BodyWallMuscle raw_tri=465710 kept_tri=465710 skipped_deg=0
+[OPENWORM-VALIDATOR][FLAT_LOADED] 5 name=BodyWallMuscle category=BodyWallMuscle
+[OPENWORM-VALIDATOR] loaded physical volumes = 5
+[OPENWORM-VALIDATOR] running CheckOverlaps on flat physical volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (0.0245078,-0.244406,0.00686811) by 10.4411 um  (max of 5 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (0.0114565,0.32918,0.00181719) by 9.58322 um  (max of 20 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (0.0111354,0.0481743,0.00833875) by 14.8819 um  (max of 67 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (0.000137703,-0.338206,0.0538532) by 11.3445 um  (max of 49 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (-0.00336149,0.00704887,-0.0121953) by 805.789 nm  (max of 4 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+Checking overlaps for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) ... 
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (-0.0172361,0.26107,-0.0162284) by 10.7827 um  (max of 10 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (0.0189746,-0.273436,0.0347691) by 10.2348 um  (max of 23 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+
+-------- WWWW ------- G4Exception-START -------- WWWW -------
+*** G4Exception : GeomVol1002
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (-0.00526036,-0.0297848,-0.0391024) by 22.3529 um  (max of 80 cases)
+*** This is just a warning message. ***
+-------- WWWW -------- G4Exception-END --------- WWWW -------
+
+[OPENWORM-VALIDATOR] overlap checks completed
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0

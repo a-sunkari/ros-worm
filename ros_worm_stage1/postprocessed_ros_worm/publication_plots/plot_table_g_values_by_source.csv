@@ -1,0 +1,61 @@
+source_geometry,region_label,species_label,mean_G
+Diffuse field,Body wall muscle,H•,0.7762188596106093
+Diffuse field,Body wall muscle,H₂,0.6998240302576448
+Diffuse field,Body wall muscle,H₂O₂,0.8996432168841783
+Diffuse field,Body wall muscle,e⁻aq,1.4985253330656794
+Diffuse field,Body wall muscle,•OH,1.4274887005731338
+Diffuse field,Digestive system,H•,0.7881894701197734
+Diffuse field,Digestive system,H₂,0.7234054628299711
+Diffuse field,Digestive system,H₂O₂,0.8853629654974351
+Diffuse field,Digestive system,e⁻aq,1.4211954045696897
+Diffuse field,Digestive system,•OH,1.463877022502608
+Diffuse field,Excretory system,H•,0.7560385256601108
+Diffuse field,Excretory system,H₂,0.776398629582735
+Diffuse field,Excretory system,H₂O₂,0.9192102156685702
+Diffuse field,Excretory system,e⁻aq,1.2272295021551272
+Diffuse field,Excretory system,•OH,1.234210109214313
+Diffuse field,Nervous system,H•,0.7634150910754359
+Diffuse field,Nervous system,H₂,0.7533503854955534
+Diffuse field,Nervous system,H₂O₂,0.9051566258758462
+Diffuse field,Nervous system,e⁻aq,1.3188266598402918
+Diffuse field,Nervous system,•OH,1.3606332149770917
+Diffuse field,Reproductive system,H•,0.7597995709500479
+Diffuse field,Reproductive system,H₂,0.6987534317111437
+Diffuse field,Reproductive system,H₂O₂,0.869047853923351
+Diffuse field,Reproductive system,e⁻aq,1.5532245223877603
+Diffuse field,Reproductive system,•OH,1.577008475625103
+Diffuse field,Residual body envelope,H•,0.7740206285529235
+Diffuse field,Residual body envelope,H₂,0.7483345910697565
+Diffuse field,Residual body envelope,H₂O₂,0.9248972694861994
+Diffuse field,Residual body envelope,e⁻aq,1.3751066444680562
+Diffuse field,Residual body envelope,•OH,1.3041812944190116
+Focused beam,Body wall muscle,H•,0.7480033705672505
+Focused beam,Body wall muscle,H₂,0.7499283887905404
+Focused beam,Body wall muscle,H₂O₂,0.9256772129755552
+Focused beam,Body wall muscle,e⁻aq,1.3772255825594006
+Focused beam,Body wall muscle,•OH,1.3425668607453014
+Focused beam,Digestive system,H•,0.7713423364855383
+Focused beam,Digestive system,H₂,0.7225366492562627
+Focused beam,Digestive system,H₂O₂,0.9256849293269371
+Focused beam,Digestive system,e⁻aq,1.4910182612780654
+Focused beam,Digestive system,•OH,1.4421831008954733
+Focused beam,Excretory system,H•,0.8246330215238054
+Focused beam,Excretory system,H₂,0.7312783398418649
+Focused beam,Excretory system,H₂O₂,1.026456952398095
+Focused beam,Excretory system,e⁻aq,1.5239040419318621
+Focused beam,Excretory system,•OH,1.1420389392424022
+Focused beam,Nervous system,H•,0.7941047486841647
+Focused beam,Nervous system,H₂,0.7034228696663103
+Focused beam,Nervous system,H₂O₂,0.8773289075069607
+Focused beam,Nervous system,e⁻aq,1.4685591888424943
+Focused beam,Nervous system,•OH,1.4804774971985175
+Focused beam,Reproductive system,H•,0.755259321688397
+Focused beam,Reproductive system,H₂,0.7165160525818827
+Focused beam,Reproductive system,H₂O₂,0.8665857126077632
+Focused beam,Reproductive system,e⁻aq,1.5123803173309351
+Focused beam,Reproductive system,•OH,1.5644468266058091
+Focused beam,Residual body envelope,H•,0.7663137879820107
+Focused beam,Residual body envelope,H₂,0.7505320209114191
+Focused beam,Residual body envelope,H₂O₂,0.9318463947450466
+Focused beam,Residual body envelope,e⁻aq,1.3886209744484086
+Focused beam,Residual body envelope,•OH,1.3100745897168966

@@ -1,0 +1,16 @@
+=== counts ===
+loaded objects: 1
+load errors: 0
+GeomSolids1001 small/narrow facets: 0
+GeomSolids1002 bad facet add: 0
+solid defects: 0
+overlap mentions: 3
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+
+=== overlap lines tail ===
+[OPENWORM-VALIDATOR] running CheckOverlaps on all placed object volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+[OPENWORM-VALIDATOR] overlap checks completed

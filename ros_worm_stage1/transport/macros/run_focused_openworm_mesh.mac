@@ -1,0 +1,21 @@
+# Focused X-ray transport through the imported OpenWorm/Virtual Worm outer-body STL.
+/run/numberOfThreads 8
+
+/worm/geometry/mode mesh
+/worm/geometry/meshFile geometry/openworm/worm_outer_openworm.stl
+/worm/geometry/meshTargetLength 1.0 mm
+/worm/geometry/useProxyROIs false
+/worm/geometry/wormMaterial soft
+/worm/geometry/maxStep 2 um
+
+/worm/source/type focused
+/worm/source/spectrum kramers
+/worm/source/kvp 50 keV
+/worm/source/minEnergy 1 keV
+/worm/source/sourceZ 50 mm
+/worm/source/spotFWHM 0.85 mm
+
+/worm/scoring/saveSteps true
+
+/run/initialize
+/run/beamOn 20000

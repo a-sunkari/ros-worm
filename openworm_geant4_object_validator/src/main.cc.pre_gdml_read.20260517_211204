@@ -1,0 +1,136 @@
+#include "DetectorConstruction.hh"
+
+#include <G4RunManagerFactory.hh>
+#include <G4UImanager.hh>
+#include <FTFP_BERT.hh>
+#include <G4VisExecutive.hh>
+#include <G4UIExecutive.hh>
+#include <G4ios.hh>
+#include <G4GDMLParser.hh>
+
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+static std::vector<std::string> split_list(const std::string& s) {
+    std::vector<std::string> out;
+    std::stringstream ss(s);
+    std::string x;
+    while (std::getline(ss, x, ',')) {
+        if (!x.empty()) out.push_back(x);
+    }
+    return out;
+}
+
+static void usage(const char* argv0) {
+    std::cerr << "Usage:\n"
+              << "  " << argv0 << " --manifest /path/openworm_object_stl_manifest.csv [options]\n\n"
+              << "Options:\n"
+              << "  --mm-per-unit 0.1          model-unit to mm scale; Virtual Worm default 0.1\n"
+              << "  --max-objects N            load only first N kept objects\n"
+              << "  --res N                    CheckOverlaps resolution, default 1000\n"
+              << "  --tol-mm X                 CheckOverlaps tolerance in mm, default 0.0001\n"
+              << "  --maxerr N                 max overlap errors printed per volume, default 20\n"
+              << "  --no-check                 load objects but do not run CheckOverlaps\n"
+              << "  --include-categories a,b   only load manifest category_guess values listed\n"
+              << "  --exclude-names A,B        skip objects by object_name or safe_name\n"
+              << "  --quiet-load               suppress per-object MEMBER_LOADED lines\n"
+              << "  --vis                      open interactive Geant4 visualization\n"
+              << "  --macro /path/file.mac     execute a visualization/control macro\n"
+              << "  --export-gdml /path/out.gdml  write constructed Geant4 geometry to GDML\n";
+}
+
+int main(int argc, char** argv) {
+    ValidatorConfig cfg;
+    bool visMode = false;
+    std::string macroPath;
+    std::string exportGdmlPath;
+
+    for (int i = 1; i < argc; ++i) {
+        std::string a = argv[i];
+
+        auto need = [&](const char* name) -> std::string {
+            if (i + 1 >= argc) {
+                usage(argv[0]);
+                std::exit(2);
+            }
+            return argv[++i];
+        };
+
+        if (a == "--manifest") cfg.manifest = need("--manifest");
+        else if (a == "--mm-per-unit") cfg.mmPerModelUnit = std::stod(need("--mm-per-unit"));
+        else if (a == "--max-objects") cfg.maxObjects = std::stoi(need("--max-objects"));
+        else if (a == "--res") cfg.overlapResolution = std::stoi(need("--res"));
+        else if (a == "--tol-mm") cfg.overlapToleranceMM = std::stod(need("--tol-mm"));
+        else if (a == "--maxerr") cfg.overlapMaxErr = std::stoi(need("--maxerr"));
+        else if (a == "--no-check") cfg.checkOverlaps = false;
+        else if (a == "--include-categories") cfg.includeCategories = split_list(need("--include-categories"));
+        else if (a == "--exclude-names") cfg.excludeNames = split_list(need("--exclude-names"));
+        else if (a == "--quiet-load") cfg.verboseLoad = false;
+        else if (a == "--vis") visMode = true;
+        else if (a == "--macro") macroPath = need("--macro");
+        else if (a == "--export-gdml") exportGdmlPath = need("--export-gdml");
+        else if (a == "--help" || a == "-h") {
+            usage(argv[0]);
+            return 0;
+        } else {
+            std::cerr << "Unknown argument: " << a << "\n";
+            usage(argv[0]);
+            return 2;
+        }
+    }
+
+    if (cfg.manifest.empty()) {
+        usage(argv[0]);
+        return 2;
+    }
+
+    auto* runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::SerialOnly);
+    runManager->SetUserInitialization(new DetectorConstruction(cfg));
+    runManager->SetUserInitialization(new FTFP_BERT);
+    runManager->Initialize();
+
+    if (!exportGdmlPath.empty()) {
+        G4GDMLParser parser;
+        parser.SetOverlapCheck(false);
+        parser.Write(G4String(exportGdmlPath), static_cast<const G4VPhysicalVolume*>(nullptr), true);
+        G4cout << "[OPENWORM-VALIDATOR][GDML_EXPORTED] " << exportGdmlPath << G4endl;
+    }
+
+    auto* uiManager = G4UImanager::GetUIpointer();
+
+    G4VisManager* visManager = nullptr;
+    G4UIExecutive* ui = nullptr;
+
+    if (visMode || !macroPath.empty()) {
+        visManager = new G4VisExecutive;
+        visManager->Initialize();
+
+        if (!macroPath.empty()) {
+            uiManager->ApplyCommand("/control/execute " + macroPath);
+        }
+
+        if (visMode) {
+            ui = new G4UIExecutive(argc, argv);
+
+            G4cout << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] Interactive UI started." << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] No geometry has been drawn yet." << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] Try commands manually:" << G4endl;
+            G4cout << "  /vis/open OGLSX" << G4endl;
+            G4cout << "  /vis/drawVolume" << G4endl;
+            G4cout << "  /vis/viewer/set/style wireframe" << G4endl;
+            G4cout << "  /vis/viewer/flush" << G4endl;
+            G4cout << G4endl;
+
+            ui->SessionStart();
+            delete ui;
+        }
+
+        delete visManager;
+    }
+
+    delete runManager;
+    return 0;
+}

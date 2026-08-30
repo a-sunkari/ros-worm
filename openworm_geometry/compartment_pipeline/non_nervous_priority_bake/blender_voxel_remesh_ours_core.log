@@ -1,0 +1,58 @@
+[KEEP] whole_body_parent /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_simple_safe_body_envelope_ellipsoid.stl
+[REMESH_BEGIN] ExcretorySystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/ExcretorySystem_resolved.stl
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+[EXPORT_TRY] bpy.ops.wm.stl_export /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ExcretorySystem_voxel_0.020.stl
+[EXPORT_FALLBACK] wm.stl_export failed: AttributeError('Calling operator "bpy.ops.wm.stl_export" error, could not be found')
+[ENABLE_ADDON] io_mesh_stl
+[EXPORT_TRY] bpy.ops.export_mesh.stl /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ExcretorySystem_voxel_0.020.stl
+[WROTE] ExcretorySystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ExcretorySystem_voxel_0.020.stl
+[REMESH_BEGIN] ReproductiveSystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/ReproductiveSystem_resolved.stl
+Info: Removed 3 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+[EXPORT_TRY] bpy.ops.wm.stl_export /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ReproductiveSystem_voxel_0.020.stl
+[EXPORT_FALLBACK] wm.stl_export failed: AttributeError('Calling operator "bpy.ops.wm.stl_export" error, could not be found')
+[ENABLE_ADDON] io_mesh_stl
+[EXPORT_TRY] bpy.ops.export_mesh.stl /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ReproductiveSystem_voxel_0.020.stl
+[WROTE] ReproductiveSystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/ReproductiveSystem_voxel_0.020.stl
+[REMESH_BEGIN] DigestiveSystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/DigestiveSystem_resolved.stl
+Info: Removed 49 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+[EXPORT_TRY] bpy.ops.wm.stl_export /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/DigestiveSystem_voxel_0.020.stl
+[EXPORT_FALLBACK] wm.stl_export failed: AttributeError('Calling operator "bpy.ops.wm.stl_export" error, could not be found')
+[ENABLE_ADDON] io_mesh_stl
+[EXPORT_TRY] bpy.ops.export_mesh.stl /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/DigestiveSystem_voxel_0.020.stl
+[WROTE] DigestiveSystem /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/DigestiveSystem_voxel_0.020.stl
+[REMESH_BEGIN] BodyWallMuscle /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/BodyWallMuscle_resolved.stl
+Info: Removed 4 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed 0 vertice(s)
+Info: Removed: 0 vertices, 0 edges, 0 faces
+[EXPORT_TRY] bpy.ops.wm.stl_export /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/BodyWallMuscle_voxel_0.020.stl
+[EXPORT_FALLBACK] wm.stl_export failed: AttributeError('Calling operator "bpy.ops.wm.stl_export" error, could not be found')
+[ENABLE_ADDON] io_mesh_stl
+[EXPORT_TRY] bpy.ops.export_mesh.stl /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/BodyWallMuscle_voxel_0.020.stl
+[WROTE] BodyWallMuscle /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/BodyWallMuscle_voxel_0.020.stl
+[MANIFEST] /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/debug_core_simple_body_voxel_remesh_children_manifest.csv
+Blender 4.0.2
+Read prefs: "/home/asunkari/.config/blender/4.0/config/userpref.blend"
+Timer 'STL Import' took 3.5 ms
+Timer 'STL Import' took 42.4 ms
+Timer 'STL Import' took 61.1 ms
+Timer 'STL Import' took 93.7 ms
+
+Blender quit

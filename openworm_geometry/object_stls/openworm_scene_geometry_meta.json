@@ -1,0 +1,20 @@
+{
+  "object_count": 694,
+  "global_min": [
+    -1.0135931968688965,
+    -3.527811050415039,
+    -0.7171018123626709
+  ],
+  "global_max": [
+    1.0135931968688965,
+    4.625528812408447,
+    3.7216670513153076
+  ],
+  "global_span": [
+    2.027186393737793,
+    8.153339385986328,
+    4.4387688636779785
+  ],
+  "degenerate_area_eps_model_units2": 1e-18,
+  "notes": "STLs are exported in Blender world/model coordinates. Do not recenter each STL independently in Geant4; use one common global center/scale for all objects."
+}

@@ -1,0 +1,2 @@
+object_name,stl_path,role,source_objects
+WholeBodyEnvelope,/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset_tuned1/whole_body_envelope.stl,whole_body_parent_envelope,Cuticle

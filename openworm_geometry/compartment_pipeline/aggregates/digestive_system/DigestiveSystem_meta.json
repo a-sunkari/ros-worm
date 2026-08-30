@@ -1,0 +1,10 @@
+{
+  "name": "DigestiveSystem",
+  "sources_csv": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/aggregate_sources/digestive_sources.csv",
+  "source_count": 93,
+  "imported_count": 93,
+  "boolean_failures": [],
+  "out_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/aggregates/digestive_system/DigestiveSystem.stl",
+  "vertices": 114746,
+  "faces": 216747
+}

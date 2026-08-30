@@ -1,0 +1,23 @@
+# Debug run using the OpenWorm/Virtual Worm STL outer-body mesh.
+# This first mesh-mode test disables internal proxy ROIs so we validate
+# Geant4 navigation through the imported outer-body solid before adding
+# anatomy/region daughter volumes.
+/run/numberOfThreads 4
+
+/worm/geometry/mode mesh
+/worm/geometry/meshFile geometry/openworm/worm_outer_openworm.stl
+/worm/geometry/meshTargetLength 1.0 mm
+/worm/geometry/useProxyROIs false
+/worm/geometry/wormMaterial soft
+/worm/geometry/maxStep 1 um
+
+/worm/source/type focused
+/worm/source/spectrum mono
+/worm/source/energy 30 keV
+/worm/source/sourceZ 5 mm
+/worm/source/spotFWHM 0.05 mm
+
+/worm/scoring/saveSteps true
+
+/run/initialize
+/run/beamOn 10000

@@ -1,0 +1,11 @@
+source_geometry,region_label,fraction_of_deposited_energy,sd_fraction,percent_of_deposited_energy
+Diffuse field,Body wall muscle,0.0206441820985508,0.0,2.06441820985508
+Diffuse field,Digestive system,0.01302002490624035,5.833934627330699e-17,1.302002490624035
+Diffuse field,Excretory system,0.0017844476452068,0.0,0.17844476452068
+Diffuse field,Nervous system,0.0088406535086654,0.0,0.88406535086654
+Diffuse field,Reproductive system,0.0253852930306501,0.0,2.53852930306501
+Focused beam,Body wall muscle,0.0157149522650645,0.0,1.57149522650645
+Focused beam,Digestive system,0.0308076098964703,0.0,3.08076098964703
+Focused beam,Excretory system,0.0004262337123137,0.0,0.04262337123137
+Focused beam,Nervous system,0.0314258416850448,0.0,3.14258416850448
+Focused beam,Reproductive system,0.011018536815827,0.0,1.1018536815827

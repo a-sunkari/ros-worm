@@ -1,0 +1,322 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+[OPENWORM-VALIDATOR] manifest = /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/baked_hybrid_flat_except_nervous_members.csv
+[OPENWORM-VALIDATOR] objects  = 282
+[OPENWORM-VALIDATOR] global center model = (-0.000835493,0.509081,-0.0100855)
+[OPENWORM-VALIDATOR] global span model   = (0.613179,8.23224,1.42234)
+[OPENWORM-VALIDATOR] mm/model-unit = 0.1
+[OPENWORM-VALIDATOR] world half size = 1.03066, 1.41161, 1.07112 mm
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=WholeBodyEnvelope category=whole_body_parent raw_tri=22282 kept_tri=22282 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_LOADED] 1 name=WholeBodyEnvelope category=whole_body_parent members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BodyWallMuscle category=BodyWallMuscle raw_tri=457976 kept_tri=457976 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=BodyWallMuscle members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=DigestiveSystem category=DigestiveSystem raw_tri=302874 kept_tri=302874 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=DigestiveSystem members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ExcretorySystem category=ExcretorySystem raw_tri=24842 kept_tri=24842 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=ExcretorySystem members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=HypodermisSeam category=HypodermisSeam raw_tri=226574 kept_tri=226574 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=HypodermisSeam members=1
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=du category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ALNR category=NervousSystem raw_tri=5824 kept_tri=5824 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PLNR category=NervousSystem raw_tri=6848 kept_tri=6848 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URYVR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AUAR category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PLNL category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ALNL category=NervousSystem raw_tri=5824 kept_tri=5824 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URYDR category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ALA category=NervousSystem raw_tri=9984 kept_tri=9984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AUAL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URYDL category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URYVL category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQVR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1VR category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1R category=NervousSystem raw_tri=3648 kept_tri=3648 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=NSMR category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=MCR category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=MCL category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQDR category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=NSML category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1DR category=NervousSystem raw_tri=756 kept_tri=756 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVL category=NervousSystem raw_tri=8384 kept_tri=8384 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1DL category=NervousSystem raw_tri=756 kept_tri=756 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1VL category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL1L category=NervousSystem raw_tri=3648 kept_tri=3648 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQDL category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQVL category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRVR category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRDR category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRR category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRL category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRDL category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=GLRVL category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccDR category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccDL category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccPL category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccAL category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccAR category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ccPR category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=Head_Mesodermal_Cell category=NervousSystem raw_tri=4864 kept_tri=4864 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=virR category=NervousSystem raw_tri=832 kept_tri=832 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=virL category=NervousSystem raw_tri=832 kept_tri=832 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIAVR category=NervousSystem raw_tri=6464 kept_tri=6464 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SDQR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SDQL category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BDUR category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVNR category=NervousSystem raw_tri=10560 kept_tri=10560 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVWR category=NervousSystem raw_tri=2112 kept_tri=2112 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVCR category=NervousSystem raw_tri=7744 kept_tri=7744 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=LUAR category=NervousSystem raw_tri=1838 kept_tri=1838 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVPL category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIPR category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URBR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIBR category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADAR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=MI category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVNL category=NervousSystem raw_tri=12480 kept_tri=12480 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVCL category=NervousSystem raw_tri=7488 kept_tri=7488 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVQL category=NervousSystem raw_tri=8128 kept_tri=8128 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=DVC category=NervousSystem raw_tri=7182 kept_tri=7182 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=DVA category=NervousSystem raw_tri=6926 kept_tri=6926 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVT category=NervousSystem raw_tri=7616 kept_tri=7616 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVPR category=NervousSystem raw_tri=6336 kept_tri=6336 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVWL category=NervousSystem raw_tri=2112 kept_tri=2112 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=LUAL category=NervousSystem raw_tri=1838 kept_tri=1838 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVQR category=NervousSystem raw_tri=8000 kept_tri=8000 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BDUL category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIVR category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVJR category=NervousSystem raw_tri=7360 kept_tri=7360 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RICR category=NervousSystem raw_tri=2318 kept_tri=2318 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIBVR category=NervousSystem raw_tri=5774 kept_tri=5774 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIADR category=NervousSystem raw_tri=4494 kept_tri=4494 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIAR category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SAADL category=NervousSystem raw_tri=2958 kept_tri=2958 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIBR category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVKR category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVKL category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVFL category=NervousSystem raw_tri=8384 kept_tri=8384 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVFR category=NervousSystem raw_tri=8512 kept_tri=8512 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVAR category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVBR category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVDL category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVBL category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVAL category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVDR category=NervousSystem raw_tri=6158 kept_tri=6158 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SAADR category=NervousSystem raw_tri=2958 kept_tri=2958 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIR category=NervousSystem raw_tri=3392 kept_tri=3392 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIBDR category=NervousSystem raw_tri=4110 kept_tri=4110 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVER category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIAR category=NervousSystem raw_tri=3392 kept_tri=3392 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SAAVR category=NervousSystem raw_tri=4800 kept_tri=4800 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AINR category=NervousSystem raw_tri=1166 kept_tri=1166 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVHR category=NervousSystem raw_tri=7360 kept_tri=7360 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URXR category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIS category=NervousSystem raw_tri=1934 kept_tri=1934 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIPL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URBL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADAL category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RID category=NervousSystem raw_tri=9152 kept_tri=9152 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URXL category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIVL category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVHL category=NervousSystem raw_tri=7360 kept_tri=7360 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVJL category=NervousSystem raw_tri=7488 kept_tri=7488 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AINL category=NervousSystem raw_tri=1166 kept_tri=1166 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SAAVL category=NervousSystem raw_tri=4800 kept_tri=4800 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIAL category=NervousSystem raw_tri=3392 kept_tri=3392 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVEL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIBDL category=NervousSystem raw_tri=4110 kept_tri=4110 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIBL category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIZL category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RICL category=NervousSystem raw_tri=2318 kept_tri=2318 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIYR category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIMR category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIBL category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIGL category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SABD category=NervousSystem raw_tri=5312 kept_tri=5312 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVG category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIFL category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIGR category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIFR category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SABVR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SABVL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIML category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIYL category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIADL category=NervousSystem raw_tri=4494 kept_tri=4494 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AIAL category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIAVL category=NervousSystem raw_tri=6464 kept_tri=6464 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SIBVL category=NervousSystem raw_tri=5774 kept_tri=5774 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIH category=NervousSystem raw_tri=4032 kept_tri=4032 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=HSNR category=NervousSystem raw_tri=5952 kept_tri=5952 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URAVR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=M3R category=NervousSystem raw_tri=3776 kept_tri=3776 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=M2R category=NervousSystem raw_tri=2112 kept_tri=2112 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=DVB category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PDA category=NervousSystem raw_tri=3520 kept_tri=3520 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PDB category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=HSNL category=NervousSystem raw_tri=5952 kept_tri=5952 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=M2L category=NervousSystem raw_tri=2112 kept_tri=2112 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=M3L category=NervousSystem raw_tri=3776 kept_tri=3776 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMBVR category=NervousSystem raw_tri=7360 kept_tri=7360 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMFR category=NervousSystem raw_tri=3520 kept_tri=3520 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMGR category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URADR category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMER category=NervousSystem raw_tri=2268 kept_tri=2268 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMHR category=NervousSystem raw_tri=3520 kept_tri=3520 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMBDR category=NervousSystem raw_tri=5952 kept_tri=5952 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMDDR category=NervousSystem raw_tri=6080 kept_tri=6080 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDDR category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDR category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDVR category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMDVR category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIMR category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMED category=NervousSystem raw_tri=3968 kept_tri=3968 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMEL category=NervousSystem raw_tri=2268 kept_tri=2268 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMEV category=NervousSystem raw_tri=8384 kept_tri=8384 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMDVL category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDVL category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDL category=NervousSystem raw_tri=2240 kept_tri=2240 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RIML category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMFL category=NervousSystem raw_tri=3520 kept_tri=3520 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMBDL category=NervousSystem raw_tri=5952 kept_tri=5952 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMDDL category=NervousSystem raw_tri=6080 kept_tri=6080 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMHL category=NervousSystem raw_tri=3520 kept_tri=3520 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMDDL category=NervousSystem raw_tri=1984 kept_tri=1984 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=RMGL category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URAVL category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=URADL category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=SMBVL category=NervousSystem raw_tri=7360 kept_tri=7360 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVM category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVDR category=NervousSystem raw_tri=217226 kept_tri=217226 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PDER category=NervousSystem raw_tri=6720 kept_tri=6720 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AVM category=NervousSystem raw_tri=5312 kept_tri=5312 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ALMR category=NervousSystem raw_tri=4032 kept_tri=4032 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVR category=NervousSystem raw_tri=9664 kept_tri=9664 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PLMR category=NervousSystem raw_tri=5696 kept_tri=5696 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHCR category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHBR category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PVDL category=NervousSystem raw_tri=217902 kept_tri=217902 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2VR category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=FLPR category=NervousSystem raw_tri=6080 kept_tri=6080 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BAGR category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2R category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWCR category=NervousSystem raw_tri=4928 kept_tri=4928 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWBR category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWAR category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASKR category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASIR category=NervousSystem raw_tri=4928 kept_tri=4928 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASER category=NervousSystem raw_tri=5568 kept_tri=5568 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASHR category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADLR category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADFR category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADER category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PQR category=NervousSystem raw_tri=3008 kept_tri=3008 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHCL category=NervousSystem raw_tri=3136 kept_tri=3136 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHBL category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHAL category=NervousSystem raw_tri=2496 kept_tri=2496 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PLML category=NervousSystem raw_tri=5696 kept_tri=5696 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PDEL category=NervousSystem raw_tri=6592 kept_tri=6592 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ALML category=NervousSystem raw_tri=4032 kept_tri=4032 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2VL category=NervousSystem raw_tri=2624 kept_tri=2624 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPDR category=NervousSystem raw_tri=4032 kept_tri=4032 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASGR category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLR category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2DR category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AFDR category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPVR category=NervousSystem raw_tri=3648 kept_tri=3648 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASJR category=NervousSystem raw_tri=4800 kept_tri=4800 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AQR category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2DL category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=BAGL category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPVL category=NervousSystem raw_tri=3648 kept_tri=3648 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADEL category=NervousSystem raw_tri=4160 kept_tri=4160 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=FLPL category=NervousSystem raw_tri=6080 kept_tri=6080 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADLL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASHL category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWBL category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AFDL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADFL category=NervousSystem raw_tri=4416 kept_tri=4416 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASEL category=NervousSystem raw_tri=5568 kept_tri=5568 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWCL category=NervousSystem raw_tri=4928 kept_tri=4928 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASJL category=NervousSystem raw_tri=4800 kept_tri=4800 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPDL category=NervousSystem raw_tri=4032 kept_tri=4032 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASIL category=NervousSystem raw_tri=4928 kept_tri=4928 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASKL category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ASGL category=NervousSystem raw_tri=3904 kept_tri=3904 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AWAL category=NervousSystem raw_tri=4544 kept_tri=4544 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLL category=NervousSystem raw_tri=4672 kept_tri=4672 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=IL2L category=NervousSystem raw_tri=2752 kept_tri=2752 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQsoVR category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoVR category=NervousSystem raw_tri=960 kept_tri=960 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=XXXR category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLsoR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoR category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AMsoR category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHso1R category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHso2R category=NervousSystem raw_tri=1472 kept_tri=1472 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHso2L category=NervousSystem raw_tri=1472 kept_tri=1472 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHso1L category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADEsoL category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AMsoL category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoDR category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADEsoR category=NervousSystem raw_tri=1920 kept_tri=1920 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPsoVR category=NervousSystem raw_tri=1472 kept_tri=1472 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPsoDR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQsoDR category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoVL category=NervousSystem raw_tri=960 kept_tri=960 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQsoVL category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoL category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILsoDL category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQsoDL category=NervousSystem raw_tri=1088 kept_tri=1088 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=XXXL category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLsoL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPsoDL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPsoVL category=NervousSystem raw_tri=1472 kept_tri=1472 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQshVR category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshVR category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLshR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshR category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AMshR category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHshR category=NervousSystem raw_tri=960 kept_tri=960 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=PHshL category=NervousSystem raw_tri=960 kept_tri=960 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQshDR category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPshVR category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPshDR category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshDR category=NervousSystem raw_tri=1344 kept_tri=1344 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADEshR category=NervousSystem raw_tri=3200 kept_tri=3200 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ADEshL category=NervousSystem raw_tri=2176 kept_tri=2176 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshVL category=NervousSystem raw_tri=1216 kept_tri=1216 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshDL category=NervousSystem raw_tri=1344 kept_tri=1344 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQshDL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ILshL category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLQshVL category=NervousSystem raw_tri=1856 kept_tri=1856 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=OLLshL category=NervousSystem raw_tri=1728 kept_tri=1728 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPshDL category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=CEPshVL category=NervousSystem raw_tri=3264 kept_tri=3264 skipped_deg=0
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=AMshL category=NervousSystem raw_tri=2880 kept_tri=2880 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=NervousSystem members=276
+[OPENWORM-VALIDATOR][MEMBER_LOADED] name=ReproductiveSystem category=ReproductiveSystem raw_tri=234046 kept_tri=234046 skipped_deg=0
+[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT] name=ReproductiveSystem members=1
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 2 name=NervousSystem members=276 subtractions=0
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 3 name=ExcretorySystem members=1 subtractions=1
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 4 name=ReproductiveSystem members=1 subtractions=2
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 5 name=DigestiveSystem members=1 subtractions=3
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 6 name=BodyWallMuscle members=1 subtractions=4
+[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] 7 name=HypodermisSeam members=1 subtractions=5
+[OPENWORM-VALIDATOR] loaded physical volumes = 7
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0

@@ -1,0 +1,12 @@
+{
+  "input_manifest": "/home/asunkari/ros-worm/openworm_geometry/object_stls/openworm_object_stl_manifest.csv",
+  "output_manifest": "/home/asunkari/ros-worm/openworm_geometry/object_stls_clean_conservative/openworm_object_stl_manifest_cleaned.csv",
+  "output_stl_dir": "/home/asunkari/ros-worm/openworm_geometry/object_stls_clean_conservative/stl",
+  "object_count": 694,
+  "error_count": 0,
+  "merge_distance": 1e-06,
+  "degenerate_threshold": 1e-07,
+  "fill_holes_max_sides": 0,
+  "elapsed_seconds": 49.03512144088745,
+  "notes": "Cleaned STLs preserve world/model coordinates. Use the cleaned manifest in the Geant4 validator. Do not recenter STLs independently."
+}

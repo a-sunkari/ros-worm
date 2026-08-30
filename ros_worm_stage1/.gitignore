@@ -1,0 +1,23 @@
+# Build dirs
+build/
+*/build/
+
+# Generated results
+results/
+*.root
+*.out
+*.dat
+*.log
+Species.txt
+output*.root
+electron_spectrum.csv
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Editor/OS
+.DS_Store
+*.swp

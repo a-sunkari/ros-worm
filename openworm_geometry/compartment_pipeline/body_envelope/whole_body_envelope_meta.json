@@ -1,0 +1,79 @@
+{
+  "output_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope/whole_body_envelope.stl",
+  "sources": [
+    {
+      "name": "Cuticle",
+      "path": "/home/asunkari/ros-worm/openworm_geometry/object_stls_repaired_meshfix_defective/stl/Cuticle.stl",
+      "verts": 96288,
+      "faces": 32096,
+      "bounds": [
+        [
+          -0.3074254095554352,
+          -3.527811050415039,
+          -0.7171018123626709
+        ],
+        [
+          0.3057541251182556,
+          4.625528812408447,
+          0.6913139820098877
+        ]
+      ],
+      "watertight": false,
+      "volume": 0.10902066824752309
+    },
+    {
+      "name": "hyp7",
+      "path": "/home/asunkari/ros-worm/openworm_geometry/object_stls_repaired_meshfix_defective/stl/hyp7.stl",
+      "verts": 346224,
+      "faces": 115408,
+      "bounds": [
+        [
+          -0.28922805190086365,
+          -3.3659322261810303,
+          -0.7076897621154785
+        ],
+        [
+          0.28723761439323425,
+          4.060296058654785,
+          0.6868475675582886
+        ]
+      ],
+      "watertight": false,
+      "volume": 0.23666954318356734
+    }
+  ],
+  "ny": 300,
+  "ntheta": 128,
+  "percentile": 99.5,
+  "radial_pad_model_units": 0.0,
+  "smooth_theta": 5,
+  "smooth_y": 7,
+  "envelope_vertices": 38402,
+  "envelope_faces": 76800,
+  "envelope_watertight": true,
+  "envelope_volume": 1.415440519197581,
+  "envelope_bounds": [
+    [
+      -0.29003126182193467,
+      -3.5304744747702284,
+      -0.7062934336077564
+    ],
+    [
+      0.28769374687737875,
+      4.628192236763636,
+      0.6777418066235621
+    ]
+  ],
+  "source_point_bounds": [
+    [
+      -0.3074254095554352,
+      -3.527811050415039,
+      -0.7171018123626709
+    ],
+    [
+      0.3057541251182556,
+      4.625528812408447,
+      0.6913139820098877
+    ]
+  ]
+}

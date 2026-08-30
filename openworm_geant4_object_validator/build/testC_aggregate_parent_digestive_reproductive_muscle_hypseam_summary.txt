@@ -1,0 +1,64 @@
+=== counts ===
+loaded objects: 0
+load errors: 0
+GeomSolids1001 small/narrow facets: 0
+GeomSolids1002 bad facet add: 0
+solid defects: 0
+overlap mentions: 51
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+
+=== overlap lines tail ===
+[OPENWORM-VALIDATOR] running CheckOverlaps on aggregate physical volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume ow_BodyWallMuscle_phys:1 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:1 (G4MultiUnion) with ow_DigestiveSystem_phys:2 (G4MultiUnion)
+          overlap at local point (0.0110942,0.273603,0.00174761) by 492.932 nm  (max of 6 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:1 (G4MultiUnion) with ow_HypodermisSeam_phys:3 (G4MultiUnion)
+          overlap at local point (0.00981195,-0.113197,-0.0197517) by 851.212 nm  (max of 71 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:1 (G4MultiUnion) with ow_ReproductiveSystem_phys:4 (G4MultiUnion)
+          overlap at local point (-0.00724432,0.0391098,0.00446771) by 1.01644 um  (max of 14 cases)
+Checking overlaps for volume ow_DigestiveSystem_phys:2 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:2 (G4MultiUnion) with ow_BodyWallMuscle_phys:1 (G4MultiUnion)
+          overlap at local point (-0.00151759,0.0029067,-0.0143422) by 13.5994 um  (max of 26 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:2 (G4MultiUnion) with ow_HypodermisSeam_phys:3 (G4MultiUnion)
+          overlap at local point (-0.00217469,0.356901,0.00812353) by 2.73445 um  (max of 15 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:2 (G4MultiUnion) with ow_ReproductiveSystem_phys:4 (G4MultiUnion)
+          overlap at local point (0.00516673,0.000334715,-0.0173799) by 222.564 nm  (max of 6 cases)
+Checking overlaps for volume ow_HypodermisSeam_phys:3 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:3 (G4MultiUnion) with ow_BodyWallMuscle_phys:1 (G4MultiUnion)
+          overlap at local point (0.00184439,-0.380165,0.0649664) by 1.43943 um  (max of 37 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:3 (G4MultiUnion) with ow_DigestiveSystem_phys:2 (G4MultiUnion)
+          overlap at local point (0.0047156,-0.375614,0.0570484) by 1.20932 um  (max of 18 cases)
+Checking overlaps for volume ow_ReproductiveSystem_phys:4 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:4 (G4MultiUnion) with ow_BodyWallMuscle_phys:1 (G4MultiUnion)
+          overlap at local point (-0.00167836,0.000511325,-0.0158102) by 15.3224 um  (max of 14 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:4 (G4MultiUnion) with ow_DigestiveSystem_phys:2 (G4MultiUnion)
+          overlap at local point (-0.00282578,0.0821348,0.0214962) by 1.10938 um  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:4 (G4MultiUnion) with ow_HypodermisSeam_phys:3 (G4MultiUnion)
+          overlap at local point (0.00330884,0.0185546,-0.0114613) by 458.5 nm  (max of 2 cases)
+[OPENWORM-VALIDATOR] overlap checks completed

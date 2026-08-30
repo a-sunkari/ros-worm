@@ -1,0 +1,10 @@
+{
+  "name": "ReproductiveSystem",
+  "sources_csv": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/aggregate_sources/reproductive_sources.csv",
+  "source_count": 105,
+  "imported_count": 105,
+  "boolean_failures": [],
+  "out_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/aggregates/reproductive_system/ReproductiveSystem.stl",
+  "vertices": 113560,
+  "faces": 217356
+}

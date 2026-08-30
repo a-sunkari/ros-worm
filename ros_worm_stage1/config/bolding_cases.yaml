@@ -1,0 +1,35 @@
+cases:
+  focused_1Gy_s_10s:
+    description: Focused 50 kVp-like X-ray, approximates acute focused stimulation.
+    source_type: focused
+    spectrum_type: kramers
+    kvp_keV: 50
+    min_energy_keV: 1
+    spot_fwhm_mm: 0.85
+    source_y_mm: -2.0
+    beam_on: 100000
+    target_dose_rate_Gy_s: 1.0
+    pulse_s: 10.0
+  focused_0p5Gy_s_10s:
+    description: Focused 50 kVp-like X-ray at 0.5 Gy/s.
+    source_type: focused
+    spectrum_type: kramers
+    kvp_keV: 50
+    min_energy_keV: 1
+    spot_fwhm_mm: 0.85
+    source_y_mm: -2.0
+    beam_on: 100000
+    target_dose_rate_Gy_s: 0.5
+    pulse_s: 10.0
+  diffuse_0p74Gy_s_20s:
+    description: Diffuse Mini-X-like broad exposure at 0.74 Gy/s.
+    source_type: diffuse
+    spectrum_type: kramers
+    kvp_keV: 50
+    min_energy_keV: 1
+    source_y_mm: -2.0
+    half_x_mm: 0.6
+    half_z_mm: 0.6
+    beam_on: 100000
+    target_dose_rate_Gy_s: 0.74
+    pulse_s: 20.0

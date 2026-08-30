@@ -1,0 +1,12 @@
+Blender 4.0.2
+Read prefs: "/home/asunkari/.config/blender/4.0/config/userpref.blend"
+STL Importer: 7 duplicate triangles were removed
+[IMPORT] /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed: 0 vertices, 0 edges, 0 faces
+Info: Removed: 0 vertices, 0 edges, 0 faces
+[EXPORT_FALLBACK] wm.stl_export failed: AttributeError('Calling operator "bpy.ops.wm.stl_export" error, could not be found')
+[WROTE] /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/voxel_remesh_nervous/NervousSystem_baked_union_voxel_0.030.stl
+Timer 'STL Import' took 376.6 ms
+
+Blender quit

@@ -1,0 +1,94 @@
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_non_nervous_priority.py", line 95, in <module>
+    rest = trimesh.boolean.difference([body] + cutters, engine="manifold")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 50, in difference
+    return _engines[engine](
+           ^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!
+
+[load] WholeBodyEnvelope: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill_inset05_g4clean_area1e8/whole_body_envelope.stl
+[load] WholeBodyEnvelope: watertight=True comps=1 faces=22282 vol=1.6225293495311872
+[load] WholeBodyEnvelope: bounds=[[-0.30742499 -3.60704088 -0.72125602]
+ [ 0.30575401  4.62520218  0.70108497]]
+
+[load] ExcretorySystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/ExcretorySystem_baked_union.stl
+[load] ExcretorySystem: watertight=True comps=2 faces=24842 vol=0.0011172443082277195
+[load] ExcretorySystem: bounds=[[-0.28908309 -3.4165895  -0.44183168]
+ [ 0.27048662  4.03152514  0.57372147]]
+
+[load] ReproductiveSystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/ReproductiveSystem_baked_union.stl
+[load] ReproductiveSystem: watertight=True comps=56 faces=234046 vol=0.16029046411034567
+[load] ReproductiveSystem: bounds=[[-0.25759962 -2.26581001 -0.59728378]
+ [ 0.24523976  3.54050183  0.39012757]]
+
+[load] DigestiveSystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/DigestiveSystem_baked_union.stl
+[load] DigestiveSystem: watertight=True comps=28 faces=302874 vol=0.30867825569588436
+[load] DigestiveSystem: bounds=[[-0.23001705 -3.49595499 -0.5805428 ]
+ [ 0.20054521  4.23271227  0.62344301]]
+
+[load] BodyWallMuscle: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/BodyWallMuscle_baked_union.stl
+[load] BodyWallMuscle: watertight=True comps=91 faces=457976 vol=0.16628385085431918
+[load] BodyWallMuscle: bounds=[[-0.247784   -3.36856985 -0.66927838]
+ [ 0.23701622  3.98336506  0.66653502]]
+
+[load] HypodermisSeam: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/HypodermisSeam_concat.stl
+[load] HypodermisSeam: watertight=True comps=12 faces=226574 vol=0.2526391415033429
+[load] HypodermisSeam: bounds=[[-0.2943739  -3.52776384 -0.70768976]
+ [ 0.29336384  4.61990738  0.68684757]]
+
+================ RESOLVING ExcretorySystem ================
+[out] ExcretorySystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/ExcretorySystem_resolved.stl
+[out] ExcretorySystem: watertight=True comps=2 faces=24842 vol=0.0011172443082277195
+[out] ExcretorySystem: bounds=[[-0.28908309 -3.4165895  -0.44183168]
+ [ 0.27048662  4.03152514  0.57372147]]
+
+================ RESOLVING ReproductiveSystem ================
+[diff] ReproductiveSystem: subtracting 1 higher-priority resolved meshes
+[out] ReproductiveSystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/ReproductiveSystem_resolved.stl
+[out] ReproductiveSystem: watertight=True comps=56 faces=234046 vol=0.16029046411096867
+[out] ReproductiveSystem: bounds=[[-0.25759962 -2.26581001 -0.59728378]
+ [ 0.24523976  3.54050183  0.39012757]]
+
+================ RESOLVING DigestiveSystem ================
+[diff] DigestiveSystem: subtracting 2 higher-priority resolved meshes
+[out] DigestiveSystem: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/DigestiveSystem_resolved.stl
+[out] DigestiveSystem: watertight=True comps=33 faces=306542 vol=0.30803277650246974
+[out] DigestiveSystem: bounds=[[-0.23001705 -3.49595499 -0.5805428 ]
+ [ 0.20054521  4.23271227  0.62344301]]
+
+================ RESOLVING BodyWallMuscle ================
+[diff] BodyWallMuscle: subtracting 3 higher-priority resolved meshes
+[out] BodyWallMuscle: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/BodyWallMuscle_resolved.stl
+[out] BodyWallMuscle: watertight=True comps=99 faces=465710 vol=0.16381172464465846
+[out] BodyWallMuscle: bounds=[[-0.247784   -3.36856985 -0.66927838]
+ [ 0.23701622  3.98336506  0.66653502]]
+
+================ RESOLVING HypodermisSeam ================
+[diff] HypodermisSeam: subtracting 4 higher-priority resolved meshes
+[clean] HypodermisSeam_resolved: dropping 96 degenerate faces
+[out] HypodermisSeam: /home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/resolved_stls/HypodermisSeam_resolved.stl
+[out] HypodermisSeam: watertight=False comps=5204 faces=324768 vol=0.24828504092862602
+[out] HypodermisSeam: bounds=[[-0.2943739  -3.52776384 -0.70768976]
+ [ 0.29336384  4.61990738  0.68684757]]
+
+================ RESOLVING RestOfBody ================
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_non_nervous_priority.py", line 95, in <module>
+    rest = trimesh.boolean.difference([body] + cutters, engine="manifold")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 50, in difference
+    return _engines[engine](
+           ^^^^^^^^^^^^^^^^^
+  File "/home/asunkari/miniconda3/envs/ros/lib/python3.11/site-packages/trimesh/boolean.py", line 142, in boolean_manifold
+    raise ValueError("Not all meshes are volumes!")
+ValueError: Not all meshes are volumes!
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/bake_non_nervous_priority.py", line 98, in <module>
+    raise RuntimeError("boolean difference failed for RestOfBody")
+RuntimeError: boolean difference failed for RestOfBody

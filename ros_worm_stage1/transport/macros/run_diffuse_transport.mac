@@ -1,0 +1,21 @@
+# Part 1: realistic transport model for Cannon/Bolding diffuse Mini-X-like setup.
+# Output: output0.root with regional dose and optional electron step source data.
+
+/run/numberOfThreads 8
+
+/worm/geometry/wormMaterial soft
+/worm/geometry/wormLength 1.0 mm
+/worm/geometry/wormRadius 40 um
+/worm/geometry/maxStep 2 um
+
+/worm/source/type diffuse
+/worm/source/spectrum kramers
+/worm/source/kvp 20 keV
+/worm/source/minEnergy 1 keV
+/worm/source/sourceZ 10 mm
+/worm/source/coneHalfAngle 60 deg
+
+/worm/scoring/saveSteps true
+
+/run/initialize
+/run/beamOn 20000

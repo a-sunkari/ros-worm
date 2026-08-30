@@ -1,0 +1,7 @@
+geometries: ['Reproductive_system', 'Reproductive_system_1', 'Reproductive_system_2']
+Reproductive_system faces 24488 verts 45239 watertight False winding True euler 10357 components 10394 volume 0.003323105809239593 bounds [[-0.039123 -0.499839 -0.091974]
+ [ 0.03934   0.50016   0.088675]] wrote split_adult_stls/Reproductive_system.stl
+Reproductive_system_1 faces 10236 verts 19239 watertight False winding True euler 4500 components 4505 volume 0.0007292241095824501 bounds [[-0.025367 -0.45919  -0.073057]
+ [ 0.029328  0.498305  0.081123]] wrote split_adult_stls/Reproductive_system_1.stl
+Reproductive_system_2 faces 24476 verts 44148 watertight False winding True euler 9906 components 9958 volume 0.0005032969411012932 bounds [[-0.030164 -0.405151 -0.077927]
+ [ 0.032248  0.340999  0.048757]] wrote split_adult_stls/Reproductive_system_2.stl

@@ -1,0 +1,13 @@
+source_geometry,region_label,n_secondaries,mean_keV,median_keV
+Diffuse field,Body wall muscle,8.0,4.520518215719054,4.222943200799553
+Diffuse field,Digestive system,4.0,4.377250497583491,4.208070625533766
+Diffuse field,Excretory system,1.0,2.5091238214387013,2.5091238214387013
+Diffuse field,Nervous system,3.0,3.514666359026874,3.28188590501662
+Diffuse field,Reproductive system,6.0,7.070446021288007,7.169323540000873
+Diffuse field,Residual body envelope,471.0,2.9412074447501104,2.224712534464094
+Focused beam,Body wall muscle,12.0,3.317898367351752,3.0078045306519523
+Focused beam,Digestive system,17.0,4.743535540058397,4.6044172856556544
+Focused beam,Excretory system,1.0,0.7319335332218561,0.7319335332218561
+Focused beam,Nervous system,10.0,5.455523839951923,4.719036548496556
+Focused beam,Reproductive system,5.0,6.027791951791786,7.153558521125227
+Focused beam,Residual body envelope,833.0,2.919692091737756,2.174659293405696

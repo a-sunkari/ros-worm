@@ -1,0 +1,216 @@
+#include "DetectorConstruction.hh"
+#include "PrimaryGeneratorAction.hh"
+#include "TrackingSmokeSteppingAction.hh"
+#include "SmokeActionInitialization.hh"
+
+#include <G4RunManagerFactory.hh>
+#include <G4UImanager.hh>
+#include <FTFP_BERT.hh>
+#include <G4VisExecutive.hh>
+#include <G4UIExecutive.hh>
+#include <G4ios.hh>
+#include <G4GDMLParser.hh>
+
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+
+static std::vector<std::string> split_list(const std::string& s) {
+    std::vector<std::string> out;
+    std::stringstream ss(s);
+    std::string x;
+    while (std::getline(ss, x, ',')) {
+        if (!x.empty()) out.push_back(x);
+    }
+    return out;
+}
+
+
+class GDMLDetectorConstruction final : public G4VUserDetectorConstruction {
+public:
+    explicit GDMLDetectorConstruction(G4VPhysicalVolume* world) : world_(world) {}
+
+    G4VPhysicalVolume* Construct() override {
+        return world_;
+    }
+
+private:
+    G4VPhysicalVolume* world_ = nullptr;
+};
+
+static G4ThreeVector parse_vec3(const std::string& s) {
+    std::stringstream ss(s);
+    std::string a, b, c;
+    if (!std::getline(ss, a, ',') || !std::getline(ss, b, ',') || !std::getline(ss, c, ',')) {
+        throw std::runtime_error("Expected vector format x,y,z but got: " + s);
+    }
+    return G4ThreeVector(std::stod(a), std::stod(b), std::stod(c));
+}
+
+static void usage(const char* argv0) {
+    std::cerr << "Usage:\n"
+              << "  " << argv0 << " --manifest /path/openworm_object_stl_manifest.csv [options]\n\n"
+              << "Options:\n"
+              << "  --mm-per-unit 0.1          model-unit to mm scale; Virtual Worm default 0.1\n"
+              << "  --max-objects N            load only first N kept objects\n"
+              << "  --res N                    CheckOverlaps resolution, default 1000\n"
+              << "  --tol-mm X                 CheckOverlaps tolerance in mm, default 0.0001\n"
+              << "  --maxerr N                 max overlap errors printed per volume, default 20\n"
+              << "  --no-check                 load objects but do not run CheckOverlaps\n"
+              << "  --include-categories a,b   only load manifest category_guess values listed\n"
+              << "  --exclude-names A,B        skip objects by object_name or safe_name\n"
+              << "  --quiet-load               suppress per-object MEMBER_LOADED lines\n"
+              << "  --vis                      open interactive Geant4 visualization\n"
+              << "  --smoke-run N              run N smoke-test primaries through geometry\n"
+              << "  --smoke-particle NAME      gamma, e-, proton, etc. default gamma\n"
+              << "  --smoke-energy-keV X       primary energy in keV, default 100\n"
+              << "  --smoke-source-y-um Y      source Y in um, default -650\n"
+              << "  --smoke-half-x-um X        source half-width X in um, default 120\n"
+              << "  --smoke-half-z-um Z        source half-width Z in um, default 120\n"
+              << "  --smoke-seed N             smoke source RNG seed\n"
+              << "  --macro /path/file.mac     execute a visualization/control macro\n"
+              << "  --export-gdml /path/out.gdml  write constructed Geant4 geometry to GDML\n"
+              << "  --read-gdml /path/in.gdml     read GDML geometry instead of manifest geometry\n"
+              << "  --geometry-mode priority|flat|flat_nervous_union  priority=MultiUnion/subtraction, flat=one row one solid\n";
+}
+
+int main(int argc, char** argv) {
+    ValidatorConfig cfg;
+    bool visMode = false;
+    std::string macroPath;
+    std::string exportGdmlPath;
+    std::string readGdmlPath;
+
+    for (int i = 1; i < argc; ++i) {
+        std::string a = argv[i];
+
+        auto need = [&](const char* name) -> std::string {
+            if (i + 1 >= argc) {
+                usage(argv[0]);
+                std::exit(2);
+            }
+            return argv[++i];
+        };
+
+        if (a == "--manifest") cfg.manifest = need("--manifest");
+        else if (a == "--mm-per-unit") cfg.mmPerModelUnit = std::stod(need("--mm-per-unit"));
+        else if (a == "--max-objects") cfg.maxObjects = std::stoi(need("--max-objects"));
+        else if (a == "--res") cfg.overlapResolution = std::stoi(need("--res"));
+        else if (a == "--tol-mm") cfg.overlapToleranceMM = std::stod(need("--tol-mm"));
+        else if (a == "--maxerr") cfg.overlapMaxErr = std::stoi(need("--maxerr"));
+        else if (a == "--no-check") cfg.checkOverlaps = false;
+        else if (a == "--include-categories") cfg.includeCategories = split_list(need("--include-categories"));
+        else if (a == "--exclude-names") cfg.excludeNames = split_list(need("--exclude-names"));
+        else if (a == "--quiet-load") cfg.verboseLoad = false;
+        else if (a == "--beam-on") cfg.beamOn = std::stoi(need("--beam-on"));
+        else if (a == "--particle") cfg.particleName = need("--particle");
+        else if (a == "--energy-mev") cfg.energyMeV = std::stod(need("--energy-mev"));
+        else if (a == "--src-mm") cfg.sourcePosMM = parse_vec3(need("--src-mm"));
+        else if (a == "--dir") cfg.sourceDir = parse_vec3(need("--dir"));
+        else if (a == "--vis") visMode = true;
+        else if (a == "--macro") macroPath = need("--macro");
+        else if (a == "--smoke-run") cfg.smokeRunCount = std::stoi(need("--smoke-run"));
+        else if (a == "--smoke-particle") cfg.smokeParticle = need("--smoke-particle");
+        else if (a == "--smoke-energy-keV") cfg.smokeEnergyKeV = std::stod(need("--smoke-energy-keV"));
+        else if (a == "--smoke-source-y-um") cfg.smokeSourceYUm = std::stod(need("--smoke-source-y-um"));
+        else if (a == "--smoke-half-x-um") cfg.smokeHalfXUm = std::stod(need("--smoke-half-x-um"));
+        else if (a == "--smoke-half-z-um") cfg.smokeHalfZUm = std::stod(need("--smoke-half-z-um"));
+        else if (a == "--smoke-seed") cfg.smokeSeed = static_cast<unsigned>(std::stoul(need("--smoke-seed")));
+        else if (a == "--export-gdml") exportGdmlPath = need("--export-gdml");
+        else if (a == "--read-gdml") readGdmlPath = need("--read-gdml");
+        else if (a == "--geometry-mode") cfg.geometryMode = need("--geometry-mode");
+        else if (a == "--export-poly-stl-dir") cfg.exportPolyStlDir = need("--export-poly-stl-dir");
+        else if (a == "--export-poly-only") cfg.exportPolyOnly = need("--export-poly-only");
+        else if (a == "--nav-probe") cfg.navProbeCount = std::stoi(need("--nav-probe"));
+        else if (a == "--nav-step-um") cfg.navProbeStepUm = std::stod(need("--nav-step-um"));
+        else if (a == "--nav-seed") cfg.navProbeSeed = static_cast<unsigned>(std::stoul(need("--nav-seed")));
+        else if (a == "--help" || a == "-h") {
+            usage(argv[0]);
+            return 0;
+        } else {
+            std::cerr << "Unknown argument: " << a << "\n";
+            usage(argv[0]);
+            return 2;
+        }
+    }
+
+    if (cfg.manifest.empty() && readGdmlPath.empty()) {
+        usage(argv[0]);
+        return 2;
+    }
+
+    auto* runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::SerialOnly);
+
+    G4GDMLParser readParser;
+
+    if (!readGdmlPath.empty()) {
+        readParser.Read(readGdmlPath, false);
+        auto* gdmlWorld = readParser.GetWorldVolume();
+        if (!gdmlWorld) {
+            G4cerr << "[OPENWORM-VALIDATOR][GDML_READ_ERROR] no world volume in " << readGdmlPath << G4endl;
+            return 3;
+        }
+
+        runManager->SetUserInitialization(new GDMLDetectorConstruction(gdmlWorld));
+        runManager->SetUserInitialization(new FTFP_BERT);
+    } else {
+        runManager->SetUserInitialization(new DetectorConstruction(cfg));
+        runManager->SetUserInitialization(new FTFP_BERT);
+    }
+
+    if (cfg.smokeRunCount > 0) {
+        runManager->SetUserInitialization(new SmokeActionInitialization(cfg));
+    }
+
+    runManager->Initialize();
+
+    if (!exportGdmlPath.empty()) {
+        G4GDMLParser parser;
+        parser.SetOverlapCheck(false);
+        parser.Write(G4String(exportGdmlPath), static_cast<const G4VPhysicalVolume*>(nullptr), true);
+        G4cout << "[OPENWORM-VALIDATOR][GDML_EXPORTED] " << exportGdmlPath << G4endl;
+    }
+
+    if (cfg.smokeRunCount > 0) {
+        G4cout << "[OPENWORM-VALIDATOR][SMOKE_BEAMON] events=" << cfg.smokeRunCount << G4endl;
+        runManager->BeamOn(cfg.smokeRunCount);
+    }
+
+    auto* uiManager = G4UImanager::GetUIpointer();
+
+    G4VisManager* visManager = nullptr;
+    G4UIExecutive* ui = nullptr;
+
+    if (visMode || !macroPath.empty()) {
+        visManager = new G4VisExecutive;
+        visManager->Initialize();
+
+        if (!macroPath.empty()) {
+            uiManager->ApplyCommand("/control/execute " + macroPath);
+        }
+
+        if (visMode) {
+            ui = new G4UIExecutive(argc, argv);
+
+            G4cout << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] Interactive UI started." << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] No geometry has been drawn yet." << G4endl;
+            G4cout << "[OPENWORM-VALIDATOR][VIS] Try commands manually:" << G4endl;
+            G4cout << "  /vis/open OGLSX" << G4endl;
+            G4cout << "  /vis/drawVolume" << G4endl;
+            G4cout << "  /vis/viewer/set/style wireframe" << G4endl;
+            G4cout << "  /vis/viewer/flush" << G4endl;
+            G4cout << G4endl;
+
+            ui->SessionStart();
+            delete ui;
+        }
+
+        delete visManager;
+    }
+
+    delete runManager;
+    return 0;
+}

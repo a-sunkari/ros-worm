@@ -1,0 +1,30 @@
+{
+  "method": "cuticle_shell_boolean_union_with_inset_filler_v2",
+  "cuticle_stl": "/home/asunkari/ros-worm/openworm_geometry/object_stls_repaired_meshfix_defective/stl/Cuticle.stl",
+  "filler_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_surface_offset_tuned1_capped/whole_body_envelope.stl",
+  "out_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill/whole_body_envelope.stl",
+  "inset_um": 2.0,
+  "unit_um": 100.0,
+  "merge_distance_um": 0.05,
+  "boolean_solver": "EXACT",
+  "final_mesh_stats_blender": {
+    "vertices": 26462,
+    "edges": 73621,
+    "polygons": 47141,
+    "dimensions": [
+      0.6131795644760132,
+      8.226749420166016,
+      1.4106875658035278
+    ],
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

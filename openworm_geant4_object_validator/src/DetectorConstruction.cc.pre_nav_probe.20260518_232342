@@ -1,0 +1,850 @@
+#include "DetectorConstruction.hh"
+#include <G4Polyhedron.hh>
+#include <filesystem>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+#include <array>
+#include <cmath>
+
+#include "STLReader.hh"
+
+#include <G4Box.hh>
+#include <G4LogicalVolume.hh>
+#include <G4Material.hh>
+#include <G4NistManager.hh>
+#include <G4PVPlacement.hh>
+#include <G4SystemOfUnits.hh>
+#include <G4TessellatedSolid.hh>
+#include <G4TriangularFacet.hh>
+#include <G4ThreeVector.hh>
+#include <G4VisAttributes.hh>
+#include <G4Colour.hh>
+#include <G4ios.hh>
+#include <G4MultiUnion.hh>
+#include <G4Transform3D.hh>
+#include <G4VSolid.hh>
+#include <G4SubtractionSolid.hh>
+
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
+#include <algorithm>
+#include <limits>
+#include <set>
+#include <map>
+#include <vector>
+#include <string>
+
+static std::vector<std::string> split_csv_line(const std::string& line) {
+    std::vector<std::string> out;
+    std::string cur;
+    bool inq = false;
+    for (char c : line) {
+        if (c == '"') { inq = !inq; continue; }
+        if (c == ',' && !inq) { out.push_back(cur); cur.clear(); }
+        else cur.push_back(c);
+    }
+    out.push_back(cur);
+    return out;
+}
+
+static int col_index(const std::vector<std::string>& h, const std::string& key) {
+    for (int i=0; i<(int)h.size(); ++i) {
+        if (h[i] == key) return i;
+    }
+    return -1;
+}
+
+DetectorConstruction::DetectorConstruction(ValidatorConfig cfg) : cfg_(std::move(cfg)) {}
+
+void DetectorConstruction::LoadManifest() {
+    std::ifstream f(cfg_.manifest);
+    if (!f) throw std::runtime_error("Cannot open manifest: " + cfg_.manifest);
+
+    std::string line;
+    if (!std::getline(f, line)) throw std::runtime_error("Empty manifest: " + cfg_.manifest);
+
+    auto h = split_csv_line(line);
+
+    const int i_obj  = col_index(h, "object_name");
+    const int i_safe = col_index(h, "safe_name");
+    const int i_cat  = col_index(h, "category_guess");
+    const int i_path = col_index(h, "stl_path");
+    const int i_minx = col_index(h, "min_x");
+    const int i_miny = col_index(h, "min_y");
+    const int i_minz = col_index(h, "min_z");
+    const int i_maxx = col_index(h, "max_x");
+    const int i_maxy = col_index(h, "max_y");
+    const int i_maxz = col_index(h, "max_z");
+
+    if (i_obj<0 || i_safe<0 || i_cat<0 || i_path<0 ||
+        i_minx<0 || i_miny<0 || i_minz<0 || i_maxx<0 || i_maxy<0 || i_maxz<0) {
+        throw std::runtime_error("Manifest missing required columns");
+    }
+
+    double gminx = std::numeric_limits<double>::infinity();
+    double gminy = gminx;
+    double gminz = gminx;
+    double gmaxx = -gminx;
+    double gmaxy = -gminx;
+    double gmaxz = -gminx;
+
+    while (std::getline(f, line)) {
+        if (line.empty()) continue;
+
+        auto c = split_csv_line(line);
+        if ((int)c.size() <= std::max({i_obj,i_safe,i_cat,i_path,i_minx,i_miny,i_minz,i_maxx,i_maxy,i_maxz})) {
+            continue;
+        }
+
+        ObjectRecord r;
+        r.object_name = c[i_obj];
+        r.safe_name   = c[i_safe];
+        r.category    = c[i_cat];
+        r.stl_path    = c[i_path];
+
+        r.min_x = std::stod(c[i_minx]);
+        r.min_y = std::stod(c[i_miny]);
+        r.min_z = std::stod(c[i_minz]);
+        r.max_x = std::stod(c[i_maxx]);
+        r.max_y = std::stod(c[i_maxy]);
+        r.max_z = std::stod(c[i_maxz]);
+
+        if (!KeepRecord(r)) continue;
+
+        records_.push_back(r);
+
+        gminx = std::min(gminx, r.min_x);
+        gminy = std::min(gminy, r.min_y);
+        gminz = std::min(gminz, r.min_z);
+        gmaxx = std::max(gmaxx, r.max_x);
+        gmaxy = std::max(gmaxy, r.max_y);
+        gmaxz = std::max(gmaxz, r.max_z);
+
+        if (cfg_.maxObjects > 0 && (int)records_.size() >= cfg_.maxObjects) break;
+    }
+
+    if (records_.empty()) throw std::runtime_error("No objects left after filters");
+
+    globalCenterModel_ = G4ThreeVector(
+        (gminx + gmaxx) / 2.0,
+        (gminy + gmaxy) / 2.0,
+        (gminz + gmaxz) / 2.0
+    );
+
+    globalSpanModel_ = G4ThreeVector(
+        (gmaxx - gminx),
+        (gmaxy - gminy),
+        (gmaxz - gminz)
+    );
+}
+
+bool DetectorConstruction::KeepRecord(const ObjectRecord& r) const {
+    for (const auto& ex : cfg_.excludeNames) {
+        if (r.object_name == ex || r.safe_name == ex) return false;
+    }
+
+    if (!cfg_.includeCategories.empty()) {
+        for (const auto& cat : cfg_.includeCategories) {
+            if (r.category == cat) return true;
+        }
+        return false;
+    }
+
+    return true;
+}
+
+
+
+static std::string SafeFileStem(const std::string& in) {
+    std::string out;
+    out.reserve(in.size());
+    for (char c : in) {
+        if ((c >= 'a' && c <= 'z') ||
+            (c >= 'A' && c <= 'Z') ||
+            (c >= '0' && c <= '9') ||
+            c == '_' || c == '-' || c == '.') {
+            out.push_back(c);
+        } else {
+            out.push_back('_');
+        }
+    }
+    return out.empty() ? std::string("unnamed") : out;
+}
+
+static std::array<double, 3> ToModelCoords(
+    const G4Point3D& p,
+    const ValidatorConfig& cfg,
+    const G4ThreeVector& globalCenterModel
+) {
+    return {
+        (p.x() / mm) / cfg.mmPerModelUnit + globalCenterModel.x(),
+        (p.y() / mm) / cfg.mmPerModelUnit + globalCenterModel.y(),
+        (p.z() / mm) / cfg.mmPerModelUnit + globalCenterModel.z()
+    };
+}
+
+static std::array<double, 3> NormalOf(
+    const std::array<double, 3>& a,
+    const std::array<double, 3>& b,
+    const std::array<double, 3>& c
+) {
+    const double ux = b[0] - a[0], uy = b[1] - a[1], uz = b[2] - a[2];
+    const double vx = c[0] - a[0], vy = c[1] - a[1], vz = c[2] - a[2];
+
+    std::array<double, 3> n = {
+        uy * vz - uz * vy,
+        uz * vx - ux * vz,
+        ux * vy - uy * vx
+    };
+
+    const double mag = std::sqrt(n[0]*n[0] + n[1]*n[1] + n[2]*n[2]);
+    if (mag > 0.0) {
+        n[0] /= mag;
+        n[1] /= mag;
+        n[2] /= mag;
+    } else {
+        n = {0.0, 0.0, 0.0};
+    }
+    return n;
+}
+
+static void WriteAsciiStlTriangle(
+    std::ofstream& out,
+    const std::array<double, 3>& a,
+    const std::array<double, 3>& b,
+    const std::array<double, 3>& c
+) {
+    const auto n = NormalOf(a, b, c);
+
+    out << std::setprecision(10);
+    out << "  facet normal " << n[0] << " " << n[1] << " " << n[2] << "\n";
+    out << "    outer loop\n";
+    out << "      vertex " << a[0] << " " << a[1] << " " << a[2] << "\n";
+    out << "      vertex " << b[0] << " " << b[1] << " " << b[2] << "\n";
+    out << "      vertex " << c[0] << " " << c[1] << " " << c[2] << "\n";
+    out << "    endloop\n";
+    out << "  endfacet\n";
+}
+
+static bool ExportSolidPolyhedronToStl(
+    G4VSolid* solid,
+    const std::string& stem,
+    const std::filesystem::path& outPath,
+    const ValidatorConfig& cfg,
+    const G4ThreeVector& globalCenterModel
+) {
+    if (!solid) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_SKIP] " << stem << " null solid" << G4endl;
+        return false;
+    }
+
+    G4Polyhedron* rawPoly = nullptr;
+
+    try {
+        rawPoly = solid->CreatePolyhedron();
+    } catch (const std::exception& e) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_ERROR] " << stem
+               << " CreatePolyhedron exception: " << e.what() << G4endl;
+        return false;
+    } catch (...) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_ERROR] " << stem
+               << " CreatePolyhedron unknown exception" << G4endl;
+        return false;
+    }
+
+    if (!rawPoly) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_SKIP] " << stem
+               << " CreatePolyhedron returned null" << G4endl;
+        return false;
+    }
+
+    std::unique_ptr<G4Polyhedron> poly(rawPoly);
+
+    const G4int nVert = poly->GetNoVertices();
+    const G4int nFace = poly->GetNoFacets();
+
+    if (nVert <= 0 || nFace <= 0) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_SKIP] " << stem
+               << " empty polyhedron vertices=" << nVert
+               << " facets=" << nFace << G4endl;
+        return false;
+    }
+
+    std::ofstream out(outPath);
+    if (!out) {
+        G4cout << "[OPENWORM-VALIDATOR][POLY_STL_ERROR] " << stem
+               << " cannot open " << outPath.string() << G4endl;
+        return false;
+    }
+
+    out << "solid " << stem << "\n";
+
+    G4int triCount = 0;
+
+    for (G4int fi = 1; fi <= nFace; ++fi) {
+        G4int nNodes = 0;
+        G4int nodes[8] = {0,0,0,0,0,0,0,0};
+        G4int edgeFlags[8] = {0,0,0,0,0,0,0,0};
+
+        poly->GetFacet(fi, nNodes, nodes, edgeFlags);
+
+        if (nNodes < 3) {
+            continue;
+        }
+
+        std::vector<std::array<double, 3>> pts;
+        pts.reserve(nNodes);
+
+        for (G4int j = 0; j < nNodes; ++j) {
+            const G4int vi = nodes[j];
+            if (vi <= 0 || vi > nVert) {
+                continue;
+            }
+            pts.push_back(ToModelCoords(poly->GetVertex(vi), cfg, globalCenterModel));
+        }
+
+        if (pts.size() < 3) {
+            continue;
+        }
+
+        // Fan triangulation for quads/ngons.
+        for (std::size_t j = 1; j + 1 < pts.size(); ++j) {
+            WriteAsciiStlTriangle(out, pts[0], pts[j], pts[j+1]);
+            triCount++;
+        }
+    }
+
+    out << "endsolid " << stem << "\n";
+
+    G4cout << "[OPENWORM-VALIDATOR][POLY_STL_WRITTEN] "
+           << stem
+           << " vertices=" << nVert
+           << " facets=" << nFace
+           << " triangles=" << triCount
+           << " path=" << outPath.string()
+           << G4endl;
+
+    return true;
+}
+
+static void ExportPlacedPolyhedraAsStl(
+    const std::vector<G4VPhysicalVolume*>& placed,
+    const ValidatorConfig& cfg,
+    const G4ThreeVector& globalCenterModel
+) {
+    if (cfg.exportPolyStlDir.empty()) {
+        return;
+    }
+
+    std::filesystem::path outdir(cfg.exportPolyStlDir);
+    std::filesystem::create_directories(outdir);
+
+    G4cout << "[OPENWORM-VALIDATOR][POLY_STL_EXPORT_BEGIN] dir="
+           << outdir.string()
+           << " only=" << cfg.exportPolyOnly
+           << G4endl;
+
+    int attempted = 0;
+    int written = 0;
+
+    for (auto* pv : placed) {
+        if (!pv) continue;
+
+        auto* lv = pv->GetLogicalVolume();
+        if (!lv) continue;
+
+        auto* solid = lv->GetSolid();
+        if (!solid) continue;
+
+        const std::string pvName = pv->GetName();
+        const std::string lvName = lv->GetName();
+        const std::string solidName = solid->GetName();
+
+        const std::string joined = pvName + " " + lvName + " " + solidName;
+
+        if (!cfg.exportPolyOnly.empty() &&
+            joined.find(cfg.exportPolyOnly) == std::string::npos) {
+            continue;
+        }
+
+        const std::string stem = SafeFileStem(pvName.empty() ? lvName : pvName);
+        const auto outPath = outdir / (stem + ".stl");
+
+        attempted++;
+        if (ExportSolidPolyhedronToStl(solid, stem, outPath, cfg, globalCenterModel)) {
+            written++;
+        }
+    }
+
+    G4cout << "[OPENWORM-VALIDATOR][POLY_STL_EXPORT_END] attempted="
+           << attempted << " written=" << written << G4endl;
+}
+
+
+static G4TessellatedSolid* BuildTessellatedSolidFromSTL(
+    const ObjectRecord& r,
+    const ValidatorConfig& cfg,
+    const G4ThreeVector& globalCenterModel
+) {
+    STLMesh mesh = ReadBinarySTL(r.stl_path, cfg.minTriangleAreaMM2);
+
+    if (mesh.triangles.empty()) {
+        throw std::runtime_error("STL produced empty triangle set: " + r.stl_path);
+    }
+
+    auto solid = new G4TessellatedSolid(G4String("ow_") + r.safe_name + "_solid");
+
+    auto cvt = [&](double x, double y, double z) {
+        return G4ThreeVector(
+            (x - globalCenterModel.x()) * cfg.mmPerModelUnit * mm,
+            (y - globalCenterModel.y()) * cfg.mmPerModelUnit * mm,
+            (z - globalCenterModel.z()) * cfg.mmPerModelUnit * mm
+        );
+    };
+
+    for (const auto& t : mesh.triangles) {
+        solid->AddFacet(new G4TriangularFacet(
+            cvt(t.x0, t.y0, t.z0),
+            cvt(t.x1, t.y1, t.z1),
+            cvt(t.x2, t.y2, t.z2),
+            ABSOLUTE
+        ));
+    }
+
+    solid->SetSolidClosed(true);
+
+    G4cout << "[OPENWORM-VALIDATOR][MEMBER_LOADED]"
+           << " name=" << r.object_name
+           << " category=" << r.category
+           << " raw_tri=" << mesh.raw_triangles
+           << " kept_tri=" << mesh.triangles.size()
+           << " skipped_deg=" << mesh.skipped_degenerate
+           << G4endl;
+
+    return solid;
+}
+
+G4VPhysicalVolume* DetectorConstruction::Construct() {
+    LoadManifest();
+
+    auto nist = G4NistManager::Instance();
+    auto worldMat = nist->FindOrBuildMaterial("G4_AIR");
+    auto wormMat  = nist->FindOrBuildMaterial("G4_WATER");
+
+    const double sx = globalSpanModel_.x() * cfg_.mmPerModelUnit * mm;
+    const double sy = globalSpanModel_.y() * cfg_.mmPerModelUnit * mm;
+    const double sz = globalSpanModel_.z() * cfg_.mmPerModelUnit * mm;
+
+    const double worldHalfX = 0.5 * sx + cfg_.marginMM * mm;
+    const double worldHalfY = 0.5 * sy + cfg_.marginMM * mm;
+    const double worldHalfZ = 0.5 * sz + cfg_.marginMM * mm;
+
+    auto worldSolid = new G4Box("world", worldHalfX, worldHalfY, worldHalfZ);
+    auto worldLV = new G4LogicalVolume(worldSolid, worldMat, "world_lv");
+    auto worldPV = new G4PVPlacement(nullptr, {}, worldLV, "world_phys", nullptr, false, 0, false);
+
+    G4cout << "[OPENWORM-VALIDATOR] manifest = " << cfg_.manifest << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] objects  = " << records_.size() << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] global center model = " << globalCenterModel_ << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] global span model   = " << globalSpanModel_ << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] mm/model-unit = " << cfg_.mmPerModelUnit << G4endl;
+    G4cout << "[OPENWORM-VALIDATOR] world half size = "
+           << worldHalfX/mm << ", " << worldHalfY/mm << ", " << worldHalfZ/mm << " mm"
+           << G4endl;
+
+    ObjectRecord parentRecord;
+    bool foundParent = false;
+
+    std::map<std::string, std::vector<ObjectRecord>> aggregateMembers;
+
+    for (const auto& r : records_) {
+        if (r.category == "whole_body_parent" || r.object_name == "WholeBodyEnvelope" || r.safe_name == "WholeBodyEnvelope") {
+            parentRecord = r;
+            foundParent = true;
+        } else {
+            aggregateMembers[r.category].push_back(r);
+        }
+    }
+
+    if (!foundParent) {
+        throw std::runtime_error("Aggregate validator requires one WholeBodyEnvelope row with category_guess=whole_body_parent");
+    }
+
+    std::vector<G4VPhysicalVolume*> placed;
+    int loadedPhysical = 0;
+
+    auto parentSolid = BuildTessellatedSolidFromSTL(parentRecord, cfg_, globalCenterModel_);
+    auto parentLV = new G4LogicalVolume(parentSolid, wormMat, "ow_WholeBodyEnvelope_lv");
+    parentLV->SetVisAttributes(new G4VisAttributes(G4Colour(0.2, 0.7, 1.0, 0.18)));
+
+    auto parentPV = new G4PVPlacement(
+        nullptr,
+        {},
+        parentLV,
+        "ow_WholeBodyEnvelope_phys",
+        worldLV,
+        false,
+        loadedPhysical,
+        false
+    );
+
+    placed.push_back(parentPV);
+    loadedPhysical++;
+
+    G4cout << "[OPENWORM-VALIDATOR][AGGREGATE_LOADED] "
+           << loadedPhysical
+           << " name=WholeBodyEnvelope"
+           << " category=whole_body_parent"
+           << " members=1"
+           << G4endl;
+
+    if (cfg_.geometryMode == "flat_nervous_union") {
+        int copyNo = loadedPhysical;
+
+        // Build NervousSystem as one placed G4MultiUnion from original member STLs.
+        int nervousMembers = 0;
+        auto nervousUnion = new G4MultiUnion("ow_NervousSystem_solid");
+
+        for (const auto& r : records_) {
+            if (r.category != "NervousSystem") {
+                continue;
+            }
+
+            auto memberSolid = BuildTessellatedSolidFromSTL(r, cfg_, globalCenterModel_);
+            nervousUnion->AddNode(*memberSolid, G4Transform3D());
+            nervousMembers++;
+        }
+
+        if (nervousMembers > 0) {
+            nervousUnion->Voxelize();
+
+            auto nervousLV = new G4LogicalVolume(
+                nervousUnion,
+                wormMat,
+                "ow_NervousSystem_lv"
+            );
+
+            nervousLV->SetVisAttributes(
+                new G4VisAttributes(G4Colour(0.2, 0.2, 1.0, 0.45))
+            );
+
+            auto nervousPV = new G4PVPlacement(
+                nullptr,
+                {},
+                nervousLV,
+                "ow_NervousSystem_phys",
+                parentLV,
+                false,
+                copyNo++,
+                false
+            );
+
+            placed.push_back(nervousPV);
+            loadedPhysical++;
+
+            G4cout << "[OPENWORM-VALIDATOR][FLAT_NERVOUS_UNION_LOADED] "
+                   << loadedPhysical
+                   << " name=NervousSystem"
+                   << " category=NervousSystem"
+                   << " members=" << nervousMembers
+                   << G4endl;
+        } else {
+            G4cout << "[OPENWORM-VALIDATOR][FLAT_NERVOUS_UNION_WARN] no NervousSystem rows found" << G4endl;
+        }
+
+        // Place every non-parent, non-nervous row directly as one flat tessellated solid.
+        for (const auto& r : records_) {
+            if (r.category == "whole_body_parent" || r.object_name == "WholeBodyEnvelope" || r.safe_name == "WholeBodyEnvelope") {
+                continue;
+            }
+
+            if (r.category == "NervousSystem") {
+                continue;
+            }
+
+            try {
+                auto solid = BuildTessellatedSolidFromSTL(r, cfg_, globalCenterModel_);
+                auto lv = new G4LogicalVolume(solid, wormMat, G4String("ow_") + r.safe_name + "_lv");
+
+                if (r.category == "ExcretorySystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.0, 0.8, 0.8, 0.40)));
+                } else if (r.category == "ReproductiveSystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(1.0, 0.2, 0.7, 0.35)));
+                } else if (r.category == "DigestiveSystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.9, 0.5, 0.1, 0.35)));
+                } else if (r.category == "BodyWallMuscle") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.8, 0.1, 0.1, 0.35)));
+                } else if (r.category == "HypodermisSeam") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.2, 0.9, 0.2, 0.25)));
+                } else {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.9, 0.9, 0.2, 0.35)));
+                }
+
+                auto pv = new G4PVPlacement(
+                    nullptr,
+                    {},
+                    lv,
+                    G4String("ow_") + r.safe_name + "_phys",
+                    parentLV,
+                    false,
+                    copyNo++,
+                    false
+                );
+
+                placed.push_back(pv);
+                loadedPhysical++;
+
+                G4cout << "[OPENWORM-VALIDATOR][FLAT_LOADED] "
+                       << loadedPhysical
+                       << " name=" << r.object_name
+                       << " category=" << r.category
+                       << G4endl;
+
+            } catch (const std::exception& e) {
+                G4cout << "[OPENWORM-VALIDATOR][FLAT_LOAD_ERROR] "
+                       << " name=" << r.object_name
+                       << " path=" << r.stl_path
+                       << " error=" << e.what()
+                       << G4endl;
+            }
+        }
+
+        G4cout << "[OPENWORM-VALIDATOR] loaded physical volumes = " << loadedPhysical << G4endl;
+
+        if (cfg_.checkOverlaps) {
+            G4cout << "[OPENWORM-VALIDATOR] running CheckOverlaps on flat_nervous_union physical volumes..." << G4endl;
+            for (auto* pv : placed) {
+                pv->CheckOverlaps(
+                    cfg_.overlapResolution,
+                    cfg_.overlapToleranceMM * mm,
+                    true,
+                    cfg_.overlapMaxErr
+                );
+            }
+            G4cout << "[OPENWORM-VALIDATOR] overlap checks completed" << G4endl;
+        }
+
+        ExportPlacedPolyhedraAsStl(placed, cfg_, globalCenterModel_);
+        ExportPlacedPolyhedraAsStl(placed, cfg_, globalCenterModel_);
+    return worldPV;
+    }
+
+    if (cfg_.geometryMode == "flat") {
+        int copyNo = loadedPhysical;
+
+        for (const auto& r : records_) {
+            if (r.category == "whole_body_parent" || r.object_name == "WholeBodyEnvelope" || r.safe_name == "WholeBodyEnvelope") {
+                continue;
+            }
+
+            try {
+                auto solid = BuildTessellatedSolidFromSTL(r, cfg_, globalCenterModel_);
+                auto lv = new G4LogicalVolume(solid, wormMat, G4String("ow_") + r.safe_name + "_lv");
+
+                if (r.category == "NervousSystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.2, 0.2, 1.0, 0.45)));
+                } else if (r.category == "ExcretorySystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.0, 0.8, 0.8, 0.40)));
+                } else if (r.category == "ReproductiveSystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(1.0, 0.2, 0.7, 0.35)));
+                } else if (r.category == "DigestiveSystem") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.9, 0.5, 0.1, 0.35)));
+                } else if (r.category == "BodyWallMuscle") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.8, 0.1, 0.1, 0.35)));
+                } else if (r.category == "HypodermisSeam") {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.2, 0.9, 0.2, 0.25)));
+                } else {
+                    lv->SetVisAttributes(new G4VisAttributes(G4Colour(0.9, 0.9, 0.2, 0.35)));
+                }
+
+                auto pv = new G4PVPlacement(
+                    nullptr,
+                    {},
+                    lv,
+                    G4String("ow_") + r.safe_name + "_phys",
+                    parentLV,
+                    false,
+                    copyNo++,
+                    false
+                );
+
+                placed.push_back(pv);
+                loadedPhysical++;
+
+                G4cout << "[OPENWORM-VALIDATOR][FLAT_LOADED] "
+                       << loadedPhysical
+                       << " name=" << r.object_name
+                       << " category=" << r.category
+                       << G4endl;
+
+            } catch (const std::exception& e) {
+                G4cout << "[OPENWORM-VALIDATOR][FLAT_LOAD_ERROR] "
+                       << " name=" << r.object_name
+                       << " path=" << r.stl_path
+                       << " error=" << e.what()
+                       << G4endl;
+            }
+        }
+
+        G4cout << "[OPENWORM-VALIDATOR] loaded physical volumes = " << loadedPhysical << G4endl;
+
+        if (cfg_.checkOverlaps) {
+            G4cout << "[OPENWORM-VALIDATOR] running CheckOverlaps on flat physical volumes..." << G4endl;
+            for (auto* pv : placed) {
+                pv->CheckOverlaps(
+                    cfg_.overlapResolution,
+                    cfg_.overlapToleranceMM * mm,
+                    true,
+                    cfg_.overlapMaxErr
+                );
+            }
+            G4cout << "[OPENWORM-VALIDATOR] overlap checks completed" << G4endl;
+        }
+
+        ExportPlacedPolyhedraAsStl(placed, cfg_, globalCenterModel_);
+        ExportPlacedPolyhedraAsStl(placed, cfg_, globalCenterModel_);
+    return worldPV;
+    }
+
+    // Build raw aggregate MultiUnions first.
+    std::map<std::string, G4VSolid*> rawSolids;
+    std::map<std::string, int> rawMemberCounts;
+
+    for (const auto& kv : aggregateMembers) {
+        const std::string& aggName = kv.first;
+        const auto& members = kv.second;
+
+        if (members.empty()) continue;
+
+        try {
+            auto multi = new G4MultiUnion(G4String("ow_") + aggName + "_raw_multiunion");
+
+            int added = 0;
+            for (const auto& member : members) {
+                auto memberSolid = BuildTessellatedSolidFromSTL(member, cfg_, globalCenterModel_);
+                G4Transform3D identity;
+                multi->AddNode(*memberSolid, identity);
+                added++;
+            }
+
+            multi->Voxelize();
+
+            rawSolids[aggName] = multi;
+            rawMemberCounts[aggName] = added;
+
+            G4cout << "[OPENWORM-VALIDATOR][AGGREGATE_RAW_BUILT]"
+                   << " name=" << aggName
+                   << " members=" << added
+                   << G4endl;
+
+        } catch (const std::exception& e) {
+            G4cout << "[OPENWORM-VALIDATOR][AGGREGATE_LOAD_ERROR] "
+                   << " name=" << aggName
+                   << " members=" << members.size()
+                   << " error=" << e.what()
+                   << G4endl;
+        }
+    }
+
+    // Priority order for non-overlapping physical compartments.
+    // Higher-priority resolved solids are preserved; lower-priority solids are carved.
+    std::vector<std::string> priorityOrder = {
+        "NervousSystem",
+        "ExcretorySystem",
+        "ReproductiveSystem",
+        "DigestiveSystem",
+        "BodyWallMuscle",
+        "HypodermisSeam"
+    };
+
+    std::vector<std::string> extraOrder;
+    for (const auto& kv : rawSolids) {
+        if (std::find(priorityOrder.begin(), priorityOrder.end(), kv.first) == priorityOrder.end()) {
+            extraOrder.push_back(kv.first);
+        }
+    }
+    for (const auto& x : extraOrder) priorityOrder.push_back(x);
+
+    std::map<std::string, G4VSolid*> resolvedSolids;
+    int copyNo = loadedPhysical;
+
+    auto colorFor = [](const std::string& name) {
+        if (name == "NervousSystem") return G4Colour(0.2, 0.2, 1.0, 0.45);
+        if (name == "ExcretorySystem") return G4Colour(0.0, 0.8, 0.8, 0.40);
+        if (name == "ReproductiveSystem") return G4Colour(1.0, 0.2, 0.7, 0.35);
+        if (name == "DigestiveSystem") return G4Colour(0.9, 0.5, 0.1, 0.35);
+        if (name == "BodyWallMuscle") return G4Colour(0.8, 0.1, 0.1, 0.35);
+        if (name == "HypodermisSeam") return G4Colour(0.2, 0.9, 0.2, 0.25);
+        return G4Colour(0.9, 0.9, 0.2, 0.35);
+    };
+
+    for (const auto& aggName : priorityOrder) {
+        auto it = rawSolids.find(aggName);
+        if (it == rawSolids.end()) continue;
+
+        G4VSolid* resolved = it->second;
+
+        int cuts = 0;
+        for (const auto& higherName : priorityOrder) {
+            if (higherName == aggName) break;
+
+            auto hit = resolvedSolids.find(higherName);
+            if (hit == resolvedSolids.end()) continue;
+
+            resolved = new G4SubtractionSolid(
+                G4String("ow_") + aggName + "_minus_" + higherName + "_" + std::to_string(cuts),
+                resolved,
+                hit->second,
+                nullptr,
+                G4ThreeVector()
+            );
+            cuts++;
+        }
+
+        resolvedSolids[aggName] = resolved;
+
+        auto lv = new G4LogicalVolume(resolved, wormMat, G4String("ow_") + aggName + "_lv");
+        lv->SetVisAttributes(new G4VisAttributes(colorFor(aggName)));
+
+        auto pv = new G4PVPlacement(
+            nullptr,
+            {},
+            lv,
+            G4String("ow_") + aggName + "_phys",
+            parentLV,
+            false,
+            copyNo++,
+            false
+        );
+
+        placed.push_back(pv);
+        loadedPhysical++;
+
+        G4cout << "[OPENWORM-VALIDATOR][AGGREGATE_RESOLVED_LOADED] "
+               << loadedPhysical
+               << " name=" << aggName
+               << " members=" << rawMemberCounts[aggName]
+               << " subtractions=" << cuts
+               << G4endl;
+    }
+
+    G4cout << "[OPENWORM-VALIDATOR] loaded physical volumes = " << loadedPhysical << G4endl;
+
+    if (cfg_.checkOverlaps) {
+        G4cout << "[OPENWORM-VALIDATOR] running CheckOverlaps on aggregate physical volumes..." << G4endl;
+        for (auto* pv : placed) {
+            pv->CheckOverlaps(
+                cfg_.overlapResolution,
+                cfg_.overlapToleranceMM * mm,
+                true,
+                cfg_.overlapMaxErr
+            );
+        }
+        G4cout << "[OPENWORM-VALIDATOR] overlap checks completed" << G4endl;
+    }
+
+    ExportPlacedPolyhedraAsStl(placed, cfg_, globalCenterModel_);
+    return worldPV;
+}

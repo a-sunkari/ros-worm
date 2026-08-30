@@ -1,0 +1,20 @@
+{
+  "method": "blender_postprocess_boolean_body_envelope",
+  "input_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill/whole_body_envelope.stl",
+  "out_stl": "/home/asunkari/ros-worm/openworm_geometry/compartment_pipeline/body_envelope_boolean_cuticle_fill_smooth/whole_body_envelope.stl",
+  "smooth_factor": 0.2,
+  "smooth_repeat": 6,
+  "laplacian": false,
+  "shade_smooth": true,
+  "weighted_normal": true,
+  "stats_after": {
+    "vertices": 26410,
+    "edges": 84189,
+    "polygons": 57771,
+    "dimensions": [
+      0.6088752746582031,
+      8.225908279418945,
+      1.4078000783920288
+    ]
+  }
+}

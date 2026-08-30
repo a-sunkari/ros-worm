@@ -1,0 +1,26 @@
+=== counts ===
+loaded objects: 0
+load errors: 0
+GeomSolids1001 small/narrow facets: 0
+GeomSolids1002 bad facet add: 0
+solid defects: 0
+overlap mentions: 13
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+
+=== overlap lines tail ===
+[OPENWORM-VALIDATOR] running CheckOverlaps on aggregate physical volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume ow_DigestiveSystem_phys:1 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:1 (G4MultiUnion) with ow_ReproductiveSystem_phys:2 (G4MultiUnion)
+          overlap at local point (0.00516673,0.000334715,-0.0173799) by 222.564 nm  (max of 6 cases)
+Checking overlaps for volume ow_ReproductiveSystem_phys:2 (G4MultiUnion) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:2 (G4MultiUnion) with ow_DigestiveSystem_phys:1 (G4MultiUnion)
+          overlap at local point (-0.0030954,0.0805337,0.0200502) by 915.1 nm  (max of 1 cases)
+[OPENWORM-VALIDATOR] overlap checks completed

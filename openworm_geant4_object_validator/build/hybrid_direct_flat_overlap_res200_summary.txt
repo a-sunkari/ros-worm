@@ -1,0 +1,313 @@
+=== counts ===
+loaded objects: 0
+load errors: 0
+GeomSolids1001 small/narrow facets: 0
+GeomSolids1002 bad facet add: 0
+solid defects: 0
+overlap mentions: 62287
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+
+=== overlap lines tail ===
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_AQR_phys:213 (G4TessellatedSolid)
+          overlap at local point (0.00259036,-0.326185,0.0527463) by 320.146 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_BAGL_phys:215 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 7.91331 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_FLPL_phys:218 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 8.73502 um  (max of 7 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ADLL_phys:219 (G4TessellatedSolid)
+          overlap at local point (0.00377795,-0.341057,0.0598265) by 8.17744 um  (max of 20 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASHL_phys:220 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 8.04444 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_AWBL_phys:221 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 8.05573 um  (max of 10 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_AFDL_phys:222 (G4TessellatedSolid)
+          overlap at local point (0.00344959,-0.33963,0.0588695) by 7.77866 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ADFL_phys:223 (G4TessellatedSolid)
+          overlap at local point (0.00333437,-0.339138,0.0586281) by 7.71065 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASEL_phys:224 (G4TessellatedSolid)
+          overlap at local point (0.00203702,-0.332758,0.0535125) by 6.0053 um  (max of 8 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_AWCL_phys:225 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 7.99088 um  (max of 11 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASJL_phys:226 (G4TessellatedSolid)
+          overlap at local point (0.00344959,-0.33963,0.0588695) by 7.78867 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_CEPDL_phys:227 (G4TessellatedSolid)
+          overlap at local point (0.00344662,-0.326946,0.0521103) by 591.412 nm  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASIL_phys:228 (G4TessellatedSolid)
+          overlap at local point (0.00368434,-0.339343,0.0587007) by 7.60756 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASKL_phys:229 (G4TessellatedSolid)
+          overlap at local point (0.00377795,-0.341057,0.0598265) by 8.15267 um  (max of 10 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_ASGL_phys:230 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 7.98637 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_AWAL_phys:231 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 8.06005 um  (max of 12 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_OLLL_phys:232 (G4TessellatedSolid)
+          overlap at local point (0.00354101,-0.339921,0.059273) by 7.7234 um  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshDL_phys:279 (G4TessellatedSolid) with ow_CEPsoDL_phys:258 (G4TessellatedSolid)
+          overlap at local point (0.00352419,-0.339902,0.059239) by 198.751 nm  (max of 3 cases)
+Checking overlaps for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (-0.000308384,-0.395929,0.0572188) by 269.687 nm  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_HypodermisSeam_phys:5 (G4TessellatedSolid)
+          overlap at local point (-0.000315134,-0.396436,0.0572084) by 200.145 nm  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_URYVL_phys:17 (G4TessellatedSolid)
+          overlap at local point (0.00436722,-0.350971,0.0482854) by 201.934 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVL_phys:27 (G4TessellatedSolid)
+          overlap at local point (-0.0019013,-0.323231,0.0350444) by 509.242 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_OLQVL_phys:32 (G4TessellatedSolid)
+          overlap at local point (0.00374191,-0.341115,0.0454718) by 147.138 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_BDUL_phys:72 (G4TessellatedSolid)
+          overlap at local point (0.00703651,-0.3235,0.0440692) by 1.77779 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_SIBVR_phys:76 (G4TessellatedSolid)
+          overlap at local point (0.00684634,-0.325499,0.042847) by 2.59757 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVKR_phys:81 (G4TessellatedSolid)
+          overlap at local point (0.00470875,-0.324516,0.0400421) by 1.71985 um  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVFR_phys:84 (G4TessellatedSolid)
+          overlap at local point (0.00032258,-0.32242,0.0357278) by 115.457 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVAR_phys:85 (G4TessellatedSolid)
+          overlap at local point (0.0027872,-0.323816,0.0365909) by 2.57636 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVBR_phys:86 (G4TessellatedSolid)
+          overlap at local point (0.00319898,-0.324588,0.0380957) by 2.12909 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVDR_phys:90 (G4TessellatedSolid)
+          overlap at local point (0.000663455,-0.322872,0.0356923) by 2.22432 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_AVER_phys:94 (G4TessellatedSolid)
+          overlap at local point (0.00319898,-0.324588,0.0380957) by 3.07117 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_SIAVL_phys:132 (G4TessellatedSolid)
+          overlap at local point (0.00337085,-0.322615,0.0373183) by 409.196 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_RMFR_phys:146 (G4TessellatedSolid)
+          overlap at local point (0.00032258,-0.32242,0.0357278) by 2.98948 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_SMDVR_phys:156 (G4TessellatedSolid)
+          overlap at local point (0.0027872,-0.323816,0.0365909) by 426.007 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_RMED_phys:158 (G4TessellatedSolid)
+          overlap at local point (0.0027872,-0.323816,0.0365909) by 3.29462 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_RMEV_phys:160 (G4TessellatedSolid)
+          overlap at local point (-0.00191094,-0.323767,0.0360106) by 336.967 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_SMDDL_phys:167 (G4TessellatedSolid)
+          overlap at local point (0.000663455,-0.322872,0.0356923) by 1.79053 um  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_URAVL_phys:171 (G4TessellatedSolid)
+          overlap at local point (0.00405667,-0.341502,0.0456289) by 274.437 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_PVR_phys:179 (G4TessellatedSolid)
+          overlap at local point (-0.00191094,-0.323767,0.0360106) by 498.898 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_ADLL_phys:219 (G4TessellatedSolid)
+          overlap at local point (0.0014396,-0.380065,0.0545429) by 3.86448 um  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_ILsoVL_phys:251 (G4TessellatedSolid)
+          overlap at local point (0.00219358,-0.369627,0.0526456) by 156.781 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_ILshVL_phys:273 (G4TessellatedSolid)
+          overlap at local point (0.00252766,-0.367802,0.0523005) by 146.876 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_CEPshVL_phys:280 (G4TessellatedSolid) with ow_OLQshVL_phys:277 (G4TessellatedSolid)
+          overlap at local point (0.0044636,-0.350244,0.0480927) by 273.139 nm  (max of 6 cases)
+Checking overlaps for volume ow_AMshL_phys:281 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (0.00588976,-0.328372,0.0477302) by 7.05229 um  (max of 38 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (0.000835476,-0.400182,0.0603753) by 775.748 nm  (max of 6 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_HypodermisSeam_phys:5 (G4TessellatedSolid)
+          overlap at local point (0.00538369,-0.365247,0.0561745) by 480.858 nm  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AUAL_phys:15 (G4TessellatedSolid)
+          overlap at local point (0.00634464,-0.356167,0.0550003) by 594.958 nm  (max of 11 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_IL1L_phys:30 (G4TessellatedSolid)
+          overlap at local point (0.00569375,-0.324269,0.0464831) by 314.969 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_GLRL_phys:36 (G4TessellatedSolid)
+          overlap at local point (0.00576918,-0.331297,0.0485911) by 330.576 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_RIPR_phys:57 (G4TessellatedSolid)
+          overlap at local point (0.00453061,-0.374447,0.0572447) by 106.483 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_SIBVR_phys:76 (G4TessellatedSolid)
+          overlap at local point (0.00565847,-0.325404,0.0467536) by 737.734 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_URBL_phys:102 (G4TessellatedSolid)
+          overlap at local point (0.00569001,-0.330702,0.0485512) by 703.741 nm  (max of 18 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_BAGL_phys:215 (G4TessellatedSolid)
+          overlap at local point (0.00595265,-0.334616,0.0498761) by 576.625 nm  (max of 5 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_FLPL_phys:218 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.893 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ADLL_phys:219 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.898 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASHL_phys:220 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.872 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AWBL_phys:221 (G4TessellatedSolid)
+          overlap at local point (0.00647042,-0.338118,0.0512212) by 332.755 nm  (max of 6 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AFDL_phys:222 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.882 nm  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ADFL_phys:223 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.863 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASEL_phys:224 (G4TessellatedSolid)
+          overlap at local point (0.00772798,-0.341693,0.05236) by 162.561 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AWCL_phys:225 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.904 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASJL_phys:226 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.882 nm  (max of 4 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASIL_phys:228 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.896 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASKL_phys:229 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.887 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ASGL_phys:230 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.893 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AWAL_phys:231 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.873 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_OLLL_phys:232 (G4TessellatedSolid)
+          overlap at local point (0.00630282,-0.337436,0.0510947) by 778.327 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_IL2L_phys:233 (G4TessellatedSolid)
+          overlap at local point (0.00630231,-0.336177,0.0505068) by 325.907 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_AMsoL_phys:245 (G4TessellatedSolid)
+          overlap at local point (0.000943452,-0.399871,0.0599278) by 119.429 nm  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_ILsoL_phys:253 (G4TessellatedSolid)
+          overlap at local point (0.00501658,-0.371049,0.0570007) by 120.882 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_OLLsoL_phys:257 (G4TessellatedSolid)
+          overlap at local point (0.000887294,-0.398313,0.0595727) by 123.879 nm  (max of 2 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_AMshL_phys:281 (G4TessellatedSolid) with ow_OLLshL_phys:278 (G4TessellatedSolid)
+          overlap at local point (0.00793634,-0.347416,0.0538686) by 118.225 nm  (max of 4 cases)
+[OPENWORM-VALIDATOR] overlap checks completed

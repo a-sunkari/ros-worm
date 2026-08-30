@@ -1,0 +1,638 @@
+=== BLENDER FILE INSPECTION ===
+file: /home/asunkari/ros-worm/openworm_geometry/virtualworm_blend/Virtual_Worm_February_2012.blend
+objects: 831
+collections: 187
+meshes: 825
+materials: 38
+
+=== COLLECTIONS ===
+COLLECTION: Alimentary_System | objects=87
+  types: {'MESH': 87}
+COLLECTION: Amphid_Neurons | objects=24
+  types: {'MESH': 24}
+COLLECTION: Amphid_Sheath_Cells | objects=2
+  types: {'MESH': 2}
+COLLECTION: Amphids | objects=26
+  types: {'MESH': 26}
+COLLECTION: Anterior_Ganglion | objects=73
+  types: {'MESH': 73}
+COLLECTION: Anterior_Gonad_Arm | objects=70
+  types: {'MESH': 70}
+COLLECTION: Anterior_Spermatheca | objects=24
+  types: {'MESH': 24}
+COLLECTION: Anus | objects=1
+  types: {'MESH': 1}
+COLLECTION: Arcade_Cells | objects=2
+  types: {'MESH': 2}
+COLLECTION: AS_Neurons | objects=11
+  types: {'MESH': 11}
+COLLECTION: Body_Ganglion | objects=32
+  types: {'MESH': 32}
+COLLECTION: Body_Wall_Muscles | objects=96
+  types: {'MESH': 96}
+COLLECTION: Cephalic_Sensillum | objects=12
+  types: {'MESH': 12}
+COLLECTION: Cephalic_Sensillum_DL | objects=3
+  types: {'MESH': 3}
+COLLECTION: Cephalic_Sensillum_DR | objects=3
+  types: {'MESH': 3}
+COLLECTION: Cephalic_Sensillum_VL | objects=3
+  types: {'MESH': 3}
+COLLECTION: Cephalic_Sensillum_VR | objects=3
+  types: {'MESH': 3}
+COLLECTION: Chemosensory_Neurons | objects=26
+  types: {'MESH': 26}
+COLLECTION: Cholinergic_Neurons | objects=94
+  types: {'MESH': 94}
+COLLECTION: Ciliated_Neurons | objects=60
+  types: {'MESH': 60}
+COLLECTION: Coelomocytes | objects=6
+  types: {'MESH': 6}
+COLLECTION: Collection 1 | objects=13
+  types: {'MESH': 13}
+COLLECTION: Collection 10 | objects=9
+  types: {'MESH': 9}
+COLLECTION: Collection 11 | objects=95
+  types: {'MESH': 95}
+COLLECTION: Collection 12 | objects=117
+  types: {'MESH': 117}
+COLLECTION: Collection 13 | objects=61
+  types: {'MESH': 61}
+COLLECTION: Collection 14 | objects=26
+  types: {'MESH': 26}
+COLLECTION: Collection 15 | objects=22
+  types: {'MESH': 22}
+COLLECTION: Collection 16 | objects=11
+  types: {'MESH': 5, 'EMPTY': 6}
+COLLECTION: Collection 2 | objects=45
+  types: {'MESH': 45}
+COLLECTION: Collection 3 | objects=95
+  types: {'MESH': 95}
+COLLECTION: Collection 4 | objects=131
+  types: {'MESH': 131}
+COLLECTION: Collection 5 | objects=34
+  types: {'MESH': 34}
+COLLECTION: Collection 6 | objects=13
+  types: {'MESH': 13}
+COLLECTION: Collection 7 | objects=15
+  types: {'MESH': 15}
+COLLECTION: Collection 8 | objects=6
+  types: {'MESH': 6}
+COLLECTION: Collection 9 | objects=11
+  types: {'MESH': 11}
+COLLECTION: Command_Interneurons | objects=11
+  types: {'MESH': 11}
+COLLECTION: Corpus | objects=32
+  types: {'MESH': 32}
+COLLECTION: DA_Neurons | objects=9
+  types: {'MESH': 9}
+COLLECTION: DB_Neurons | objects=7
+  types: {'MESH': 7}
+COLLECTION: DD_Neurons | objects=6
+  types: {'MESH': 6}
+COLLECTION: Deirid_Neurons | objects=4
+  types: {'MESH': 4}
+COLLECTION: Deirid_Sensillum | objects=8
+  types: {'MESH': 8}
+COLLECTION: Deirid_Sensillum_A | objects=6
+  types: {'MESH': 6}
+COLLECTION: Deirid_Sensillum_P | objects=2
+  types: {'MESH': 2}
+COLLECTION: Deirid_Sensillum_PL | objects=1
+  types: {'MESH': 1}
+COLLECTION: Deirid_Sensillum_PR | objects=1
+  types: {'MESH': 1}
+COLLECTION: Dopaminergic_Neurons | objects=8
+  types: {'MESH': 8}
+COLLECTION: Dorsal_BWMs | objects=48
+  types: {'MESH': 48}
+COLLECTION: Dorsal_Ganglion | objects=2
+  types: {'MESH': 2}
+COLLECTION: Dorsal_Labial_Process | objects=26
+  types: {'MESH': 26}
+COLLECTION: Dorsal_Nerve_Cord | objects=47
+  types: {'MESH': 47}
+COLLECTION: Dorso_Rectal_Ganglion | objects=3
+  types: {'MESH': 3}
+COLLECTION: Egg_Laying_Apparatus | objects=41
+  types: {'MESH': 41}
+COLLECTION: Epithelial_Cells | objects=24
+  types: {'MESH': 24}
+COLLECTION: Excretory_System | objects=4
+  types: {'MESH': 4}
+COLLECTION: GABAergic_Neurons | objects=26
+  types: {'MESH': 26}
+COLLECTION: Ganglia | objects=191
+  types: {'MESH': 191}
+COLLECTION: Germline | objects=44
+  types: {'MESH': 44}
+COLLECTION: Glands | objects=9
+  types: {'MESH': 9}
+COLLECTION: GLR_cells | objects=6
+  types: {'MESH': 6}
+COLLECTION: Glutamatergic_Neurons | objects=4
+  types: {'MESH': 4}
+COLLECTION: Gonad | objects=155
+  types: {'MESH': 155}
+COLLECTION: Gonadal_Sheath_A | objects=10
+  types: {'MESH': 10}
+COLLECTION: Gonadal_Sheath_Cell | objects=20
+  types: {'MESH': 20}
+COLLECTION: Gonadal_Sheath_P | objects=10
+  types: {'MESH': 10}
+COLLECTION: Head | objects=310
+  types: {'MESH': 310}
+COLLECTION: Head_Ganglion | objects=139
+  types: {'MESH': 139}
+COLLECTION: Head_Hypodermis | objects=7
+  types: {'MESH': 7}
+COLLECTION: Head_Muscles | objects=16
+  types: {'MESH': 16}
+COLLECTION: Head_Neurons | objects=179
+  types: {'MESH': 179}
+COLLECTION: HeadMesodermCell | objects=1
+  types: {'MESH': 1}
+COLLECTION: Hypodermis | objects=15
+  types: {'MESH': 15}
+COLLECTION: IL1_Neurons | objects=6
+  types: {'MESH': 6}
+COLLECTION: IL2_Neurons | objects=6
+  types: {'MESH': 6}
+COLLECTION: IL_Neurons | objects=12
+  types: {'MESH': 12}
+COLLECTION: Inner_Labial_Sens | objects=12
+  types: {'MESH': 12}
+COLLECTION: Int_Rect_Valve | objects=2
+  types: {'MESH': 2}
+COLLECTION: Interfacial_Epithelia | objects=76
+  types: {'MESH': 76}
+COLLECTION: Interneurons | objects=97
+  types: {'MESH': 97}
+COLLECTION: Intestinal_Muscle | objects=2
+  types: {'MESH': 2}
+COLLECTION: Intestine | objects=21
+  types: {'MESH': 21}
+COLLECTION: Isthmus | objects=9
+  types: {'MESH': 9}
+COLLECTION: Labial_Sensillum | objects=30
+  types: {'MESH': 30}
+COLLECTION: Lateral_Ganglion | objects=66
+  types: {'MESH': 66}
+COLLECTION: Lateral_Ganglion_L | objects=32
+  types: {'MESH': 32}
+COLLECTION: Lateral_Ganglion_R | objects=35
+  types: {'MESH': 35}
+COLLECTION: Lateral_Nerve_Cord | objects=18
+  types: {'MESH': 18}
+COLLECTION: Lumbar_Ganglion | objects=23
+  types: {'MESH': 23}
+COLLECTION: Lumbar_Ganglion_L | objects=13
+  types: {'MESH': 13}
+COLLECTION: Lumbar_Ganglion_R | objects=10
+  types: {'MESH': 10}
+COLLECTION: Mechanosensory_Neuron | objects=26
+  types: {'MESH': 26}
+COLLECTION: Metacorpus | objects=14
+  types: {'MESH': 14}
+COLLECTION: Motor_Neurons | objects=116
+  types: {'MESH': 116}
+COLLECTION: mu_bod_DL | objects=24
+  types: {'MESH': 24}
+COLLECTION: mu_bod_DLL | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_DLM | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_DR | objects=24
+  types: {'MESH': 24}
+COLLECTION: mu_bod_DRL | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_DRM | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_VL | objects=24
+  types: {'MESH': 24}
+COLLECTION: mu_bod_VLL | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_VLM | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_VR | objects=24
+  types: {'MESH': 24}
+COLLECTION: mu_bod_VRL | objects=12
+  types: {'MESH': 12}
+COLLECTION: mu_bod_VRM | objects=12
+  types: {'MESH': 12}
+COLLECTION: Muscle | objects=128
+  types: {'MESH': 128}
+COLLECTION: Neck_Muscles | objects=16
+  types: {'MESH': 16}
+COLLECTION: Nerve_Cords | objects=147
+  types: {'MESH': 147}
+COLLECTION: Nerve_Ring | objects=173
+  types: {'MESH': 173}
+COLLECTION: Nervous_System | objects=303
+  types: {'MESH': 303}
+COLLECTION: Neuronal_Support_Cell | objects=46
+  types: {'MESH': 46}
+COLLECTION: NeuronsUnknFunc | objects=13
+  types: {'MESH': 13}
+COLLECTION: Nociceptor_Neurons | objects=2
+  types: {'MESH': 2}
+COLLECTION: Non_striated_Muscle | objects=40
+  types: {'MESH': 40}
+COLLECTION: Odorsensory_Neurons | objects=8
+  types: {'MESH': 8}
+COLLECTION: Oocytes | objects=18
+  types: {'MESH': 18}
+COLLECTION: Osmoceptor_Neurons | objects=2
+  types: {'MESH': 2}
+COLLECTION: Outer_Labial_Neurons | objects=6
+  types: {'MESH': 6}
+COLLECTION: Outer_Labial_Sens | objects=18
+  types: {'MESH': 18}
+COLLECTION: Oxygen_Sensing_Neuron | objects=6
+  types: {'MESH': 6}
+COLLECTION: Phar_Int_Valve | objects=7
+  types: {'MESH': 7}
+COLLECTION: PharInterneurons | objects=8
+  types: {'MESH': 8}
+COLLECTION: PharMotorNeurons | objects=1
+  types: {'MESH': 1}
+COLLECTION: Pharyngeal_Epithelium | objects=9
+  types: {'MESH': 9}
+COLLECTION: Pharyngeal_Glands | objects=5
+  types: {'MESH': 5}
+COLLECTION: Pharyngeal_Muscle | objects=20
+  types: {'MESH': 20}
+COLLECTION: Pharyngeal_Neurons | objects=20
+  types: {'MESH': 20}
+COLLECTION: Pharynx | objects=44
+  types: {'MESH': 44}
+COLLECTION: Pharynx_Marginal_Cell | objects=9
+  types: {'MESH': 9}
+COLLECTION: Phasmid_Neurons | objects=5
+  types: {'MESH': 5}
+COLLECTION: Phasmid_Sheath_Cell | objects=2
+  types: {'MESH': 2}
+COLLECTION: Phasmid_Socket_Cells | objects=4
+  types: {'MESH': 4}
+COLLECTION: Phasmids | objects=11
+  types: {'MESH': 11}
+COLLECTION: Polymodal_Neurons | objects=16
+  types: {'MESH': 16}
+COLLECTION: Posterior_Gonad_Arm | objects=44
+  types: {'MESH': 44}
+COLLECTION: Posterior_Spermatheca | objects=24
+  types: {'MESH': 24}
+COLLECTION: Pre_Anal_Ganglion | objects=12
+  types: {'MESH': 12}
+COLLECTION: Procorpus | objects=21
+  types: {'MESH': 21}
+COLLECTION: Proprioceptor_Neurons | objects=79
+  types: {'MESH': 79}
+COLLECTION: Proximal_Gonadal_SthA | objects=8
+  types: {'MESH': 8}
+COLLECTION: Proximal_Gonadal_SthP | objects=8
+  types: {'MESH': 8}
+COLLECTION: Rachis | objects=2
+  types: {'MESH': 2}
+COLLECTION: Rectal_Epithelium | objects=6
+  types: {'MESH': 6}
+COLLECTION: Rectal_Glands | objects=3
+  types: {'MESH': 3}
+COLLECTION: Rectum | objects=11
+  types: {'MESH': 11}
+COLLECTION: Reproductive_Muscle | objects=16
+  types: {'MESH': 16}
+COLLECTION: Reproductive_System | objects=155
+  types: {'MESH': 155}
+COLLECTION: Retrovesicular_Gangli | objects=20
+  types: {'MESH': 20}
+COLLECTION: Sensillum | objects=88
+  types: {'MESH': 88}
+COLLECTION: Sensory_Neurons | objects=61
+  types: {'MESH': 61}
+COLLECTION: Serotonergic_Neurons | objects=11
+  types: {'MESH': 11}
+COLLECTION: Sheath_Cells | objects=22
+  types: {'MESH': 22}
+COLLECTION: Socket_Cells | objects=24
+  types: {'MESH': 24}
+COLLECTION: Somatic_Gonad | objects=111
+  types: {'MESH': 111}
+COLLECTION: Somatic_Neurons | objects=329
+  types: {'MESH': 329}
+COLLECTION: Spermatheca | objects=72
+  types: {'MESH': 72}
+COLLECTION: Sublateral_NC_DL | objects=5
+  types: {'MESH': 5}
+COLLECTION: Sublateral_NC_DR | objects=5
+  types: {'MESH': 5}
+COLLECTION: Sublateral_NC_VL | objects=7
+  types: {'MESH': 7}
+COLLECTION: Sublateral_NC_VR | objects=5
+  types: {'MESH': 5}
+COLLECTION: Tail | objects=47
+  types: {'MESH': 47}
+COLLECTION: Tail_Ganglion | objects=26
+  types: {'MESH': 26}
+COLLECTION: Tail_Neurons | objects=28
+  types: {'MESH': 28}
+COLLECTION: Terminal_Bulb | objects=15
+  types: {'MESH': 15}
+COLLECTION: Thermosensory_Neurons | objects=4
+  types: {'MESH': 4}
+COLLECTION: Touch_Receptor_Neuron | objects=6
+  types: {'MESH': 6}
+COLLECTION: ut_cell | objects=8
+  types: {'MESH': 8}
+COLLECTION: Uterine_Muscles | objects=8
+  types: {'MESH': 8}
+COLLECTION: Uterus | objects=24
+  types: {'MESH': 24}
+COLLECTION: uv_cell | objects=6
+  types: {'MESH': 6}
+COLLECTION: VA_Neurons | objects=12
+  types: {'MESH': 12}
+COLLECTION: Valves | objects=10
+  types: {'MESH': 10}
+COLLECTION: VB_Neurons | objects=11
+  types: {'MESH': 11}
+COLLECTION: VC_Neurons | objects=7
+  types: {'MESH': 7}
+COLLECTION: VD_Neurons | objects=13
+  types: {'MESH': 13}
+COLLECTION: Ventral_BWMs | objects=47
+  types: {'MESH': 47}
+COLLECTION: Ventral_Ganglion | objects=28
+  types: {'MESH': 28}
+COLLECTION: Ventral_Nerve_Cord | objects=122
+  types: {'MESH': 122}
+COLLECTION: Ventral_Nerve_Cord_L | objects=3
+  types: {'MESH': 3}
+COLLECTION: Ventral_Nerve_Cord_R | objects=25
+  types: {'MESH': 25}
+COLLECTION: Ventral_Phar_Gang_A | objects=25
+  types: {'MESH': 25}
+COLLECTION: Ventral_Phar_Gang_P | objects=9
+  types: {'MESH': 9}
+COLLECTION: VNC_Motor_Neurons | objects=74
+  types: {'MESH': 74}
+COLLECTION: Vulva | objects=15
+  types: {'MESH': 15}
+COLLECTION: Vulval_Muscles | objects=8
+  types: {'MESH': 8}
+
+=== OBJECT TYPE COUNTS ===
+EMPTY: 6
+MESH: 825
+
+=== MESH OBJECT SUMMARY ===
+mesh object count: 825
+hidden mesh objects: 1
+mesh objects with modifiers: 818
+mesh objects with non-unit scale: 825
+mesh objects with negative scale product: 22
+mesh datablocks used by >1 object: 0
+
+=== TOP MESHES BY POLYGON COUNT ===
+PVDL | mesh=PVDL | polys=6942 verts=6999 users=1 cols=['Collection 13', 'Lateral_Nerve_Cord', 'Mechanosensory_Neuron', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Sensory_Neurons', 'Somatic_Neurons', 'Ventral_Nerve_Cord'] loc=(0.247691, -0.330306, -0.362958) scale=(1.666609, 1.666609, 1.666609) mods=['SUBSURF']
+PVDR | mesh=PVDR | polys=6938 verts=6995 users=1 cols=['Collection 13', 'Lateral_Nerve_Cord', 'Mechanosensory_Neuron', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Sensory_Neurons', 'Somatic_Neurons', 'Ventral_Nerve_Cord'] loc=(-0.240205, 1.750229, 0.256176) scale=(1.666609, 1.666609, 1.666609) mods=['SUBSURF']
+hyp7 | mesh=hyp7 | polys=3642 verts=3505 users=1 cols=['Collection 1', 'Epithelial_Cells', 'Hypodermis'] loc=(-0.00612, -0.642219, -0.4345) scale=(0.254777, 0.261064, 0.261064) mods=['SUBSURF']
+Cuticle | mesh=Cuticle | polys=1010 verts=992 users=1 cols=['Collection 1', 'Epithelial_Cells', 'Hypodermis'] loc=(-0.005728, 0.517895, 0.068392) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+Arcade_Cell_Ant | mesh=Arcade_Cell_Ant | polys=491 verts=488 users=1 cols=['Alimentary_System', 'Arcade_Cells', 'Collection 2', 'Corpus', 'Head', 'Interfacial_Epithelia'] loc=(-0.021431, -3.481524, 0.583174) scale=(1.579794, 1.579794, 1.579794) mods=['SUBSURF']
+Intestine | mesh=Intestine | polys=456 verts=464 users=1 cols=['Intestine'] loc=(-0.015387, 0.834036, -0.004162) scale=(0.088298, 0.088298, 0.088298) mods=['SUBSURF']
+Arcade_Cell_Post | mesh=Arcade_Cell_Post | polys=432 verts=456 users=1 cols=['Alimentary_System', 'Arcade_Cells', 'Collection 2', 'Corpus', 'Head', 'Interfacial_Epithelia'] loc=(-0.019721, -3.450114, 0.58226) scale=(1.238375, 1.238376, 1.238376) mods=['SUBSURF']
+IL1DR | mesh=IL1DR | polys=394 verts=380 users=1 cols=['Anterior_Ganglion', 'Ciliated_Neurons', 'Collection 7', 'Dorsal_Labial_Process', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'IL1_Neurons', 'IL_Neurons', 'Inner_Labial_Sens', 'Labial_Sensillum', 'Nerve_Ring', 'Nervous_System', 'Polymodal_Neurons', 'Sensillum', 'Somatic_Neurons'] loc=(-0.068151, -2.826326, 0.530882) scale=(0.011231, 0.012619, 0.010116) mods=[]
+IL1DL | mesh=IL1DL | polys=394 verts=380 users=1 cols=['Anterior_Ganglion', 'Ciliated_Neurons', 'Collection 7', 'Dorsal_Labial_Process', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'IL1_Neurons', 'IL_Neurons', 'Inner_Labial_Sens', 'Labial_Sensillum', 'Nerve_Ring', 'Nervous_System', 'Polymodal_Neurons', 'Sensillum', 'Somatic_Neurons'] loc=(0.025362, -2.826326, 0.531455) scale=(0.011231, 0.012619, 0.010116) mods=[]
+PVNL | mesh=PVNL | polys=390 verts=392 users=1 cols=['Collection 11', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.005669, 4.106141, 0.094533) scale=(0.770979, 0.770979, 0.770979) mods=['SUBSURF']
+mu_bod_VR20 | mesh=mu_bod_VR20 | polys=387 verts=375 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.090047, 1.909351, -0.039664) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+I5 | mesh=I5 | polys=380 verts=376 users=1 cols=['Collection 11', 'Head', 'Head_Neurons', 'Interneurons', 'Nervous_System', 'PharInterneurons', 'Pharyngeal_Neurons', 'Proprioceptor_Neurons'] loc=(-0.021349, -2.477007, 0.296786) scale=(1.666609, 1.666609, 1.666609) mods=['SUBSURF']
+mu_bod_VL20 | mesh=mu_bod_VL20 | polys=371 verts=359 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.074288, 1.868881, -0.029535) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VL22 | mesh=mu_bod_VL22 | polys=367 verts=357 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.068407, 2.778174, -0.19332) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VR22 | mesh=mu_bod_VR22 | polys=353 verts=341 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.078891, 2.818635, -0.201522) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+Seam_Cells_Right | mesh=Seam_Cells_Right | polys=346 verts=348 users=1 cols=['Collection 1', 'Epithelial_Cells', 'Head', 'Hypodermis'] loc=(-0.284269, 0.427791, -0.004616) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+Seam_Cells_Left | mesh=Seam_Cells_Left | polys=346 verts=348 users=1 cols=['Collection 1', 'Epithelial_Cells', 'Head', 'Hypodermis'] loc=(0.266103, 0.427791, -0.004616) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+PVNR | mesh=PVNR | polys=330 verts=332 users=1 cols=['Collection 11', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.032835, 4.106138, 0.094533) scale=(0.770979, 0.770979, 0.770979) mods=['SUBSURF']
+Phar_Gland_g1_L | mesh=Phar_Gland_g1_L | polys=330 verts=308 users=1 cols=['Alimentary_System', 'Collection 2', 'Glands', 'Head', 'Isthmus', 'Pharyngeal_Glands', 'Pharynx', 'Terminal_Bulb'] loc=(0.008904, -2.687907, 0.397783) scale=(1.093791, 0.990356, 3.400638) mods=['SUBSURF']
+mu_bod_VR24 | mesh=mu_bod_VR24 | polys=317 verts=304 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.05705, 3.541541, -0.116046) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+pm1 | mesh=pm1 | polys=314 verts=308 users=1 cols=['Alimentary_System', 'Collection 2', 'Corpus', 'Head', 'Muscle', 'Non_striated_Muscle', 'Pharyngeal_Muscle', 'Pharynx', 'Procorpus'] loc=(-0.020283, -3.041057, 0.596594) scale=(0.027521, 0.027521, 0.027521) mods=['SUBSURF']
+ALA | mesh=ALA | polys=312 verts=314 users=1 cols=['Collection 6', 'Dorsal_Ganglion', 'Ganglia', 'Head', 'Head_Neurons', 'Lateral_Nerve_Cord', 'Nerve_Cords', 'Nervous_System', 'NeuronsUnknFunc', 'Somatic_Neurons'] loc=(-0.020987, -2.700025, 0.516027) scale=(0.010433, 0.010665, 0.008876) mods=['SUBSURF']
+mu_bod_VR18 | mesh=mu_bod_VR18 | polys=306 verts=297 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.094188, 1.016597, 0.048086) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VL18 | mesh=mu_bod_VL18 | polys=305 verts=297 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.083669, 1.020381, 0.033989) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+PVR | mesh=PVR | polys=302 verts=304 users=1 cols=['Collection 13', 'Ganglia', 'Lumbar_Ganglion', 'Lumbar_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Sensory_Neurons', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord'] loc=(-0.018582, 4.073666, 0.076819) scale=(0.745821, 0.745821, 0.745821) mods=['SUBSURF']
+mu_bod_VR12 | mesh=mu_bod_VR12 | polys=298 verts=287 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.090768, -1.045391, -0.561962) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mc1DR | mesh=mc1DR | polys=296 verts=288 users=1 cols=['Alimentary_System', 'Collection 2', 'Corpus', 'Head', 'Interfacial_Epithelia', 'Metacorpus', 'Pharynx', 'Pharynx_Marginal_Cell', 'Procorpus'] loc=(-0.068101, -3.171044, 0.579512) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mc1DL | mesh=mc1DL | polys=296 verts=288 users=1 cols=['Alimentary_System', 'Collection 2', 'Corpus', 'Head', 'Interfacial_Epithelia', 'Metacorpus', 'Pharynx', 'Pharynx_Marginal_Cell', 'Procorpus'] loc=(0.026025, -3.171035, 0.579511) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_DR20 | mesh=mu_bod_DR20 | polys=292 verts=215 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'Dorsal_BWMs', 'mu_bod_DR', 'mu_bod_DRM', 'Muscle'] loc=(-0.09005, 1.936353, 0.347294) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+Excretory_Cell | mesh=Excretory Cell | polys=290 verts=292 users=1 cols=['Collection 9', 'Excretory_System', 'Head'] loc=(-0.022005, -2.50469, 0.237066) scale=(1.263826, 1.930926, 1.099037) mods=['SUBSURF']
+mu_bod_VL12 | mesh=mu_bod_VL12 | polys=288 verts=279 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.077332, -1.045118, -0.563821) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mc1V | mesh=mc1V | polys=288 verts=278 users=1 cols=['Alimentary_System', 'Collection 2', 'Corpus', 'Head', 'Interfacial_Epithelia', 'Metacorpus', 'Pharynx', 'Pharynx_Marginal_Cell', 'Procorpus'] loc=(-0.024756, -3.175625, 0.499478) scale=(0.232503, 0.227172, 0.237611) mods=['SUBSURF']
+RID | mesh=RID | polys=286 verts=288 users=1 cols=['Collection 11', 'Dorsal_Ganglion', 'Dorsal_Nerve_Cord', 'Ganglia', 'Head', 'Head_Neurons', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons'] loc=(-0.011694, -2.723975, 0.551394) scale=(0.00674, 0.010665, 0.008876) mods=['SUBSURF']
+mu_bod_VR14 | mesh=mu_bod_VR14 | polys=284 verts=275 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.09436, -0.3769, -0.535089) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VL14 | mesh=mu_bod_VL14 | polys=284 verts=275 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.080341, -0.376619, -0.537039) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VR9 | mesh=mu_bod_VR9 | polys=276 verts=273 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRL', 'Muscle', 'Ventral_BWMs'] loc=(-0.177151, -1.368879, -0.401243) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+utse | mesh=utse | polys=268 verts=268 users=1 cols=['Collection 4', 'Egg_Laying_Apparatus', 'Gonad', 'Reproductive_System', 'Somatic_Gonad', 'Uterus'] loc=(-0.004212, 0.548431, 0.017579) scale=(0.237631, 0.220956, 0.23738) mods=['SUBSURF']
+AVBR | mesh=AVBR | polys=268 verts=268 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.086055, -2.634573, 0.426036) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVBL | mesh=AVBL | polys=268 verts=268 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.041325, -2.634573, 0.426036) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+SIBVR | mesh=SIBVR | polys=267 verts=268 users=1 cols=['Cholinergic_Neurons', 'Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Sublateral_NC_VL', 'Ventral_Ganglion', 'Ventral_Phar_Gang_A'] loc=(-0.074251, -2.661115, 0.364248) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+SIBVL | mesh=SIBVL | polys=267 verts=268 users=1 cols=['Cholinergic_Neurons', 'Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Sublateral_NC_VR', 'Ventral_Ganglion', 'Ventral_Phar_Gang_A'] loc=(0.031505, -2.661128, 0.36425) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+AVFR | mesh=AVFR | polys=266 verts=268 users=1 cols=['Body_Ganglion', 'Collection 11', 'Ganglia', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Retrovesicular_Gangli', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.083941, -2.490437, 0.2487) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+RMEV | mesh=RMEV | polys=262 verts=264 users=1 cols=['Collection 12', 'GABAergic_Neurons', 'Head', 'Head_Neurons', 'Motor_Neurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.020223, -2.728808, 0.360209) scale=(0.009609, 0.009758, 0.007597) mods=['SUBSURF']
+AVL | mesh=AVL | polys=262 verts=264 users=1 cols=['Collection 7', 'GABAergic_Neurons', 'Head', 'Head_Neurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Polymodal_Neurons', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Phar_Gang_A'] loc=(-0.074605, -2.625101, 0.370705) scale=(-0.010132, 0.016522, 0.009264) mods=['SUBSURF']
+AVFL | mesh=AVFL | polys=262 verts=264 users=1 cols=['Body_Ganglion', 'Collection 11', 'Ganglia', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Retrovesicular_Gangli', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.02127, -2.462237, 0.192168) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVKR | mesh=AVKR | polys=259 verts=260 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Ganglion', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R', 'Ventral_Phar_Gang_P'] loc=(-0.10795, -2.494842, 0.258666) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVKL | mesh=AVKL | polys=259 verts=260 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Ganglion', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_L', 'Ventral_Phar_Gang_P'] loc=(0.067266, -2.495678, 0.261376) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+DVC | mesh=DVC | polys=255 verts=256 users=1 cols=['Collection 11', 'Dorso_Rectal_Ganglion', 'Ganglia', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.005465, 3.985121, 0.051445) scale=(1.076662, 1.076662, 1.076662) mods=['SUBSURF']
+DVA | mesh=DVA | polys=255 verts=256 users=1 cols=['Collection 11', 'Dorso_Rectal_Ganglion', 'Ganglia', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.023445, 3.965366, 0.058491) scale=(1.068181, 1.068181, 1.068181) mods=['SUBSURF']
+PVQL | mesh=PVQL | polys=254 verts=256 users=1 cols=['Collection 11', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_L'] loc=(0.00732, 4.016098, 0.051655) scale=(0.812866, 0.812866, 0.812866) mods=['SUBSURF']
+DB1 | mesh=DB1 | polys=254 verts=256 users=1 cols=['Body_Ganglion', 'Cholinergic_Neurons', 'Collection 12', 'DB_Neurons', 'Dorsal_Nerve_Cord', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Motor_Neurons', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Retrovesicular_Gangli', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.019053, -2.303377, 0.067892) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+PVQR | mesh=PVQR | polys=250 verts=252 users=1 cols=['Collection 11', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.033211, 4.016098, 0.051655) scale=(0.812866, 0.812866, 0.812866) mods=['SUBSURF']
+VC3 | mesh=VC3 | polys=243 verts=247 users=1 cols=['Cholinergic_Neurons', 'Collection 12', 'Motor_Neurons', 'Nerve_Cords', 'Nervous_System', 'Somatic_Neurons', 'VC_Neurons', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.006658, -0.064514, -0.540089) scale=(1.223108, 1.223108, 1.223108) mods=['SUBSURF']
+PVCR | mesh=PVCR | polys=242 verts=244 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.034371, 4.041754, 0.063691) scale=(0.812866, 0.812866, 0.812866) mods=['SUBSURF']
+PVCL.001 | mesh=PVCL.001 | polys=242 verts=244 users=1 cols=['Command_Interneurons', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord'] loc=(0.007634, 4.041753, 0.063691) scale=(0.812866, 0.812866, 0.812866) mods=['SUBSURF']
+DB4 | mesh=DB4 | polys=242 verts=244 users=1 cols=['Cholinergic_Neurons', 'Collection 12', 'DB_Neurons', 'Dorsal_Nerve_Cord', 'Motor_Neurons', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.01876, -0.963376, -0.646514) scale=(1.223108, 1.223108, 1.223108) mods=['SUBSURF']
+mu_bod_VR23 | mesh=mu_bod_VR23 | polys=242 verts=240 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRL', 'Muscle', 'Ventral_BWMs'] loc=(-0.117565, 3.291845, -0.085315) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VL23 | mesh=mu_bod_VL23 | polys=242 verts=240 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLL', 'Muscle', 'Ventral_BWMs'] loc=(0.106819, 3.292218, -0.086941) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_VL10 | mesh=mu_bod_VL10 | polys=239 verts=231 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VL', 'mu_bod_VLM', 'Muscle', 'Ventral_BWMs'] loc=(0.073772, -1.654053, -0.316419) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+PVT | mesh=PVT | polys=238 verts=240 users=1 cols=['Body_Ganglion', 'Collection 11', 'Ganglia', 'Interneurons', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Pre_Anal_Ganglion', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.001235, 3.601296, -0.169232) scale=(1.278392, 1.278392, 1.278392) mods=['SUBSURF']
+PVCL | mesh=PVCL | polys=234 verts=236 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Interneurons', 'Lumbar_Ganglion', 'Lumbar_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Tail', 'Tail_Ganglion', 'Tail_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.007634, 4.041753, 0.063691) scale=(0.812866, 0.812866, 0.812866) mods=['SUBSURF']
+AVJL | mesh=AVJL | polys=234 verts=236 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.002328, -2.640359, 0.47532) scale=(0.009245, 0.010193, 0.008874) mods=['SUBSURF']
+AVDR | mesh=AVDR | polys=231 verts=232 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.082947, -2.614555, 0.415743) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVDL | mesh=AVDL | polys=231 verts=232 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.041325, -2.612852, 0.415436) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVAR | mesh=AVAR | polys=231 verts=232 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.096629, -2.704596, 0.428481) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+AVAL | mesh=AVAL | polys=231 verts=232 users=1 cols=['Collection 11', 'Command_Interneurons', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.056459, -2.704209, 0.427777) scale=(0.009481, 0.008938, 0.011547) mods=['SUBSURF']
+SMBVR | mesh=SMBVR | polys=230 verts=232 users=1 cols=['Cholinergic_Neurons', 'Collection 12', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Motor_Neurons', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Sublateral_NC_VR', 'Ventral_Phar_Gang_A'] loc=(-0.050818, -2.62738, 0.335434) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+SMBVL | mesh=SMBVL | polys=230 verts=232 users=1 cols=['Cholinergic_Neurons', 'Collection 12', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Motor_Neurons', 'Nerve_Ring', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Sublateral_NC_VL', 'Ventral_Ganglion', 'Ventral_Phar_Gang_A'] loc=(0.008221, -2.626421, 0.336051) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+DA6 | mesh=DA6 | polys=230 verts=232 users=1 cols=['Cholinergic_Neurons', 'Collection 12', 'DA_Neurons', 'Dorsal_Nerve_Cord', 'Motor_Neurons', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.016542, 1.986808, -0.063482) scale=(1.223108, 1.223108, 1.223108) mods=['SUBSURF']
+AVJR | mesh=AVJR | polys=230 verts=232 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.047699, -2.638685, 0.475554) scale=(0.009245, 0.010193, 0.008874) mods=['SUBSURF']
+AVHR | mesh=AVHR | polys=230 verts=232 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_R', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(-0.089421, -2.637688, 0.449838) scale=(-0.007955, 0.008771, 0.008528) mods=['SUBSURF']
+AVHL | mesh=AVHL | polys=230 verts=232 users=1 cols=['Collection 11', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Interneurons', 'Lateral_Ganglion', 'Lateral_Ganglion_L', 'Nerve_Cords', 'Nerve_Ring', 'Nervous_System', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'Ventral_Nerve_Cord_R'] loc=(0.041325, -2.636186, 0.450272) scale=(0.007955, 0.008771, 0.007636) mods=['SUBSURF']
+mu_bod_VR10 | mesh=mu_bod_VR10 | polys=227 verts=219 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'mu_bod_VR', 'mu_bod_VRM', 'Muscle', 'Ventral_BWMs'] loc=(-0.088002, -1.654294, -0.314499) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mc3DR | mesh=mc3DR | polys=225 verts=214 users=1 cols=['Alimentary_System', 'Collection 2', 'Head', 'Interfacial_Epithelia', 'Pharynx', 'Pharynx_Marginal_Cell', 'Terminal_Bulb'] loc=(-0.089522, -2.481287, 0.415739) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mc3DL | mesh=mc3DL | polys=225 verts=214 users=1 cols=['Alimentary_System', 'Collection 2', 'Head', 'Interfacial_Epithelia', 'Pharynx', 'Pharynx_Marginal_Cell', 'Terminal_Bulb'] loc=(0.046804, -2.481287, 0.415739) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_DR23 | mesh=mu_bod_DR23 | polys=219 verts=216 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'Dorsal_BWMs', 'mu_bod_DR', 'mu_bod_DRL', 'Muscle'] loc=(-0.11717, 3.303168, 0.068612) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_int_R | mesh=mu_int_R | polys=219 verts=210 users=1 cols=['Alimentary_System', 'Collection 10', 'Intestinal_Muscle', 'Muscle', 'Non_striated_Muscle'] loc=(-0.004005, 3.517423, -0.114124) scale=(1.666609, 1.666609, 1.666609) mods=['SUBSURF']
+DB2 | mesh=DB2 | polys=218 verts=220 users=1 cols=['Body_Ganglion', 'Cholinergic_Neurons', 'Collection 12', 'DB_Neurons', 'Dorsal_Nerve_Cord', 'Ganglia', 'Head', 'Head_Ganglion', 'Head_Neurons', 'Motor_Neurons', 'Nerve_Cords', 'Nervous_System', 'Proprioceptor_Neurons', 'Retrovesicular_Gangli', 'Somatic_Neurons', 'Ventral_Nerve_Cord', 'VNC_Motor_Neurons'] loc=(-0.006472, -2.448029, 0.159736) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_DL23 | mesh=mu_bod_DL23 | polys=217 verts=216 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'Dorsal_BWMs', 'mu_bod_DL', 'mu_bod_DLL', 'Muscle'] loc=(0.106748, 3.302598, 0.067309) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+mu_bod_DL24 | mesh=mu_bod_DL24 | polys=216 verts=204 users=1 cols=['Body_Wall_Muscles', 'Collection 3', 'Dorsal_BWMs', 'mu_bod_DL', 'mu_bod_DLM', 'Muscle'] loc=(0.046529, 3.514118, 0.099144) scale=(0.237631, 0.237592, 0.237631) mods=['SUBSURF']
+
+=== MESH MANIFOLD / BOUNDARY QUICK CHECK ===
+PVDL | polys=6942 verts=6999 edges_used=13995 boundary_edges=224 nonmanifold_edges=224
+PVDR | polys=6938 verts=6995 edges_used=13987 boundary_edges=224 nonmanifold_edges=224
+hyp7 | polys=3642 verts=3505 edges_used=7213 boundary_edges=0 nonmanifold_edges=0
+Cuticle | polys=1010 verts=992 edges_used=2006 boundary_edges=0 nonmanifold_edges=0
+Arcade_Cell_Ant | polys=491 verts=488 edges_used=980 boundary_edges=2 nonmanifold_edges=4
+Intestine | polys=456 verts=464 edges_used=920 boundary_edges=16 nonmanifold_edges=16
+Arcade_Cell_Post | polys=432 verts=456 edges_used=890 boundary_edges=52 nonmanifold_edges=52
+IL1DL | polys=394 verts=380 edges_used=772 boundary_edges=0 nonmanifold_edges=0
+IL1DR | polys=394 verts=380 edges_used=772 boundary_edges=0 nonmanifold_edges=0
+PVNL | polys=390 verts=392 edges_used=780 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR20 | polys=387 verts=375 edges_used=760 boundary_edges=0 nonmanifold_edges=0
+I5 | polys=380 verts=376 edges_used=760 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL20 | polys=371 verts=359 edges_used=728 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL22 | polys=367 verts=357 edges_used=722 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR22 | polys=353 verts=341 edges_used=692 boundary_edges=0 nonmanifold_edges=0
+Seam_Cells_Left | polys=346 verts=348 edges_used=692 boundary_edges=0 nonmanifold_edges=0
+Seam_Cells_Right | polys=346 verts=348 edges_used=692 boundary_edges=0 nonmanifold_edges=0
+Phar_Gland_g1_L | polys=330 verts=308 edges_used=636 boundary_edges=0 nonmanifold_edges=0
+PVNR | polys=330 verts=332 edges_used=660 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR24 | polys=317 verts=304 edges_used=619 boundary_edges=0 nonmanifold_edges=0
+pm1 | polys=314 verts=308 edges_used=628 boundary_edges=0 nonmanifold_edges=0
+ALA | polys=312 verts=314 edges_used=624 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR18 | polys=306 verts=297 edges_used=601 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL18 | polys=305 verts=297 edges_used=600 boundary_edges=0 nonmanifold_edges=0
+PVR | polys=302 verts=304 edges_used=604 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR12 | polys=298 verts=287 edges_used=583 boundary_edges=0 nonmanifold_edges=0
+mc1DL | polys=296 verts=288 edges_used=582 boundary_edges=0 nonmanifold_edges=0
+mc1DR | polys=296 verts=288 edges_used=582 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DR20 | polys=292 verts=215 edges_used=505 boundary_edges=0 nonmanifold_edges=0
+Excretory_Cell | polys=290 verts=292 edges_used=580 boundary_edges=0 nonmanifold_edges=0
+mc1V | polys=288 verts=278 edges_used=564 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL12 | polys=288 verts=279 edges_used=565 boundary_edges=0 nonmanifold_edges=0
+RID | polys=286 verts=288 edges_used=572 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL14 | polys=284 verts=275 edges_used=557 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR14 | polys=284 verts=275 edges_used=557 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR9 | polys=276 verts=273 edges_used=547 boundary_edges=0 nonmanifold_edges=0
+AVBL | polys=268 verts=268 edges_used=532 boundary_edges=0 nonmanifold_edges=8
+AVBR | polys=268 verts=268 edges_used=532 boundary_edges=0 nonmanifold_edges=8
+utse | polys=268 verts=268 edges_used=536 boundary_edges=0 nonmanifold_edges=0
+SIBVL | polys=267 verts=268 edges_used=532 boundary_edges=0 nonmanifold_edges=4
+SIBVR | polys=267 verts=268 edges_used=532 boundary_edges=0 nonmanifold_edges=4
+AVFR | polys=266 verts=268 edges_used=532 boundary_edges=0 nonmanifold_edges=0
+AVFL | polys=262 verts=264 edges_used=524 boundary_edges=0 nonmanifold_edges=0
+AVL | polys=262 verts=264 edges_used=524 boundary_edges=0 nonmanifold_edges=0
+RMEV | polys=262 verts=264 edges_used=524 boundary_edges=0 nonmanifold_edges=0
+AVKL | polys=259 verts=260 edges_used=516 boundary_edges=0 nonmanifold_edges=4
+AVKR | polys=259 verts=260 edges_used=516 boundary_edges=0 nonmanifold_edges=4
+DVA | polys=255 verts=256 edges_used=508 boundary_edges=0 nonmanifold_edges=4
+DVC | polys=255 verts=256 edges_used=508 boundary_edges=0 nonmanifold_edges=4
+DB1 | polys=254 verts=256 edges_used=508 boundary_edges=0 nonmanifold_edges=0
+PVQL | polys=254 verts=256 edges_used=508 boundary_edges=0 nonmanifold_edges=0
+PVQR | polys=250 verts=252 edges_used=500 boundary_edges=0 nonmanifold_edges=0
+VC3 | polys=243 verts=247 edges_used=487 boundary_edges=3 nonmanifold_edges=3
+DB4 | polys=242 verts=244 edges_used=484 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL23 | polys=242 verts=240 edges_used=480 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR23 | polys=242 verts=240 edges_used=480 boundary_edges=0 nonmanifold_edges=0
+PVCL.001 | polys=242 verts=244 edges_used=484 boundary_edges=0 nonmanifold_edges=0
+PVCR | polys=242 verts=244 edges_used=484 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL10 | polys=239 verts=231 edges_used=468 boundary_edges=0 nonmanifold_edges=0
+PVT | polys=238 verts=240 edges_used=476 boundary_edges=0 nonmanifold_edges=0
+AVJL | polys=234 verts=236 edges_used=468 boundary_edges=0 nonmanifold_edges=0
+PVCL | polys=234 verts=236 edges_used=468 boundary_edges=0 nonmanifold_edges=0
+AVAL | polys=231 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=4
+AVAR | polys=231 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=4
+AVDL | polys=231 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=4
+AVDR | polys=231 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=4
+AVHL | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+AVHR | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+AVJR | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+DA6 | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+SMBVL | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+SMBVR | polys=230 verts=232 edges_used=460 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR10 | polys=227 verts=219 edges_used=444 boundary_edges=0 nonmanifold_edges=0
+mc3DL | polys=225 verts=214 edges_used=437 boundary_edges=0 nonmanifold_edges=0
+mc3DR | polys=225 verts=214 edges_used=437 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DR23 | polys=219 verts=216 edges_used=433 boundary_edges=0 nonmanifold_edges=0
+mu_int_R | polys=219 verts=210 edges_used=427 boundary_edges=0 nonmanifold_edges=0
+DB2 | polys=218 verts=220 edges_used=436 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DL23 | polys=217 verts=216 edges_used=431 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DL24 | polys=216 verts=204 edges_used=418 boundary_edges=0 nonmanifold_edges=0
+mu_int_L | polys=215 verts=208 edges_used=421 boundary_edges=0 nonmanifold_edges=0
+PLNR | polys=214 verts=216 edges_used=428 boundary_edges=0 nonmanifold_edges=0
+pm3VL | polys=214 verts=199 edges_used=411 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DL20 | polys=211 verts=199 edges_used=408 boundary_edges=0 nonmanifold_edges=0
+SIBDL | polys=211 verts=212 edges_used=420 boundary_edges=0 nonmanifold_edges=4
+SIBDR | polys=211 verts=212 edges_used=420 boundary_edges=0 nonmanifold_edges=4
+DB5 | polys=210 verts=212 edges_used=420 boundary_edges=0 nonmanifold_edges=0
+M4 | polys=210 verts=212 edges_used=420 boundary_edges=0 nonmanifold_edges=0
+PDER | polys=210 verts=212 edges_used=420 boundary_edges=0 nonmanifold_edges=0
+SIADL | polys=207 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=4
+SIADR | polys=207 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=4
+AVG | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+DB3 | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+mc2V | polys=206 verts=194 edges_used=398 boundary_edges=0 nonmanifold_edges=0
+PDEL | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+PLNL | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+PVPL | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+SMDVL | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+SMDVR | polys=206 verts=208 edges_used=412 boundary_edges=0 nonmanifold_edges=0
+pm3VR | polys=205 verts=192 edges_used=395 boundary_edges=0 nonmanifold_edges=0
+Gonadal_Sheath_P1L | polys=204 verts=204 edges_used=406 boundary_edges=0 nonmanifold_edges=0
+Gonadal_Sheath_P1R | polys=204 verts=204 edges_used=406 boundary_edges=0 nonmanifold_edges=0
+mc2DL | polys=204 verts=194 edges_used=396 boundary_edges=0 nonmanifold_edges=0
+mc2DR | polys=204 verts=194 edges_used=396 boundary_edges=0 nonmanifold_edges=0
+SIAVL | polys=202 verts=204 edges_used=404 boundary_edges=0 nonmanifold_edges=0
+SIAVR | polys=202 verts=204 edges_used=404 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL24 | polys=201 verts=188 edges_used=387 boundary_edges=0 nonmanifold_edges=0
+mc3V | polys=200 verts=188 edges_used=386 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VR16 | polys=200 verts=191 edges_used=389 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DR24 | polys=199 verts=188 edges_used=385 boundary_edges=0 nonmanifold_edges=0
+DD4 | polys=198 verts=200 edges_used=396 boundary_edges=0 nonmanifold_edges=0
+mu_bod_VL16 | polys=198 verts=191 edges_used=387 boundary_edges=0 nonmanifold_edges=0
+PVPR | polys=198 verts=200 edges_used=396 boundary_edges=0 nonmanifold_edges=0
+Gonadal_Sheath_A1L | polys=197 verts=196 edges_used=391 boundary_edges=0 nonmanifold_edges=0
+Gonadal_Sheath_A1R | polys=197 verts=196 edges_used=391 boundary_edges=0 nonmanifold_edges=0
+M5 | polys=194 verts=196 edges_used=388 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DL22 | polys=191 verts=181 edges_used=370 boundary_edges=0 nonmanifold_edges=0
+mu_bod_DR22 | polys=191 verts=181 edges_used=370 boundary_edges=0 nonmanifold_edges=0
+FLPL | polys=190 verts=192 edges_used=380 boundary_edges=0 nonmanifold_edges=0
+FLPR | polys=190 verts=192 edges_used=380 boundary_edges=0 nonmanifold_edges=0
+
+=== MATERIALS ===
+Arcade Cells | users=3
+Body Wall Muscle | users=97
+Coelomocyte | users=7
+DTC_&_Somatic_Gonad | users=23
+Even#PhMusc | users=11
+Excretory Cell | users=2
+Excretory Duct Cell | users=2
+Excretory Gland Cells | users=2
+Excretory Pore Cell | users=2
+Generic_Transparency | users=727
+Germline | users=21
+GLR Cells | users=7
+Head Mesodermal Cell | users=2
+Hypodermis | users=12
+Interneuron | users=98
+Intestine | users=22
+marginal cells | users=10
+Motor Neuron | users=118
+NeurUnkFunc | users=14
+Odd#PhMuscle | users=12
+Phary & Rect Glands | users=9
+Pharyngeal Epithelium | users=11
+PolymodalNeuron | users=16
+Rectal epithelium | users=7
+Seam Cell | users=3
+SensoryNeuron | users=62
+SheathOther | users=24
+SocketCell | users=27
+Spermath_Uterin_Valve | users=3
+Spermatheca | users=73
+Sphnc & Anal Dep Musc | users=3
+Stage | users=1
+Stomatoint Muscle | users=3
+Uterine Muscle | users=9
+Uterus | users=17
+VPI & VIR | users=10
+Vulva epithelium | users=8
+Vulval Muscle | users=9

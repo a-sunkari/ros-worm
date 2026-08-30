@@ -1,0 +1,85 @@
+=== counts ===
+loaded objects: 0
+load errors: 0
+GeomSolids1001 small/narrow facets: 0
+GeomSolids1002 bad facet add: 0
+solid defects: 0
+overlap mentions: 72
+
+=== load errors ===
+
+=== solid defects / holes / orientation ===
+
+=== overlap lines tail ===
+[OPENWORM-VALIDATOR] running CheckOverlaps on flat physical volumes...
+Checking overlaps for volume ow_WholeBodyEnvelope_phys:0 (G4TessellatedSolid) ... OK! 
+Checking overlaps for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (0.0238924,-0.244477,0.00799259) by 9.81545 um  (max of 6 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (0.0103121,0.332118,0.00326038) by 9.78702 um  (max of 14 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ExcretorySystem_phys:1 (G4TessellatedSolid) with ow_HypodermisSeam_phys:5 (G4TessellatedSolid)
+          overlap at local point (0.0251555,0.0302699,0.0192567) by 1.75239 um  (max of 200 cases)
+Checking overlaps for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (-0.00357318,-0.0380316,-0.0330143) by 14.1794 um  (max of 45 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_ReproductiveSystem_phys:2 (G4TessellatedSolid) with ow_BodyWallMuscle_phys:4 (G4TessellatedSolid)
+          overlap at local point (-0.0232734,-0.00342458,-0.00923519) by 1.15862 um  (max of 2 cases)
+Checking overlaps for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (-0.00442634,-0.33748,0.0580173) by 12.0672 um  (max of 28 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_BodyWallMuscle_phys:4 (G4TessellatedSolid)
+          overlap at local point (-0.00573901,0.339935,-0.00358807) by 542.495 nm  (max of 3 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_DigestiveSystem_phys:3 (G4TessellatedSolid) with ow_HypodermisSeam_phys:5 (G4TessellatedSolid)
+          overlap at local point (-0.00677839,0.342764,-0.00225242) by 358.328 nm  (max of 13 cases)
+Checking overlaps for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (-0.0148833,0.295463,-0.0157301) by 10.4426 um  (max of 1 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (0.0114081,-0.265932,0.0385386) by 8.03416 um  (max of 21 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (-0.00154854,-0.0305848,-0.0385808) by 23.5618 um  (max of 71 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_BodyWallMuscle_phys:4 (G4TessellatedSolid) with ow_HypodermisSeam_phys:5 (G4TessellatedSolid)
+          overlap at local point (-0.0106357,0.338686,-0.00129828) by 962.528 nm  (max of 26 cases)
+Checking overlaps for volume ow_HypodermisSeam_phys:5 (G4TessellatedSolid) ... 
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:5 (G4TessellatedSolid) with ow_ExcretorySystem_phys:1 (G4TessellatedSolid)
+          overlap at local point (-0.0188249,0.279092,-0.0137588) by 7.99834 um  (max of 20 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:5 (G4TessellatedSolid) with ow_ReproductiveSystem_phys:2 (G4TessellatedSolid)
+          overlap at local point (0.0215379,-0.274703,0.0358019) by 13.1646 um  (max of 7 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:5 (G4TessellatedSolid) with ow_DigestiveSystem_phys:3 (G4TessellatedSolid)
+          overlap at local point (0.000351725,-0.0334735,-0.0410736) by 23.5175 um  (max of 41 cases)
+      issued by : G4PVPlacement::CheckOverlaps()
+Overlap with volume already placed !
+          Overlap is detected for volume ow_HypodermisSeam_phys:5 (G4TessellatedSolid) with ow_BodyWallMuscle_phys:4 (G4TessellatedSolid)
+          overlap at local point (0.000351725,-0.0334735,-0.0410736) by 2.62318 um  (max of 26 cases)
+[OPENWORM-VALIDATOR] overlap checks completed
