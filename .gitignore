@@ -1,0 +1,27 @@
+# Build products
+**/build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Generated simulation outputs
+**/results/
+*.root
+*.log
+*.out
+Species.txt
+output*.root
+electron_spectrum.csv
+
+# Local scratch / backups
+*.bak
+*.bak_*
+*.pre_*
+*~
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc

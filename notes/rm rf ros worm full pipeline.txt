@@ -1,8 +1,0 @@
-rm -rf ros_worm_full_pipeline_v2
-
-unzip ~/Downloads/ros_worm_full_pipeline_v2_tissue_materials.zip -d /home/asunkari/ros-worm
-
-cd /home/asunkari/ros-worm/ros_worm_full_pipeline_v2
-
-chmod +x install_into_repo.sh
-chmod +x scripts/*.sh
