@@ -97,6 +97,13 @@ At 1 ps, focused/diffuse G(•OH) values were 5.035/5.040 and G(H₂O₂) values
 1.463/1.485 while G(H₂O₂) increased to 0.889/0.885. Hydrated-electron G values
 decreased from about 4.08 at 1 ps to 1.47–1.49 at 1 µs.
 
+The matched muscle-proximity spectra gave ~1 µs G(•OH)=1.467 focused and 1.483
+diffuse, and G(H₂O₂)=0.888 and 0.884. All four muscle-versus-neural differences
+for these two species were below 0.3%, comparable to the chemistry Monte Carlo
+uncertainty. Thus the same homogeneous-water radiochemical environment is
+predicted for neural- and muscle-proximity spectra at the resolution supported
+here; tissue-specific biology is not supplied by a distinct spectral chemistry.
+
 Radiochemical products therefore arise orders of magnitude before behavioral
 responses, satisfying a necessary timing condition for plausibility. The near
 identity of focused and diffuse G curves shows that, after conditioning on the

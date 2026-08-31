@@ -39,7 +39,10 @@ electron.
   water molecule-equivalent energy budgets over those conditions. These assume
   full local thermalization and are not intracellular concentrations.
 - `chemistry/` and `chemistry_timeseries_all.csv`: time-resolved homogeneous
-  water-radiolysis results and manifests.
+  water-radiolysis results, input spectra, and manifests for focused/diffuse
+  neural- and muscle-proximity cases.
+- `chemistry_neural_muscle_comparison_1us.csv`: direct paired tissue-spectrum
+  G-value comparison near the chemistry endpoint.
 - `runs/`: compact per-run macros, manifests, and summaries with input hashes.
   The tracked production macros let the release audit verify actual `beamOn`,
   source, direction, and environment commands without the ignored ROOT files.

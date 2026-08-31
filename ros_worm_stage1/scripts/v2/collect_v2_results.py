@@ -96,6 +96,12 @@ def main() -> None:
                        scoring / "neural_distance_shells.csv", scoring / "neural_muscle_comparison.csv",
                        scoring / "neural_longitudinal_sectors.csv", scoring / "neural_matched_atlas_null.csv"]:
             if source.exists(): shutil.copy2(source, destination / source.name)
+        if run_dir.name.startswith("v2_production_"):
+            for spectrum_name in ["electron_spectrum_neural_within_5um.csv",
+                                  "electron_spectrum_muscle_within_5um.csv",
+                                  "electron_spectrum_inside_bodywall.csv"]:
+                source = scoring / spectrum_name
+                if source.exists(): shutil.copy2(source, destination / spectrum_name)
     runs = pd.DataFrame(rows).sort_values(["events", "case", "run_name"])
     runs.to_csv(args.outdir / "transport_run_index.csv", index=False)
     shells = pd.concat(shell_frames, ignore_index=True); shells.to_csv(args.outdir / "all_neural_distance_shells.csv", index=False)
@@ -271,18 +277,29 @@ def main() -> None:
 
     # Figure 7: time-resolved water radiolysis.
     chemistry_frames=[]; chemistry_out=args.outdir / "chemistry"; chemistry_out.mkdir(exist_ok=True)
-    for label, dirname in [("Focused", "v2_chemistry_focused_neural_10k"), ("Diffuse", "v2_chemistry_diffuse_neural_10k")]:
+    # Remove the superseded neural-only aliases from collectors predating the
+    # explicit tissue dimension. The underlying full results are untouched.
+    for label in ["focused", "diffuse"]:
+        for suffix in ["run_manifest.json", "species_summary.csv", "species_timeseries.csv"]:
+            (chemistry_out / f"{label}_{suffix}").unlink(missing_ok=True)
+    chemistry_runs = [
+        ("Focused", "neural", "v2_chemistry_focused_neural_10k"),
+        ("Diffuse", "neural", "v2_chemistry_diffuse_neural_10k"),
+        ("Focused", "muscle", "v2_chemistry_focused_muscle_10k"),
+        ("Diffuse", "muscle", "v2_chemistry_diffuse_muscle_10k"),
+    ]
+    for label, tissue, dirname in chemistry_runs:
         source=args.results / dirname / "species_timeseries.csv"
         if source.exists():
-            frame=pd.read_csv(source); frame.insert(0,"condition",label); chemistry_frames.append(frame)
-            for filename in ["species_timeseries.csv","species_summary.csv","run_manifest.json"]:
+            frame=pd.read_csv(source); frame.insert(0,"tissue",tissue); frame.insert(0,"condition",label); chemistry_frames.append(frame)
+            for filename in ["species_timeseries.csv","species_summary.csv","run_manifest.json","electron_spectrum.csv"]:
                 path=args.results/dirname/filename
-                if path.exists(): shutil.copy2(path, chemistry_out/f"{label.lower()}_{filename}")
+                if path.exists(): shutil.copy2(path, chemistry_out/f"{label.lower()}_{tissue}_{filename}")
     if chemistry_frames:
         chemistry=pd.concat(chemistry_frames,ignore_index=True); chemistry.to_csv(args.outdir/"chemistry_timeseries_all.csv",index=False)
         targets=np.array([.001,.01,.1,1,10,100,999.999])
         selected=[]
-        for (condition,species), frame in chemistry.groupby(["condition","species"]):
+        for (condition,tissue,species), frame in chemistry.groupby(["condition","tissue","species"]):
             times=frame.time_ns.to_numpy(float)
             for target in targets:
                 row=frame.iloc[np.argmin(np.abs(times-target))].copy(); row["requested_time_ns"]=target; selected.append(row)
@@ -294,7 +311,7 @@ def main() -> None:
         radiolysis_rows = []
         for _, exposure in dose.iterrows():
             condition = "Focused" if exposure["case"].startswith("focused") else "Diffuse"
-            for _, chem in selected[selected.condition == condition].iterrows():
+            for _, chem in selected[(selected.condition == condition) & (selected.tissue == "neural")].iterrows():
                 molecule_equivalent = (exposure["near5_birth_energy_keV_conditional"]
                                        * 10.0 * chem["mean_G_molecules_per_100eV"])
                 molecule_sem = (exposure["near5_birth_energy_keV_conditional"]
@@ -311,9 +328,19 @@ def main() -> None:
                 })
         pd.DataFrame(radiolysis_rows).to_csv(
             args.outdir / "experimental_condition_radiolysis_scaling.csv", index=False)
-        fig,axes=plt.subplots(1,2,figsize=(10,4.5),sharey=True)
-        for ax,condition in zip(axes,["Focused","Diffuse"]):
-            part=selected[selected.condition==condition]
+        final_time=selected[np.isclose(selected.requested_time_ns,999.999)]
+        means=final_time.pivot_table(index=["condition","species"],columns="tissue",
+                                     values="mean_G_molecules_per_100eV")
+        sems=final_time.pivot_table(index=["condition","species"],columns="tissue",
+                                    values="standard_error_G")
+        comparison=means.rename(columns={"neural":"neural_G","muscle":"muscle_G"}).join(
+            sems.rename(columns={"neural":"neural_G_SEM","muscle":"muscle_G_SEM"})).reset_index()
+        comparison["muscle_vs_neural_percent_difference"]=(comparison.muscle_G/comparison.neural_G-1)*100
+        comparison.to_csv(args.outdir/"chemistry_neural_muscle_comparison_1us.csv",index=False)
+        fig,axes=plt.subplots(2,2,figsize=(10,8),sharex=True,sharey=True)
+        panels=[("neural","Focused"),("neural","Diffuse"),("muscle","Focused"),("muscle","Diffuse")]
+        for ax,(tissue,condition) in zip(axes.flat,panels):
+            part=selected[(selected.condition==condition)&(selected.tissue==tissue)]
             # ASCII/mathtext-safe labels avoid missing glyphs in headless
             # publication rendering while retaining unambiguous chemistry.
             display = {"°OH^0": r"$\mathregular{OH\bullet}$", "H2O2^0": r"$\mathregular{H_2O_2}$",
@@ -322,7 +349,7 @@ def main() -> None:
                 frame=part[part.species==species]
                 ax.errorbar(frame.requested_time_ns,frame.mean_G_molecules_per_100eV,yerr=frame.standard_error_G,
                             marker="o",ms=3,label=display[species])
-            ax.set_xscale("log"); ax.set(title=condition,xlabel="Time (ns)",ylabel="G (molecules / 100 eV)"); ax.legend(frameon=False,fontsize=8)
+            ax.set_xscale("log"); ax.set(title=f"{condition}, {tissue} proximity",xlabel="Time (ns)",ylabel="G (molecules / 100 eV)"); ax.legend(frameon=False,fontsize=8)
         fig.suptitle("Geant4-DNA water-radiolysis time response")
         fig.tight_layout(); save_figure(fig, figures / "fig07_radiolysis_timeseries")
 

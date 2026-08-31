@@ -105,13 +105,15 @@ ejection. No dose-rate chemistry or biological saturation is asserted.
 
 ## Radiolysis
 
-Near-neural electron birth spectra drive the preserved chem6-derived
-Geant4-DNA liquid-water chemistry. The IRT time-step model and validated
+Neural- and muscle-proximity electron birth spectra drive the preserved
+chem6-derived Geant4-DNA liquid-water chemistry. The IRT time-step model and validated
 reaction lifecycle are unchanged. Species are reported at 1 ps, 10 ps, 100 ps,
 1 ns, 10 ns, 100 ns, and approximately 1 µs, with 50 additional log bins.
 Outputs are G values in molecules/100 eV. They are homogeneous-water
 radiolysis predictions, not biological ROS measurements or intracellular
-concentrations.
+concentrations. Four 10k chemistry cases use the focused/diffuse spectra within
+5 µm of the neural and body-wall muscle surfaces, with paired seeds for the
+tissue comparison.
 
 For an exposure-level energy-budget comparison, the workflow multiplies each
 time-resolved G value by the summed kinetic energy of births within 5 µm,

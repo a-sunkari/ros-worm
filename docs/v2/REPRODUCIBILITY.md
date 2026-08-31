@@ -36,7 +36,8 @@ The tiers are cumulative:
   and paired 1M tests of spectrum, experimental medium, focused-beam position
   and width, diffuse liquid depth, and water-versus-tissue materials.
 - `production`: validation plus one 10M focused case, one 10M diffuse case,
-  10k chemistry for each near-neural spectrum, and artifact collection.
+  paired 10k chemistry for focused/diffuse neural- and muscle-proximity
+  spectra, and artifact collection.
 
 The runner reuses a case only when its result directory already contains a
 `run_manifest.json`; it never silently overwrites a prior run.

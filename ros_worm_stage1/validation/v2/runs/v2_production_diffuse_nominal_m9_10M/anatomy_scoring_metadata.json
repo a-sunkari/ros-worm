@@ -9,6 +9,20 @@
     "recorded_outside_body": 0,
     "geometrically_outside_body": 0
   },
+  "eligible_coordinate_ranges_mm": {
+    "x": [
+      -0.040956074655078376,
+      0.0409362184764772
+    ],
+    "y": [
+      -0.4321452521156059,
+      0.43684521933688747
+    ],
+    "z": [
+      -0.09423241834284087,
+      0.09384303274851573
+    ]
+  },
   "whole_worm_mass_kg": 7.252349000000001e-09,
   "whole_worm_dose_per_incident_history_Gy": 2.0861906534399743e-10,
   "per_Gy_normalization": "Conditional on identifying the reported experimental Gy with model whole-worm mean absorbed dose.",

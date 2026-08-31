@@ -129,6 +129,11 @@ Water chemistry began promptly. •OH G values were about 5.04 at 1 ps and
 therefore easily precedes second-scale behavior, but timing compatibility is a
 necessary rather than sufficient causal criterion.
 
+Separate 10k chemistry runs driven by muscle-surface-proximity spectra agreed
+with the neural-spectrum runs to within 0.3% for ~1 µs •OH and H₂O₂ G values.
+This reinforces the physical interpretation that neural and ectopic-muscle
+LITE-1 expression encounter comparable transport/radiolysis inputs.
+
 Conditional homogeneous-water energy-budget conversions span roughly
 0.19–1.42 billion •OH molecule equivalents across the focused conditions and
 0.35–1.36 billion across the diffuse series at ~1 µs. They assume full local

@@ -143,6 +143,8 @@ def main() -> None:
     pd.DataFrame(tissue_rows).to_csv(args.outdir / "neural_muscle_comparison.csv", index=False)
     write_spectrum(scored[scored["distance_to_nervous_surface_um"] < 5], energy,
                    args.outdir / "electron_spectrum_neural_within_5um.csv")
+    write_spectrum(scored[scored["distance_to_bodywall_surface_um"] < 5], energy,
+                   args.outdir / "electron_spectrum_muscle_within_5um.csv")
     write_spectrum(scored[scored["inside_bodywall_physical_compartment"]], energy,
                    args.outdir / "electron_spectrum_inside_bodywall.csv")
 

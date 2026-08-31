@@ -20,7 +20,7 @@ has become experimentally measured.
 | Regional physical transport | Done | `all_regional_transport.csv`; Results regional table |
 | Cannon exposure-series scaling | Done, conditional on reported Gy | `experimental_condition_model_scaling.csv`; Figure 5 |
 | Behavioral comparison | Done at supported resolution | `cannon_observations.csv`; report separates compatibility from causality |
-| Time-resolved water radiolysis | Done | 1 ps–~1 µs tracked chemistry tables; Figure 7 |
+| Time-resolved water radiolysis | Done | four neural/muscle 10k cases at 1 ps–~1 µs; Figure 7 |
 | Exposure-level radiolysis budget | Done with explicit local-water assumption | `experimental_condition_radiolysis_scaling.csv` |
 | Stochastic uncertainty | Done | three independent 1M replicates/source; `replicate_summary_1M.csv` |
 | Physical-input sensitivity | Done for primary brackets | twelve paired 1M contrasts; Figure 9 |

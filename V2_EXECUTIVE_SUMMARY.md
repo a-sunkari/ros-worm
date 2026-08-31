@@ -29,6 +29,8 @@ a geometry-matched internal surface.
   argues that tissue specificity need not arise from special X-ray transport.
 - At ~1 µs, focused/diffuse homogeneous-water G values were 1.463/1.485 for
   •OH and 0.889/0.885 for H₂O₂ molecules per 100 eV.
+- Matched muscle-proximity chemistry differed by <0.3% from neural-proximity
+  chemistry for ~1 µs •OH and H₂O₂, within the 10k chemistry uncertainty.
 - Conditional homogeneous-water energy-budget equivalents scale from about
   0.19 to 1.42 billion •OH molecules across the focused exposure set and 0.35
   to 1.36 billion across the diffuse set. These are not intracellular counts

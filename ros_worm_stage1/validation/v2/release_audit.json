@@ -203,6 +203,38 @@
       ]
     },
     {
+      "name": "tracked.chemistry_tissue_conditions",
+      "passed": true,
+      "detail": [
+        {
+          "condition": "Diffuse",
+          "tissue": "muscle"
+        },
+        {
+          "condition": "Diffuse",
+          "tissue": "neural"
+        },
+        {
+          "condition": "Focused",
+          "tissue": "muscle"
+        },
+        {
+          "condition": "Focused",
+          "tissue": "neural"
+        }
+      ]
+    },
+    {
+      "name": "tracked.chemistry_input_hashes",
+      "passed": true,
+      "detail": {
+        "diffuse_muscle": true,
+        "diffuse_neural": true,
+        "focused_muscle": true,
+        "focused_neural": true
+      }
+    },
+    {
       "name": "tracked.figure_pairs",
       "passed": true,
       "detail": {

@@ -98,6 +98,23 @@ def main() -> None:
     check("tracked.chemistry_reporting_times",
           set(chemistry["requested_time_ns"].unique()) == expected_times,
           sorted(chemistry["requested_time_ns"].unique()))
+    expected_tissues = {("Focused", "neural"), ("Diffuse", "neural"),
+                        ("Focused", "muscle"), ("Diffuse", "muscle")}
+    actual_tissues = set(map(tuple, chemistry[["condition", "tissue"]].drop_duplicates().to_numpy()))
+    check("tracked.chemistry_tissue_conditions", actual_tissues == expected_tissues,
+          chemistry[["condition", "tissue"]].drop_duplicates().to_dict("records"))
+    chemistry_hashes = {}
+    for condition, tissue in expected_tissues:
+        stem = f"{condition.lower()}_{tissue}"
+        manifest_path = args.validation / "chemistry" / f"{stem}_run_manifest.json"
+        spectrum_path = args.validation / "chemistry" / f"{stem}_electron_spectrum.csv"
+        valid = manifest_path.exists() and spectrum_path.exists()
+        if valid:
+            chemistry_manifest = json.loads(manifest_path.read_text())
+            valid = (chemistry_manifest["events"] == 10_000
+                     and chemistry_manifest["input_spectrum_sha256"] == sha256(spectrum_path))
+        chemistry_hashes[stem] = valid
+    check("tracked.chemistry_input_hashes", all(chemistry_hashes.values()), chemistry_hashes)
     pngs = sorted((args.validation / "figures").glob("fig*.png"))
     pdfs = sorted((args.validation / "figures").glob("fig*.pdf"))
     check("tracked.figure_pairs", len(pngs) == len(pdfs) == 10,

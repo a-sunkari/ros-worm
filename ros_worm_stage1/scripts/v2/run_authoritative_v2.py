@@ -94,14 +94,16 @@ def main() -> None:
 
     if args.tier == "production":
         chemistry = [
-            ("focused", "v2_production_focused_nominal_ngm_10M"),
-            ("diffuse", "v2_production_diffuse_nominal_m9_10M"),
+            ("focused", "neural", "v2_production_focused_nominal_ngm_10M"),
+            ("diffuse", "neural", "v2_production_diffuse_nominal_m9_10M"),
+            ("focused", "muscle", "v2_production_focused_nominal_ngm_10M"),
+            ("diffuse", "muscle", "v2_production_diffuse_nominal_m9_10M"),
         ]
-        for label, transport in chemistry:
-            outdir = stage / "results" / f"v2_chemistry_{label}_neural_10k"
+        for label, tissue, transport in chemistry:
+            outdir = stage / "results" / f"v2_chemistry_{label}_{tissue}_10k"
             if (outdir / "run_manifest.json").exists():
                 print(f"[REUSE] {outdir.name}"); continue
-            spectrum = stage / "results" / transport / "anatomy_scoring_v2/electron_spectrum_neural_within_5um.csv"
+            spectrum = stage / "results" / transport / f"anatomy_scoring_v2/electron_spectrum_{tissue}_within_5um.csv"
             command = [python, str(stage / "scripts/run_chemistry_spectrum.py"), "--spectrum", str(spectrum),
                        "--outdir", str(outdir), "--events", "10000", "--threads", str(min(8,args.threads))]
             print("+", " ".join(command), flush=True)
