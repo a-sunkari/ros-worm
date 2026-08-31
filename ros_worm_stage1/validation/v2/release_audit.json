@@ -228,10 +228,10 @@
       "name": "tracked.chemistry_input_hashes",
       "passed": true,
       "detail": {
-        "diffuse_muscle": true,
+        "focused_neural": true,
         "diffuse_neural": true,
         "focused_muscle": true,
-        "focused_neural": true
+        "diffuse_muscle": true
       }
     },
     {

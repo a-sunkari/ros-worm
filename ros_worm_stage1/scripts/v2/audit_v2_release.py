@@ -98,13 +98,14 @@ def main() -> None:
     check("tracked.chemistry_reporting_times",
           set(chemistry["requested_time_ns"].unique()) == expected_times,
           sorted(chemistry["requested_time_ns"].unique()))
-    expected_tissues = {("Focused", "neural"), ("Diffuse", "neural"),
-                        ("Focused", "muscle"), ("Diffuse", "muscle")}
+    expected_tissue_pairs = [("Focused", "neural"), ("Diffuse", "neural"),
+                             ("Focused", "muscle"), ("Diffuse", "muscle")]
+    expected_tissues = set(expected_tissue_pairs)
     actual_tissues = set(map(tuple, chemistry[["condition", "tissue"]].drop_duplicates().to_numpy()))
     check("tracked.chemistry_tissue_conditions", actual_tissues == expected_tissues,
           chemistry[["condition", "tissue"]].drop_duplicates().to_dict("records"))
     chemistry_hashes = {}
-    for condition, tissue in expected_tissues:
+    for condition, tissue in expected_tissue_pairs:
         stem = f"{condition.lower()}_{tissue}"
         manifest_path = args.validation / "chemistry" / f"{stem}_run_manifest.json"
         spectrum_path = args.validation / "chemistry" / f"{stem}_electron_spectrum.csv"
