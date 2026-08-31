@@ -1,5 +1,13 @@
 # Current project state — August 2026
 
+> **V2 update (August 30, 2026):** the validated v1 architecture remains the
+> geometry/chemistry baseline, and a completed thesis-study extension now lives
+> under `config/v2`, `scripts/v2`, and `validation/v2`. Start with
+> `V2_EXECUTIVE_SUMMARY.md` and `docs/v2/THESIS_REPORT.md`. The v2 production
+> cases use vertical −Z irradiation, source uncertainty ensembles, experimental
+> medium/substrates, 10M transport, matched neural nulls, muscle comparison,
+> and time-resolved chemistry.
+
 ## Authoritative workflow
 
 The working implementation is `ros_worm_stage1/`. The authoritative physical

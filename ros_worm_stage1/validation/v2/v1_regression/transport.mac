@@ -1,0 +1,17 @@
+/run/numberOfThreads 2
+/random/setSeeds 83001 83002
+/rosworm/materials /home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm/ros_worm_stage1/config/region_materials.csv
+/rosworm/manifest /home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm/ros_worm_stage1/config/transport_geometry_v1.csv
+/rosworm/mmPerUnit 0.1
+/rosworm/maxStep_um 2 um
+/rosworm/saveSteps true
+/rosworm/sourceType focused
+/rosworm/spectrumType kramers
+/rosworm/kvp 50 keV
+/rosworm/minEnergy 1 keV
+/rosworm/sourceY -2.0 mm
+/rosworm/spotFWHM 0.85 mm
+/run/initialize
+/tracking/verbose 0
+/run/printProgress 100
+/run/beamOn 1000

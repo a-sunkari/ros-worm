@@ -11,10 +11,27 @@ Future humans and AI agents should read, in order:
 3. [`docs/SCIENTIFIC_CONTEXT.md`](docs/SCIENTIFIC_CONTEXT.md) — Bolding/Cannon literature and the modeling question.
 4. [`docs/GEOMETRY_AND_NERVOUS_SYSTEM.md`](docs/GEOMETRY_AND_NERVOUS_SYSTEM.md) — the anatomy/mesh problem and current nervous-system strategy.
 5. [`docs/VALIDATION_AND_NEXT_STEPS.md`](docs/VALIDATION_AND_NEXT_STEPS.md) — known results, warnings, and completion plan.
+6. [`V2_EXECUTIVE_SUMMARY.md`](V2_EXECUTIVE_SUMMARY.md) — thesis-study result and its scientific boundary.
+7. [`docs/v2/THESIS_REPORT.md`](docs/v2/THESIS_REPORT.md) — v2 methods, validation, results, and discussion.
+8. [`docs/v2/COMPLETION_MATRIX.md`](docs/v2/COMPLETION_MATRIX.md) — requirement-to-evidence audit.
 
 The active implementation is under [`ros_worm_stage1/`](ros_worm_stage1/). The older `ros_worm_full_pipeline_v2` staging copy, build trees, scratch backups, and command-dump notes were removed from the working tree during the August 2026 cleanup; their history remains in git.
 
-## Authoritative run
+## Authoritative v2 run
+
+The cumulative study runner is:
+
+```bash
+/home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/v2/run_authoritative_v2.py --tier smoke
+```
+
+Use `--tier validation` for the independent 1M replicates and primary
+sensitivity brackets, or `--tier production` for the full 10M transport + 10k
+chemistry package. Existing provenance-complete results are reused. See
+[`docs/v2/REPRODUCIBILITY.md`](docs/v2/REPRODUCIBILITY.md).
+
+## Validated v1 run
 
 From the repository root, a focused validation run is:
 
@@ -43,3 +60,9 @@ physical nervous daughter volume plus post-processing against the original
 high-resolution nervous surface**. This is a secondary-electron birth-proximity
 metric, not nervous-tissue absorbed dose. Geant4-DNA outputs are simulated water
 radiolysis yields, not measured biological ROS.
+
+The v2 matched-atlas null test found no compelling neural-specific enrichment:
+the real-atlas within-5-µm fractions were 14.19% (focused) and 14.88% (diffuse),
+but anatomy-preserving perturbation means were 14.12% and 14.52%. The endpoint
+remains useful as an anatomy-referenced exposure metric, not evidence that
+X-ray transport preferentially targets the nervous system.

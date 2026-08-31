@@ -1,5 +1,12 @@
 # Geometry and nervous-system treatment
 
+> **V2 decision:** retain the original high-resolution nervous surface as the
+> authoritative atlas; do not promote a voxel reconstruction to a physical
+> neural solid. Ten-million-history matched-atlas controls found real/null
+> within-5-µm ratios of 1.005 focused and 1.025 diffuse. Near-neural proximity
+> is therefore an anatomy-referenced exposure descriptor, not evidence of
+> preferential neural targeting. See `docs/v2/RESULTS.md`.
+
 ## Physical transport geometry
 
 `ros_worm_stage1/config/transport_geometry_v1.csv` is authoritative. Its paths,

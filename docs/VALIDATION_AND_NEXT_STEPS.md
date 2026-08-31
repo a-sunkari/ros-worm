@@ -1,5 +1,12 @@
 # Validation and remaining work
 
+> **V2 completion note (August 30, 2026):** the thesis extension has been
+> executed through 100k falsification, independent 1M replicates and paired
+> sensitivities, 10M focused/diffuse production, 10k time-resolved chemistry,
+> compact tables, and ten figures. Remaining work is experimental
+> discrimination rather than another geometry rewrite. See
+> `V2_LIMITATIONS_AND_EXPERIMENTAL_TESTS.md`.
+
 ## Completed validation
 
 Two 100k falsification runs and two 10M production runs completed with Geant4
@@ -50,11 +57,15 @@ concentrations in a worm and not experimental ROS measurements.
 
 ## Remaining research, not workflow blockers
 
-1. Replace generic Kramers inputs with measured or vendor-validated tungsten and
-   silver spectra/fluence maps, including filtration and focusing geometry.
-2. Add experimental medium/container geometry if absolute dosimetry is required.
-3. Quantify Monte Carlo uncertainties with independent-seed replicates rather
-   than treating one 10M run as an uncertainty estimate.
+1. Replace the v2 physics-bracketed source ensembles with at-sample measured
+   tungsten and silver spectra/fluence maps, including the exact filtration and
+   polycapillary response.
+2. Replace simplified v2 medium/substrate slabs with measured per-animal liquid
+   depth, meniscus, dish/slide dimensions, and worm height.
+3. Extend the completed independent-seed and paired one-at-a-time study to a
+   larger global design spanning posture, orientation, dimensions, and source
+   distance if quantitative confidence intervals beyond the current brackets
+   are required.
 4. Construct a true neural volume only if biological radii/segmentation data and
    a resolution-converged implicit representation become available.
 5. Extend homogeneous water chemistry with oxygen/scavenger/biomolecular kinetics

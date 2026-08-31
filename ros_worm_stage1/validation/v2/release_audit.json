@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "purpose": "Release-integrity audit; no scientific pass/fail threshold is inferred.",
+  "production_runs": {
+    "focused": {
+      "run_name": "v2_production_focused_nominal_ngm_10M",
+      "audit_source": "tracked compact result",
+      "events": 10000000,
+      "seeds": [
+        91001,
+        92001
+      ],
+      "geant4_version": "11.3.2",
+      "transport_git_commit": "105cb563743c63e65bd63a5077ad2f95645f762a",
+      "git_status_at_transport": [
+        " M ros_worm_stage1/scripts/run_chemistry_spectrum.py",
+        " M ros_worm_stage1/scripts/v2/score_anatomy_v2.py",
+        "?? ros_worm_stage1/config/v2/cannon_observations.csv",
+        "?? ros_worm_stage1/scripts/v2/collect_v2_results.py",
+        "?? ros_worm_stage1/scripts/v2/summarize_chemistry_timeseries_v2.py",
+        "?? ros_worm_stage1/validation/v2/"
+      ],
+      "eligible_electrons": 65612,
+      "near5_fraction": 0.14191001646040358,
+      "null_enrichment": 1.0049558827497505,
+      "coordinate_exclusions": {
+        "non_electron": 52,
+        "nonfinite": 0,
+        "recorded_outside_body": 0,
+        "geometrically_outside_body": 0
+      }
+    },
+    "diffuse": {
+      "run_name": "v2_production_diffuse_nominal_m9_10M",
+      "audit_source": "tracked compact result",
+      "events": 10000000,
+      "seeds": [
+        91002,
+        92002
+      ],
+      "geant4_version": "11.3.2",
+      "transport_git_commit": "105cb563743c63e65bd63a5077ad2f95645f762a",
+      "git_status_at_transport": [
+        " M ros_worm_stage1/scripts/run_chemistry_spectrum.py",
+        " M ros_worm_stage1/scripts/v2/score_anatomy_v2.py",
+        "?? ros_worm_stage1/config/v2/cannon_observations.csv",
+        "?? ros_worm_stage1/scripts/v2/collect_v2_results.py",
+        "?? ros_worm_stage1/scripts/v2/summarize_chemistry_timeseries_v2.py"
+      ],
+      "eligible_electrons": 16396,
+      "near5_fraction": 0.14881678458160527,
+      "null_enrichment": 1.0246002029604226,
+      "coordinate_exclusions": {
+        "non_electron": 21,
+        "nonfinite": 0,
+        "recorded_outside_body": 0,
+        "geometrically_outside_body": 0
+      }
+    }
+  },
+  "checks": [
+    {
+      "name": "focused.required_files",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "name": "focused.beamOn",
+      "passed": true,
+      "detail": [
+        10000000
+      ]
+    },
+    {
+      "name": "focused.summary_events",
+      "passed": true,
+      "detail": 10000000
+    },
+    {
+      "name": "focused.direction",
+      "passed": true,
+      "detail": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "focused.tabulated_spectrum",
+      "passed": true,
+      "detail": "nominal"
+    },
+    {
+      "name": "focused.artifact_hashes",
+      "passed": true,
+      "detail": {
+        "ros_worm_stage1/config/v2/study_cases.yaml": true,
+        "ros_worm_stage1/config/v2/source_models.yaml": true,
+        "ros_worm_stage1/config/v2/spectra/focused_imoxs_w_50kv_nominal.csv": true,
+        "ros_worm_stage1/config/transport_geometry_v1.csv": true,
+        "ros_worm_stage1/config/region_materials.csv": true,
+        "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl": true
+      }
+    },
+    {
+      "name": "focused.eligible_coordinate_exclusions",
+      "passed": true,
+      "detail": {
+        "non_electron": 52,
+        "nonfinite": 0,
+        "recorded_outside_body": 0,
+        "geometrically_outside_body": 0
+      }
+    },
+    {
+      "name": "diffuse.required_files",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "name": "diffuse.beamOn",
+      "passed": true,
+      "detail": [
+        10000000
+      ]
+    },
+    {
+      "name": "diffuse.summary_events",
+      "passed": true,
+      "detail": 10000000
+    },
+    {
+      "name": "diffuse.direction",
+      "passed": true,
+      "detail": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "diffuse.tabulated_spectrum",
+      "passed": true,
+      "detail": "nominal"
+    },
+    {
+      "name": "diffuse.artifact_hashes",
+      "passed": true,
+      "detail": {
+        "ros_worm_stage1/config/v2/study_cases.yaml": true,
+        "ros_worm_stage1/config/v2/source_models.yaml": true,
+        "ros_worm_stage1/config/v2/spectra/diffuse_minix_ag_20kv_nominal.csv": true,
+        "ros_worm_stage1/config/transport_geometry_v1.csv": true,
+        "ros_worm_stage1/config/region_materials.csv": true,
+        "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl": true
+      }
+    },
+    {
+      "name": "diffuse.eligible_coordinate_exclusions",
+      "passed": true,
+      "detail": {
+        "non_electron": 21,
+        "nonfinite": 0,
+        "recorded_outside_body": 0,
+        "geometrically_outside_body": 0
+      }
+    },
+    {
+      "name": "tracked.run_count",
+      "passed": true,
+      "detail": 34
+    },
+    {
+      "name": "tracked.independent_nominal_replicates",
+      "passed": true,
+      "detail": [
+        {
+          "case": "diffuse_paralysis",
+          "near5_fraction_count": 3
+        },
+        {
+          "case": "focused_avoidance",
+          "near5_fraction_count": 3
+        }
+      ]
+    },
+    {
+      "name": "tracked.paired_sensitivity_contrasts",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "tracked.chemistry_reporting_times",
+      "passed": true,
+      "detail": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0,
+        999.999
+      ]
+    },
+    {
+      "name": "tracked.figure_pairs",
+      "passed": true,
+      "detail": {
+        "png": 10,
+        "pdf": 10
+      }
+    },
+    {
+      "name": "tracked.v1_regression_files",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "name": "tracked.v1_regression_behavior",
+      "passed": true,
+      "detail": {
+        "events": 1000,
+        "warnings": 0
+      }
+    }
+  ],
+  "all_checks_passed": true
+}

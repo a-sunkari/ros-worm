@@ -48,6 +48,25 @@ Authoritative end-to-end runner:
 
 `ros_worm_stage1/scripts/run_reproducible_case.py`
 
+## Thesis v2 study
+
+The validated v1 workflow above remains available. The current thesis-study
+extension is additive:
+
+- v2 source/environment cases: `ros_worm_stage1/config/v2/study_cases.yaml`
+- source provenance/uncertainty: `ros_worm_stage1/config/v2/source_models.yaml`
+- one-case runner: `ros_worm_stage1/scripts/v2/run_v2_case.py`
+- cumulative authoritative runner: `ros_worm_stage1/scripts/v2/run_authoritative_v2.py`
+- anatomy + null scorer: `ros_worm_stage1/scripts/v2/score_anatomy_v2.py`
+- compact results and figures: `ros_worm_stage1/validation/v2/`
+- thesis report: `docs/v2/THESIS_REPORT.md`
+
+The v2 source axis is world −Z. Model Y is the worm longitudinal axis. Do not
+reuse the old +Y source default for claims about the Cannon experimental
+orientation. The diffuse `targeted_cone` histories are conditioned on reaching
+the target rectangle; normalize them to the reported absorbed dose, never to
+tube current or histories alone.
+
 ## Region IDs
 
 1. body / residual WholeBodyEnvelope
