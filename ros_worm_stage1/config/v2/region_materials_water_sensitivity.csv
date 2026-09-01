@@ -1,0 +1,7 @@
+region_id,region_key,material_name,material_class,density_g_cm3,rationale
+1,body,G4_WATER,NIST,1.00,Water sensitivity model; not the authoritative tissue assignment.
+2,nervous,G4_WATER,NIST,1.00,Post-processing atlas only; retained for manifest completeness.
+3,bodywall,G4_WATER,NIST,1.00,Water sensitivity model; not the authoritative muscle assignment.
+4,digestive,G4_WATER,NIST,1.00,Water sensitivity model; not the authoritative digestive assignment.
+5,reproductive,G4_WATER,NIST,1.00,Water sensitivity model; not the authoritative reproductive assignment.
+6,excretory,G4_WATER,NIST,1.00,Post-processing atlas only; retained for manifest completeness.

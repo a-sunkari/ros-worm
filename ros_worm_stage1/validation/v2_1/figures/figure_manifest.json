@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "figures": [
+    {
+      "figure": "fig01_surface_vs_implicit_roi",
+      "title": "Original nervous atlas and accepted analysis-only neural ROI",
+      "png_sha256": "49323eb10eafa9bfde2ca322a097d65119c1305691a54b17309ef53758ca833d",
+      "pdf_sha256": "7f0233294824afee59bc897ec8cefad8822c428d8562f255a2792010e73bec37"
+    },
+    {
+      "figure": "fig02_neural_roi_convergence",
+      "title": "Neural-volume and surface-error convergence",
+      "png_sha256": "9aa6c9795a16c1b95a1fd9d88c78cdf32a4eff97139916b145773f5d82e4a700",
+      "pdf_sha256": "e034495044af16ec4e6e4f4f488af25a81356b81493ab901f9e0d511db549aca"
+    },
+    {
+      "figure": "fig03_edep_vs_neural_distance",
+      "title": "Nervous-surface-referenced deposited energy",
+      "png_sha256": "228b86fa4429f41705eda2fd09ec8e76c1c4458c5f63460dc0edcb45c52b201a",
+      "pdf_sha256": "072a8778ec3ac2e4144a51e82c1f15b2795c1601090ea8fe74ec68cc00349a26"
+    },
+    {
+      "figure": "fig04_neural_dose_convergence",
+      "title": "Neural dose convergence across analysis-only ROI definitions",
+      "png_sha256": "f9358170bbea4a9b40156f636f2c6ad643fc33273ad90f7987d8d2e87c7a6e42",
+      "pdf_sha256": "3a8cbd788b010998dcc194c5a19c94db2f67cb54eae3f497338ad26a8cfd0da7"
+    },
+    {
+      "figure": "fig05_neural_vs_muscle_dose",
+      "title": "Neural and body-wall-muscle absorbed dose",
+      "png_sha256": "af39351ff953142db6fca001aa43a877ba105c7bd11e3ab302d7282255320db4",
+      "pdf_sha256": "96d6a38c65a823706e57627c9f9f44d686461373e1309120c42c90554719a924"
+    },
+    {
+      "figure": "fig06_cannon_condition_neural_dose",
+      "title": "Cannon exposure conditions mapped to regional dose",
+      "png_sha256": "a5973cfd1edc8e38cefc2807de76a36b01fcb90adcec2e61c18bd121b62e99bc",
+      "pdf_sha256": "dd2f38e26edf893991c2422a601153eebe6a0f8f9e8c786be4a1898f43b9e45a"
+    },
+    {
+      "figure": "fig07_edep_radiolysis_timeseries",
+      "title": "Deposited-energy-normalized water radiolysis",
+      "png_sha256": "ee4e4d14420e87ad448d2e3071d164d1fa244e190065785fec1a8a8aff5c5891",
+      "pdf_sha256": "608f627fabdc99305451dc4be523687f47e85ec6cc2f4127ce47e9b2652dbc19"
+    },
+    {
+      "figure": "fig08_lite1_target_opportunity",
+      "title": "Literature-rate target-interaction opportunities (Level 1)",
+      "png_sha256": "502c49fd33be04049e806b4071e5688c19a766fef110391332e335841867f68e",
+      "pdf_sha256": "0ca7b9434c8291d366fac41acdf1300ff60966d760c99f203b00fe960e85959d"
+    },
+    {
+      "figure": "fig09_sensitivity_uncertainty",
+      "title": "Sensitivity tests and dominant assumption intervals",
+      "png_sha256": "94bb20b68ef762d10d0ee179c98f9e7177e06d004236bc5db09d1cfdeffbcba2",
+      "pdf_sha256": "d40fc6bac858f4904fc5de8cd594df12f547e8e378aeae51eead2b1c4ab31bd0"
+    },
+    {
+      "figure": "fig10_mechanistic_ladder",
+      "title": "Mechanistic ladder and evidentiary boundary",
+      "png_sha256": "1182faedc66d90c47ab6257dbae7c21d13b6a3f46f6e0f237f241dfbc1e1601f",
+      "pdf_sha256": "c97426f1e3d99bb8dd64d3de937602aeeca8368485a2b8fd667240f694c1919f"
+    }
+  ],
+  "source_hashes": {
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_resolution_convergence.csv": "0c40c045925c8ad7f1ca0a1e5fa267ceb117e544cd994655c7c4e1b235c5e72a",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/production/production_neural_muscle_dose.csv": "469d019ea727fc6f1817bc74bf4caa00d0c55b00c5738c222b064cf35d5d3394",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/production/production_nervous_surface_edep_shells.csv": "0e206ebd5eccf613b60b969edfa6edd96ae0377a4811ce6eaa92233977210aed",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/chemistry/cannon_condition_summary.csv": "90bc4de82cd5041cfaa64792ebbccad3fe383a6bcc6453cc35f335ab1fd5f446",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/chemistry/cannon_condition_edep_radiolysis.csv": "f9a4ba609c245fe2bdfbf98730b1ec440baf02a1d876882c353b915f198d9ceb",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/chemistry/lite1_target_interaction_sweep.csv": "9e2a5c22295ff3d25b343efcd6ebf00723c7b240f37c1d11166309303240058a",
+    "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/sensitivity/corrected_sensitivity_effects.csv": "f2d493eeb9e2e10df9d361979e82c202b5e6e319ccd2a5855bc114fb1e7f77cf"
+  }
+}

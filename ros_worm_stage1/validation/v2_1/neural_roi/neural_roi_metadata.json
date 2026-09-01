@@ -1,0 +1,138 @@
+{
+  "method": "voxel-center sampling of the set-theoretic union of 276 individually closed source nervous objects, intersected with the whole-body envelope",
+  "interpretation": "analysis-only neural ROI; never placed in Geant4",
+  "source_manifest": "openworm_geometry/compartment_pipeline/aggregate_testE_nervous_no_cube/testE_aggregate_with_nervous_no_cube.csv",
+  "source_manifest_sha256": "5301b79b9219066748e430b376a6c4505c933df80714191aef67624defec5b86",
+  "placement_manifest": "ros_worm_stage1/config/transport_geometry_v1.csv",
+  "placement_manifest_sha256": "fd874f679e12874b8323d5ed79decb3812a46f7156d5a458212ae9eadaf4efb1",
+  "reference_high_resolution_atlas": "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl",
+  "reference_sha256": "686224ff64fb03024fa34df08434481f90679cc8b551d54021e853689081f8a7",
+  "source_members": 276,
+  "all_members_watertight_actual": true,
+  "all_members_winding_consistent_actual": true,
+  "body_center_model_units": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "um_per_model_unit": 100.0,
+  "reference_bounds_um": [
+    [
+      -28.98460030555725,
+      27.619099617004395
+    ],
+    [
+      -349.5352268218994,
+      448.32258224487305
+    ],
+    [
+      -67.09195971488953,
+      64.91047143936157
+    ]
+  ],
+  "member_union_bounds_um": [
+    [
+      -28.98460030555725,
+      27.619099617004395
+    ],
+    [
+      -349.5352268218994,
+      448.32258224487305
+    ],
+    [
+      -67.09195971488953,
+      64.91047143936157
+    ]
+  ],
+  "density_g_cm3_primary": 1.04,
+  "density_note": "G4_BRAIN_ICRP proxy; 1.00 g/cm3 is retained as a dose sensitivity case.",
+  "surface_error_definition": "sampled symmetric distance between full-resolution baked-union triangle surface and occupied-voxel boundary centers",
+  "random_seed": 20260831,
+  "surface_samples_each_direction_max": 30000,
+  "convergence_records": [
+    {
+      "pitch_um": 0.25,
+      "occupied_voxels": 554432,
+      "volume_um3": 8663.0,
+      "density_g_cm3": 1.04,
+      "mass_kg": 9.00952e-12,
+      "preclip_occupied_voxels": 555985,
+      "outside_body_voxels": 1553,
+      "fraction_volume_outside_body_preclip": 0.002793240824842397,
+      "twentysix_connected_components": 6640,
+      "largest_component_fraction": 0.8513054802031629,
+      "boundary_voxels": 293380,
+      "surface_error_p50_um": 0.11860993784796416,
+      "surface_error_p95_um": 0.24569864136753836,
+      "surface_error_p99_um": 0.5224023482171769,
+      "surface_error_sampled_hausdorff_um": 30.59200872935558,
+      "reference_to_candidate_p95_um": 0.2814120987281437,
+      "candidate_to_reference_p95_um": 0.18522057104951686,
+      "roi_file": "ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_union_members_pitch_0.25um.npz",
+      "roi_sha256": "69bf318ee42796258993035ed87c2954f05b21ff1887bbb1a9ef2497afc84475"
+    },
+    {
+      "pitch_um": 0.5,
+      "occupied_voxels": 68633,
+      "volume_um3": 8579.125,
+      "density_g_cm3": 1.04,
+      "mass_kg": 8.92229e-12,
+      "preclip_occupied_voxels": 68827,
+      "outside_body_voxels": 194,
+      "fraction_volume_outside_body_preclip": 0.0028186612811832564,
+      "twentysix_connected_components": 4374,
+      "largest_component_fraction": 0.4329841329972462,
+      "boundary_voxels": 45976,
+      "surface_error_p50_um": 0.23614929886006544,
+      "surface_error_p95_um": 1.2600835943196174,
+      "surface_error_p99_um": 5.098124548600843,
+      "surface_error_sampled_hausdorff_um": 30.70498451609389,
+      "reference_to_candidate_p95_um": 2.4803728231526914,
+      "candidate_to_reference_p95_um": 0.37906966681031945,
+      "roi_file": "ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_union_members_pitch_0.5um.npz",
+      "roi_sha256": "1e05e1f36fc0b8337920faa2c50e838d0b23091d6323ee23435bd500601b4d54"
+    },
+    {
+      "pitch_um": 1.0,
+      "occupied_voxels": 8872,
+      "volume_um3": 8872.0,
+      "density_g_cm3": 1.04,
+      "mass_kg": 9.22688e-12,
+      "preclip_occupied_voxels": 8891,
+      "outside_body_voxels": 19,
+      "fraction_volume_outside_body_preclip": 0.002136992464289731,
+      "twentysix_connected_components": 1278,
+      "largest_component_fraction": 0.42098737601442743,
+      "boundary_voxels": 7672,
+      "surface_error_p50_um": 0.7324766593155156,
+      "surface_error_p95_um": 8.107395834004109,
+      "surface_error_p99_um": 13.414606573444475,
+      "surface_error_sampled_hausdorff_um": 31.202135931715897,
+      "reference_to_candidate_p95_um": 9.098882126551267,
+      "candidate_to_reference_p95_um": 0.7351346612245028,
+      "roi_file": "ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_union_members_pitch_1um.npz",
+      "roi_sha256": "116180c2d107cc84148b19729471bddcc81395bf0f71bc9172ef57af602176d7"
+    },
+    {
+      "pitch_um": 2.0,
+      "occupied_voxels": 1067,
+      "volume_um3": 8536.0,
+      "density_g_cm3": 1.04,
+      "mass_kg": 8.877440000000001e-12,
+      "preclip_occupied_voxels": 1074,
+      "outside_body_voxels": 7,
+      "fraction_volume_outside_body_preclip": 0.006517690875232775,
+      "twentysix_connected_components": 304,
+      "largest_component_fraction": 0.44048734770384257,
+      "boundary_voxels": 1048,
+      "surface_error_p50_um": 2.592727143684561,
+      "surface_error_p95_um": 17.61152783443083,
+      "surface_error_p99_um": 25.219003903841298,
+      "surface_error_sampled_hausdorff_um": 41.70650264976608,
+      "reference_to_candidate_p95_um": 17.74411971905441,
+      "candidate_to_reference_p95_um": 1.0295487493091888,
+      "roi_file": "ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_union_members_pitch_2um.npz",
+      "roi_sha256": "5b2b165c21fa8d3e81bd3939c86f18550e0c3c55d2a290cf73b96f54f9b17d8f"
+    }
+  ]
+}

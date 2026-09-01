@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-30T21:28:03.627291+00:00",
+  "git_commit": "eef465ad7b6510596c400a5751d281568b59a806",
+  "git_status_at_run": [
+    " M AGENTS.md",
+    " M README.md",
+    " M docs/CURRENT_STATE.md",
+    " M docs/GEOMETRY_AND_NERVOUS_SYSTEM.md",
+    " M docs/VALIDATION_AND_NEXT_STEPS.md",
+    " M ros_worm_stage1/scripts/v2/collect_v2_results.py",
+    " M ros_worm_stage1/validation/v2/figures/fig00_geometry_schematic.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig01_source_spectrum_ensemble.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig02_neural_distance_shells.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig03_neural_matched_null.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig04_neural_muscle_comparison.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig05_experimental_dose_scaling.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig06_navigation_warnings.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig07_radiolysis_timeseries.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig07_radiolysis_timeseries.png",
+    " M ros_worm_stage1/validation/v2/figures/fig08_longitudinal_neural_sectors.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig09_sensitivity_tornado.pdf",
+    " M ros_worm_stage1/validation/v2/figures/fig09_sensitivity_tornado.png",
+    "?? V2_EXECUTIVE_SUMMARY.md",
+    "?? V2_LIMITATIONS_AND_EXPERIMENTAL_TESTS.md",
+    "?? docs/v2/",
+    "?? ros_worm_stage1/scripts/v2/run_authoritative_v2.py",
+    "?? ros_worm_stage1/validation/v2/README.md"
+  ],
+  "case_name": "focused_avoidance_50kv",
+  "case": {
+    "description": "Focused iMOXS-MFR tungsten-target avoidance experiment.",
+    "source_type": "focused",
+    "target": "tungsten",
+    "spectrum_type": "kramers",
+    "spectrum_interpretation": "Generic endpoint approximation; not a measured/filtered iMOXS spectrum.",
+    "kvp_keV": 50,
+    "min_energy_keV": 1,
+    "spot_fwhm_mm": 0.85,
+    "source_y_mm": -2.0,
+    "dose_rates_Gy_s": [
+      0.2,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "pulse_s": 10.0
+  },
+  "events": 1000,
+  "threads": 2,
+  "random_seeds": [
+    83001,
+    83002
+  ],
+  "geant4_version": "11.3.2",
+  "artifacts": {
+    "ros_worm_stage1/results/v1_regression_after_v2_1k/transport.mac": {
+      "sha256": "1b8ea6c00d2cb85f6230428defa30dfd823a467d735db574f6685aed02c08309",
+      "bytes": 656
+    },
+    "ros_worm_stage1/config/transport_geometry_v1.csv": {
+      "sha256": "fd874f679e12874b8323d5ed79decb3812a46f7156d5a458212ae9eadaf4efb1",
+      "bytes": 1751
+    },
+    "ros_worm_stage1/config/region_materials.csv": {
+      "sha256": "10dcffd8a1a6acf182a551f2b54ac246a4c35da6154eda607a6195464ab42b78",
+      "bytes": 989
+    },
+    "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl": {
+      "sha256": "686224ff64fb03024fa34df08434481f90679cc8b551d54021e853689081f8a7",
+      "bytes": 67784384
+    }
+  },
+  "result_directory": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm/ros_worm_stage1/results/v1_regression_after_v2_1k"
+}

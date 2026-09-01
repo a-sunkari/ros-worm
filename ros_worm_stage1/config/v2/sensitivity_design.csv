@@ -1,0 +1,9 @@
+study,case,parameter,low,nominal,high,unit,histories_per_case,interpretation
+source_hardness,focused_avoidance,spectrum_variant,soft,nominal,hard,category,1000000,Paired final bracket after initial 100k falsification.
+source_hardness,diffuse_paralysis,spectrum_variant,soft,nominal,hard,category,1000000,Paired final bracket after initial 100k falsification.
+environment,focused_avoidance,environment,worm_only,ngm_agar_dish,ngm_agar_dish,category,1000000,Paired seed comparison isolates downstream agar and dish.
+environment,diffuse_paralysis,environment,worm_only,m9_drop_glass,m9_drop_glass,category,1000000,Paired seed comparison tests overlying M9 attenuation and spectral hardening.
+beam_position,focused_avoidance,beam_y_mm,-0.2,0.0,0.2,mm,1000000,Paired bracket of longitudinal targeting offset.
+beam_width,focused_avoidance,spot_fwhm_mm,0.65,0.85,1.05,mm,1000000,Paired profile-width bracket around the reported 0.85 mm FWHM.
+m9_height,diffuse_paralysis,environment_above_mm,0.155,0.405,0.405,mm,1000000,Paired total-water-height bracket of approximately 0.25 to 0.50 mm including worm half thickness.
+material_model,focused_avoidance,material_model,water,tissue,tissue,category,1000000,Paired macroscopic transport material sensitivity; chemistry remains liquid water.

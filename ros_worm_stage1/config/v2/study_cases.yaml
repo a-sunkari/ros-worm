@@ -1,0 +1,78 @@
+schema_version: 2
+transport_manifest: ../transport_geometry_v1.csv
+materials: ../region_materials.csv
+mm_per_model_unit: 0.1
+
+environments:
+  worm_only:
+    interpretation: "Air world; baseline used to quantify environmental bias."
+    mode: none
+    material: G4_WATER
+    half_x_mm: 5.0
+    half_y_mm: 5.0
+    above_mm: 0.0
+    below_mm: 0.0
+    substrate_material: none
+    substrate_thickness_mm: 0.0
+  ngm_agar_dish:
+    interpretation: "Worm resting on a 3 mm water-equivalent NGM/agar slab in a 1 mm polystyrene dish. Thicknesses are assumptions to be varied."
+    mode: slab
+    material: G4_WATER
+    half_x_mm: 5.0
+    half_y_mm: 5.0
+    above_mm: 0.0
+    below_mm: 3.0
+    substrate_material: G4_POLYSTYRENE
+    substrate_thickness_mm: 1.0
+  m9_drop_glass:
+    interpretation: "Worm immersed in a water-equivalent M9 layer up to 0.5 mm total height on a 1 mm glass slide."
+    mode: immersion
+    material: G4_WATER
+    half_x_mm: 5.0
+    half_y_mm: 5.0
+    above_mm: 0.405
+    below_mm: 0.010
+    substrate_material: G4_Pyrex_Glass
+    substrate_thickness_mm: 1.0
+
+cases:
+  focused_avoidance:
+    experimental_source: focused_imoxs_w_50kv
+    source_type: focused
+    spectrum_variants: [soft, nominal, hard]
+    source_position_mm: [0.0, 0.0, 50.0]
+    direction: [0.0, 0.0, -1.0]
+    target_position_mm: [0.0, 0.0, 0.0]
+    spot_fwhm_mm: 0.85
+    default_environment: ngm_agar_dish
+    dose_rates_Gy_s: [0.2, 0.5, 0.7, 1.0]
+    exposure_s: 10.0
+    normalization_note: "Focused dosimetry was reported within approximately a factor of two."
+  focused_egg_ejection:
+    experimental_source: focused_imoxs_w_50kv
+    source_type: focused
+    spectrum_variants: [soft, nominal, hard]
+    source_position_mm: [0.0, 0.0, 50.0]
+    direction: [0.0, 0.0, -1.0]
+    target_position_mm: [0.0, 0.0, 0.0]
+    spot_fwhm_mm: 0.85
+    default_environment: ngm_agar_dish
+    dose_rates_Gy_s: [1.0]
+    exposure_s: 15.0
+    normalization_note: "Focused dosimetry was reported within approximately a factor of two."
+  diffuse_paralysis:
+    experimental_source: diffuse_minix_ag_20kv
+    source_type: targeted_cone
+    spectrum_variants: [soft, nominal, hard]
+    source_position_mm: [0.0, 0.0, 10.0]
+    direction: [0.0, 0.0, -1.0]
+    target_position_mm: [0.0, 0.0, 0.0]
+    target_half_widths_mm: [0.6, 0.6]
+    default_environment: m9_drop_glass
+    dose_rates_Gy_s: [0.19, 0.38, 0.56, 0.74]
+    exposure_s: 20.0
+    normalization_note: >-
+      Photon histories are conditioned on crossing a 1.2 x 1.2 mm target plane
+      around the worm. Absolute fluence is therefore obtained only by scaling
+      to the measured experimental dose, not from histories per tube electron.
+

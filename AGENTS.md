@@ -48,6 +48,61 @@ Authoritative end-to-end runner:
 
 `ros_worm_stage1/scripts/run_reproducible_case.py`
 
+## Thesis v2 study
+
+The validated v1 workflow above remains available. The current thesis-study
+extension is additive:
+
+- v2 source/environment cases: `ros_worm_stage1/config/v2/study_cases.yaml`
+- source provenance/uncertainty: `ros_worm_stage1/config/v2/source_models.yaml`
+- one-case runner: `ros_worm_stage1/scripts/v2/run_v2_case.py`
+- cumulative authoritative runner: `ros_worm_stage1/scripts/v2/run_authoritative_v2.py`
+- anatomy + null scorer: `ros_worm_stage1/scripts/v2/score_anatomy_v2.py`
+- compact results and figures: `ros_worm_stage1/validation/v2/`
+- thesis report: `docs/v2/THESIS_REPORT.md`
+
+The v2 source axis is world −Z. Model Y is the worm longitudinal axis. Do not
+reuse the old +Y source default for claims about the Cannon experimental
+orientation. The diffuse `targeted_cone` histories are conditioned on reaching
+the target rectangle; normalize them to the reported absorbed dose, never to
+tube current or histories alone.
+
+## Final v2.1 methodological upgrade
+
+V2.1 is the current analysis/reporting authority and is additive to v2:
+
+- authoritative audit: `ros_worm_stage1/scripts/v2_1/run_authoritative_v2_1.py`
+- neural ROI construction: `ros_worm_stage1/scripts/v2_1/build_neural_roi_v2_1.py`
+- actual-edep scorer: `ros_worm_stage1/scripts/v2_1/score_edep_v2_1.py`
+- target chemistry config: `ros_worm_stage1/config/v2_1/lite1_target_chemistry.yaml`
+- compact evidence: `ros_worm_stage1/validation/v2_1/`
+- final report: `docs/v2_1/THESIS_REPORT.md`
+
+The primary neural ROI is the analysis-only set union of 276 verified closed
+source objects; its 0.25–2 micrometre voxel series is a convergence test. Never
+install these ROIs as Geant4 daughters. Allowed endpoint terms are **analysis-
+only neural mean absorbed dose**, **nervous-surface-referenced deposited
+energy**, **homogeneous-water molecule equivalent**, and **target-interaction
+opportunity**. No LITE-1 activation/open probability is supported.
+
+V2.1 spatial results are authoritative only when the transport log confirms
+`G4StepLimiterPhysics` and a 0.5 micrometre charged-particle limit. The earlier
+1M v2.1 outputs marked `SUPERSEDED.md` are an audit trail, not scientific data.
+
+## Paper-ready final authority
+
+The v2.1 architecture remains authoritative, but final paper numbers come from
+the two 100M campaigns indexed under `ros_worm_stage1/validation/final/`.
+Use `ros_worm_stage1/scripts/final/run_compact_release.py` to regenerate paper
+tables/figures/manuscript and run the fail-loud release audit. Do not copy the
+older 10M dose ratios into a final table. Raw ROOT files are ignored; their
+hashes, expanded macros, seeds, and compact evidence are tracked.
+
+The final allowed claim is that neural and muscle tissues receive whole-worm-
+order dose and a prompt reference-water radiochemical environment. The matched
+surface controls do not establish neuron-selective deposition. LITE-1 gating,
+calcium response, and behavior remain unmodeled.
+
 ## Region IDs
 
 1. body / residual WholeBodyEnvelope

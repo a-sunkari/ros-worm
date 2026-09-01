@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "primary_interval": "event-level delta method with covariance",
+  "bootstrap_role": "distributional adequacy audit; percentile interval",
+  "bootstrap_replicates": 2000,
+  "seed": 20260901,
+  "normality_gate": "at least 100 contributing events and bootstrap-vs-normal interval widths agree within 10%",
+  "uncertainty_scope": "Monte Carlo statistics only; reconstruction, registration, model, and experimental dosimetry are separate"
+}

@@ -1,0 +1,8 @@
+{
+  "log": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/results/v2_1_sensitivity_corrected_focused_soft_ngm_1M/transport.log",
+  "geomnav1002_incidents": 16,
+  "pair_counts": {
+    "ow_WholeBodyEnvelope_phys <- ow_DigestiveSystem_phys": 13,
+    "ow_WholeBodyEnvelope_phys <- ow_BodyWallMuscle_phys": 3
+  }
+}

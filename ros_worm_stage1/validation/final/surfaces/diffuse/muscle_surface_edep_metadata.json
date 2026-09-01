@@ -1,0 +1,8 @@
+{
+  "endpoint": "body-wall-muscle-surface-referenced deposited energy",
+  "muscle_surface": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/openworm_geometry/compartment_pipeline/non_nervous_priority_bake/voxel_remesh_wu_like/BodyWallMuscle_voxel_0.020.stl",
+  "events": 100000000,
+  "eligible_steps": 5205208,
+  "distance_units": "um",
+  "interpretation": "distance to closed physical muscle boundary; not membrane or intracellular dose"
+}

@@ -1,0 +1,7 @@
+{
+  "endpoint_policy": "actual Geant4 deposited energy is primary",
+  "dose_ratio_statistics": "event-level covariance delta method and event bootstrap",
+  "uncertainties_combined": false,
+  "dosimetry_scaling": "fluence-linear nominal transport reused",
+  "target_metric": "Level 1 chemical opportunity; not activation"
+}

@@ -1,0 +1,91 @@
+schema_version: 1
+evidence_level: 1
+decision: >-
+  Quantify chemical opportunity only. No receptor-open probability or calibrated
+  LITE-1 activation metric is supported by current literature.
+
+radical_target_reactions:
+  - key: oh_trp
+    radiolysis_species: "°OH^0"
+    target_class: tryptophan_like
+    rate_M-1_s-1: 1.25e10
+    rate_standard_uncertainty_M-1_s-1: 0.30e10
+    source: "Armstrong and Swallow, Radiation Research 40, 563-579 (1969)"
+    doi: "10.2307/3573010"
+    note: "Free aqueous tryptophan at neutral conditions; a protein-bound residue can differ. Reaction is not evidence of LITE-1 activation."
+  - key: oh_cys
+    radiolysis_species: "°OH^0"
+    target_class: cysteine_thiol_like
+    rate_M-1_s-1: 5.35e9
+    rate_standard_uncertainty_M-1_s-1: 0.82e9
+    source: "Mezyk, Radiation Research 145, 102-106 (1996)"
+    doi: "10.2307/3579203"
+    note: "Free aqueous cysteine; not a site-specific rate for LITE-1 C44 and not a gating yield."
+
+h2o2_relay:
+  species: "H2O2^0"
+  target_class: peroxiredoxin_like
+  rate_M-1_s-1_range: [1.0e5, 1.0e8]
+  representative_rate_M-1_s-1: 1.0e7
+  source: "Rhee and Woo, J Biol Chem 287, 4403-4410 (2012); Ogusucu et al., Free Radic Biol Med 42, 326-334 (2007)"
+  dois: ["10.1074/jbc.R111.283432", "10.1016/j.freeradbiomed.2006.10.042"]
+  note: "Family-level bracket, not a measured C. elegans PRDX-2/LITE-1 complex rate."
+
+uncertain_effective_target_concentrations_M: [1.0e-6, 1.0e-5, 1.0e-4, 1.0e-3]
+uncertain_background_radical_scavenging_s-1: [1.0e8, 1.0e9, 1.0e10]
+interaction_model: >-
+  Radical capture fraction = k_target*C_target/(k_target*C_target+k_background).
+  This transparent competition model brackets availability; target concentration
+  and background scavenging are not measured for LITE-1-expressing cells.
+
+cannon_conditions:
+  - condition: focused_avoidance_0p2
+    irradiation: focused
+    phenotype: avoidance
+    dose_rate_Gy_s: 0.2
+    exposure_s: 10.0
+  - condition: focused_avoidance_0p5
+    irradiation: focused
+    phenotype: avoidance
+    dose_rate_Gy_s: 0.5
+    exposure_s: 10.0
+  - condition: focused_avoidance_0p7
+    irradiation: focused
+    phenotype: avoidance
+    dose_rate_Gy_s: 0.7
+    exposure_s: 10.0
+  - condition: focused_avoidance_1p0
+    irradiation: focused
+    phenotype: avoidance
+    dose_rate_Gy_s: 1.0
+    exposure_s: 10.0
+  - condition: focused_egg_ejection_1p0
+    irradiation: focused
+    phenotype: ectopic-muscle_paralysis_egg_ejection
+    dose_rate_Gy_s: 1.0
+    exposure_s: 15.0
+  - condition: diffuse_0p19
+    irradiation: diffuse
+    phenotype: diffuse_response_series
+    dose_rate_Gy_s: 0.19
+    exposure_s: 20.0
+  - condition: diffuse_0p38
+    irradiation: diffuse
+    phenotype: diffuse_response_series
+    dose_rate_Gy_s: 0.38
+    exposure_s: 20.0
+  - condition: diffuse_0p56
+    irradiation: diffuse
+    phenotype: diffuse_response_series
+    dose_rate_Gy_s: 0.56
+    exposure_s: 20.0
+  - condition: diffuse_0p74
+    irradiation: diffuse
+    phenotype: diffuse_response_series
+    dose_rate_Gy_s: 0.74
+    exposure_s: 20.0
+
+experimental_dosimetry_uncertainty:
+  multiplicative_low: 0.5
+  multiplicative_high: 2.0
+  interpretation: "Approximate factor-of-two dose uncertainty reported/discussed for the Cannon setup; treated as an external multiplicative interval, not a Gaussian standard error."

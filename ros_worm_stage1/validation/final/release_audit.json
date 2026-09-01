@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "branch": "ai/paper-ready-final",
+  "checks": [
+    {
+      "check": "branch",
+      "passed": true,
+      "evidence": "ai/paper-ready-final"
+    },
+    {
+      "check": "focused histories",
+      "passed": true,
+      "evidence": "100000000"
+    },
+    {
+      "check": "focused ROOT hash",
+      "passed": true,
+      "evidence": "9ca894f34111914a9722922185ab4c63c0f21b3aba7e37e46e9d202b32188e91"
+    },
+    {
+      "check": "focused energy conservation",
+      "passed": true,
+      "evidence": "0.0"
+    },
+    {
+      "check": "focused active step limit",
+      "passed": true,
+      "evidence": "0.5"
+    },
+    {
+      "check": "diffuse histories",
+      "passed": true,
+      "evidence": "100000000"
+    },
+    {
+      "check": "diffuse ROOT hash",
+      "passed": true,
+      "evidence": "6f0dccd1e504f44e6ea7889c17bfaf0b23e4aaa01df229a5548d68d3ba0f6d4d"
+    },
+    {
+      "check": "diffuse energy conservation",
+      "passed": true,
+      "evidence": "0.0"
+    },
+    {
+      "check": "diffuse active step limit",
+      "passed": true,
+      "evidence": "0.5"
+    },
+    {
+      "check": "four ROI pitches",
+      "passed": true,
+      "evidence": "[0.25, 0.5, 1.0, 2.0]"
+    },
+    {
+      "check": "primary ROI hash",
+      "passed": true,
+      "evidence": "69bf318ee42796258993035ed87c2954f05b21ff1887bbb1a9ef2497afc84475"
+    },
+    {
+      "check": "276 valid neural members",
+      "passed": true,
+      "evidence": "{'source_members': 276, 'selected_members_all_manifest_category_nervous': True, 'all_watertight_after_vertex_merge': True, 'all_winding_consistent': True, 'all_positive_signed_interiors': True, 'union_overlap_rule': 'logical OR; each point/voxel counted once', 'body_clipping': 'voxel centers outside closed body envelope removed before mass calculation', 'primary_pitch_um': 0.25, 'primary_volume_um3': 8663.0, 'primary_density_kg_m3': 1040.0, 'primary_mass_kg': 9.00952e-12, 'mass_formula': 'volume_um3 * 1e-18 m3/um3 * 1040 kg/m3', 'volume_range_percent': 3.936269915651369, 'outlier_interpretation': 'localized surface-sampling disagreement; scientific impact quantified by exact/voxel edep disagreement'}"
+    },
+    {
+      "check": "four final dose estimators",
+      "passed": true,
+      "evidence": "4"
+    },
+    {
+      "check": "neural RSE <=10%",
+      "passed": true,
+      "evidence": "[{'irradiation': 'focused', 'delta_method_se': 0.0339127594238155, 'roi_to_whole_dose_ratio': 0.9315698265637188}, {'irradiation': 'diffuse', 'delta_method_se': 0.06162723113444, 'roi_to_whole_dose_ratio': 0.8730344680835531}]"
+    },
+    {
+      "check": "bootstrap count",
+      "passed": true,
+      "evidence": "[2000, 2000, 2000, 2000]"
+    },
+    {
+      "check": "focused 99 matched nulls",
+      "passed": true,
+      "evidence": "99"
+    },
+    {
+      "check": "diffuse 99 matched nulls",
+      "passed": true,
+      "evidence": "99"
+    },
+    {
+      "check": "six chemistry cases",
+      "passed": true,
+      "evidence": "6"
+    },
+    {
+      "check": "chemistry 10k each",
+      "passed": true,
+      "evidence": "[10000, 10000, 10000, 10000, 10000, 10000]"
+    },
+    {
+      "check": "seven chemistry times",
+      "passed": true,
+      "evidence": "[np.float64(0.001), np.float64(0.01), np.float64(0.1), np.float64(1.0), np.float64(10.0), np.float64(100.0), np.float64(999.9990000000004)]"
+    },
+    {
+      "check": "implemented key species",
+      "passed": true,
+      "evidence": "['H2O2^0', 'H3O^1', 'H^0', 'H_2^0', 'OH^-1', 'e_aq^-1', '\u00b0OH^0', '\u00b0O^0']"
+    },
+    {
+      "check": "table final_nominal_regional_dose.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/final_nominal_regional_dose.csv"
+    },
+    {
+      "check": "table final_uncertainty_budget.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/final_uncertainty_budget.csv"
+    },
+    {
+      "check": "table final_cannon_condition_table.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/final_cannon_condition_table.csv"
+    },
+    {
+      "check": "table neural_muscle_surface_edep_shells.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/neural_muscle_surface_edep_shells.csv"
+    },
+    {
+      "check": "table longitudinal_edep_profiles.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/longitudinal_edep_profiles.csv"
+    },
+    {
+      "check": "table transport_qc_and_navigation.csv",
+      "passed": true,
+      "evidence": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/final/tables/transport_qc_and_navigation.csv"
+    },
+    {
+      "check": "nine final figures",
+      "passed": true,
+      "evidence": "9"
+    },
+    {
+      "check": "fig01_geometry_workflow png hash",
+      "passed": true,
+      "evidence": "fig01_geometry_workflow"
+    },
+    {
+      "check": "fig01_geometry_workflow pdf hash",
+      "passed": true,
+      "evidence": "fig01_geometry_workflow"
+    },
+    {
+      "check": "fig02_neural_roi_validation png hash",
+      "passed": true,
+      "evidence": "fig02_neural_roi_validation"
+    },
+    {
+      "check": "fig02_neural_roi_validation pdf hash",
+      "passed": true,
+      "evidence": "fig02_neural_roi_validation"
+    },
+    {
+      "check": "fig03_regional_dose png hash",
+      "passed": true,
+      "evidence": "fig03_regional_dose"
+    },
+    {
+      "check": "fig03_regional_dose pdf hash",
+      "passed": true,
+      "evidence": "fig03_regional_dose"
+    },
+    {
+      "check": "fig04_surface_edep_nulls png hash",
+      "passed": true,
+      "evidence": "fig04_surface_edep_nulls"
+    },
+    {
+      "check": "fig04_surface_edep_nulls pdf hash",
+      "passed": true,
+      "evidence": "fig04_surface_edep_nulls"
+    },
+    {
+      "check": "fig05_longitudinal_edep png hash",
+      "passed": true,
+      "evidence": "fig05_longitudinal_edep"
+    },
+    {
+      "check": "fig05_longitudinal_edep pdf hash",
+      "passed": true,
+      "evidence": "fig05_longitudinal_edep"
+    },
+    {
+      "check": "fig06_cannon_dose_mapping png hash",
+      "passed": true,
+      "evidence": "fig06_cannon_dose_mapping"
+    },
+    {
+      "check": "fig06_cannon_dose_mapping pdf hash",
+      "passed": true,
+      "evidence": "fig06_cannon_dose_mapping"
+    },
+    {
+      "check": "fig07_radiolysis_timecourse png hash",
+      "passed": true,
+      "evidence": "fig07_radiolysis_timecourse"
+    },
+    {
+      "check": "fig07_radiolysis_timecourse pdf hash",
+      "passed": true,
+      "evidence": "fig07_radiolysis_timecourse"
+    },
+    {
+      "check": "fig08_target_opportunities png hash",
+      "passed": true,
+      "evidence": "fig08_target_opportunities"
+    },
+    {
+      "check": "fig08_target_opportunities pdf hash",
+      "passed": true,
+      "evidence": "fig08_target_opportunities"
+    },
+    {
+      "check": "fig09_uncertainty_budget png hash",
+      "passed": true,
+      "evidence": "fig09_uncertainty_budget"
+    },
+    {
+      "check": "fig09_uncertainty_budget pdf hash",
+      "passed": true,
+      "evidence": "fig09_uncertainty_budget"
+    },
+    {
+      "check": "manuscript ROS_WORM_MANUSCRIPT.md",
+      "passed": true,
+      "evidence": "ROS_WORM_MANUSCRIPT.md"
+    },
+    {
+      "check": "manuscript TITLE_ABSTRACT.md",
+      "passed": true,
+      "evidence": "TITLE_ABSTRACT.md"
+    },
+    {
+      "check": "manuscript INTRODUCTION.md",
+      "passed": true,
+      "evidence": "INTRODUCTION.md"
+    },
+    {
+      "check": "manuscript METHODS.md",
+      "passed": true,
+      "evidence": "METHODS.md"
+    },
+    {
+      "check": "manuscript RESULTS.md",
+      "passed": true,
+      "evidence": "RESULTS.md"
+    },
+    {
+      "check": "manuscript DISCUSSION.md",
+      "passed": true,
+      "evidence": "DISCUSSION.md"
+    },
+    {
+      "check": "manuscript FIGURE_CAPTIONS.md",
+      "passed": true,
+      "evidence": "FIGURE_CAPTIONS.md"
+    },
+    {
+      "check": "manuscript REFERENCES.md",
+      "passed": true,
+      "evidence": "REFERENCES.md"
+    },
+    {
+      "check": "manuscript SUPPLEMENTARY_METHODS.md",
+      "passed": true,
+      "evidence": "SUPPLEMENTARY_METHODS.md"
+    },
+    {
+      "check": "manuscript SUPPLEMENTARY_TABLES.md",
+      "passed": true,
+      "evidence": "SUPPLEMENTARY_TABLES.md"
+    },
+    {
+      "check": "stale manuscript token absent: 0.778 \u00b1 0.101",
+      "passed": true,
+      "evidence": "0.778 \u00b1 0.101"
+    },
+    {
+      "check": "stale manuscript token absent: 0.969 \u00b1 0.224",
+      "passed": true,
+      "evidence": "0.969 \u00b1 0.224"
+    },
+    {
+      "check": "stale manuscript token absent: only 30 contributing events",
+      "passed": true,
+      "evidence": "only 30 contributing events"
+    },
+    {
+      "check": "release document docs/final/JOURNAL_POSITIONING.md",
+      "passed": true,
+      "evidence": "docs/final/JOURNAL_POSITIONING.md"
+    },
+    {
+      "check": "release document docs/final/LITE1_EVIDENCE_AUDIT.md",
+      "passed": true,
+      "evidence": "docs/final/LITE1_EVIDENCE_AUDIT.md"
+    },
+    {
+      "check": "release document docs/final/REVIEWER_2_REPORT.md",
+      "passed": true,
+      "evidence": "docs/final/REVIEWER_2_REPORT.md"
+    },
+    {
+      "check": "release document docs/final/RESPONSE_TO_REVIEWER_2.md",
+      "passed": true,
+      "evidence": "docs/final/RESPONSE_TO_REVIEWER_2.md"
+    },
+    {
+      "check": "release document FINAL_PROJECT_STATUS.md",
+      "passed": true,
+      "evidence": "FINAL_PROJECT_STATUS.md"
+    }
+  ],
+  "authoritative_hashes": {
+    "focused_root": "9ca894f34111914a9722922185ab4c63c0f21b3aba7e37e46e9d202b32188e91",
+    "diffuse_root": "6f0dccd1e504f44e6ea7889c17bfaf0b23e4aaa01df229a5548d68d3ba0f6d4d",
+    "neural_roi_0.25um": "69bf318ee42796258993035ed87c2954f05b21ff1887bbb1a9ef2497afc84475"
+  }
+}

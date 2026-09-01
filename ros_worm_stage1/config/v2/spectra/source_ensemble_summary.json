@@ -1,0 +1,91 @@
+{
+  "schema_version": 2,
+  "interpretation": "physics-informed uncertainty ensemble, not measured instrument spectra",
+  "config": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm/ros_worm_stage1/config/v2/source_models.yaml",
+  "spectra": [
+    {
+      "source": "focused_imoxs_w_50kv",
+      "variant": "soft",
+      "endpoint_keV": 50.0,
+      "be_mm": 0.1,
+      "al_mm": 0.0,
+      "characteristic_fraction_pre_filter": 0.25,
+      "mean_energy_keV": 10.473036844308103,
+      "median_energy_keV": 8.5,
+      "p10_energy_keV": 3.25,
+      "p90_energy_keV": 20.5,
+      "photon_fraction_below_5keV": 0.19576563394014834,
+      "spectrum_file": "config/v2/spectra/focused_imoxs_w_50kv_soft.csv"
+    },
+    {
+      "source": "focused_imoxs_w_50kv",
+      "variant": "nominal",
+      "endpoint_keV": 50.0,
+      "be_mm": 0.1,
+      "al_mm": 0.1,
+      "characteristic_fraction_pre_filter": 0.15,
+      "mean_energy_keV": 12.828103853410639,
+      "median_energy_keV": 9.75,
+      "p10_energy_keV": 5.5,
+      "p90_energy_keV": 25.25,
+      "photon_fraction_below_5keV": 0.07205360524018996,
+      "spectrum_file": "config/v2/spectra/focused_imoxs_w_50kv_nominal.csv"
+    },
+    {
+      "source": "focused_imoxs_w_50kv",
+      "variant": "hard",
+      "endpoint_keV": 50.0,
+      "be_mm": 0.1,
+      "al_mm": 0.25,
+      "characteristic_fraction_pre_filter": 0.1,
+      "mean_energy_keV": 14.58346027608336,
+      "median_energy_keV": 11.25,
+      "p10_energy_keV": 6.75,
+      "p90_energy_keV": 27.75,
+      "photon_fraction_below_5keV": 0.023683841125081807,
+      "spectrum_file": "config/v2/spectra/focused_imoxs_w_50kv_hard.csv"
+    },
+    {
+      "source": "diffuse_minix_ag_20kv",
+      "variant": "soft",
+      "endpoint_keV": 20.0,
+      "be_mm": 0.1,
+      "al_mm": 0.0,
+      "characteristic_fraction_pre_filter": 0.2,
+      "mean_energy_keV": 5.526689878997293,
+      "median_energy_keV": 4.0,
+      "p10_energy_keV": 2.75,
+      "p90_energy_keV": 10.75,
+      "photon_fraction_below_5keV": 0.5856303825663108,
+      "spectrum_file": "config/v2/spectra/diffuse_minix_ag_20kv_soft.csv"
+    },
+    {
+      "source": "diffuse_minix_ag_20kv",
+      "variant": "nominal",
+      "endpoint_keV": 20.0,
+      "be_mm": 0.125,
+      "al_mm": 0.0,
+      "characteristic_fraction_pre_filter": 0.1,
+      "mean_energy_keV": 6.092224550383125,
+      "median_energy_keV": 5.0,
+      "p10_energy_keV": 2.75,
+      "p90_energy_keV": 11.5,
+      "photon_fraction_below_5keV": 0.4944543013368156,
+      "spectrum_file": "config/v2/spectra/diffuse_minix_ag_20kv_nominal.csv"
+    },
+    {
+      "source": "diffuse_minix_ag_20kv",
+      "variant": "hard",
+      "endpoint_keV": 20.0,
+      "be_mm": 0.15,
+      "al_mm": 0.05,
+      "characteristic_fraction_pre_filter": 0.05,
+      "mean_energy_keV": 7.57305855948128,
+      "median_energy_keV": 6.75,
+      "p10_energy_keV": 3.5,
+      "p90_energy_keV": 13.0,
+      "photon_fraction_below_5keV": 0.2742969120237597,
+      "spectrum_file": "config/v2/spectra/diffuse_minix_ag_20kv_hard.csv"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "figures": [
+    {
+      "figure": "fig01_geometry_workflow",
+      "title": "Experimental configurations, computation, and mechanistic boundary",
+      "png_sha256": "e02df37b6bae137ee7c1b7d8ca675cffc89f841472e833f486ef108595548113",
+      "pdf_sha256": "5678ebd9b2a13ab210c783a00d2278d35aeea50a5fe5cbe48dcee6f58b5cbc4d"
+    },
+    {
+      "figure": "fig02_neural_roi_validation",
+      "title": "Analysis-only neural ROI convergence and localized surface outliers",
+      "png_sha256": "efe07b0343b3a86f6bc26ecd1dc8d161f83b2ae81ee056443330442cfada2146",
+      "pdf_sha256": "a1998f210510aa8cf494dfc93a2722767099f2a82bfd31047d1050fc29303522"
+    },
+    {
+      "figure": "fig03_regional_dose",
+      "title": "Neural and body-wall-muscle dose from 100-million-history transport",
+      "png_sha256": "2f38e522b7d2ce969bb292495b9c0d462fe6071ababc1350a32b1ee576159b15",
+      "pdf_sha256": "c20b1bc90f4dd4996e3df4c0275a5a6233dcbe9238bcc925fd4be2400dbc7949"
+    },
+    {
+      "figure": "fig04_surface_edep_nulls",
+      "title": "Actual deposited energy near nervous and muscle surfaces",
+      "png_sha256": "7c67e419d0df879f3b7d67f599f4d0632bfcebd244b4c137b43f54dbed49d13e",
+      "pdf_sha256": "ead006f0f5f2e3015fdb045ada16c5d77e55c2f2ebbc2db74014987e6675479b"
+    },
+    {
+      "figure": "fig05_longitudinal_edep",
+      "title": "Focused and diffuse longitudinal deposited-energy distributions",
+      "png_sha256": "e0ab52c3a072ab88fd7d381ccbb1d44ca1fed1112f8bc090decf9f0513584e36",
+      "pdf_sha256": "e9213b47cc10ae9e66e416f9da4dd3d3a78120a3da515f8f97220012acfb482c"
+    },
+    {
+      "figure": "fig06_cannon_dose_mapping",
+      "title": "Cannon conditions translated to neural and muscle dose",
+      "png_sha256": "3ca818398dfd6fb9d838856d3752e33a9b8cc91770c10110bcf586bf465a8117",
+      "pdf_sha256": "d3c2dd71482eaca682233322253426787c3c2505acdc420cd495e941efc8d8e3"
+    },
+    {
+      "figure": "fig07_radiolysis_timecourse",
+      "title": "Time-resolved homogeneous-water radiolysis from local deposited energy",
+      "png_sha256": "b7ab960e565bcc53a6978c1df59606641fdae36882e98f912b371b0520bab646",
+      "pdf_sha256": "8ea700a4c1df20574dd8a1baf183f730b043970322f2f1d16bede4c21b525ea6"
+    },
+    {
+      "figure": "fig08_target_opportunities",
+      "title": "LITE-1-relevant Level-1 chemical interaction opportunities",
+      "png_sha256": "c3e3a13f48bc75497dd45dc95707093287315cb3dde4b8735d4ef9f6628d64cd",
+      "pdf_sha256": "87594f01c17cce36d3a554a3651e5a60d8eab98eb6b9a09e783f3795a66cf97a"
+    },
+    {
+      "figure": "fig09_uncertainty_budget",
+      "title": "Neural-dose uncertainty sources kept separate",
+      "png_sha256": "88e2828050b276225dda2b9a78630fa51a66baef463fd52583518fb309517839",
+      "pdf_sha256": "e45e66d740b145161badb8732ecce632497af556e19c83babbc908f2abe2b79c"
+    }
+  ],
+  "source_hashes": {
+    "ros_worm_stage1/validation/final/tables/final_cannon_condition_table.csv": "1ce1bb13066e568d4628c6494e5b4c63a7abfdb2c84556d0d6db711a60697b86",
+    "ros_worm_stage1/validation/final/tables/neural_muscle_surface_edep_shells.csv": "2139a5c222d435ff88eae9fb6311cda34c73b350a7b89d570980d0cc0f1ec251",
+    "ros_worm_stage1/validation/final/tables/final_uncertainty_budget.csv": "da679c0a88df82b99d0a3a72fa3b4bcfb20e56bd81f72b92a990165844ea4242",
+    "ros_worm_stage1/validation/final/tables/transport_qc_and_navigation.csv": "3a95117e35e9c583f96be2bf8f1e4c40a6d68b5160ee59f22de5c779ceb9c045",
+    "ros_worm_stage1/validation/final/tables/final_nominal_regional_dose.csv": "5c751f36f0dfe44cb00fe61a1070148be8d37c8c29254019f0a42872496b9e10",
+    "ros_worm_stage1/validation/final/tables/longitudinal_edep_profiles.csv": "33d5f018f474405c502af317545b749552ec49218e677ea60538c88cbe34da72",
+    "ros_worm_stage1/validation/final/tables/neural_muscle_surface_within5um.csv": "bc547d1f7e1e42c4c7a53ee26552b4f1510b5cf50ab9f6522a3a2b04e5483b7d",
+    "ros_worm_stage1/validation/final/statistics/history_convergence.csv": "bad22f19c19930c498e5df42a3323e5323d45e75741e8ea54f92befd37c0999c",
+    "ros_worm_stage1/validation/final/statistics/independent_replicate_consistency.csv": "cff892b3f950d3a7d78267264494aa5cf01e51ff5a7d1adfd79f9716bd05bd2b",
+    "ros_worm_stage1/validation/final/statistics/final_nominal_dose_statistics.csv": "67a8725caa0cc19fd7e7fdd984611d253317818084f0834db8bc613e250cf3cd",
+    "ros_worm_stage1/validation/final/chemistry/lite1_target_interaction_sweep.csv": "d2bd91e995749e6a2704e21855b55495e36be308df8cc0cd330794c328e1155e",
+    "ros_worm_stage1/validation/final/chemistry/h2o2_prdx_opportunity_sweep.csv": "b6b4941ebfdba3e291a0d2b5247cbeeff91cc6cdc6ca652ea4d0e8008cd0ae0d",
+    "ros_worm_stage1/validation/final/chemistry/cannon_condition_edep_radiolysis.csv": "416ccd88f26e8fb47ac4fe57ed80b08ee8dcd32aad6a0a363e0a703517a89f41",
+    "ros_worm_stage1/validation/final/chemistry/chemistry_spectrum_normalization_comparison.csv": "7f31fcdcc88d1024ab9ed9da92ceaf5a95c252c6680a6d7cc6d29580ca501470",
+    "ros_worm_stage1/validation/final/chemistry/cannon_condition_summary.csv": "de6c4f762e11fa766b4f2b664565c93d624806cf8439b8f7a4e26d71f21344a4",
+    "ros_worm_stage1/validation/final/chemistry/local_edep_per_whole_worm_Gy.csv": "22f714525c849f988968d6f66ae5761b5c16100f18f15edf0c30fc57fc003d34",
+    "ros_worm_stage1/validation/final/chemistry/chemistry_run_index.csv": "a46e5285ef3c69f00d68315bf98381807dd8b69b06ee5adcb001c837f1c15443",
+    "ros_worm_stage1/validation/final/chemistry/edep_weighted_chemistry_timeseries.csv": "3c2555920ecc385f18ecf38371fac003398cce3f69925085654a1c77dc89dc50",
+    "ros_worm_stage1/validation/final/chemistry/cannon_condition_local_dose_edep.csv": "f0a40b3732009bd5187f27faf8e1b20f59098728dd1a10aef83c4d2a73fe34ec"
+  }
+}

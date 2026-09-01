@@ -14,6 +14,10 @@ Species.txt
 output*.root
 electron_spectrum.csv
 
+# Retained locally for audit but superseded by the enforced-step v2.1 controls.
+ros_worm_stage1/validation/v2_1/focused_edep_1M_seed1/controls/
+ros_worm_stage1/validation/v2_1/diffuse_edep_1M_seed1/controls/
+
 # Local scratch / backups
 *.bak
 *.bak_*

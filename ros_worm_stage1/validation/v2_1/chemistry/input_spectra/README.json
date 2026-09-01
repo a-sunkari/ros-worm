@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "purpose": "Geant4-DNA comparison spectra weighted by local electron edep, not electron-birth counts.",
+  "interpretation": "Used to estimate energy-normalized homogeneous-water G values. Absolute molecule equivalents are normalized separately to the full local deposited-energy budget.",
+  "limitation": "The condensed-history transport output cannot replay nanometre-resolved tracks; this is a spectrum-conditioned comparison, not direct chemistry continuation."
+}

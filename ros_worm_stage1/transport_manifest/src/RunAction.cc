@@ -37,6 +37,31 @@ RunAction::RunAction(DetectorConstruction* det) : fDetector(det)
   man->CreateNtupleDColumn("x_um");
   man->CreateNtupleDColumn("y_um");
   man->CreateNtupleDColumn("z_um");
+  // x/y/z above are retained as the historical pre-step position.  v2.1
+  // appends explicit pre/mid/post coordinates rather than changing that
+  // established schema.  The midpoint is the authoritative location for
+  // post-transport deposited-energy scoring.
+  man->CreateNtupleDColumn("preX_um");
+  man->CreateNtupleDColumn("preY_um");
+  man->CreateNtupleDColumn("preZ_um");
+  man->CreateNtupleDColumn("midX_um");
+  man->CreateNtupleDColumn("midY_um");
+  man->CreateNtupleDColumn("midZ_um");
+  man->CreateNtupleDColumn("postX_um");
+  man->CreateNtupleDColumn("postY_um");
+  man->CreateNtupleDColumn("postZ_um");
+  man->CreateNtupleIColumn("insideBodyPre");
+  man->CreateNtupleIColumn("insideBodyMid");
+  man->CreateNtupleIColumn("insideBodyPost");
+  man->CreateNtupleIColumn("processType");
+  man->CreateNtupleIColumn("processSubtype");
+  man->CreateNtupleIColumn("creatorProcessType");
+  man->CreateNtupleIColumn("creatorProcessSubtype");
+  man->CreateNtupleDColumn("edepX_um");
+  man->CreateNtupleDColumn("edepY_um");
+  man->CreateNtupleDColumn("edepZ_um");
+  man->CreateNtupleIColumn("edepPositionCode");
+  man->CreateNtupleIColumn("insideBodyEdep");
   man->FinishNtuple(1);
 
   man->CreateNtuple("secondaries", "Secondary particle source terms by parent region");

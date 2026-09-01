@@ -1,0 +1,11 @@
+experiment,dose_rate_Gy_s,exposure_s,total_dose_Gy,genotype,reported_behavior_value_percent,reported_sem_percent,observation,status,source
+diffuse_swimming,0.00,20,0.0,pmyo-3::lite-1,,,baseline condition,reported,Cannon et al. 2023 Figure 4
+diffuse_swimming,0.19,20,3.8,pmyo-3::lite-1,,,dose-series condition; group not reported significant in article text,reported,Cannon et al. 2023 Figure 4
+diffuse_swimming,0.38,20,7.6,pmyo-3::lite-1,,,significant bend-frequency decrease,reported,Cannon et al. 2023 Figure 4
+diffuse_swimming,0.56,20,11.2,pmyo-3::lite-1,,,significant bend-frequency decrease,reported,Cannon et al. 2023 Figure 4
+diffuse_swimming,0.74,20,14.8,pmyo-3::lite-1,72,5,bend-frequency decrease,reported,Cannon et al. 2023
+diffuse_swimming,0.74,20,14.8,wild_type,3,2,bend-frequency decrease,reported,Cannon et al. 2023
+focused_avoidance,0.2,10,2.0,wild_type,,,lower-current focused avoidance condition; focused dose uncertain by factor two,reported_approximate,Cannon et al. 2023
+focused_avoidance,1.0,10,10.0,wild_type,,,high-current focused avoidance condition; focused dose uncertain by factor two,reported_approximate,Cannon et al. 2023
+focused_egg_ejection,1.0,15,15.0,pmyo-3::lite-1,50,,5 of 10 animals ejected eggs,reported,Cannon et al. 2023
+focused_egg_ejection,1.0,15,15.0,wild_type,0,,0 of 10 animals ejected eggs,reported,Cannon et al. 2023

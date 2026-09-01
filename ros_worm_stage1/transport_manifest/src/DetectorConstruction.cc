@@ -92,15 +92,32 @@ DetectorConstruction::DetectorConstruction()
   fMessenger->DeclareProperty("mmPerUnit", fMmPerUnit, "Scale factor: STL model unit to mm");
   fMessenger->DeclarePropertyWithUnit("maxStep_um", "um", fMaxStep, "Maximum biological step length");
   fMessenger->DeclareProperty("saveSteps", fSaveSteps, "Write per-step edep ntuple rows");
-  fMessenger->DeclareProperty("sourceType", fSourceType, "focused or diffuse");
-  fMessenger->DeclareProperty("spectrumType", fSpectrumType, "mono or kramers");
+  fMessenger->DeclareProperty("sourceType", fSourceType, "focused, diffuse/uniform_parallel, or targeted_cone");
+  fMessenger->DeclareProperty("spectrumType", fSpectrumType, "mono, kramers, or tabulated");
+  fMessenger->DeclareProperty("spectrumFile", fSpectrumFile, "CSV energy_keV,weight file for tabulated spectrum");
   fMessenger->DeclarePropertyWithUnit("monoEnergy", "keV", fMonoEnergy, "Mono energy");
   fMessenger->DeclarePropertyWithUnit("kvp", "keV", fKvp, "Kramers endpoint energy");
   fMessenger->DeclarePropertyWithUnit("minEnergy", "keV", fMinEnergy, "Kramers minimum sampled energy");
   fMessenger->DeclarePropertyWithUnit("spotFWHM", "mm", fSpotFWHM, "Focused beam FWHM");
   fMessenger->DeclarePropertyWithUnit("sourceY", "mm", fSourceY, "Source plane y position");
+  fMessenger->DeclarePropertyWithUnit("sourceX", "mm", fSourceX, "Source x position");
+  fMessenger->DeclarePropertyWithUnit("sourceZ", "mm", fSourceZ, "Source z position");
+  fMessenger->DeclareProperty("directionX", fDirectionX, "Nominal beam direction x component");
+  fMessenger->DeclareProperty("directionY", fDirectionY, "Nominal beam direction y component");
+  fMessenger->DeclareProperty("directionZ", fDirectionZ, "Nominal beam direction z component");
+  fMessenger->DeclarePropertyWithUnit("targetX", "mm", fTargetX, "Target-plane center x");
+  fMessenger->DeclarePropertyWithUnit("targetY", "mm", fTargetY, "Target-plane center y");
+  fMessenger->DeclarePropertyWithUnit("targetZ", "mm", fTargetZ, "Target-plane center z");
   fMessenger->DeclarePropertyWithUnit("halfX", "mm", fHalfX, "Diffuse source half-size x");
   fMessenger->DeclarePropertyWithUnit("halfZ", "mm", fHalfZ, "Diffuse source half-size z");
+  fMessenger->DeclareProperty("environmentMode", fEnvironmentMode, "none, slab, or immersion");
+  fMessenger->DeclareProperty("environmentMaterial", fEnvironmentMaterial, "NIST material for medium");
+  fMessenger->DeclarePropertyWithUnit("environmentHalfX", "mm", fEnvironmentHalfX, "Medium half-size x");
+  fMessenger->DeclarePropertyWithUnit("environmentHalfY", "mm", fEnvironmentHalfY, "Medium half-size y");
+  fMessenger->DeclarePropertyWithUnit("environmentAbove", "mm", fEnvironmentAbove, "Medium above body top");
+  fMessenger->DeclarePropertyWithUnit("environmentBelow", "mm", fEnvironmentBelow, "Medium below body bottom");
+  fMessenger->DeclareProperty("substrateMaterial", fSubstrateMaterial, "NIST substrate material or none");
+  fMessenger->DeclarePropertyWithUnit("substrateThickness", "mm", fSubstrateThickness, "Substrate thickness below medium");
 }
 DetectorConstruction::~DetectorConstruction(){ delete fMessenger; }
 
@@ -239,13 +256,57 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4ThreeVector center((body->minX+body->maxX)/2.0, (body->minY+body->maxY)/2.0, (body->minZ+body->maxZ)/2.0);
   G4double spanX=(body->maxX-body->minX)*fMmPerUnit*mm, spanY=(body->maxY-body->minY)*fMmPerUnit*mm, spanZ=(body->maxZ-body->minZ)*fMmPerUnit*mm;
   G4double half = std::max({spanX,spanY,spanZ})/2.0 + fWorldMargin;
-  half = std::max(half, std::abs(fSourceY) + fWorldMargin);
+  half = std::max({half, std::abs(fSourceX)+fWorldMargin, std::abs(fSourceY)+fWorldMargin,
+                   std::abs(fSourceZ)+fWorldMargin, fEnvironmentHalfX+fWorldMargin,
+                   fEnvironmentHalfY+fWorldMargin,
+                   spanZ/2.0+fEnvironmentAbove+fEnvironmentBelow+fSubstrateThickness+fWorldMargin});
   auto* worldS = new G4Box("world", half, half, half);
   auto* worldL = new G4LogicalVolume(worldS, fWorldMaterial, "world_log");
   auto* worldP = new G4PVPlacement(nullptr, {}, worldL, "world_phys", nullptr, false, 0, false);
   fStepLimit = new G4UserLimits(fMaxStep);
+  G4cout << "[ROS-WORM][STEP_LIMIT] charged_max_step_um=" << fMaxStep/um << G4endl;
 
   G4LogicalVolume* bodyL = nullptr;
+  G4LogicalVolume* bodyMother = worldL;
+  G4ThreeVector bodyPlacement;
+  const G4double bodyHalfZ = spanZ/2.0;
+  G4double mediumBottomZ = -bodyHalfZ;
+  if (fEnvironmentMode == "immersion") {
+    const G4double mediumHalfZ = bodyHalfZ + (fEnvironmentAbove + fEnvironmentBelow)/2.0;
+    const G4double mediumCenterZ = (fEnvironmentAbove - fEnvironmentBelow)/2.0;
+    auto* material = G4NistManager::Instance()->FindOrBuildMaterial(fEnvironmentMaterial, false);
+    if (!material) G4Exception("Construct","ROSWORM_ENV_MATERIAL",FatalException,fEnvironmentMaterial);
+    auto* solid = new G4Box("environment_solid", fEnvironmentHalfX, fEnvironmentHalfY, mediumHalfZ);
+    auto* logical = new G4LogicalVolume(solid, material, "environment_log");
+    new G4PVPlacement(nullptr, {0,0,mediumCenterZ}, logical, "environment_phys", worldL, false, 0, false);
+    bodyMother = logical;
+    // Preserve the anatomical origin in world coordinates when changing the
+    // body mother from world to an offset medium volume.
+    bodyPlacement = {0,0,-mediumCenterZ};
+    mediumBottomZ = mediumCenterZ - mediumHalfZ;
+    G4cout << "[ROS-WORM][ENVIRONMENT] mode=immersion material=" << material->GetName()
+           << " above_mm=" << fEnvironmentAbove/mm << " below_mm=" << fEnvironmentBelow/mm << G4endl;
+  } else if (fEnvironmentMode == "slab" && fEnvironmentBelow > 0) {
+    auto* material = G4NistManager::Instance()->FindOrBuildMaterial(fEnvironmentMaterial, false);
+    if (!material) G4Exception("Construct","ROSWORM_ENV_MATERIAL",FatalException,fEnvironmentMaterial);
+    const G4double centerZ = -bodyHalfZ - fEnvironmentBelow/2.0;
+    auto* solid = new G4Box("environment_solid", fEnvironmentHalfX, fEnvironmentHalfY, fEnvironmentBelow/2.0);
+    auto* logical = new G4LogicalVolume(solid, material, "environment_log");
+    new G4PVPlacement(nullptr, {0,0,centerZ}, logical, "environment_phys", worldL, false, 0, false);
+    mediumBottomZ = centerZ - fEnvironmentBelow/2.0;
+    G4cout << "[ROS-WORM][ENVIRONMENT] mode=slab material=" << material->GetName()
+           << " thickness_mm=" << fEnvironmentBelow/mm << G4endl;
+  }
+  if (fSubstrateMaterial != "none" && fSubstrateThickness > 0) {
+    auto* material = G4NistManager::Instance()->FindOrBuildMaterial(fSubstrateMaterial, false);
+    if (!material) G4Exception("Construct","ROSWORM_SUBSTRATE_MATERIAL",FatalException,fSubstrateMaterial);
+    const G4double centerZ = mediumBottomZ - fSubstrateThickness/2.0;
+    auto* solid = new G4Box("substrate_solid", fEnvironmentHalfX, fEnvironmentHalfY, fSubstrateThickness/2.0);
+    auto* logical = new G4LogicalVolume(solid, material, "substrate_log");
+    new G4PVPlacement(nullptr, {0,0,centerZ}, logical, "substrate_phys", worldL, false, 0, false);
+    G4cout << "[ROS-WORM][SUBSTRATE] material=" << material->GetName()
+           << " thickness_mm=" << fSubstrateThickness/mm << G4endl;
+  }
   for (auto& r: fRows) {
     auto* solid = BuildTessellatedSolid("solid_"+r.safeName, r.stlPath, center);
     auto* material = MaterialForRegion(r.regionId);
@@ -256,7 +317,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     if (r.regionId == 1) {
       bodyL = lv;
       fBodySolid = solid;
-      new G4PVPlacement(nullptr, {}, lv, physName, worldL, false, r.regionId, false);
+      new G4PVPlacement(nullptr, bodyPlacement, lv, physName, bodyMother, false, r.regionId, false);
     } else {
       if (!bodyL) G4Exception("Construct","ROSWORM_BODY_ORDER",FatalException,"Body must be constructed before children");
       new G4PVPlacement(nullptr, {}, lv, physName, bodyL, false, r.regionId, false);
