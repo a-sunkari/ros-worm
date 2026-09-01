@@ -1,0 +1,16 @@
+{
+  "source_members": 276,
+  "selected_members_all_manifest_category_nervous": true,
+  "all_watertight_after_vertex_merge": true,
+  "all_winding_consistent": true,
+  "all_positive_signed_interiors": true,
+  "union_overlap_rule": "logical OR; each point/voxel counted once",
+  "body_clipping": "voxel centers outside closed body envelope removed before mass calculation",
+  "primary_pitch_um": 0.25,
+  "primary_volume_um3": 8663.0,
+  "primary_density_kg_m3": 1040.0,
+  "primary_mass_kg": 9.00952e-12,
+  "mass_formula": "volume_um3 * 1e-18 m3/um3 * 1040 kg/m3",
+  "volume_range_percent": 3.936269915651369,
+  "outlier_interpretation": "localized surface-sampling disagreement; scientific impact quantified by exact/voxel edep disagreement"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "config": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/config/v2_1/lite1_target_chemistry.yaml",
+  "config_sha256": "365905107be576e0ede04824af5492144744c3e63c31772e9bbd2b7f3d1c5847",
+  "normalization": "actual local deposited energy multiplied by Geant4-DNA homogeneous-water G values",
+  "primary_chemistry_spectrum": "local electron deposited-energy-weighted pre-step kinetic-energy spectrum",
+  "comparison": "v2 electron-birth-count spectrum",
+  "direct_track_chemistry_gate": "not attempted: condensed-history transport does not retain nanometre track states required for faithful continuation",
+  "lite1_evidence_level": 1,
+  "lite1_decision": "Quantify chemical opportunity only. No receptor-open probability or calibrated LITE-1 activation metric is supported by current literature."
+}

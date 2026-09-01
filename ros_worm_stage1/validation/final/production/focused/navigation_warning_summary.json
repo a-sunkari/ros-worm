@@ -1,0 +1,14 @@
+{
+  "log": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/results/final_highstat_focused_nominal_ngm_100M/transport.log",
+  "geomnav1002_incidents": 2264,
+  "pair_counts": {
+    "ow_WholeBodyEnvelope_phys <- ow_BodyWallMuscle_phys": 565,
+    "ow_WholeBodyEnvelope_phys <- ow_DigestiveSystem_phys": 1524,
+    "ow_WholeBodyEnvelope_phys <- ow_ReproductiveSystem_phys": 167,
+    "world_phys <- ow_WholeBodyEnvelope_phys": 2,
+    "ow_BodyWallMuscle_phys <- ow_WholeBodyEnvelope_phys": 1,
+    "world_phys <- ow_BodyWallMuscle_phys": 2,
+    "ow_ReproductiveSystem_phys <- ow_DigestiveSystem_phys": 2,
+    "ow_ReproductiveSystem_phys <- ow_WholeBodyEnvelope_phys": 1
+  }
+}

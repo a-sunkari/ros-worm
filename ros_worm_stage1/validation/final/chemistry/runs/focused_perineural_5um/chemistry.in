@@ -1,0 +1,56 @@
+# ROS Worm stage-1 chemistry run.
+# This preserves the working chem6 chemistry/scoring lifecycle but replaces
+# mono /gun/energy runs with a CSV-sampled electron source.
+#
+# Required input in current working directory:
+#   electron_spectrum.csv  with rows: energy_keV,weight
+
+/run/numberOfThreads 4
+/random/setSeeds 419057 820191
+/process/dna/e-SolvationSubType Meesungnoen2002
+/process/chem/TimeStepModel IRT
+
+/run/initialize
+
+/chem/PrintSpeciesTable
+/chem/reaction/UI
+
+# Same reduced water radiolysis reaction set used by chem6 beam.in.
+/chem/reaction/add H + H -> H2                      | Fix |  0.503e10 | 0
+/chem/reaction/add e_aq + H -> H2 + OHm             | Fix |  2.50e10  | 0
+/chem/reaction/add e_aq + e_aq -> H2 + OHm + OHm    | Fix |  0.636e10 | 0
+/chem/reaction/add H3Op + OHm -> H2O                | Fix |  1.13e11  | 0
+/chem/reaction/add °OH + H -> H2O                   | Fix |  1.55e10 | 1
+/chem/reaction/add °OH + °OH -> H2O2                | Fix |  0.55e10 | 1
+/chem/reaction/add e_aq + °OH -> OHm                | Fix |  2.95e10 | 1
+/chem/reaction/add e_aq + H2O2 -> OHm + °OH         | Fix |  1.10e10 | 1
+/chem/reaction/add e_aq + H3Op -> H + H2O           | Fix |  2.11e10 | 1
+/chem/reaction/print
+
+/gun/position  0 0 0
+/gun/direction 0 0 1
+/gun/particle e-
+
+# Project-specific source: sample electron kinetic energy from CSV.
+/ros/source/mode spectrum
+/ros/source/spectrumFile electron_spectrum.csv
+/ros/source/verbose true
+
+/scorer/species/nOfTimeBins 50
+/scorer/species/addTimeToRecord 10 ps
+/scorer/species/addTimeToRecord 100 ps
+/scorer/species/addTimeToRecord 1 ns
+/scorer/species/addTimeToRecord 10 ns
+/scorer/species/addTimeToRecord 100 ns
+/tracking/verbose 0
+/scheduler/verbose 0
+/scheduler/endTime 1 microsecond
+/run/printProgress 100
+
+# Keep PrimaryKiller from aborting arbitrary spectrum events. The original
+# chem6 beam.in intentionally sweeps narrow energy-loss bands for LET studies;
+# for ROS-Worm spectrum coupling we want the electron track to run normally.
+/primaryKiller/eLossMin 100 MeV
+/primaryKiller/eLossMax 200 MeV
+
+/run/beamOn 10000
