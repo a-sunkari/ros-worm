@@ -156,7 +156,7 @@ def main() -> None:
                       stage / "config/transport_geometry_v1.csv", materials_path,
                       repo / "openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl"]
     manifest = {
-        "schema_version": 2, "created_utc": datetime.now(timezone.utc).isoformat(),
+        "schema_version": 3, "created_utc": datetime.now(timezone.utc).isoformat(),
         "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip(),
         "git_status_at_run": subprocess.check_output(["git", "status", "--short"], cwd=repo, text=True).splitlines(),
         "case_name": args.case, "case": case, "spectrum_variant": args.spectrum,
@@ -164,6 +164,8 @@ def main() -> None:
         "material_model": args.material_model, "beam_y_mm": source_position[1],
         "spot_fwhm_mm": args.spot_fwhm_mm if args.spot_fwhm_mm is not None else case.get("spot_fwhm_mm"),
         "events": args.events, "threads": args.threads, "random_seeds": [args.seed_a, args.seed_b],
+        "save_positive_edep_steps": args.save_steps,
+        "edep_step_position_definition": "midpoint of Geant4 pre-step and post-step positions",
         "geant4_version": subprocess.check_output(["geant4-config", "--version"], text=True).strip(),
         "normalization_warning": case["normalization_note"],
         "artifacts": {str(path.relative_to(repo)): {"sha256": sha256(path), "bytes": path.stat().st_size} for path in tracked_inputs},
