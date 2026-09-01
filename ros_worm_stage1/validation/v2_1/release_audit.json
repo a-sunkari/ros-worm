@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "release": "ROS-Worm v2.1",
+  "passed": true,
+  "checks": [
+    {
+      "name": "required_documentation",
+      "passed": true,
+      "detail": {
+        "missing": [],
+        "count": 13
+      }
+    },
+    {
+      "name": "focused_10M_histories",
+      "passed": true,
+      "detail": 10000000
+    },
+    {
+      "name": "focused_spatial_steps_present",
+      "passed": true,
+      "detail": 1947267
+    },
+    {
+      "name": "focused_energy_conservation",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "focused_coordinate_filter",
+      "passed": true,
+      "detail": {
+        "nonfinite": 0,
+        "outside": 0
+      }
+    },
+    {
+      "name": "focused_step_limit_macro",
+      "passed": true,
+      "detail": "0.5 um"
+    },
+    {
+      "name": "diffuse_10M_histories",
+      "passed": true,
+      "detail": 10000000
+    },
+    {
+      "name": "diffuse_spatial_steps_present",
+      "passed": true,
+      "detail": 510833
+    },
+    {
+      "name": "diffuse_energy_conservation",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "diffuse_coordinate_filter",
+      "passed": true,
+      "detail": {
+        "nonfinite": 0,
+        "outside": 0
+      }
+    },
+    {
+      "name": "diffuse_step_limit_macro",
+      "passed": true,
+      "detail": "0.5 um"
+    },
+    {
+      "name": "neural_source_members",
+      "passed": true,
+      "detail": {
+        "members": 276,
+        "watertight": true
+      }
+    },
+    {
+      "name": "neural_volume_resolution_stability",
+      "passed": true,
+      "detail": {
+        "minimum_um3": 8536.0,
+        "maximum_um3": 8872.0
+      }
+    },
+    {
+      "name": "authoritative_neural_dose_rows",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "muscle_comparator_rows",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "focused_matched_nulls",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "diffuse_matched_nulls",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "sensitivity_ensemble",
+      "passed": true,
+      "detail": 27
+    },
+    {
+      "name": "chemistry_6x10k",
+      "passed": true,
+      "detail": {
+        "rows": 6,
+        "versions": [
+          "11.3.2"
+        ]
+      }
+    },
+    {
+      "name": "lite1_evidence_gate",
+      "passed": true,
+      "detail": "Quantify chemical opportunity only. No receptor-open probability or calibrated LITE-1 activation metric is supported by current literature."
+    },
+    {
+      "name": "ten_figures_hash_verified",
+      "passed": true,
+      "detail": {
+        "count": 10,
+        "failures": []
+      }
+    }
+  ],
+  "production_root_hashes": {
+    "focused": "aebb5a29302a5b5c5d9c6e528efbef50d87494e3442d9687b449ee51555d3b24",
+    "diffuse": "a23d986e8a7864a9bc8906574198a35e60e95f7da1b67e9cf12cbab21f9e5d0c"
+  }
+}

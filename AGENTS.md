@@ -67,6 +67,28 @@ orientation. The diffuse `targeted_cone` histories are conditioned on reaching
 the target rectangle; normalize them to the reported absorbed dose, never to
 tube current or histories alone.
 
+## Final v2.1 methodological upgrade
+
+V2.1 is the current analysis/reporting authority and is additive to v2:
+
+- authoritative audit: `ros_worm_stage1/scripts/v2_1/run_authoritative_v2_1.py`
+- neural ROI construction: `ros_worm_stage1/scripts/v2_1/build_neural_roi_v2_1.py`
+- actual-edep scorer: `ros_worm_stage1/scripts/v2_1/score_edep_v2_1.py`
+- target chemistry config: `ros_worm_stage1/config/v2_1/lite1_target_chemistry.yaml`
+- compact evidence: `ros_worm_stage1/validation/v2_1/`
+- final report: `docs/v2_1/THESIS_REPORT.md`
+
+The primary neural ROI is the analysis-only set union of 276 verified closed
+source objects; its 0.25–2 micrometre voxel series is a convergence test. Never
+install these ROIs as Geant4 daughters. Allowed endpoint terms are **analysis-
+only neural mean absorbed dose**, **nervous-surface-referenced deposited
+energy**, **homogeneous-water molecule equivalent**, and **target-interaction
+opportunity**. No LITE-1 activation/open probability is supported.
+
+V2.1 spatial results are authoritative only when the transport log confirms
+`G4StepLimiterPhysics` and a 0.5 micrometre charged-particle limit. The earlier
+1M v2.1 outputs marked `SUPERSEDED.md` are an audit trail, not scientific data.
+
 ## Region IDs
 
 1. body / residual WholeBodyEnvelope

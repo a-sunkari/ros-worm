@@ -49,15 +49,26 @@ at the finest pitch. This is a material limitation of the derived voxel files.
 The exact member-union definition preserves each source interior; the voxel
 files are resolution-study representations, not new anatomical truth.
 
-## Acceptance gate
+## Final acceptance decision
 
-The stable volume and fine-grid surface error are encouraging but do not by
-themselves validate neural absorbed dose. The 100k focused falsification run
-contains too few in-ROI deposition events for a final claim. Its 0.25- and
-0.5-micrometre numerators agree closely with exact member-union classification,
-whereas the 1- and 2-micrometre classifications do not. The 1M and production
-studies will determine whether 0.25/0.5-micrometre neural dose converges.
+The 10M production results meet a bounded, analysis-only dose standard. Across
+0.25, 0.5, 1, and 2 micrometre voxel representations, focused neural/whole-
+worm dose ratios were 0.819, 0.886, 0.829, and 0.912; diffuse ratios were
+0.913, 1.010, 1.127, and 1.101. The full voxel-pitch range is 11% focused and
+23% diffuse and is smaller than, or comparable to, the event-level uncertainty.
+The exact 276-member union, normalized by the finest-grid mass, gives 0.778 ±
+0.101 focused and 0.969 ± 0.224 diffuse (standard error).
 
-If it does not, the neural volume will be used only to bound dose and the
-surface-referenced deposited-energy shells will remain the primary endpoint.
+This is practical convergence for the question "is neural mean dose strongly
+different from whole-worm mean dose?" It is not evidence that every thin
+neurite has a uniquely correct volume. The accepted authoritative result is
+therefore the exact-member-union numerator with the 0.25 micrometre body-
+clipped mass; all voxel results remain a reconstruction interval. Surface-
+referenced deposited-energy shells remain co-primary because they do not
+require a neural mass.
 
+Registration remains important. Under the stated ±2 micrometre transverse,
+±5 micrometre longitudinal, and ±3 degree bracket, full-production focused
+ROI deposition ranged from 1.00 to 1.28 of baseline and diffuse deposition
+from 0.70 to 1.42. These are assumption intervals, not probabilistic errors.
+They are reported separately from Monte Carlo uncertainty.

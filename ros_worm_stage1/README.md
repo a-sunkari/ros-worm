@@ -52,9 +52,18 @@ Alignment QC:
 
 This reports proximity to nervous anatomy, not automatically true inside-neuron dose.
 
+V2.1 additionally scores actual deposited-energy steps and defines an analysis-
+only neural mean dose from the exact union of verified closed nervous source
+objects. See `../docs/v2_1/THESIS_REPORT.md`. The ROI is never installed as a
+physical daughter and does not support individual-neuron dose.
+
 ## Chemistry
 
 `chemistry/` preserves the Geant4-DNA `chem6`-derived water-radiolysis workflow. Transport-derived electron spectra can be used as chemistry source spectra. Until oxygen/scavenger/biomolecular chemistry is explicitly added, chemistry outputs should be described as water-radiolysis species/yields rather than measured intracellular ROS concentrations.
+
+V2.1 normalizes water radiolysis to actual local deposited energy and applies
+literature-rate Trp/thiol/PRDX competition brackets. These are chemical-
+opportunity metrics, not receptor activation probabilities.
 
 ## Historical scripts/docs
 

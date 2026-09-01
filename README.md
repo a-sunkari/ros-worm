@@ -14,6 +14,8 @@ Future humans and AI agents should read, in order:
 6. [`V2_EXECUTIVE_SUMMARY.md`](V2_EXECUTIVE_SUMMARY.md) — thesis-study result and its scientific boundary.
 7. [`docs/v2/THESIS_REPORT.md`](docs/v2/THESIS_REPORT.md) — v2 methods, validation, results, and discussion.
 8. [`docs/v2/COMPLETION_MATRIX.md`](docs/v2/COMPLETION_MATRIX.md) — requirement-to-evidence audit.
+9. [`V2_1_EXECUTIVE_SUMMARY.md`](V2_1_EXECUTIVE_SUMMARY.md) — actual neural dose and LITE-1-relevant chemistry.
+10. [`docs/v2_1/THESIS_REPORT.md`](docs/v2_1/THESIS_REPORT.md) — final v2.1 study and evidentiary boundary.
 
 The active implementation is under [`ros_worm_stage1/`](ros_worm_stage1/). The older `ros_worm_full_pipeline_v2` staging copy, build trees, scratch backups, and command-dump notes were removed from the working tree during the August 2026 cleanup; their history remains in git.
 
@@ -30,6 +32,20 @@ Use `--tier validation` for the independent 1M replicates and primary
 sensitivity brackets, or `--tier production` for the full 10M transport + 10k
 chemistry package. Existing provenance-complete results are reused. See
 [`docs/v2/REPRODUCIBILITY.md`](docs/v2/REPRODUCIBILITY.md).
+
+## Authoritative v2.1 verification
+
+The final methodological upgrade is additive and lives under `config/v2_1`,
+`scripts/v2_1`, and `validation/v2_1`. Verify the tracked package with:
+
+```bash
+/home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/v2_1/run_authoritative_v2_1.py --stage audit
+```
+
+Use `--stage figures` to regenerate all ten figures from compact results or
+`--stage analysis` to regenerate deposited-energy radiochemistry and figures.
+See [`docs/v2_1/REPRODUCIBILITY.md`](docs/v2_1/REPRODUCIBILITY.md).
 
 ## Validated v1 run
 
@@ -52,17 +68,18 @@ neural atlas. See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for the
 
 Reproduce the X-ray conditions used in the Bolding/Cannon *C. elegans* work, compute physically grounded regional energy deposition and secondary-electron spectra, feed those spectra into Geant4-DNA radiolysis chemistry, and determine whether the resulting near-neural/radiolytic signal is spatially and dose-wise compatible with the observed LITE-1-dependent behavioral responses.
 
-## Important limitation
+## Important interpretation
 
 The high-resolution nervous-system STL is anatomically useful but not a clean
-watertight solid. The validated method is therefore **transport without a
-physical nervous daughter volume plus post-processing against the original
-high-resolution nervous surface**. This is a secondary-electron birth-proximity
-metric, not nervous-tissue absorbed dose. Geant4-DNA outputs are simulated water
-radiolysis yields, not measured biological ROS.
+watertight solid. Transport therefore still uses **no physical nervous daughter
+volume**. V2.1 scores actual deposited-energy steps against the original surface
+and an analysis-only exact union of 276 verified closed source objects. This
+supports an explicitly defined mean neural ROI dose, not cell-resolved dose.
+Geant4-DNA outputs remain simulated homogeneous-water radiolysis yields, not
+measured biological ROS or a prediction of LITE-1 activation.
 
-The v2 matched-atlas null test found no compelling neural-specific enrichment:
-the real-atlas within-5-µm fractions were 14.19% (focused) and 14.88% (diffuse),
-but anatomy-preserving perturbation means were 14.12% and 14.52%. The endpoint
-remains useful as an anatomy-referenced exposure metric, not evidence that
-X-ray transport preferentially targets the nervous system.
+V2.1 likewise finds no compelling neural-specific enrichment of actual energy
+deposition: 14.32% (focused) and 14.73% (diffuse) lie within 5 µm, while matched
+null ratios are only 1.022 and 1.039 (empirical p=0.308 and 0.231). The neural
+dose is approximately 0.78 and 0.97 times whole-worm mean dose; muscle is 1.07
+and 1.09 times. Transport is broadly available rather than neural-selective.

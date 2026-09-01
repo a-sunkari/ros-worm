@@ -1,5 +1,13 @@
 # Current project state — August 2026
 
+> **V2.1 update (August 31, 2026):** v2.1 is the current analysis/reporting
+> authority. It preserves v2 transport but adds verified spatial energy-
+> deposition output, nervous-surface edep shells, an analysis-only neural dose,
+> muscle comparison, deposited-energy-driven chemistry, and a literature-gated
+> LITE-1 target-interaction metric. Start with `V2_1_EXECUTIVE_SUMMARY.md` and
+> `docs/v2_1/THESIS_REPORT.md`; verify with
+> `scripts/v2_1/run_authoritative_v2_1.py --stage audit`.
+
 > **V2 update (August 30, 2026):** the validated v1 architecture remains the
 > geometry/chemistry baseline, and a completed thesis-study extension now lives
 > under `config/v2`, `scripts/v2`, and `validation/v2`. Start with
@@ -85,3 +93,10 @@ not a cellular material map. The simulation lacks agar/M9/container detail.
 Neural results are proximity statistics, and chemistry is an uncoupled homogeneous
 water calculation driven by electron birth energy. These restrictions prevent a
 claim of neuron-level absorbed dose or a mechanistic prediction of LITE-1 activation.
+
+The paragraph above describes the v1 boundary and is superseded for current
+analysis by v2/v2.1. V2 adds source/environment reconstruction; v2.1 uses actual
+deposited energy and supports a mean dose to an explicit analysis-only neural
+ROI. It still does not support individual-neuron dose, intracellular ROS, or a
+mechanistic LITE-1 activation prediction. Residual navigation incidents and the
+factor-of-two experimental dosimetry interval remain disclosed.

@@ -63,13 +63,17 @@ and dose-ratio errors use first-order covariance propagation because numerator
 and whole-worm denominator come from the same histories. Independent-seed
 replicates will be used to check those analytic errors before production.
 
-## Required remaining sensitivities
+## Completed sensitivities and remaining power limit
 
-- 0.25 versus 0.5 micrometre ROI classification and exact member-union checks;
-- 1.00 versus 1.04 g/cm3 neural density;
-- midpoint versus pre/post assignment and maximum-step sensitivity;
-- rigid atlas registration uncertainty;
-- source-spectrum and environment brackets;
-- exact-atlas deposited-energy nulls;
-- independent random seeds;
-- neural versus physical body-wall muscle dose.
+The release includes 0.25/0.5/1/2 micrometre ROI classification, exact-member-
+union scoring, 1.00/1.04 g/cm3 density, pre/mid/post/hybrid positions, rigid
+registration, source spectra, physical environment, material model,
+independent seeds, matched-atlas nulls, and muscle comparison.
+
+The 1M variant runs are underpowered for the small neural ROI: some variants
+have fewer than 10 contributing events. They are retained as falsification
+tests, not used to claim precise source-specific neural-dose effects. The 10M
+nominal runs, reconstruction interval, full-production registration bracket,
+and event-level standard errors define the neural-dose result. Perineural
+shell and muscle sensitivities have many more contributing events and are the
+appropriate endpoints for 1M source/environment comparisons.
