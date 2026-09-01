@@ -15,7 +15,9 @@ Future humans and AI agents should read, in order:
 7. [`docs/v2/THESIS_REPORT.md`](docs/v2/THESIS_REPORT.md) — v2 methods, validation, results, and discussion.
 8. [`docs/v2/COMPLETION_MATRIX.md`](docs/v2/COMPLETION_MATRIX.md) — requirement-to-evidence audit.
 9. [`V2_1_EXECUTIVE_SUMMARY.md`](V2_1_EXECUTIVE_SUMMARY.md) — actual neural dose and LITE-1-relevant chemistry.
-10. [`docs/v2_1/THESIS_REPORT.md`](docs/v2_1/THESIS_REPORT.md) — final v2.1 study and evidentiary boundary.
+10. [`docs/v2_1/THESIS_REPORT.md`](docs/v2_1/THESIS_REPORT.md) — validated v2.1 baseline and evidentiary boundary.
+11. [`FINAL_PROJECT_STATUS.md`](FINAL_PROJECT_STATUS.md) — final go/no-go decision and remaining experimental limits.
+12. [`manuscript/ROS_WORM_MANUSCRIPT.md`](manuscript/ROS_WORM_MANUSCRIPT.md) — journal-style paper draft using the final high-statistics results.
 
 The active implementation is under [`ros_worm_stage1/`](ros_worm_stage1/). The older `ros_worm_full_pipeline_v2` staging copy, build trees, scratch backups, and command-dump notes were removed from the working tree during the August 2026 cleanup; their history remains in git.
 
@@ -46,6 +48,22 @@ The final methodological upgrade is additive and lives under `config/v2_1`,
 Use `--stage figures` to regenerate all ten figures from compact results or
 `--stage analysis` to regenerate deposited-energy radiochemistry and figures.
 See [`docs/v2_1/REPRODUCIBILITY.md`](docs/v2_1/REPRODUCIBILITY.md).
+
+## Paper-ready final release
+
+The final 100-million-history-per-configuration results, event-level statistical
+audit, 99-member matched-null ensembles, local-edep chemistry, paper figures,
+and manuscript are under `ros_worm_stage1/validation/final/`, `docs/final/`,
+and `manuscript/`. Regenerate and verify all compact artifacts with:
+
+```bash
+/home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/final/run_compact_release.py
+```
+
+See [`docs/final/REPRODUCIBILITY.md`](docs/final/REPRODUCIBILITY.md). The raw
+100M ROOT files are ignored but identified by SHA-256 in the tracked production
+index and release audit.
 
 ## Validated v1 run
 
@@ -78,8 +96,9 @@ supports an explicitly defined mean neural ROI dose, not cell-resolved dose.
 Geant4-DNA outputs remain simulated homogeneous-water radiolysis yields, not
 measured biological ROS or a prediction of LITE-1 activation.
 
-V2.1 likewise finds no compelling neural-specific enrichment of actual energy
-deposition: 14.32% (focused) and 14.73% (diffuse) lie within 5 µm, while matched
-null ratios are only 1.022 and 1.039 (empirical p=0.308 and 0.231). The neural
-dose is approximately 0.78 and 0.97 times whole-worm mean dose; muscle is 1.07
-and 1.09 times. Transport is broadly available rather than neural-selective.
+The paper-ready high-statistics analysis likewise finds no compelling neural-
+specific transport enhancement. Actual energy within 5 µm of the nervous
+surface is 14.23% focused and 14.39% diffuse, essentially the same as the muscle-
+surface fractions. Analysis-only neural/whole-worm dose is `0.932±0.034`
+focused and `0.873±0.062` diffuse (Monte Carlo SE); muscle is `1.060±0.009`
+and `1.083±0.018`. Transport is broadly available rather than neural-selective.

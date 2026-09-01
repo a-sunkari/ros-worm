@@ -89,6 +89,20 @@ V2.1 spatial results are authoritative only when the transport log confirms
 `G4StepLimiterPhysics` and a 0.5 micrometre charged-particle limit. The earlier
 1M v2.1 outputs marked `SUPERSEDED.md` are an audit trail, not scientific data.
 
+## Paper-ready final authority
+
+The v2.1 architecture remains authoritative, but final paper numbers come from
+the two 100M campaigns indexed under `ros_worm_stage1/validation/final/`.
+Use `ros_worm_stage1/scripts/final/run_compact_release.py` to regenerate paper
+tables/figures/manuscript and run the fail-loud release audit. Do not copy the
+older 10M dose ratios into a final table. Raw ROOT files are ignored; their
+hashes, expanded macros, seeds, and compact evidence are tracked.
+
+The final allowed claim is that neural and muscle tissues receive whole-worm-
+order dose and a prompt reference-water radiochemical environment. The matched
+surface controls do not establish neuron-selective deposition. LITE-1 gating,
+calcium response, and behavior remain unmodeled.
+
 ## Region IDs
 
 1. body / residual WholeBodyEnvelope

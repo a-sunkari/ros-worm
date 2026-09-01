@@ -1,5 +1,10 @@
 # ROS-Worm v2.1 executive summary
 
+> **Validated baseline, superseded for final numeric reporting.** The architecture
+> and methodological findings here remain valid, but final paper numbers use the
+> 100M campaigns in [`FINAL_EXECUTIVE_SUMMARY.md`](FINAL_EXECUTIVE_SUMMARY.md)
+> and [`FINAL_PROJECT_STATUS.md`](FINAL_PROJECT_STATUS.md).
+
 ## What changed
 
 V2.1 replaces secondary-electron birth proximity as the primary neural result
