@@ -227,6 +227,8 @@ def main() -> None:
     masks = {"all_eligible": eligible, "physical_body_wall_muscle": muscle}
     if not args.skip_surface_distance:
         masks["within_5um_nervous_surface"] = eligible & (distance < 5)
+    if exact_inside is not None:
+        masks["analysis_neural_exact_member_union"] = exact_inside
     if args.neural_roi:
         finest = SparseVoxelROI.load(min(args.neural_roi, key=lambda path: SparseVoxelROI.load(path).pitch_um))
         masks["finest_neural_roi"] = eligible & finest.contains(points)

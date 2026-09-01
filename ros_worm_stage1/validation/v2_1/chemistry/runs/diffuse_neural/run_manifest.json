@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-09-01T01:59:41.566052+00:00",
+  "interpretation": "Geant4-DNA water-radiolysis simulation; not measured biological ROS.",
+  "git_commit": "64e2a41d3be8513847ddd5fb0cf320e292618396",
+  "geant4_version": "11.3.2",
+  "events": 10000,
+  "threads": 8,
+  "random_seeds": [
+    319057,
+    720191
+  ],
+  "input_spectrum": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/validation/v2_1/chemistry/input_spectra/diffuse_neural_edep_weighted.csv",
+  "input_spectrum_sha256": "f3cfd7d81d9862ca9984e83e148e13c846ab77112cc2e9a1d2e1dd8eda0de7e8",
+  "macro_sha256": "cf57728708731ef4bb915b170763cbd429edf60f9ed5b00fc7eee6beeee75941",
+  "reported_scoring_times": [
+    "1 ps",
+    "10 ps",
+    "100 ps",
+    "1 ns",
+    "10 ns",
+    "100 ns",
+    "999.999 ns"
+  ],
+  "time_note": "The logarithmic default supplies 1 ps and endTime-1 ps; five interior reporting times are added explicitly."
+}

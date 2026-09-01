@@ -7,6 +7,7 @@ import hashlib
 import json
 import shutil
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -68,9 +69,9 @@ def main() -> None:
     with (outdir / "chemistry.log").open("w") as log:
         subprocess.run([str(binary), str(macro)], cwd=outdir, stdout=log,
                        stderr=subprocess.STDOUT, check=True)
-    subprocess.run(["python3", str(stage / "chemistry/analysis/summarize_species_root.py"),
+    subprocess.run([sys.executable, str(stage / "chemistry/analysis/summarize_species_root.py"),
                     "--latest", "--csv", "species_summary.csv"], cwd=outdir, check=True)
-    subprocess.run(["python3", str(stage / "scripts/v2/summarize_chemistry_timeseries_v2.py"),
+    subprocess.run([sys.executable, str(stage / "scripts/v2/summarize_chemistry_timeseries_v2.py"),
                     "--root", "Species0.root", "--out", "species_timeseries.csv"], cwd=outdir, check=True)
 
     git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo,
