@@ -1,0 +1,29 @@
+{
+  "endpoint": "nervous-surface-referenced deposited energy at charged-step midpoints and neutral post-step interactions",
+  "not_equivalent_to": [
+    "secondary-electron birth energy",
+    "nervous absorbed dose without an explicit ROI mass"
+  ],
+  "root_file": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/results/v2_1_sensitivity_corrected_focused_soft_ngm_1M/output0.root",
+  "root_sha256": "2cf2b33ab7216462f00aecd241524671c1284c52980d0b0657792b81d11924f2",
+  "steps": 211964,
+  "events": 1000000,
+  "positive_step_edep_keV": 41111.38095347375,
+  "event_edep_keV": 41111.38095347376,
+  "step_minus_event_edep_keV": -7.275957614183426e-12,
+  "eligible_steps": 211964,
+  "nonfinite_steps_excluded": 0,
+  "scoring_position_outside_body_steps_excluded": 0,
+  "scoring_position_outside_body_edep_keV_excluded": 0.0,
+  "whole_worm_mass_kg": 7.252349000000001e-09,
+  "whole_worm_dose_per_history_Gy": 9.082256515113694e-10,
+  "distance_surface": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/openworm_geometry/compartment_pipeline/baked_priority_meshes_test/NervousSystem_baked_union.stl",
+  "distance_surface_sha256": "686224ff64fb03024fa34df08434481f90679cc8b551d54021e853689081f8a7",
+  "distance_units": "um",
+  "position_definition": "charged midpoint with enforced step limit; neutral discrete-interaction post-step",
+  "roi_density_g_cm3": 1.04,
+  "exact_member_union_membership_computed": true,
+  "surface_distance_scoring_computed": true,
+  "stochastic_uncertainty": "event-level sample variance; ratio SE uses first-order covariance propagation",
+  "process_caveat": "process-defined-step categories are diagnostic labels and do not uniquely cause continuous energy loss"
+}

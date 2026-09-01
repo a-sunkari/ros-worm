@@ -1,0 +1,33 @@
+/run/numberOfThreads 8
+/random/setSeeds 1357911 2468022
+/rosworm/materials /home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/config/region_materials.csv
+/rosworm/manifest /home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/config/transport_geometry_v1.csv
+/rosworm/mmPerUnit 0.1
+/rosworm/maxStep_um 0.5 um
+/rosworm/saveSteps true
+/rosworm/sourceType targeted_cone
+/rosworm/spectrumType tabulated
+/rosworm/spectrumFile /home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/config/v2/spectra/diffuse_minix_ag_20kv_hard.csv
+/rosworm/sourceX 0.0 mm
+/rosworm/sourceY 0.0 mm
+/rosworm/sourceZ 10.0 mm
+/rosworm/directionX 0.0
+/rosworm/directionY 0.0
+/rosworm/directionZ -1.0
+/rosworm/targetX 0.0 mm
+/rosworm/targetY 0.0 mm
+/rosworm/targetZ 0.0 mm
+/rosworm/halfX 0.6 mm
+/rosworm/halfZ 0.6 mm
+/rosworm/environmentMode immersion
+/rosworm/environmentMaterial G4_WATER
+/rosworm/environmentHalfX 5.0 mm
+/rosworm/environmentHalfY 5.0 mm
+/rosworm/environmentAbove 0.405 mm
+/rosworm/environmentBelow 0.01 mm
+/rosworm/substrateMaterial G4_Pyrex_Glass
+/rosworm/substrateThickness 1.0 mm
+/run/initialize
+/tracking/verbose 0
+/run/printProgress 100000
+/run/beamOn 1000000

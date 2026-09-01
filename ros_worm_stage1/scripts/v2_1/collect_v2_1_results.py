@@ -40,6 +40,9 @@ def main() -> None:
         for name in ["neural_roi_registration_sensitivity.csv", "nervous_surface_edep_matched_nulls.csv",
                      "edep_control_metadata.json"]:
             copy_if_present(score / "controls_1M_prefix" / name, target / "controls_1M_prefix" / name)
+        for name in ["neural_roi_registration_sensitivity.csv", "edep_control_metadata.json"]:
+            copy_if_present(score / "controls_full_registration" / name,
+                            target / "controls_full_registration" / name)
         for name in ["transport.mac", "transport_summary.json", "navigation_warning_summary.json",
                      "run_manifest.json", "v2_1_run_manifest.json"]:
             copy_if_present(result / name, target / name)

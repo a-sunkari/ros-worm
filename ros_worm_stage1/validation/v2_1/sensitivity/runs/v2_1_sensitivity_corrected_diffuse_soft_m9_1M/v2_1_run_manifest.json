@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "case": "diffuse_paralysis",
+  "spectrum": "soft",
+  "environment": "m9_drop_glass",
+  "material_model": "tissue",
+  "events": 1000000,
+  "random_seeds": [
+    1357911,
+    2468022
+  ],
+  "maximum_biological_step_um": 0.5,
+  "surface_distance_scoring": false,
+  "transport_run_manifest": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/results/v2_1_sensitivity_corrected_diffuse_soft_m9_1M/run_manifest.json",
+  "edep_scoring_metadata": "/home/asunkari/.codex/.chatgpt-projects/g-p-69fb94fc0158819180744a51f3272eb0/ros-worm-v2_1/ros_worm_stage1/results/v2_1_sensitivity_corrected_diffuse_soft_m9_1M/anatomy_edep_v2_1/edep_scoring_metadata.json"
+}
