@@ -15,7 +15,10 @@ def sha(p):
     h=hashlib.sha256(); h.update(p.read_bytes()); return h.hexdigest()
 def save(fig,out,stem,title,records):
     fig.suptitle(title,x=.02,ha="left",fontsize=12,fontweight="bold"); fig.tight_layout(rect=(0,0,1,.95))
-    for ext in ("png","pdf"): fig.savefig(out/f"{stem}.{ext}",dpi=350 if ext=="png" else None,bbox_inches="tight")
+    for ext in ("png","pdf"):
+        kwargs={"dpi":350 if ext=="png" else None,"bbox_inches":"tight"}
+        if ext=="pdf": kwargs["metadata"]={"CreationDate":None,"ModDate":None}
+        fig.savefig(out/f"{stem}.{ext}",**kwargs)
     plt.close(fig); records.append({"figure":stem,"title":title,"png_sha256":sha(out/f"{stem}.png"),"pdf_sha256":sha(out/f"{stem}.pdf")})
 
 def main():

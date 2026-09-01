@@ -5,55 +5,55 @@
       "figure": "fig01_geometry_workflow",
       "title": "Experimental configurations, computation, and mechanistic boundary",
       "png_sha256": "e02df37b6bae137ee7c1b7d8ca675cffc89f841472e833f486ef108595548113",
-      "pdf_sha256": "3e7e6eec5d8f5e5f1ef0868c5e0c646e94e372e54ced4a6e7ea4e7a51add1204"
+      "pdf_sha256": "5678ebd9b2a13ab210c783a00d2278d35aeea50a5fe5cbe48dcee6f58b5cbc4d"
     },
     {
       "figure": "fig02_neural_roi_validation",
       "title": "Analysis-only neural ROI convergence and localized surface outliers",
       "png_sha256": "efe07b0343b3a86f6bc26ecd1dc8d161f83b2ae81ee056443330442cfada2146",
-      "pdf_sha256": "a85fd08219ccfe3abbebe931c89d37c54902d1b9a048dca9fb9051c72aed66a0"
+      "pdf_sha256": "a1998f210510aa8cf494dfc93a2722767099f2a82bfd31047d1050fc29303522"
     },
     {
       "figure": "fig03_regional_dose",
       "title": "Neural and body-wall-muscle dose from 100-million-history transport",
       "png_sha256": "2f38e522b7d2ce969bb292495b9c0d462fe6071ababc1350a32b1ee576159b15",
-      "pdf_sha256": "b2cfc4d23b95534ddfd3f1179d4b4498f3482656eec5610f7ca03b820f8ca86e"
+      "pdf_sha256": "c20b1bc90f4dd4996e3df4c0275a5a6233dcbe9238bcc925fd4be2400dbc7949"
     },
     {
       "figure": "fig04_surface_edep_nulls",
       "title": "Actual deposited energy near nervous and muscle surfaces",
       "png_sha256": "7c67e419d0df879f3b7d67f599f4d0632bfcebd244b4c137b43f54dbed49d13e",
-      "pdf_sha256": "c9350616549560447e8469a2d432282912bbcb07114b5c9c55372843bd825690"
+      "pdf_sha256": "ead006f0f5f2e3015fdb045ada16c5d77e55c2f2ebbc2db74014987e6675479b"
     },
     {
       "figure": "fig05_longitudinal_edep",
       "title": "Focused and diffuse longitudinal deposited-energy distributions",
       "png_sha256": "e0ab52c3a072ab88fd7d381ccbb1d44ca1fed1112f8bc090decf9f0513584e36",
-      "pdf_sha256": "7278a800d1a744d595342015b9579e35148fac98f17b0d12081041cb74f4367a"
+      "pdf_sha256": "e9213b47cc10ae9e66e416f9da4dd3d3a78120a3da515f8f97220012acfb482c"
     },
     {
       "figure": "fig06_cannon_dose_mapping",
       "title": "Cannon conditions translated to neural and muscle dose",
       "png_sha256": "3ca818398dfd6fb9d838856d3752e33a9b8cc91770c10110bcf586bf465a8117",
-      "pdf_sha256": "f7541e89e35ef865a86de7d451e957334997c192acb00290b6cdf5743b67e29c"
+      "pdf_sha256": "d3c2dd71482eaca682233322253426787c3c2505acdc420cd495e941efc8d8e3"
     },
     {
       "figure": "fig07_radiolysis_timecourse",
       "title": "Time-resolved homogeneous-water radiolysis from local deposited energy",
       "png_sha256": "b7ab960e565bcc53a6978c1df59606641fdae36882e98f912b371b0520bab646",
-      "pdf_sha256": "190150cd1ab1a6de1b47cca0b8dc6a0132ed7a6018a77a9ef4b44e882e17738e"
+      "pdf_sha256": "8ea700a4c1df20574dd8a1baf183f730b043970322f2f1d16bede4c21b525ea6"
     },
     {
       "figure": "fig08_target_opportunities",
       "title": "LITE-1-relevant Level-1 chemical interaction opportunities",
       "png_sha256": "c3e3a13f48bc75497dd45dc95707093287315cb3dde4b8735d4ef9f6628d64cd",
-      "pdf_sha256": "44ceddc3488436e351eaaa7414a77250c48f0dcc32aeba2f61006fcb1f741433"
+      "pdf_sha256": "87594f01c17cce36d3a554a3651e5a60d8eab98eb6b9a09e783f3795a66cf97a"
     },
     {
       "figure": "fig09_uncertainty_budget",
       "title": "Neural-dose uncertainty sources kept separate",
       "png_sha256": "88e2828050b276225dda2b9a78630fa51a66baef463fd52583518fb309517839",
-      "pdf_sha256": "4dad53fcd2c2937c397b30a7b1a17f29ee98b6a538e24c903ef4f52994491f6e"
+      "pdf_sha256": "e45e66d740b145161badb8732ecce632497af556e19c83babbc908f2abe2b79c"
     }
   ],
   "source_hashes": {
