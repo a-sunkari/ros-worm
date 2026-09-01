@@ -6,20 +6,21 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import vtk
 # VTK must be loaded before ROOT in the project conda environment so ROOT's
 # bundled libcurl does not pre-empt VTK's OpenSSL-linked dependency chain.
+import vtk
 import ROOT
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from neural_roi import (  # noqa: E402
     SparseVoxelROI, body_center_and_path, inside_member_union, load_member_surfaces,
-    stl_polydata,
+    closest_surface_distances_file,
 )
 
 SHELLS = [(0.0, 1.0), (1.0, 2.0), (2.0, 5.0), (5.0, 10.0),
@@ -42,20 +43,6 @@ def root_arrays(path: Path, tree: str, branches: list[str]) -> dict[str, np.ndar
     if missing:
         raise SystemExit(f"{tree} tree lacks required v2.1 branches: {missing}")
     return {key: np.asarray(value) for key, value in frame.AsNumpy(branches).items()}
-
-
-def closest_distance(points_um: np.ndarray, surface: vtk.vtkPolyData) -> np.ndarray:
-    locator = vtk.vtkStaticCellLocator()
-    locator.SetDataSet(surface)
-    locator.BuildLocator()
-    distances = np.empty(len(points_um), dtype=np.float32)
-    cell = vtk.vtkGenericCell()
-    for index, point in enumerate(points_um):
-        target = [0.0, 0.0, 0.0]
-        cell_id, sub_id, distance2 = vtk.reference(0), vtk.reference(0), vtk.reference(0.0)
-        locator.FindClosestPoint(point, target, cell, cell_id, sub_id, distance2)
-        distances[index] = float(distance2) ** 0.5
-    return distances
 
 
 def event_metric(mask: np.ndarray, event_id: np.ndarray, edep: np.ndarray,
@@ -112,6 +99,11 @@ def main() -> None:
     parser.add_argument("--outdir", type=Path, required=True)
     parser.add_argument("--density-g-cm3", type=float, default=1.04)
     parser.add_argument("--skip-exact-member-union", action="store_true")
+    parser.add_argument("--skip-surface-distance", action="store_true",
+                        help="Dose-only sensitivity mode; omit full-atlas distance shells")
+    parser.add_argument("--resume", action="store_true",
+                        help="Reuse validated distance/member caches in the output directory")
+    parser.add_argument("--distance-workers", type=int, default=min(8, os.cpu_count() or 1))
     args = parser.parse_args()
     args.outdir.mkdir(parents=True, exist_ok=True)
     repo = Path(__file__).resolve().parents[3]
@@ -146,28 +138,38 @@ def main() -> None:
         raise SystemExit(f"Positive step edep does not reproduce event edep: delta={sum_difference} keV")
 
     center_model, _ = body_center_and_path(args.placement_manifest.resolve(), repo)
-    nervous = stl_polydata(args.nervous_stl.resolve(), center_model, 100.0)
     distance = np.full(len(edep), np.nan, dtype=np.float32)
-    distance[eligible] = closest_distance(points[eligible], nervous)
-    np.savez_compressed(args.outdir / "edep_step_scoring_cache.npz",
+    cache_path = args.outdir / "edep_step_scoring_cache.npz"
+    if args.resume and cache_path.exists():
+        cached = np.load(cache_path)
+        if (len(cached["edep_keV"]) != len(edep) or
+                not np.array_equal(cached["eventID"], event_id) or
+                not np.allclose(cached["edep_keV"], edep, rtol=0, atol=0)):
+            raise SystemExit("Refusing to resume: step cache does not match ROOT rows")
+        distance = cached["distance_to_nervous_surface_um"].astype(np.float32)
+    elif not args.skip_surface_distance:
+        distance[eligible] = closest_surface_distances_file(
+            points[eligible], args.nervous_stl.resolve(), center_model, 100.0, args.distance_workers)
+    np.savez_compressed(cache_path,
                         eventID=event_id, regionID=step["regionID"], pdg=step["pdg"],
                         edep_keV=edep, ekin_pre_keV=step["ekin_pre_keV"],
                         midX_um=points[:, 0], midY_um=points[:, 1], midZ_um=points[:, 2],
                         distance_to_nervous_surface_um=distance, eligible=eligible)
 
-    shell_rows = []
-    for lower, upper in SHELLS:
-        mask = eligible & (distance >= lower)
-        if np.isfinite(upper):
-            mask &= distance < upper
-        stats = event_metric(mask, event_id, edep, event_total)
-        shell_rows.append({"shell_lower_um": lower, "shell_upper_um": upper,
-                           "shell_label": f"{lower:g}-{upper:g}" if np.isfinite(upper) else ">=50",
-                           **stats,
-                           "edep_keV_per_whole_worm_Gy": stats["edep_per_history_keV"] / modeled_dose_per_history,
-                           "edep_steps": int(mask.sum()),
-                           "mean_step_edep_keV": float(edep[mask].mean()) if mask.any() else np.nan})
-    pd.DataFrame(shell_rows).to_csv(args.outdir / "nervous_surface_edep_shells.csv", index=False)
+    if not args.skip_surface_distance:
+        shell_rows = []
+        for lower, upper in SHELLS:
+            mask = eligible & (distance >= lower)
+            if np.isfinite(upper):
+                mask &= distance < upper
+            stats = event_metric(mask, event_id, edep, event_total)
+            shell_rows.append({"shell_lower_um": lower, "shell_upper_um": upper,
+                               "shell_label": f"{lower:g}-{upper:g}" if np.isfinite(upper) else ">=50",
+                               **stats,
+                               "edep_keV_per_whole_worm_Gy": stats["edep_per_history_keV"] / modeled_dose_per_history,
+                               "edep_steps": int(mask.sum()),
+                               "mean_step_edep_keV": float(edep[mask].mean()) if mask.any() else np.nan})
+        pd.DataFrame(shell_rows).to_csv(args.outdir / "nervous_surface_edep_shells.csv", index=False)
 
     composition = pd.DataFrame({name: step[name] for name in ["pdg", "processType", "processSubtype"]})
     composition["edep_keV"] = edep
@@ -188,11 +190,27 @@ def main() -> None:
 
     exact_inside = None
     if not args.skip_exact_member_union:
-        members, _, _ = load_member_surfaces(args.source_member_manifest.resolve(),
-                                             args.placement_manifest.resolve(), repo)
-        exact_inside = np.zeros(len(points), dtype=bool)
-        exact_inside[eligible] = inside_member_union(points[eligible], members)
-        np.savez_compressed(args.outdir / "exact_member_union_step_membership.npz", inside=exact_inside)
+        membership_path = args.outdir / "exact_member_union_step_membership.npz"
+        if args.resume and membership_path.exists():
+            exact_inside = np.load(membership_path)["inside"].astype(bool)
+            if len(exact_inside) != len(points):
+                raise SystemExit("Refusing to resume: member-union cache length differs from ROOT")
+        else:
+            members, _, _ = load_member_surfaces(args.source_member_manifest.resolve(),
+                                                 args.placement_manifest.resolve(), repo)
+            exact_inside = np.zeros(len(points), dtype=bool)
+            exact_inside[eligible] = inside_member_union(points[eligible], members)
+            np.savez_compressed(membership_path, inside=exact_inside)
+        if args.neural_roi:
+            finest_path = min(args.neural_roi, key=lambda path: SparseVoxelROI.load(path).pitch_um)
+            finest = SparseVoxelROI.load(finest_path)
+            finest_volume = len(finest.flat_indices) * finest.pitch_um ** 3
+            for density in dict.fromkeys([args.density_g_cm3, 1.0]):
+                mass = finest_volume * 1e-18 * density * 1000.0
+                dose_rows.append(dose_metric(
+                    f"neural_exact_member_union_with_{finest.pitch_um:g}um_mass_density_{density:g}",
+                    exact_inside, mass, density, event_id, edep, event_total,
+                    whole_mass, events, finest.pitch_um))
 
     muscle_rows = [row for row in summary["regions"] if row["region_key"] == "bodywall"]
     if len(muscle_rows) != 1 or muscle_rows[0]["scoring_mass_kg"] == "":
@@ -205,8 +223,9 @@ def main() -> None:
 
     spectrum_edges = np.geomspace(0.01, max(100.0, float(step["ekin_pre_keV"].max())), 101)
     spectrum_rows = []
-    masks = {"all_eligible": eligible, "within_5um_nervous_surface": eligible & (distance < 5),
-             "physical_body_wall_muscle": muscle}
+    masks = {"all_eligible": eligible, "physical_body_wall_muscle": muscle}
+    if not args.skip_surface_distance:
+        masks["within_5um_nervous_surface"] = eligible & (distance < 5)
     if args.neural_roi:
         finest = SparseVoxelROI.load(min(args.neural_roi, key=lambda path: SparseVoxelROI.load(path).pitch_um))
         masks["finest_neural_roi"] = eligible & finest.contains(points)
@@ -232,6 +251,7 @@ def main() -> None:
         "distance_surface": str(args.nervous_stl.resolve()), "distance_surface_sha256": sha256(args.nervous_stl.resolve()),
         "distance_units": "um", "position_definition": "midpoint of Geant4 pre-step and post-step positions",
         "roi_density_g_cm3": args.density_g_cm3, "exact_member_union_membership_computed": exact_inside is not None,
+        "surface_distance_scoring_computed": not args.skip_surface_distance,
         "stochastic_uncertainty": "event-level sample variance; ratio SE uses first-order covariance propagation",
         "process_caveat": "process-defined-step categories are diagnostic labels and do not uniquely cause continuous energy loss",
     }

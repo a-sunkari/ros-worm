@@ -10,6 +10,8 @@ union and sparse, grid-convergent voxel approximations of it.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from concurrent.futures import ThreadPoolExecutor
+import multiprocessing as mp
 from pathlib import Path
 
 import numpy as np
@@ -108,6 +110,79 @@ def enclosed_points(points_um: np.ndarray, surface: vtk.vtkPolyData) -> np.ndarr
     selector.Update()
     values = vtk_to_numpy(selector.GetOutput().GetPointData().GetArray("SelectedPoints"))
     return values.astype(bool)
+
+
+def closest_surface_distances(points_um: np.ndarray, surface: vtk.vtkPolyData,
+                              workers: int = 1) -> np.ndarray:
+    """Exact unsigned point-to-triangle distance using a shared static locator."""
+    points = np.asarray(points_um, dtype=float)
+    locator = vtk.vtkStaticCellLocator()
+    locator.SetDataSet(surface)
+    locator.BuildLocator()
+    result = np.empty(len(points), dtype=np.float32)
+
+    def score(start_stop: tuple[int, int]) -> None:
+        start, stop = start_stop
+        cell = vtk.vtkGenericCell()
+        for index in range(start, stop):
+            target = [0.0, 0.0, 0.0]
+            cell_id, sub_id, distance2 = vtk.reference(0), vtk.reference(0), vtk.reference(0.0)
+            locator.FindClosestPoint(points[index], target, cell, cell_id, sub_id, distance2)
+            result[index] = float(distance2) ** 0.5
+
+    workers = max(1, min(int(workers), len(points) or 1))
+    edges = np.linspace(0, len(points), workers + 1, dtype=int)
+    chunks = [(int(edges[i]), int(edges[i + 1])) for i in range(workers) if edges[i] < edges[i + 1]]
+    if workers == 1:
+        score(chunks[0] if chunks else (0, 0))
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            list(executor.map(score, chunks))
+    return result
+
+
+_WORKER_LOCATOR = None
+
+
+def _distance_worker_init(stl_path: str, center_model: np.ndarray, um_per_model_unit: float) -> None:
+    global _WORKER_LOCATOR
+    surface = stl_polydata(Path(stl_path), np.asarray(center_model), um_per_model_unit)
+    locator = vtk.vtkStaticCellLocator()
+    locator.SetDataSet(surface)
+    locator.BuildLocator()
+    # Keep both objects alive; the locator references its data set.
+    _WORKER_LOCATOR = (surface, locator)
+
+
+def _distance_worker(points: np.ndarray) -> np.ndarray:
+    if _WORKER_LOCATOR is None:
+        raise RuntimeError("Distance worker was not initialized")
+    _, locator = _WORKER_LOCATOR
+    result = np.empty(len(points), dtype=np.float32)
+    cell = vtk.vtkGenericCell()
+    for index, point in enumerate(points):
+        target = [0.0, 0.0, 0.0]
+        cell_id, sub_id, distance2 = vtk.reference(0), vtk.reference(0), vtk.reference(0.0)
+        locator.FindClosestPoint(point, target, cell, cell_id, sub_id, distance2)
+        result[index] = float(distance2) ** 0.5
+    return result
+
+
+def closest_surface_distances_file(points_um: np.ndarray, stl_path: Path,
+                                   center_model: np.ndarray, um_per_model_unit: float = 100.0,
+                                   workers: int = 1) -> np.ndarray:
+    """Parallel exact distance queries; each process owns its VTK locator."""
+    points = np.asarray(points_um, dtype=float)
+    workers = max(1, min(int(workers), len(points) or 1))
+    if workers == 1:
+        surface = stl_polydata(stl_path, center_model, um_per_model_unit)
+        return closest_surface_distances(points, surface, 1)
+    chunks = [chunk for chunk in np.array_split(points, workers) if len(chunk)]
+    context = mp.get_context("spawn")
+    with context.Pool(workers, initializer=_distance_worker_init,
+                      initargs=(str(stl_path), np.asarray(center_model), um_per_model_unit)) as pool:
+        parts = pool.map(_distance_worker, chunks)
+    return np.concatenate(parts)
 
 
 def inside_member_union(points_um: np.ndarray, members: list[dict], chunk_size: int = 250_000) -> np.ndarray:

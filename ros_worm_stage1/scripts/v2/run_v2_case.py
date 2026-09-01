@@ -68,6 +68,7 @@ def main() -> None:
     parser.add_argument("--skip-build", action="store_true")
     parser.add_argument("--skip-scoring", action="store_true")
     parser.add_argument("--save-steps", action="store_true")
+    parser.add_argument("--max-step-um", type=float, default=2.0)
     parser.add_argument("--null-count", type=int, default=12)
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
@@ -104,7 +105,7 @@ def main() -> None:
         f"/run/numberOfThreads {args.threads}", f"/random/setSeeds {args.seed_a} {args.seed_b}",
         f"/rosworm/materials {materials_path}",
         f"/rosworm/manifest {stage / 'config/transport_geometry_v1.csv'}",
-        f"/rosworm/mmPerUnit {cfg['mm_per_model_unit']}", "/rosworm/maxStep_um 2 um",
+        f"/rosworm/mmPerUnit {cfg['mm_per_model_unit']}", f"/rosworm/maxStep_um {args.max_step_um} um",
         f"/rosworm/saveSteps {'true' if args.save_steps else 'false'}",
         f"/rosworm/sourceType {case['source_type']}", "/rosworm/spectrumType tabulated",
         f"/rosworm/spectrumFile {spectrum}",
@@ -166,6 +167,7 @@ def main() -> None:
         "events": args.events, "threads": args.threads, "random_seeds": [args.seed_a, args.seed_b],
         "save_positive_edep_steps": args.save_steps,
         "edep_step_position_definition": "midpoint of Geant4 pre-step and post-step positions",
+        "maximum_biological_step_um": args.max_step_um,
         "geant4_version": subprocess.check_output(["geant4-config", "--version"], text=True).strip(),
         "normalization_warning": case["normalization_note"],
         "artifacts": {str(path.relative_to(repo)): {"sha256": sha256(path), "bytes": path.stat().st_size} for path in tracked_inputs},
