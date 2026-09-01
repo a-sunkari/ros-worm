@@ -1,0 +1,14 @@
+{
+  "primary_position_definition": "charged midpoint after enforced 0.5 um maximum; neutral post-step interaction point",
+  "roi_pitch_um": 0.25,
+  "roi_density_g_cm3": 1.04,
+  "position_code_counts": {
+    "1": 1892719,
+    "2": 54548
+  },
+  "position_codes": {
+    "1": "charged midpoint",
+    "2": "neutral post-step"
+  },
+  "all_primary_positions_inside_body": true
+}

@@ -9,9 +9,10 @@ PDG, track and parent IDs; deposited energy; pre-step kinetic energy; step
 length; explicit pre/mid/post coordinates; body containment at those three
 positions; and Geant4 process type/subtype identifiers.
 
-The authoritative scoring location is the geometric midpoint of the pre- and
-post-step positions. The historical `x_um/y_um/z_um` columns retain their
-pre-step meaning for backward compatibility. Process labels are diagnostics;
+The authoritative scoring location is the geometric midpoint for a charged
+particle after an enforced 0.5-micrometre step limit, and the post-step
+interaction point for a neutral particle. The historical `x_um/y_um/z_um`
+columns retain their pre-step meaning for backward compatibility. Process labels are diagnostics;
 the process that limits a step is not assumed to be the unique cause of
 continuous energy loss.
 
@@ -22,8 +23,19 @@ energy deposition, and midpoint containment in the whole-body envelope. It
 then verifies that the sum of saved positive step deposition exactly reproduces
 the per-event whole-worm ROOT total. Any discrepancy terminates the analysis.
 
-The 1k and 100k focused tests both pass this equality exactly. They contain no
-non-finite or midpoint-outside-body deposition rows and no navigation warnings.
+The corrected smoke and 10M production tests pass this equality exactly. They
+contain no non-finite or scoring-position-outside-body deposition rows.
+
+### Falsified initial implementation
+
+The first v2.1 audit correctly saved pre/mid/post positions but uncovered a
+deeper legacy defect: `G4UserLimits` was configured while
+`G4StepLimiterPhysics` was absent. A paired 0.5/2-micrometre run was identical,
+and actual electron steps extended to 187 micrometres. Fine spatial assignment
+from those runs is invalid. The physics list now registers the limiter, the log
+prints the active value, and direct ROOT checks show electron deposition steps
+at or below 0.5 micrometres. Photon steps may remain long because their local
+discrete deposition is scored at the post-step interaction point.
 
 ## Surface-referenced endpoint
 
@@ -61,4 +73,3 @@ replicates will be used to check those analytic errors before production.
 - exact-atlas deposited-energy nulls;
 - independent random seeds;
 - neural versus physical body-wall muscle dose.
-

@@ -264,6 +264,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   auto* worldL = new G4LogicalVolume(worldS, fWorldMaterial, "world_log");
   auto* worldP = new G4PVPlacement(nullptr, {}, worldL, "world_phys", nullptr, false, 0, false);
   fStepLimit = new G4UserLimits(fMaxStep);
+  G4cout << "[ROS-WORM][STEP_LIMIT] charged_max_step_um=" << fMaxStep/um << G4endl;
 
   G4LogicalVolume* bodyL = nullptr;
   G4LogicalVolume* bodyMother = worldL;

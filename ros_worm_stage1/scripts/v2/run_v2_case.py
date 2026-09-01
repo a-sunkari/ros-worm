@@ -166,7 +166,7 @@ def main() -> None:
         "spot_fwhm_mm": args.spot_fwhm_mm if args.spot_fwhm_mm is not None else case.get("spot_fwhm_mm"),
         "events": args.events, "threads": args.threads, "random_seeds": [args.seed_a, args.seed_b],
         "save_positive_edep_steps": args.save_steps,
-        "edep_step_position_definition": "midpoint of Geant4 pre-step and post-step positions",
+        "edep_step_position_definition": "charged-particle midpoint after enforced step limit; neutral discrete-interaction post-step position",
         "maximum_biological_step_um": args.max_step_um,
         "geant4_version": subprocess.check_output(["geant4-config", "--version"], text=True).strip(),
         "normalization_warning": case["normalization_note"],

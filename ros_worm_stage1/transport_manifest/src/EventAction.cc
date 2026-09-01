@@ -50,6 +50,11 @@ void EventAction::AddStep(const G4Step* step)
     const auto midPos = 0.5 * (prePos + postPos);
     const auto* process = post->GetProcessDefinedStep();
     const auto* creatorProcess = track->GetCreatorProcess();
+    // Charged-particle continuous loss is approximated at the midpoint of a
+    // bounded step. Neutral-particle deposition from a discrete interaction is
+    // localized at the post-step interaction point.
+    const auto charged = particle->GetPDGCharge() != 0.0;
+    const auto edepPos = charged ? midPos : postPos;
     man->FillNtupleIColumn(1, 0, fEventID);
     man->FillNtupleIColumn(1, 1, regionID);
     man->FillNtupleIColumn(1, 2, pdg);
@@ -77,6 +82,11 @@ void EventAction::AddStep(const G4Step* step)
     man->FillNtupleIColumn(1, 24, process ? process->GetProcessSubType() : -1);
     man->FillNtupleIColumn(1, 25, creatorProcess ? creatorProcess->GetProcessType() : -1);
     man->FillNtupleIColumn(1, 26, creatorProcess ? creatorProcess->GetProcessSubType() : -1);
+    man->FillNtupleDColumn(1, 27, edepPos.x()/um);
+    man->FillNtupleDColumn(1, 28, edepPos.y()/um);
+    man->FillNtupleDColumn(1, 29, edepPos.z()/um);
+    man->FillNtupleIColumn(1, 30, charged ? 1 : 2);
+    man->FillNtupleIColumn(1, 31, fDetector->IsInsideBody(edepPos) ? 1 : 0);
     man->AddNtupleRow(1);
   }
 

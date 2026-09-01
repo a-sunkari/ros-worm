@@ -111,7 +111,8 @@ def main() -> None:
     branches = ["eventID", "regionID", "pdg", "trackID", "parentID", "edep_keV",
                 "ekin_pre_keV", "step_um", "midX_um", "midY_um", "midZ_um",
                 "insideBodyMid", "processType", "processSubtype",
-                "creatorProcessType", "creatorProcessSubtype"]
+                "creatorProcessType", "creatorProcessSubtype", "edepX_um", "edepY_um",
+                "edepZ_um", "edepPositionCode", "insideBodyEdep"]
     step = root_arrays(args.root.resolve(), "steps", branches)
     event = root_arrays(args.root.resolve(), "event", ["eventID", "Edep_total_worm_keV"])
     events = len(event["eventID"])
@@ -121,11 +122,11 @@ def main() -> None:
     # Geant4 MT ntuple merging does not promise event-row order.
     event_total = np.empty(events, dtype=float)
     event_total[event_ids] = event["Edep_total_worm_keV"].astype(float)
-    points = np.column_stack([step["midX_um"], step["midY_um"], step["midZ_um"]]).astype(float)
+    points = np.column_stack([step["edepX_um"], step["edepY_um"], step["edepZ_um"]]).astype(float)
     edep = step["edep_keV"].astype(float)
     event_id = step["eventID"].astype(np.int64)
     finite = np.isfinite(points).all(axis=1) & np.isfinite(edep) & (edep > 0)
-    recorded_inside = step["insideBodyMid"].astype(bool)
+    recorded_inside = step["insideBodyEdep"].astype(bool)
     eligible = finite & recorded_inside
 
     summary = json.loads(args.transport_summary.read_text())
@@ -153,7 +154,7 @@ def main() -> None:
     np.savez_compressed(cache_path,
                         eventID=event_id, regionID=step["regionID"], pdg=step["pdg"],
                         edep_keV=edep, ekin_pre_keV=step["ekin_pre_keV"],
-                        midX_um=points[:, 0], midY_um=points[:, 1], midZ_um=points[:, 2],
+                        scoreX_um=points[:, 0], scoreY_um=points[:, 1], scoreZ_um=points[:, 2],
                         distance_to_nervous_surface_um=distance, eligible=eligible)
 
     if not args.skip_surface_distance:
@@ -239,17 +240,17 @@ def main() -> None:
     pd.DataFrame(spectrum_rows).to_csv(args.outdir / "local_edep_weighted_electron_spectra.csv", index=False)
 
     metadata = {
-        "endpoint": "nervous-surface-referenced deposited energy at Geant4 step midpoints",
+        "endpoint": "nervous-surface-referenced deposited energy at charged-step midpoints and neutral post-step interactions",
         "not_equivalent_to": ["secondary-electron birth energy", "nervous absorbed dose without an explicit ROI mass"],
         "root_file": str(args.root.resolve()), "root_sha256": sha256(args.root.resolve()),
         "steps": len(edep), "events": events, "positive_step_edep_keV": float(edep.sum()),
         "event_edep_keV": float(event_total.sum()), "step_minus_event_edep_keV": sum_difference,
         "eligible_steps": int(eligible.sum()), "nonfinite_steps_excluded": int((~finite).sum()),
-        "midpoint_outside_body_steps_excluded": int((finite & ~recorded_inside).sum()),
-        "midpoint_outside_body_edep_keV_excluded": float(edep[finite & ~recorded_inside].sum()),
+        "scoring_position_outside_body_steps_excluded": int((finite & ~recorded_inside).sum()),
+        "scoring_position_outside_body_edep_keV_excluded": float(edep[finite & ~recorded_inside].sum()),
         "whole_worm_mass_kg": whole_mass, "whole_worm_dose_per_history_Gy": modeled_dose_per_history,
         "distance_surface": str(args.nervous_stl.resolve()), "distance_surface_sha256": sha256(args.nervous_stl.resolve()),
-        "distance_units": "um", "position_definition": "midpoint of Geant4 pre-step and post-step positions",
+        "distance_units": "um", "position_definition": "charged midpoint with enforced step limit; neutral discrete-interaction post-step",
         "roi_density_g_cm3": args.density_g_cm3, "exact_member_union_membership_computed": exact_inside is not None,
         "surface_distance_scoring_computed": not args.skip_surface_distance,
         "stochastic_uncertainty": "event-level sample variance; ratio SE uses first-order covariance propagation",

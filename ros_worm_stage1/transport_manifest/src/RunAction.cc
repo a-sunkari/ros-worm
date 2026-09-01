@@ -57,6 +57,11 @@ RunAction::RunAction(DetectorConstruction* det) : fDetector(det)
   man->CreateNtupleIColumn("processSubtype");
   man->CreateNtupleIColumn("creatorProcessType");
   man->CreateNtupleIColumn("creatorProcessSubtype");
+  man->CreateNtupleDColumn("edepX_um");
+  man->CreateNtupleDColumn("edepY_um");
+  man->CreateNtupleDColumn("edepZ_um");
+  man->CreateNtupleIColumn("edepPositionCode");
+  man->CreateNtupleIColumn("insideBodyEdep");
   man->FinishNtuple(1);
 
   man->CreateNtuple("secondaries", "Secondary particle source terms by parent region");

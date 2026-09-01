@@ -54,13 +54,18 @@ def main() -> None:
     parser.add_argument("--null-seed", type=int, default=20260831)
     parser.add_argument("--distance-workers", type=int, default=4)
     parser.add_argument("--skip-nulls", action="store_true")
+    parser.add_argument("--max-event-id-exclusive", type=int,
+                        help="Use a deterministic event-ID prefix for affordable null controls")
     args = parser.parse_args()
     args.outdir.mkdir(parents=True, exist_ok=True)
     repo = Path(__file__).resolve().parents[3]
 
     cache = np.load(args.scoring_cache)
     eligible = cache["eligible"].astype(bool)
-    points = np.column_stack([cache["midX_um"], cache["midY_um"], cache["midZ_um"]])[eligible]
+    if args.max_event_id_exclusive is not None:
+        eligible &= cache["eventID"].astype(np.int64) < args.max_event_id_exclusive
+    xyz = ["scoreX_um", "scoreY_um", "scoreZ_um"] if "scoreX_um" in cache.files else ["midX_um", "midY_um", "midZ_um"]
+    points = np.column_stack([cache[name] for name in xyz])[eligible]
     edep = cache["edep_keV"].astype(float)[eligible]
     real_distance = cache["distance_to_nervous_surface_um"].astype(float)[eligible]
     if not np.isfinite(real_distance).all() and not args.skip_nulls:
@@ -133,6 +138,7 @@ def main() -> None:
     null_5 = np.array([row["edep_fraction_within_5um"] for row in null_rows], dtype=float)
     metadata = {
         "control": "same full-resolution atlas under anatomically contained rigid perturbations; surface area and triangle content exactly matched",
+        "event_id_prefix_exclusive": args.max_event_id_exclusive,
         "real": real, "null_seed": args.null_seed, "null_requested": args.null_count,
         "null_accepted": len(null_rows), "null_attempts": attempts,
         "baseline_sampled_atlas_containment": baseline_containment,

@@ -50,10 +50,17 @@ uncertainty. The shell endpoint is not called neural dose because no neural
 mass is implied.
 
 The transport output will retain pre-, midpoint-, and post-step positions. A
-2-micrometre maximum biological step already bounds spatial assignment error;
+charged-particle step limit bounds spatial assignment error and
 midpoint-versus-endpoint sensitivity will be checked. Process-defined-step
 metadata may be recorded for diagnostics, but it will not be treated as an
 unambiguous causal allocation of continuous energy loss.
+
+**Audit correction (v2.1 implementation):** initial runs revealed that the
+historical physics list had not registered `G4StepLimiterPhysics`, so
+`G4UserLimits` did not enforce the macro value. Depositing electron steps
+reached 187 micrometres. Those initial v2.1 spatial results are superseded.
+Production now uses an actually verified 0.5-micrometre charged-particle limit;
+neutral discrete-interaction deposition is assigned to the post-step point.
 
 ## Analysis-only neural volume and dose
 
