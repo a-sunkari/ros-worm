@@ -24,9 +24,9 @@ The earliest radiolytic products are also chemically capable of reacting with re
 
 A quantitative test of the radiolysis hypothesis therefore requires more than whole-animal dose. It requires knowledge of where X-ray energy is deposited relative to the nervous system and muscle, whether the regional doses are large enough to support substantial local radiation chemistry, and whether the chemical products arise on timescales compatible with the observed behavior. OpenWorm provides a framework for this analysis by combining three-dimensional anatomical resources with computational models of the worm [11]. The present study integrates OpenWorm-derived anatomy with Geant4 radiation transport [12] and Geant4-DNA water chemistry [13–15] to reconstruct the physical and early chemical environment produced by the Cannon/Bolding X-ray exposures. We calculate absorbed dose in nervous and muscle tissue, resolve deposited energy as a function of distance from neural anatomy, propagate local electron spectra into water-radiolysis simulations, and compare the resulting chemistry with known LITE-1-relevant reaction pathways.
 
-![Figure 1. Experimental and computational framework.](../ros_worm_stage1/validation/final/figures/fig01_geometry_workflow.png)
+![Figure 1. Experimental and computational framework.](../ros_worm_stage1/validation/publication_figures/main/Figure1_framework.png)
 
-**Figure 1. Experimental and computational framework.** Focused 50 kV tungsten irradiation and diffuse 20 kV silver irradiation were modeled in the corresponding agar and liquid sample environments. Geant4 was used to calculate spatial energy deposition in OpenWorm-derived anatomy, followed by regional dosimetry, distance-resolved scoring around nervous and muscle surfaces, and Geant4-DNA water-radiolysis calculations.
+**Figure 1. Experimental configurations, source models, and computational framework.** **a**, Focused 50 kV tungsten configuration with a 0.85 mm FWHM footprint over the NGM/agar and polystyrene preparation. **b**, Diffuse 20 kV silver configuration with a 120° emission cone over the M9 and glass preparation. Vertical dimensions are compressed in both technical schematics. **c**, Nominal photon-energy probability distributions (lines) and soft-to-hard spectral brackets (bands). **d**, OpenWorm-derived body-wall-muscle and nervous-system anatomy and the analysis chain from transport energy deposition to regional dosimetry, homogeneous-water radiolysis, and chemical target-interaction opportunities.
 
 ## Methods
 
@@ -66,9 +66,9 @@ The union was sampled at 0.25, 0.5, 1, and 2 µm isotropic voxel pitch to evalua
 
 The original aggregate nervous-system surface, containing 1,355,686 triangles, was retained as the anatomical reference for distance-based scoring. Reconstruction fidelity was evaluated by surface-distance statistics, volume stability, body containment, longitudinal morphology, and visual registration.
 
-![Figure 2. Neural scoring volume and geometric convergence.](../ros_worm_stage1/validation/final/figures/fig02_neural_roi_validation.png)
+![Figure 2. Neural scoring volume and geometric convergence.](../ros_worm_stage1/validation/publication_figures/main/Figure2_neural_ROI.png)
 
-**Figure 2. Neural scoring volume and geometric convergence.** Comparison of the original high-resolution nervous-system atlas with body-clipped neural scoring volumes reconstructed at 0.25–2 µm voxel pitch. Surface-error and volume-convergence analyses were used to quantify the uncertainty associated with neural mass and point classification.
+**Figure 2. Neural scoring volume and geometric convergence.** **a**, Original high-resolution nervous-system surface overlaid with the 0.25 µm body-clipped set-union ROI in whole-animal coordinates; the body envelope is light gray. **b**, Anterior detail of the same overlay. **c**, Body-clipped neural volume across 0.25–2 µm voxel pitch; the dotted line marks the 0.25 µm mass proxy. **d**, Median (p50), p95, and p99 symmetric surface error relative to the original atlas. **e**, Neural-to-whole-worm dose ratio obtained with each voxel reconstruction. Dotted colored lines show the exact-union numerator used for the primary estimates, and the black dashed line denotes equality with whole-worm mean dose.
 
 ### Geant4 transport and spatial energy-deposition scoring
 
@@ -151,9 +151,9 @@ Body-wall muscle received slightly greater mean dose than the whole-worm average
 | Focused 50 kV + NGM | 0.932 | 0.865–0.998 | 1.060 | 1.042–1.078 |
 | Diffuse 20 kV + M9 | 0.873 | 0.752–0.994 | 1.083 | 1.047–1.120 |
 
-![Figure 3. Regional absorbed dose.](../ros_worm_stage1/validation/final/figures/fig03_regional_dose.png)
+![Figure 3. Regional dose and anatomical-surface-referenced energy deposition.](../ros_worm_stage1/validation/publication_figures/main/Figure3_dose_and_surface.png)
 
-**Figure 3. Regional absorbed dose relative to whole-worm mean dose.** Neural and body-wall-muscle dose ratios from the 100-million-history focused and diffuse simulations. Error bars show 95% Monte Carlo intervals calculated from event-level regional and whole-worm energy with covariance propagation. Neural reconstruction ranges are shown separately from Monte Carlo sampling uncertainty.
+**Figure 3. Regional dose and anatomical-surface-referenced energy deposition.** **a**, Neural and body-wall-muscle dose relative to whole-worm mean dose in the nominal focused and diffuse 100-million-history simulations. Whiskers are covariance-aware 95% Monte Carlo intervals from event-level regional and whole-worm deposition. Pale purple segments show the deterministic neural ROI-pitch range and are not combined with sampling uncertainty; the dashed line denotes unity. **b,c**, Cumulative whole-worm deposited energy within the stated unsigned distance of nervous and body-wall-muscle surfaces for focused and diffuse irradiation. The vertical dotted line marks 5 µm. **d**, Native nervous-atlas fraction within 5 µm (diamonds) compared with all 99 anatomy-contained rigid matched-atlas controls (gray points) on fixed one-million-history prefixes. Empirical probabilities test enrichment relative to the matched controls.
 
 ### Energy deposition was broadly distributed around internal anatomy
 
@@ -163,15 +163,9 @@ Body-wall muscle showed nearly identical surface-associated deposition: 14.298% 
 
 The matched-surface controls provided a geometric reference for these fractions. On the fixed 1-million-history focused subset, the native nervous atlas had a 0–5 µm energy fraction 1.016 times the mean of the 99 perturbed atlases (empirical upper-tail p=0.29). In the diffuse subset, the corresponding ratio was 1.060 (p=0.08). Thus, the native nervous geometry sampled a substantial portion of the local energy-deposition field, but its near-surface energy was similar to that obtained by modestly displaced copies of the same internal surface.
 
-![Figure 4. Deposited energy as a function of distance from nervous and muscle anatomy.](../ros_worm_stage1/validation/final/figures/fig04_surface_edep_nulls.png)
-
-**Figure 4. Distance-resolved energy deposition around nervous and muscle surfaces.** Left, fractions of whole-worm deposited energy in successive distance shells from the high-resolution nervous-system atlas and body-wall-muscle surface. Right, native nervous-surface 0–5 µm deposition compared with 99 rigidly perturbed copies of the identical atlas.
-
 Longitudinal profiles reflected the two irradiation geometries. Focused deposition peaked around the central portion of the beam footprint and decreased toward the anterior and posterior ends of the body, whereas diffuse irradiation produced a broader longitudinal distribution. The near-neural and near-muscle profiles followed the corresponding whole-worm deposition field while retaining local anatomical structure.
 
-![Figure 5. Longitudinal deposited-energy profiles.](../ros_worm_stage1/validation/final/figures/fig05_longitudinal_edep.png)
-
-**Figure 5. Longitudinal distribution of deposited energy.** Whole-worm, near-neural, and near-muscle energy deposition in 20 µm bins along the body axis for focused and diffuse irradiation.
+Aligned whole-worm and local surface-associated profiles are retained as Supplementary Figure S1.
 
 ### Experimental exposure conditions corresponded to multi-gray neural and muscle doses
 
@@ -191,9 +185,9 @@ For diffuse 20 s exposure, the 0.19, 0.38, 0.56, and 0.74 Gy s^-1 conditions cor
 | Diffuse 0.56 Gy s^-1 × 20 s | 11.2 Gy | 9.78 Gy | 12.13 Gy |
 | Diffuse 0.74 Gy s^-1 × 20 s | 14.8 Gy | 12.92 Gy | 16.03 Gy |
 
-![Figure 6. Experimental exposure conditions mapped to regional dose.](../ros_worm_stage1/validation/final/figures/fig06_cannon_dose_mapping.png)
+![Figure 4. Experimental exposure conditions mapped to regional dose.](../ros_worm_stage1/validation/publication_figures/main/Figure4_Cannon_exposures.png)
 
-**Figure 6. Neural and muscle dose across the Cannon exposure conditions.** Reported experimental dose was used to normalize whole-worm mean dose, and the high-statistics regional dose ratios were applied to each condition. The focused values represent a centered animal receiving the nominal full pulse.
+**Figure 4. Neural and muscle dose across Cannon experimental exposure conditions.** **a**, Focused 50 kV tungsten exposures on NGM, including the 15 s egg-ejection condition. **b**, Diffuse 20 kV silver exposures in M9. Open circles show reported whole-worm mean dose; purple diamonds and green squares apply the nominal high-statistics neural- and muscle-to-whole-worm dose ratios. Pale horizontal segments show the separate 0.5–2× experimental dosimetry envelope. Conditions are discrete fluence-linear normalizations, not independent transport simulations or biological dose-response fits. Focused values assume a centered animal receiving the full nominal pulse.
 
 ### Source, geometry, and anatomical uncertainties did not change the regional scale of exposure
 
@@ -201,9 +195,7 @@ Monte Carlo sampling, neural reconstruction, and neural-atlas registration contr
 
 The spectral and environmental sensitivity cases showed that low-energy sample geometry was particularly relevant to diffuse irradiation. The nominal diffuse fraction of whole-worm energy within 5 µm of the nervous surface was 14.73% in the 1-million-history sensitivity set; removing the M9/glass environment reduced it to 12.98%. Soft and hard diffuse spectra gave 14.32% and 15.04%, respectively. For focused irradiation, the nominal 1-million-history perineural fraction was 14.32%, compared with 14.80% in the worm-only environment and 13.41–13.98% across the soft/hard spectral variants. These changes were smaller than the difference between the complete diffuse sample geometry and a worm-only model.
 
-![Figure 9. Sources of uncertainty in the neural dose ratio.](../ros_worm_stage1/validation/final/figures/fig09_uncertainty_budget.png)
-
-**Figure 9. Neural-dose uncertainty.** Monte Carlo sampling intervals, neural-volume reconstruction ranges, and atlas-registration brackets for the focused and diffuse regional dose ratios. Experimental absolute-dose uncertainty is treated separately because it scales both whole-worm and regional gray values without changing the regional transport ratio.
+History convergence and the separated Monte Carlo, reconstruction, and atlas-registration ranges are shown in Supplementary Figure S2. Experimental absolute-dose uncertainty is treated separately because it scales regional gray values without changing the regional-to-whole-worm transport ratio.
 
 ### Radiolysis products formed on picosecond-to-microsecond timescales
 
@@ -211,9 +203,9 @@ Geant4-DNA simulations predicted rapid formation of reactive water-radiolysis pr
 
 Applying these G values to regional deposited energy produced exposure-scale estimates of the corresponding pure-water radiolysis yield. At the nominal 2 Gy focused avoidance condition, neural deposition gave approximately 1.44×10^6 ·OH and 9.65×10^5 H2O2 molecules at ~1 µs. At 10 Gy focused exposure, the corresponding values were 7.19×10^6 and 4.82×10^6. Across the diffuse 3.8–14.8 Gy series, neural yields ranged from approximately 2.53×10^6 to 9.87×10^6 ·OH molecules and from 1.72×10^6 to 6.71×10^6 H2O2 molecules in the same pure-water reference calculation.
 
-![Figure 7. Time-resolved water-radiolysis yields.](../ros_worm_stage1/validation/final/figures/fig07_radiolysis_timecourse.png)
+![Figure 5. Time-resolved water-radiolysis yields.](../ros_worm_stage1/validation/publication_figures/main/Figure5_radiolysis.png)
 
-**Figure 7. Time-resolved Geant4-DNA water radiolysis.** G values for major radiolytic species from 1 ps to approximately 1 µs using local deposited-energy-weighted electron spectra from neural tissue. Focused and diffuse irradiation produced similar chemical evolution after normalization to deposited energy.
+**Figure 5. Time-resolved Geant4-DNA homogeneous-water radiolysis from neural local energy deposition.** **a**, Short-lived oxidizing/reducing species (·OH, hydrated electron, and H·). **b**, Molecular and ionic products (H2O2, H2, and H3O+). G values are shown from 1 ps to approximately 1 µs for the focused (solid) and diffuse (dashed) neural deposited-energy-weighted electron spectra. Focused and diffuse curves overlap closely after normalization to deposited energy. Values are homogeneous-water molecule equivalents per 100 eV, not intracellular concentrations or surviving biological ROS.
 
 ### LITE-1-relevant residues lie within a kinetically accessible radical-reaction regime
 
@@ -221,9 +213,9 @@ The combination of modeled ·OH production and literature reaction rates produce
 
 The width of these intervals was driven primarily by the assumed effective target concentration and competing scavenging, which were varied over three and two orders of magnitude, respectively. The calculations therefore identify a chemically accessible regime rather than a unique receptor-specific reaction yield. The modeled H2O2 time course also overlaps the kinetic regime of peroxiredoxin-mediated redox signaling, providing a second potential route between radiolysis and LITE-1-associated redox biology.
 
-![Figure 8. LITE-1-relevant radical-target reaction estimates.](../ros_worm_stage1/validation/final/figures/fig08_target_opportunities.png)
+![Figure 6. LITE-1-relevant radical-target reaction estimates.](../ros_worm_stage1/validation/publication_figures/main/Figure6_target_chemistry.png)
 
-**Figure 8. Estimated radiochemical access to tryptophan- and thiol-like targets.** Reaction ranges across the experimental exposure conditions were calculated from modeled neural ·OH yields, published solution-phase rate constants, and broad sweeps of effective target concentration and competing scavenging.
+**Figure 6. LITE-1-relevant Level-1 chemical interaction opportunities.** **a,b**, Trp-like and thiol-like interaction opportunity for the nominal 2 Gy focused neural exposure across effective target concentrations of 1 µM–1 mM and competing pseudo-first-order scavenging rates of 10^8–10^10 s^-1; cell values are log10 opportunities. **c**, Corresponding ranges across all modeled Cannon exposure conditions; points are geometric range midpoints. Estimates use deposited-energy-normalized ·OH yield and published free-solute rate constants. They are chemical opportunity metrics, not protein modification counts, receptor activation probabilities, channel opening, or behavioral predictions.
 
 ## Discussion
 
