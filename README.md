@@ -17,7 +17,8 @@ Future humans and AI agents should read, in order:
 9. [`V2_1_EXECUTIVE_SUMMARY.md`](V2_1_EXECUTIVE_SUMMARY.md) — actual neural dose and LITE-1-relevant chemistry.
 10. [`docs/v2_1/THESIS_REPORT.md`](docs/v2_1/THESIS_REPORT.md) — validated v2.1 baseline and evidentiary boundary.
 11. [`FINAL_PROJECT_STATUS.md`](FINAL_PROJECT_STATUS.md) — final go/no-go decision and remaining experimental limits.
-12. [`manuscript/ROS_WORM_MANUSCRIPT.md`](manuscript/ROS_WORM_MANUSCRIPT.md) — journal-style paper draft using the final high-statistics results.
+12. [`manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md`](manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md) — current coauthor-review manuscript using the final high-statistics results and publication figures.
+13. [`manuscript/SUPPLEMENTARY_FIGURES.md`](manuscript/SUPPLEMENTARY_FIGURES.md) — assembled supplementary figure set.
 
 The active implementation is under [`ros_worm_stage1/`](ros_worm_stage1/). The older `ros_worm_full_pipeline_v2` staging copy, build trees, scratch backups, and command-dump notes were removed from the working tree during the August 2026 cleanup; their history remains in git.
 
@@ -64,6 +65,22 @@ and `manuscript/`. Regenerate and verify all compact artifacts with:
 See [`docs/final/REPRODUCIBILITY.md`](docs/final/REPRODUCIBILITY.md). The raw
 100M ROOT files are ignored but identified by SHA-256 in the tracked production
 index and release audit.
+
+The manuscript's authoritative six main and two supplementary publication
+figures are regenerated separately from the tracked compact outputs:
+
+```bash
+MPLCONFIGDIR=/tmp/mpl-pub /home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/make_publication_figures_final.py \
+  --repo . --outdir ros_worm_stage1/validation/publication_figures
+
+/home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/audit_publication_figures.py \
+  --repo . --figure-root ros_worm_stage1/validation/publication_figures
+```
+
+See [`docs/final/FIGURE_STYLE_GUIDE.md`](docs/final/FIGURE_STYLE_GUIDE.md) and
+[`docs/final/FIGURE_AUDIT.md`](docs/final/FIGURE_AUDIT.md).
 
 ## Validated v1 run
 
