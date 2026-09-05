@@ -17,8 +17,10 @@ Future humans and AI agents should read, in order:
 9. [`V2_1_EXECUTIVE_SUMMARY.md`](V2_1_EXECUTIVE_SUMMARY.md) — actual neural dose and LITE-1-relevant chemistry.
 10. [`docs/v2_1/THESIS_REPORT.md`](docs/v2_1/THESIS_REPORT.md) — validated v2.1 baseline and evidentiary boundary.
 11. [`FINAL_PROJECT_STATUS.md`](FINAL_PROJECT_STATUS.md) — final go/no-go decision and remaining experimental limits.
-12. [`manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md`](manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md) — current coauthor-review manuscript using the final high-statistics results and publication figures.
+12. [`manuscript/ROS_WORM_MANUSCRIPT_V3.md`](manuscript/ROS_WORM_MANUSCRIPT_V3.md) — current coauthor-review manuscript using the final high-statistics results and publication figures.
 13. [`manuscript/SUPPLEMENTARY_FIGURES.md`](manuscript/SUPPLEMENTARY_FIGURES.md) — assembled supplementary figure set.
+
+`manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md` is retained as the pre-v3 manuscript for comparison and provenance.
 
 The active implementation is under [`ros_worm_stage1/`](ros_worm_stage1/). The older `ros_worm_full_pipeline_v2` staging copy, build trees, scratch backups, and command-dump notes were removed from the working tree during the August 2026 cleanup; their history remains in git.
 
