@@ -98,6 +98,14 @@ tables/figures/manuscript and run the fail-loud release audit. Do not copy the
 older 10M dose ratios into a final table. Raw ROOT files are ignored; their
 hashes, expanded macros, seeds, and compact evidence are tracked.
 
+The current manuscript-writing authority is
+`manuscript/ROS_WORM_MANUSCRIPT_V3.md`. It preserves the final numerical results
+while replacing the earlier audit-heavy prose with journal-style scientific
+writing, a shorter Introduction and Discussion, less repetitive Results, and
+GitHub-compatible mathematical notation. `manuscript/ROS_WORM_MANUSCRIPT_REWRITE.md`
+is the pre-v3 manuscript and should remain unchanged for provenance unless a
+future task explicitly asks to revise that version.
+
 The final allowed claim is that neural and muscle tissues receive whole-worm-
 order dose and a prompt reference-water radiochemical environment. The matched
 surface controls do not establish neuron-selective deposition. LITE-1 gating,
