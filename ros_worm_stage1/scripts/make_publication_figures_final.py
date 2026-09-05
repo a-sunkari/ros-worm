@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 from matplotlib.patches import Ellipse, Polygon, Rectangle
 import numpy as np
 import pandas as pd
@@ -17,10 +18,6 @@ import trimesh
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from publication_style import (COLORS, DOUBLE_COLUMN_IN, apply_publication_style,
                                light_grid, panel_label, save_figure, sha256)
-
-sys.path.insert(0, str(Path(__file__).resolve().parent / "v2_1"))
-from neural_roi import SparseVoxelROI  # noqa: E402
-
 
 def read_spectrum(path: Path) -> pd.DataFrame:
     return pd.read_csv(path, comment="#", names=["energy_keV", "probability"])
@@ -32,6 +29,21 @@ def sampled_vertices(path: Path, maximum: int) -> np.ndarray:
     if len(vertices) > maximum:
         vertices = vertices[np.linspace(0, len(vertices) - 1, maximum, dtype=int)]
     return vertices
+
+
+def sparse_boundary_centers(path: Path) -> np.ndarray:
+    """Load precomputed ROI boundary centers without importing the VTK analysis stack."""
+    data = np.load(path)
+    flat = data["boundary_flat_indices"].astype(np.int64)
+    dimensions = data["dimensions"].astype(np.int64)
+    pitch_um = float(data["pitch_um"])
+    origin_edge_um = data["origin_edge_um"].astype(float)
+    nx, ny, _ = dimensions
+    iz = flat // (nx * ny)
+    remainder = flat - iz * nx * ny
+    iy = remainder // nx
+    ix = remainder - iy * nx
+    return origin_edge_um + (np.column_stack([ix, iy, iz]) + 0.5) * pitch_um
 
 
 def anatomy_data(repo: Path) -> dict[str, np.ndarray]:
@@ -46,8 +58,7 @@ def anatomy_data(repo: Path) -> dict[str, np.ndarray]:
         geometry / "baked_priority_meshes_test/NervousSystem_baked_union.stl", 75_000
     ) * 100.0
     roi_path = repo / "ros_worm_stage1/validation/v2_1/neural_roi/neural_roi_union_members_pitch_0.25um.npz"
-    roi = SparseVoxelROI.load(roi_path)
-    boundary = roi.centers(np.load(roi_path)["boundary_flat_indices"])
+    boundary = sparse_boundary_centers(roi_path)
     if len(boundary) > 75_000:
         boundary = boundary[np.linspace(0, len(boundary) - 1, 75_000, dtype=int)]
     return {"body": body, "muscle": muscle, "atlas": atlas, "roi": boundary}
@@ -92,8 +103,6 @@ def draw_setup(ax, kind: str) -> None:
     ax.text(0.12, 0.125, substrate_label, va="center", fontsize=5.9)
     ax.text(0.50, 0.925, "Focused configuration" if focused else "Diffuse configuration",
             ha="center", va="center", fontsize=7, fontweight="semibold")
-    ax.text(0.98, 0.02, "schematic; vertical scale compressed", ha="right",
-            va="bottom", fontsize=5.2, color=COLORS["null_dark"])
 
 
 def figure1(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
@@ -101,8 +110,7 @@ def figure1(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
     gs = fig.add_gridspec(2, 2, height_ratios=[0.92, 1.08], hspace=0.08, wspace=0.10)
     a = fig.add_subplot(gs[0, 0]); b = fig.add_subplot(gs[0, 1])
     c = fig.add_subplot(gs[1, 0])
-    right = gs[1, 1].subgridspec(2, 1, height_ratios=[1.0, 0.34], hspace=0.03)
-    d = fig.add_subplot(right[0, 0]); flow = fig.add_subplot(right[1, 0])
+    d = fig.add_subplot(gs[1, 1])
     draw_setup(a, "focused"); draw_setup(b, "diffuse")
     panel_label(a, "a", x=-0.05, y=1.00); panel_label(b, "b", x=-0.05, y=1.00)
 
@@ -114,14 +122,14 @@ def figure1(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
         variants = {v: read_spectrum(spectra / f"{prefix}_{v}.csv") for v in ("soft", "nominal", "hard")}
         x = variants["nominal"].energy_keV.to_numpy()
         values = np.vstack([variants[v].probability.to_numpy() for v in ("soft", "nominal", "hard")])
-        c.fill_between(x, values.min(axis=0), values.max(axis=0), color=color, alpha=0.14, linewidth=0)
+        c.fill_between(x, values.min(axis=0), values.max(axis=0), color=color, alpha=0.14,
+                       linewidth=0,
+                       label="Soft-hard spectral bracket" if prefix.startswith("focused") else None)
         c.plot(x, values[1], color=color, lw=1.05, label=label)
     c.set(xlabel="Photon energy (keV)", ylabel="Probability per 0.25 keV bin",
           yscale="log", xlim=(1, 50), ylim=(1e-5, 0.3))
     c.legend(loc="upper right")
     light_grid(c, "y"); panel_label(c, "c")
-    c.text(0.02, 0.04, "line: nominal; band: soft–hard bracket", transform=c.transAxes,
-           fontsize=5.7, color=COLORS["null_dark"])
 
     body, muscle, atlas = anatomy["body"], anatomy["muscle"], anatomy["atlas"]
     d.scatter(body[:, 1], body[:, 0], s=0.08, color=COLORS["null"], alpha=0.40,
@@ -136,14 +144,6 @@ def figure1(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
              handletextpad=0.35, columnspacing=1.1)
     fig.text(0.505, 0.535, "d", ha="left", va="top", fontsize=9,
              fontweight="bold", color=COLORS["text"])
-    flow.axis("off")
-    flow.text(0.50, 0.64,
-              "transport  →  deposited-energy steps  →  regional dose / surface distance",
-              transform=flow.transAxes, ha="center", va="center", fontsize=5.9,
-              color=COLORS["text"])
-    flow.text(0.50, 0.25, "water radiolysis  →  target-interaction opportunities",
-              transform=flow.transAxes, ha="center", va="center", fontsize=5.9,
-              color=COLORS["text"])
     return save_figure(fig, outdir, "Figure1_framework")
 
 
@@ -178,7 +178,8 @@ def figure2(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
 
     pitch_x = np.arange(len(conv))
     pitch_labels = [f"{v:g}" for v in conv.pitch_um]
-    c.plot(pitch_x, conv.volume_um3, "o-", color=COLORS["neural"], ms=3)
+    c.plot(pitch_x, conv.volume_um3, "o-", color=COLORS["neural"], ms=3,
+           lw=0.55, alpha=0.80)
     c.axhline(conv.loc[conv.pitch_um == 0.25, "volume_um3"].iloc[0], color=COLORS["null_dark"],
               lw=0.65, ls=":")
     c.set(xlabel="Voxel pitch (µm)", ylabel="Body-clipped volume (µm³)",
@@ -203,13 +204,14 @@ def figure2(repo: Path, anatomy: dict[str, np.ndarray], outdir: Path) -> dict:
                ms=3, label=irradiation.capitalize())
         exact = stats[(stats.irradiation == irradiation) & stats.roi.str.startswith("neural_")].iloc[0]
         e.axhline(exact.roi_to_whole_dose_ratio, color=color, lw=0.65, ls=":")
-    e.axhline(1, color=COLORS["whole"], lw=0.65, ls="--")
+    e.axhline(1, color=COLORS["whole"], lw=0.65, ls="--", label="Whole-worm equality")
     e.set(xlabel="Voxel pitch (µm)", ylabel="Neural / whole-worm dose",
           xticks=pitch_x, xticklabels=pitch_labels, ylim=(0.78, 1.04))
-    e.legend(loc="lower right")
+    handles, labels = e.get_legend_handles_labels()
+    handles.append(Line2D([0], [0], color=COLORS["null_dark"], lw=0.75, ls=":"))
+    labels.append("Exact-union estimate")
+    e.legend(handles, labels, loc="lower right", ncol=1)
     light_grid(e, "y"); panel_label(e, "e")
-    e.text(0.03, 0.96, "dotted: exact-union numerator", transform=e.transAxes,
-           ha="left", va="top", fontsize=5.4, color=COLORS["null_dark"])
     return save_figure(fig, outdir, "Figure2_neural_ROI")
 
 
@@ -248,8 +250,6 @@ def figure3(repo: Path, outdir: Path) -> dict:
                                  "Diffuse — neural", "Diffuse — muscle"],
           xlabel="Regional dose / whole-worm mean dose", xlim=(0.70, 1.16))
     light_grid(a, "x"); panel_label(a, "a", x=-0.07)
-    a.text(0.01, 0.04, "whiskers: 95% Monte Carlo interval   pale segment: neural ROI-pitch range",
-           transform=a.transAxes, fontsize=5.7, color=COLORS["null_dark"])
 
     for ax, irr, letter in [(b, "focused", "b"), (c, "diffuse", "c")]:
         for surface, color, marker in [("nervous", COLORS["neural"], "o"),
@@ -281,9 +281,6 @@ def figure3(repo: Path, outdir: Path) -> dict:
     d.set(xticks=[0, 1], xticklabels=["Focused", "Diffuse"],
           ylabel="Energy within 5 µm (%)", xlim=(-0.42, 1.42), title="Matched-atlas controls")
     light_grid(d, "y"); panel_label(d, "d", x=-0.22)
-    d.text(0.50, 0.03, "gray: 99 rigid controls\ndiamond: native atlas",
-           transform=d.transAxes, ha="center", va="bottom", fontsize=5.5,
-           color=COLORS["null_dark"])
     return save_figure(fig, outdir, "Figure3_dose_and_surface")
 
 
@@ -301,25 +298,28 @@ def figure4(repo: Path, outdir: Path) -> dict:
     ):
         q = table[table.source_type == irr].copy().sort_values(["exposure_s", "reported_dose_rate_Gy_s"])
         y = np.arange(len(q))[::-1]
-        for yy, (_, row) in zip(y, q.iterrows()):
+        for index, (yy, (_, row)) in enumerate(zip(y, q.iterrows())):
             vals = np.array([row.reported_whole_worm_dose_Gy, row.neural_Gy, row.muscle_Gy])
-            ax.hlines(yy, 0.5 * vals.min(), 2.0 * vals.max(), color=COLORS["null"], lw=4.8, alpha=0.32)
-        ax.scatter(q.reported_whole_worm_dose_Gy, y, marker="o", s=18, facecolor="white",
-                   edgecolor=COLORS["whole"], linewidth=0.8, label="Whole-worm mean", zorder=3)
+            ax.hlines(yy, 0.5 * vals.min(), 2.0 * vals.max(), color=COLORS["null"],
+                      lw=3.8, alpha=0.27,
+                      label="0.5-2× dosimetry" if index == 0 else None)
+        ax.scatter(q.reported_whole_worm_dose_Gy, y + 0.15, marker="o", s=27, facecolor="white",
+                   edgecolor=COLORS["whole"], linewidth=1.0, label="Whole-worm mean", zorder=5)
         ax.scatter(q.neural_Gy, y, marker="D", s=19, color=COLORS["neural"],
-                   edgecolor="white", linewidth=0.4, label="Neural", zorder=3)
-        ax.scatter(q.muscle_Gy, y, marker="s", s=19, color=COLORS["muscle"],
-                   edgecolor="white", linewidth=0.4, label="Muscle", zorder=3)
+                   edgecolor="white", linewidth=0.4, label="Neural", zorder=4)
+        ax.scatter(q.muscle_Gy, y - 0.15, marker="s", s=19, color=COLORS["muscle"],
+                   edgecolor="white", linewidth=0.4, label="Muscle", zorder=4)
         labels = [condition_label(row) for _, row in q.iterrows()]
         if irr == "focused":
             labels[-1] += "  (egg ejection)" if q.iloc[-1].exposure_s == 15 else ""
         ax.set(yticks=y, yticklabels=labels, xlabel="Nominal regional dose (Gy)",
                xlim=(0, 33), title=title)
         light_grid(ax, "x"); panel_label(ax, letter, x=-0.21)
-    axes[0].legend(loc="upper right", ncol=1)
-    axes[1].text(0.98, 0.03, "pale line: 0.5–2× experimental\ndosimetry envelope",
-                 transform=axes[1].transAxes, ha="right", va="bottom",
-                 fontsize=5.7, color=COLORS["null_dark"])
+    handles, labels = axes[0].get_legend_handles_labels()
+    order = [labels.index(name) for name in
+             ("Whole-worm mean", "Neural", "Muscle", "0.5-2× dosimetry")]
+    axes[0].legend([handles[i] for i in order], [labels[i] for i in order],
+                   loc="upper right", ncol=1)
     return save_figure(fig, outdir, "Figure4_Cannon_exposures")
 
 
@@ -349,10 +349,13 @@ def figure5(repo: Path, outdir: Path) -> dict:
             ax.text(1250, qf.mean_G_molecules_per_100eV.iloc[-1] * offset, label,
                     color=color, fontsize=6.4, ha="left", va="center", clip_on=False)
         ax.set(xscale="log", yscale="log", xlabel="Time after energy deposition (ns)",
-               ylabel="G value (molecules per 100 eV)", title=title, xlim=(7e-4, 2100))
+               ylabel=r"G (molecules 100 eV$^{-1}$)", title=title, xlim=(7e-4, 2100))
         light_grid(ax, "both"); panel_label(ax, letter, x=-0.15)
-    axes[0].text(0.03, 0.04, "solid: focused    dashed: diffuse", transform=axes[0].transAxes,
-                 fontsize=5.8, color=COLORS["null_dark"])
+    style_handles = [
+        Line2D([0], [0], color=COLORS["whole"], lw=1.05, ls="-", label="Focused"),
+        Line2D([0], [0], color=COLORS["whole"], lw=0.85, ls=(0, (3, 2)), label="Diffuse"),
+    ]
+    axes[0].legend(handles=style_handles, loc="lower left", ncol=2)
     return save_figure(fig, outdir, "Figure5_radiolysis")
 
 
@@ -389,7 +392,7 @@ def figure6(repo: Path, outdir: Path) -> dict:
                yticks=range(len(matrix.index)), yticklabels=[f"{1e6*v:g}" for v in matrix.index],
                xlabel=r"Competing scavenging (s$^{-1}$)", ylabel="Effective target (µM)", title=title)
         panel_label(ax, letter, x=-0.18)
-    fig.colorbar(image, cax=cb, label="log₁₀ interaction opportunity\n(2 Gy focused neural ROI)")
+    fig.colorbar(image, cax=cb, label="log₁₀ interaction opportunity")
 
     y = np.arange(len(cannon))[::-1]
     for target, low, high, color, offset, marker, linestyle in [
@@ -402,12 +405,20 @@ def figure6(repo: Path, outdir: Path) -> dict:
         c.hlines(y + offset, lo, hi, color=color, lw=1.25, alpha=0.88,
                  linestyles=linestyle)
         c.scatter(np.sqrt(lo * hi), y + offset, s=12, marker=marker, color=color,
-                  edgecolor="white", linewidth=0.35, label=target, zorder=3)
+                  edgecolor="white", linewidth=0.35, zorder=3)
     labels = [f"{'F' if r.source_type == 'focused' else 'D'}  {r.reported_dose_rate_Gy_s:g} Gy s$^{{-1}}$ × {r.exposure_s:g} s"
               for _, r in cannon.iterrows()]
     c.set(xscale="log", yticks=y, yticklabels=labels,
           xlabel="Neural target-interaction opportunity", title="Experimental exposure series")
-    light_grid(c, "x"); c.legend(loc="lower right"); panel_label(c, "c", x=-0.09)
+    target_handles = [
+        Line2D([0], [0], color=COLORS["trp"], lw=1.25, ls="-", marker="o",
+               markersize=3.5, markeredgecolor="white", markeredgewidth=0.35, label="Trp-like"),
+        Line2D([0], [0], color=COLORS["thiol"], lw=1.25, ls=(0, (3, 2)), marker="s",
+               markersize=3.5, markeredgecolor="white", markeredgewidth=0.35, label="Thiol-like"),
+    ]
+    light_grid(c, "x")
+    c.legend(handles=target_handles, loc="upper center", bbox_to_anchor=(0.5, -0.20), ncol=2)
+    panel_label(c, "c", x=-0.09)
     return save_figure(fig, outdir, "Figure6_target_chemistry")
 
 
@@ -432,7 +443,7 @@ def supplementary1(repo: Path, outdir: Path) -> dict:
                               out=np.full(len(local), np.nan), where=whole.edep_keV.to_numpy() > 0)
             axes[1, col].plot(local.index, 100 * ratio, color=color, ls=ls, label=label)
         axes[1, col].set(xlabel="Longitudinal position (µm)",
-                         ylabel="Local-bin energy within 5 µm (%)", ylim=(0, 65))
+                         ylabel="Local-bin energy within 5 µm (%)", ylim=(0, 32))
         light_grid(axes[0, col], "y"); light_grid(axes[1, col], "y")
     for ax, label in zip(axes.ravel(), ("a", "b", "c", "d")):
         panel_label(ax, label, x=-0.17)
@@ -444,7 +455,7 @@ def supplementary2(repo: Path, outdir: Path) -> dict:
     vf = repo / "ros_worm_stage1/validation/final"
     hist = pd.read_csv(vf / "statistics/history_convergence.csv")
     budget = pd.read_csv(vf / "tables/final_uncertainty_budget.csv")
-    fig = plt.figure(figsize=(DOUBLE_COLUMN_IN, 4.7), layout="constrained")
+    fig = plt.figure(figsize=(DOUBLE_COLUMN_IN, 5.0), layout="constrained")
     gs = fig.add_gridspec(2, 2, height_ratios=[1, 0.88], hspace=0.09, wspace=0.10)
     a = fig.add_subplot(gs[0, 0]); b = fig.add_subplot(gs[0, 1], sharey=a); c = fig.add_subplot(gs[1, :])
     for ax, irr, letter in [(a, "focused", "a"), (b, "diffuse", "b")]:
@@ -454,9 +465,10 @@ def supplementary2(repo: Path, outdir: Path) -> dict:
                     color=COLORS[irr], marker="o" if irr == "focused" else "s",
                     ms=2.8, lw=0.8, capsize=1.7)
         ax.axhline(1, color=COLORS["whole"], ls="--", lw=0.65)
+        ax.axhline(q.roi_to_whole_dose_ratio.iloc[-1], color=COLORS[irr], ls=":", lw=0.75)
         ax.set(xscale="log", xlabel="Primary histories (million)",
                ylabel="Neural / whole-worm dose", title=irr.capitalize(),
-               xticks=[1, 2, 5, 10, 20, 50, 100], ylim=(0, 1.9))
+               xticks=[1, 2, 5, 10, 20, 50, 100], ylim=(0, 2.35))
         ax.set_xticklabels(["1", "2", "5", "10", "20", "50", "100"])
         light_grid(ax, "y"); panel_label(ax, letter, x=-0.16)
     plt.setp(b.get_yticklabels(), visible=False)
@@ -475,9 +487,8 @@ def supplementary2(repo: Path, outdir: Path) -> dict:
                       linewidth=0.35, label=irr.capitalize() if category == categories[0] else None)
     c.axvline(0, color=COLORS["whole"], lw=0.65)
     c.set(yticks=ybase, yticklabels=categories, xlabel="Relative interval around nominal neural-dose ratio (%)")
-    c.legend(loc="lower right", ncol=2); light_grid(c, "x"); panel_label(c, "c", x=-0.08)
-    c.text(0.01, 0.04, "Monte Carlo: 95% sampling interval; ROI and registration: deterministic ranges",
-           transform=c.transAxes, fontsize=5.6, color=COLORS["null_dark"])
+    c.legend(loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2)
+    light_grid(c, "x"); panel_label(c, "c", x=-0.08)
     return save_figure(fig, outdir, "FigureS2_uncertainty")
 
 

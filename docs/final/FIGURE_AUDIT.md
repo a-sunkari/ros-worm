@@ -6,7 +6,7 @@ The previous nine-figure main-text set diluted the central physical argument and
 
 | Previous figure | Decision | Final location | Reason |
 |---|---|---|---|
-| 1. Geometry/workflow | Redesigned substantially | Main Figure 1 | Retains the two experimental geometries, adds source-spectrum brackets and the actual OpenWorm anatomy/analysis path, and removes presentation-style boxes. |
+| 1. Geometry/workflow | Redesigned substantially | Main Figure 1 | Retains the two experimental geometries, adds source-spectrum brackets and the actual OpenWorm anatomy, and removes presentation-style boxes and workflow prose. |
 | 2. Neural ROI validation | Redesigned substantially | Main Figure 2 | Combines the real atlas/ROI overlay and anatomical zoom with volume, surface-error, and dose convergence on one coherent resolution axis. |
 | 3. Regional dose | Redesigned and merged | Main Figure 3a | Replaces large bars with point estimates, covariance-aware Monte Carlo intervals, a whole-worm reference, and separately encoded ROI-pitch ranges. |
 | 4. Surface deposition/nulls | Redesigned and merged | Main Figure 3b–d | Places cumulative nervous/muscle surface deposition beside the regional dose result and shows all 99 matched-atlas controls rather than a generic boxplot. |
@@ -20,7 +20,7 @@ No validated numerical result was changed during redesign. Main-text removal mea
 
 ## Narrative role of the final figures
 
-1. **Figure 1 — modeled experiment and analysis chain.** The two actual irradiation configurations, spectral uncertainty, anatomy, and the boundary between transport, radiolysis, and target-opportunity calculations.
+1. **Figure 1 — modeled experiment and anatomy.** The two actual irradiation configurations, spectral uncertainty, and the anatomy used for regional and surface-referenced analysis.
 2. **Figure 2 — validity of the neural scoring model.** The analysis-only ROI follows the original atlas sufficiently for whole-system mean-dose inference, and the scientific dose endpoint is stable across tested pitch.
 3. **Figure 3 — central dosimetric result.** Neural and muscle doses are whole-worm-order; both surfaces sample a substantial deposition field; the native neural atlas is not enriched above matched rigid controls.
 4. **Figure 4 — link to Cannon conditions.** Actual experimental exposures map to multi-gray neural and muscle doses without implying a nonlinear modeled response.
@@ -44,5 +44,4 @@ Exact hashes for all tabular/configuration sources and all exports are recorded 
 
 ## Visual review outcome
 
-The final set was inspected as individual 600 dpi panels and as color/grayscale contact sheets at 182 mm-equivalent width. The redesign avoids default plotting-library colors, filled ratio bars, arbitrary connecting lines, redundant main figures, floating legends, and infographic-like mechanistic claims. Shapes and line styles preserve focused/diffuse and neural/muscle distinctions in grayscale. The remaining local rasterization is confined to million-facet anatomy point clouds; axes and text remain vector/editable.
-
+The final set was inspected as individual 600 dpi panels and as color/grayscale contact sheets at 182 mm-equivalent width. The redesign avoids default plotting-library colors, filled ratio bars, arbitrary connecting lines, redundant main figures, data-obscuring legends, and infographic-like mechanistic claims. Shapes and line styles preserve focused/diffuse and neural/muscle distinctions in grayscale. The remaining local rasterization is confined to million-facet anatomy point clouds; axes and text remain vector/editable.
