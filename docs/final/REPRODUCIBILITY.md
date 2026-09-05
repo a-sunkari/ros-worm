@@ -8,7 +8,21 @@ From the repository root in the tracked `ros` Conda environment:
 conda run -n ros python ros_worm_stage1/scripts/final/run_compact_release.py
 ```
 
-This deterministically regenerates paper tables, all nine PNG/PDF figures, the assembled manuscript, and `validation/final/release_audit.json`. The audit fails on wrong branch, ROOT/ROI hash, history count, step/event energy mismatch, insufficient neural precision, incomplete null/chemistry ensembles, stale/missing figures, or missing manuscript artifacts.
+This deterministically regenerates the compact analysis tables, the original nine-figure paper-ready release, the assembled baseline manuscript, and `validation/final/release_audit.json`. The audit fails on wrong branch, ROOT/ROI hash, history count, step/event energy mismatch, insufficient neural precision, incomplete null/chemistry ensembles, stale/missing figures, or missing manuscript artifacts.
+
+The current coauthor-review manuscript uses the redesigned publication set rather than the original nine-figure layout. After the compact release is validated, regenerate and audit that visual release with:
+
+```bash
+MPLCONFIGDIR=/tmp/mpl-pub /home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/make_publication_figures_final.py \
+  --repo . --outdir ros_worm_stage1/validation/publication_figures
+
+/home/asunkari/miniconda3/envs/ros/bin/python \
+  ros_worm_stage1/scripts/audit_publication_figures.py \
+  --repo . --figure-root ros_worm_stage1/validation/publication_figures
+```
+
+This second stage produces six main and two supplementary figures in PDF, editable-text SVG, and 600 dpi PNG formats, plus color and grayscale final-size contact sheets. `publication_figure_manifest.json` binds each output to the exact tracked data/configuration hashes. The generator is deterministic: two successive runs produce identical artifact and manifest hashes. Figure selection and visual rules are documented in `FIGURE_AUDIT.md` and `FIGURE_STYLE_GUIDE.md`.
 
 ## Authoritative nominal transport
 
@@ -29,6 +43,7 @@ These runs use Geant4 11.3.2, Livermore electromagnetic physics, the validated v
 4. Score nervous and muscle surfaces; run 99 matched-atlas controls on fixed one-million-event prefixes.
 5. Build local edep-weighted spectra and run the six seeded 10k Geant4-DNA chemistry cases.
 6. Run `build_final_tables.py`, `make_paper_figures.py`, and `audit_paper_release.py` via the compact runner.
+7. Run `make_publication_figures_final.py` and `audit_publication_figures.py` for the current six-main/two-supplementary manuscript release.
 
 The exact commands and arguments are represented by the final scripts; manual copying of numbers into paper tables is not authoritative.
 
