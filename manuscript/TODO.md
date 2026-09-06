@@ -1,0 +1,2 @@
+- Figure out where em-dashes are needed and when a regular unicode dash is fine (upload to GPT to check)
+- Check if the "Because X-ray energy in tissue... and receptor-dependent signalling" is too long
