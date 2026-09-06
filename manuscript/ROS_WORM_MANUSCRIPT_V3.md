@@ -134,19 +134,19 @@ Simulation macros, source definitions, geometry files, random seeds, software ve
 
 ## Results
 
-### Neural geometry was stable for whole-system dose estimation
+### Neural ROI reconstruction and geometry sensitivity
 
-The body-clipped neural volume varied by 3.94% across voxel pitches from 0.25 to 2 µm. At 0.25 µm, the median surface deviation from the original nervous-system atlas was 0.119 µm; the 95th and 99th percentiles were 0.246 and 0.522 µm. Larger differences were confined mainly to a small number of thin posterior terminal processes. Of 100,000 sampled reference points, 0.257% differed by more than 10 µm and 0.031% by more than 25 µm.
+The reconstructed neural volume varied by 3.94% across voxel pitches from 0.25 to 2 µm. At 0.25 µm resolution, the median surface deviation from the original nervous system atlas was 0.119 µm, with the 95th and 99th percentiles at 0.246 and 0.522 µm. Larger deviations were confined mainly to a small number of thin posterior processes. Of 100,000 sampled reference points, 0.257% differed by more than 10 µm and 0.031% by more than 25 µm.
 
-Using the exact object union rather than the 0.25 µm voxel representation changed the neural energy numerator by 0.32% during focused irradiation and 1.51% during diffuse irradiation. Across 0.25, 0.5, 1, and 2 µm mass reconstructions, focused neural-to-whole-worm dose ratios were 0.929, 0.930, 0.955, and 0.987. Diffuse ratios were 0.860, 0.870, 0.843, and 0.919. The exact union was used for the primary energy numerator in all subsequent analyses.
+Using the exact union of the 276 neural meshes instead of the 0.25 µm voxel representation changed the neural energy deposition numerator by 0.32% during focused irradiation and 1.51% during diffuse irradiation. Across voxel pitches of 0.25, 0.5, 1, and 2 µm, focused neural/whole-worm dose ratios were 0.929, 0.930, 0.955, and 0.987, respectively. Diffuse ratios were 0.860, 0.870, 0.843, and 0.919, respectively (Fig. 2).
 
-### Neural and muscle mean dose were comparable with whole-worm dose
+Energy deposition which was excluded because of numerical boundary effects accounted for 1.90 × 10⁻⁶ of total worm deposition in the focused simulation and 2.03 × 10⁻⁵ in the diffuse simulation.
 
-The focused 100-million-history simulation deposited 4,254.3 keV inside the neural ROI. The deposition arose from 1,264 primary histories, with an energy-weighted effective event count of 753. Neural mean dose was 0.9316 ± 0.0339 times the whole-worm mean dose (Monte Carlo standard error), with a covariance-based 95% interval of 0.8651–0.9980. The bootstrap interval was 0.8636–0.9993.
+### Neural and muscle tissue doses were comparable with whole-worm mean dose
 
-Diffuse irradiation deposited 1,041.8 keV in the neural ROI from 318 primary histories, with an effective event count of 200. Neural mean dose was 0.8730 ± 0.0616 times the whole-worm mean, with a covariance-based 95% interval of 0.7522–0.9938 and a bootstrap interval of 0.7594–1.0013. Relative Monte Carlo standard errors were 3.6% for focused and 7.1% for diffuse neural dose.
+During focused irradiation, the mean nervous system dose was 0.932 times the whole-worm mean dose (95% Monte Carlo interval, 0.865–0.998). The corresponding body wall muscle ratio was 1.060 (1.042–1.078). During diffuse irradiation, the nervous system and body wall muscle ratios were 0.873 (0.752–0.994) and 1.083 (1.047–1.120), respectively (Table 2; Fig. 3a).
 
-Body-wall muscle received slightly more dose than the whole-worm mean in both configurations. Muscle-to-whole-worm ratios were 1.0600 ± 0.0093 for focused irradiation and 1.0834 ± 0.0185 for diffuse irradiation. Independent 10-million-history simulations were consistent with the final estimates.
+Energy deposition within the neural ROI occurred in 1,264 primary histories during focused irradiation and 318 primary histories during diffuse irradiation. The relative Monte Carlo standard errors of the neural dose estimates were 3.6% and 7.1%, respectively. Poisson-weighted bootstrap intervals closely matched the covariance-based intervals, and independent 10 million-history simulations gave similar regional dose estimates.
 
 | Irradiation | Neural/whole-worm dose ratio | 95% MC interval | Muscle/whole-worm dose ratio | 95% MC interval |
 |---|---:|---:|---:|---:|
@@ -155,19 +155,18 @@ Body-wall muscle received slightly more dose than the whole-worm mean in both co
 
 ![Figure 3. Regional dose and energy deposition around anatomical surfaces.](../ros_worm_stage1/validation/publication_figures/main/Figure3_dose_and_surface.png)
 
-**Figure 3. Regional dose and energy deposition around anatomical surfaces.** **a**, Neural and body-wall-muscle dose relative to whole-worm mean dose in the 100-million-history focused and diffuse simulations. Whiskers show covariance-based 95% Monte Carlo intervals; pale purple segments show the neural ROI reconstruction range. **b,c**, Cumulative whole-worm deposited energy as a function of distance from nervous-system and muscle surfaces. **d**, Native nervous-system fraction within 5 µm compared with 99 displaced copies of the same atlas on fixed one-million-history subsets.
+**Figure 3. Regional dose and energy deposition around anatomical surfaces.** **a**, Nervous system and body wall muscle dose relative to whole-worm mean dose in the 100 million-history focused and diffuse simulations. Whiskers show covariance-based 95% Monte Carlo intervals; pale purple segments show the range obtained across neural ROI reconstructions. **b,c**, Cumulative whole-worm deposited energy as a function of distance from the nervous system and body wall muscle surfaces. **d**, Fraction of deposited energy within 5 µm of the native nervous system surface compared with 99 displaced copies of the same anatomy using fixed subsets of 1 million primary histories.
 
-### Energy deposition was not preferentially concentrated around the nervous system
+### Spatial distribution of energy deposition around neural and muscle surfaces
 
-During focused irradiation, 1.386% of whole-worm energy was deposited within 1 µm of the nervous-system surface, 2.444% between 1 and 2 µm, and 10.400% between 2 and 5 µm. The cumulative fraction within 5 µm was 14.230%. Under diffuse irradiation, the corresponding fractions were 1.328%, 2.508%, and 10.551%, for a cumulative 14.388%. These values corresponded to approximately 6.44 × 10⁶ and 6.48 × 10⁶ keV of near-neural deposited energy per modeled whole-worm gray.
+During focused irradiation, 14.230% of whole-worm deposited energy occured within 5 µm of the nervous system surface. The corresponding fraction during diffuse irradiation was 14.388%. Energy deposition around the body wall muscle surface was similar, with 14.298% and 14.350% of whole-worm deposition occurring within 5 µm during focused and diffuse irradiation, respectively (Fig. 3b,c).
 
-The body-wall-muscle surface gave nearly the same result: 14.298% of focused and 14.350% of diffuse whole-worm energy was deposited within 5 µm. On fixed 1-million-history subsets, the native nervous atlas sampled 1.016 times the mean near-surface fraction of the 99 displaced atlases during focused irradiation (*p* = 0.29) and 1.060 times the displaced-atlas mean during diffuse irradiation (*p* = 0.08). The native nervous system therefore occupied a substantial deposition field, but not a strongly enriched one.
+The native neural surface was also compared with 99 displaced copies of the same anatomy. Using fixed subsets of 1 million primary histories, the fraction of deposited energy within 5 µm of the native surface was 1.016 times the mean of the displaced surfaces during focused irradiation (*p* = 0.29) and 1.060 times the displaced-surface mean during diffuse irradiation (*p* = 0.08) (Fig. 3d).
+Longitudinal energy deposition followed the irradiation geometry. Focused irradiation produced a central maximum corresponding to the beam footprint, whereas diffuse irradiation produced a broader distribution along the body axis. Profiles near the nervous system and body wall muscle followed the corresponding whole-worm distributions (Supplementary Fig. S1).
 
-Longitudinal profiles reflected the irradiation geometry. Focused deposition peaked near the central beam footprint and fell toward the anterior and posterior ends of the worm, whereas diffuse irradiation produced a broader profile. Near-neural and near-muscle profiles followed the corresponding whole-worm pattern. These profiles are shown in Supplementary Figure S1.
+### Regional dose estimates for the experimental irradiation conditions
 
-### Experimental exposures produced similar whole-worm, neural, and muscle dose scales
-
-Applying the regional ratios to the reported experimental exposures yielded neural and muscle doses close to the nominal whole-worm dose (Table 2). Across the focused conditions, calculated neural dose ranged from 1.86 to 13.97 Gy and body-wall-muscle dose from 2.12 to 15.90 Gy. Across the diffuse series, the corresponding ranges were 3.32–12.92 Gy and 4.12–16.03 Gy.
+Applying the simulated regional dose ratios to the irradiation conditions reported by Cannon et al. gave nervous system and body wall muscle doses on the same scale as the nominal whole-worm dose (Table 3; Fig. 4). Across the focused exposures, estimated nervous system dose ranged from 1.86 to 13.97 Gy and body wall muscle dose from 2.12 to 15.90 Gy. Across the diffuse exposures, the corresponding ranges were 3.32–12.92 Gy and 4.12–16.03 Gy.
 
 | Cannon condition | Nominal whole-worm dose | Neural dose | Muscle dose |
 |---|---:|---:|---:|
