@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="514.8pt" height="370.8pt" viewBox="0 0 514.8 370.8">
+  <image x="0" y="0" width="514.8" height="370.8" xlink:href="Figure1_framework.png" preserveAspectRatio="none"/>
+
+  <!-- Minimal overlay correction: redraw the two target labels inside their existing boxes. -->
+  <rect x="116.0" y="20.5" width="43.9" height="13.2" fill="#ffffff"/>
+  <rect x="121.024221" y="21.957544" width="33.799493" height="10.207778" fill="#ffffff" stroke="#202124" stroke-width="0.65"/>
+  <text x="137.923968" y="28.35" text-anchor="middle" font-family="Liberation Sans, Arial, Helvetica, DejaVu Sans, sans-serif" font-size="4.8px" fill="#000000">W target, 50 kV</text>
+
+  <rect x="384.2" y="20.5" width="43.9" height="13.2" fill="#ffffff"/>
+  <rect x="389.276598" y="21.957544" width="33.799493" height="10.207778" fill="#ffffff" stroke="#202124" stroke-width="0.65"/>
+  <text x="406.176345" y="28.35" text-anchor="middle" font-family="Liberation Sans, Arial, Helvetica, DejaVu Sans, sans-serif" font-size="4.8px" fill="#000000">Ag target, 20 kV</text>
+</svg>
