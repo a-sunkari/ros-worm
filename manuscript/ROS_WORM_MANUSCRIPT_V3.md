@@ -14,7 +14,7 @@ In aqueous tissue, X-ray interactions generate energetic secondary electrons tha
 
 Here, we developed Monte Carlo simulations of the focused and diffuse X-ray experiments performed by Cannon et al. in an anatomically resolved Geant4 model of C. elegans built from OpenWorm [11–13]. We calculated absorbed dose in the nervous system and body wall muscle, mapped energy deposition relative to these tissues, and used the resulting electron spectra to model early water radiolysis with Geant4-DNA [14–16]. We then examined hydroxyl-radical reactions with tryptophan and cysteine and peroxide chemistry relevant to known features of LITE-1 signaling.
 
-![Figure 1. Experimental and computational framework.](../ros_worm_stage1/validation/publication_figures/main/Figure1_framework_fixed.svg)
+![Figure 1. Experimental and computational framework.](../ros_worm_stage1/validation/publication_figures/main/Figure1_framework.svg)
 
 **Figure 1. Experimental configurations and computational framework.** **a**, Focused 50 kV tungsten configuration with a 0.85 mm FWHM footprint over the NGM/agar and polystyrene preparation. **b**, Diffuse 20 kV silver configuration with a 120° emission cone over the M9 and glass preparation. Vertical dimensions are compressed in both schematics. **c**, Nominal photon energy probability distributions with soft and hard spectral brackets. **d**, OpenWorm-derived body wall muscle and nervous system anatomy used for regional and surface-based analysis.
 
